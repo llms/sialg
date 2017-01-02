@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="unidGEC_SUB" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGECv2" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="unidGEC_SUB" id="unidGEC_SUB" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="paramGEC" name="paramGEC" type="IntegerArray"/>
+      </Parameters>
+      <Query><![CDATA[Select *  from 
+    (SELECT 
+        -1 "CO_SUB_GEC", 
+        'Todas' as  "SG_GEC_COMPLETO"
+    union
+    SELECT distinct 
+        "CO_SUB_GEC", 
+        "SG_GEC_COMPLETO"      
+    FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" 
+    where 
+        "CO_GEC" in (${paramGEC})) a 
+order by "CO_SUB_GEC"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC" id="unidGEC" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select * from (select -1 "CO_GEC", 'Todas' "SG_GEC"       
+union
+SELECT distinct "CO_GEC", "SG_GEC"       
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC") a order by "CO_GEC";]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGECv2" id="unidGECv2" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT distinct "CO_SUB_GEC", "SG_GEC_COMPLETO", "CO_GEC", "SG_GEC"       
+FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
+   </DataAccess>
+</CDADescriptor>

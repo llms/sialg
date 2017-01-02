@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="qualidadeDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="indicadoresDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="produtividadeDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="atendimentoDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="agildiadeDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="aderenciaDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="qualidadeDS" id="qualidadeDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="1,2" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
+set [Rows] as FILTER(
+[Unidades.GEA].[GEA].members
+, [Measures].[Qualidade] > 0 )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Qualidade] ON COLUMNS
+
+FROM [SIALG - RTC Indicadores]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0,1" mode="exclude"/>
+      <Parameters>
+         <Parameter default="" name="pesoAderencia" type="String"/>
+         <Parameter default="" name="pesoAgilidade" type="String"/>
+         <Parameter default="" name="pesoQualidade" type="String"/>
+         <Parameter default="" name="pesoAtendimento" type="String"/>
+         <Parameter default="" name="pesoProdutividade" type="String"/>
+         <Parameter default="" name="metaCobertura" type="String"/>
+         <Parameter default="" name="metaAderencia" type="String"/>
+         <Parameter default="" name="metaPrazo" type="String"/>
+         <Parameter default="" name="metaPlanejamento" type="String"/>
+         <Parameter default="" name="metaCorretude" type="String"/>
+         <Parameter default="" name="metaDefeitos" type="String"/>
+         <Parameter default="" name="metaAtendimento" type="String"/>
+         <Parameter default="" name="participacaoAderencia" type="String"/>
+         <Parameter default="" name="metaEquipe" type="String"/> 
+         <Parameter default="" name="metaIndividual" type="String"/>
+         <Parameter default="" name="participacaoCobertura" type="String"/>
+         <Parameter default="" name="participacaoPrazo" type="String"/>
+         <Parameter default="" name="participacaoPlanejamento" type="String"/>
+         <Parameter default="" name="participacaoCorretude" type="String"/>
+         <Parameter default="" name="participacaoDefeitos" type="String"/>
+         <Parameter default="" name="participacaoAtendimento" type="String"/>
+         <Parameter default="" name="participacaoEquipe" type="String"/>
+         <Parameter default="" name="participacaoIndividual" type="String"/>
+         <Parameter default="" name="participacaoAderencia" type="String"/>
+         <Parameter default="" name="paramUnidade" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with
+member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
+member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
+member [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
+member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
+member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
+member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'
+
+
+member [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'
+member [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'
+member [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'
+member [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'
+
+member [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'
+
+member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no PerÃ­odo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'
+
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[${paramUnidade}].MEMBERS
+, [Organizacao.Gestao da Demanda].[${paramUnidade}].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],
+[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}
+ )
+set [SORTED_ROW] as 'ORDER([Rows],[Measures].[Rank],BASC)'
+
+
+
+SELECT
+[SORTED_ROW] ON ROWS
+,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]
+  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]
+  ,[Measures].[Corretude],[Measures].[Defeitos]
+  , [Measures].[Atendimento], [Measures].[Equipe]
+  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="produtividadeDS" id="produtividadeDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+SELECT
+[Rows] ON ROWS
+,[Measures].[Produtividade] ON COLUMNS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+SELECT
+[Rows] ON ROWS
+,[Measures].[Atendimento] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="agildiadeDS" id="agildiadeDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="1,2" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
+ 
+set [Rows] as FILTER(
+[Unidades.GEA].[GEA].members
+, [Measures].[Agilidade] > 0 )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Agilidade] ON COLUMNS
+
+FROM [SIALG - RTC Indicadores]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="aderenciaDS" id="aderenciaDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Aderencia] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+</CDADescriptor>
