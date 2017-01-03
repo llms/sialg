@@ -1412,7 +1412,7 @@
      {
       "name": "extensionPoints",
       "type": "EditorValuesArray",
-      "value": "[[\"label_text\",\"function(obj) { \\r\\n    return Dashboards.numberFormat(obj.vars.value.value, '0.00%');   \\r\\n}\"]]"
+      "value": "[]"
      },
      {
       "name": "tooltip",
@@ -2716,7 +2716,7 @@
      {
       "name": "extensionPoints",
       "type": "EditorValuesArray",
-      "value": "[[\"label_text\",\"function(obj) { \\r\\n    return Dashboards.numberFormat(obj.vars.value.value, '0.00%');   \\r\\n}\"]]"
+      "value": "[]"
      },
      {
       "name": "tooltip",
@@ -4020,7 +4020,7 @@
      {
       "name": "extensionPoints",
       "type": "EditorValuesArray",
-      "value": "[[\"values_text\",\"function f(obj) { \\r\\n    console.log(obj);\\r\\n    return obj.vars.value.value;\\r\\n}\"]]"
+      "value": "[]"
      },
      {
       "name": "tooltip",
@@ -5339,7 +5339,7 @@
      {
       "name": "barOrthoSizeMin",
       "type": "Float",
-      "value": 1.5
+      "value": "1.5"
      },
      {
       "name": "barSizeMax",
@@ -6586,6 +6586,24 @@
     "typeDesc": "JavaScript function"
    },
    {
+    "id": "d7e01c36-47cb-a812-1dc4-37097682ad55",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "colorNota"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "  function colorNota(valor){  \r\n    var x = valor;\r\n    if(x >= 12){\r\n      return \"diamante\";\r\n    }else if(x >= 10){\r\n      return \"ouro\";\r\n    }else if(x >= 8.5){\r\n      return \"prata\";\r\n    }else if(x >= 7){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
     "id": "bf87fe5e-4edc-9b64-1318-eca8acbd8323",
     "parent": "SCRIPT",
     "properties": [
@@ -6597,11 +6615,29 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "  function color(valor, meta){\r\n    var x = meta/valor;\r\n    if(x >= 1.2){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85){\r\n      return \"prata\";\r\n    }else if(x >= 0.7){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+      "value": "  function color(valor, y){\r\n    var meta = getMeta(y);  \r\n    var x = valor;\r\n    if(x >= 1.2*meta){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*meta){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*meta){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*meta){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
      }
     ],
     "type": "ComponentsFunction",
     "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "8bff0a0e-68fb-25da-692e-5ab678ea7aaa",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "value": "getMeta",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "function getMeta(y){\n    var metaRetorno = 0;\n    switch (y){\n        case 1:\n            metaRetorno=  metaAderencia;\n            break;\n        case 2:\n            metaRetorno=  metaCobertura;\n            break;\n        case 3:\n            metaRetorno = metaPrazo;\n            break;\n        case 4:\n            metaRetorno = metaPlanejamento;\n            break;\n        case 5:\n            metaRetorno = metaCorretude;\n            break;\n        case 6:\n            metaRetorno = metaDefeitos;\n            break;\n        case 7:\n            metaRetorno = metaAtendimento;\n            break;\n        case 8:\n            metaRetorno = metaEquipe;\n            break;\n        case 9:\n            metaRetorno = metaIndividual;\n            break;\n    }\n    \n    return metaRetorno;  \n} ",
+      "type": "JavaScript"
+     }
+    ]
    },
    {
     "id": "OTHERCOMPONENTS",
@@ -6789,7 +6825,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n      console.log(a);\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        tr += \"<td>-</td>\";\r\n        tr += \"<td>\"+l+\"</td>\";\r\n        tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n        $('#indicadores').append(tr);\r\n      }\r\n}\r\n "
+      "value": "function postFetch(a){\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n        tr += \"<td>\"+l+\"</td>\";\r\n        tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -7595,36 +7631,36 @@
    },
    {
     "id": "e814c47f-54c9-2214-ef5f-628f1a1b7d6b",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "paramUnidade",
-      "type": "Id"
+      "type": "Id",
+      "value": "paramUnidade"
      },
      {
       "name": "propertyValue",
-      "value": "Sigla GEA Completa",
-      "type": "String"
+      "type": "String",
+      "value": "Sigla GEA Completa"
      },
      {
       "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
      },
      {
       "name": "bookmarkable",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      },
      {
       "name": "public",
-      "value": "true",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "true"
      }
-    ]
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "SELECTORS",
@@ -9563,7 +9599,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no Período]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Período]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no Período]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'\r\n\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[${paramUnidade}].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[${paramUnidade}].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows],[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no Período]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Período]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no Período]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'\r\n\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows],[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -9943,6 +9979,29 @@
  "filename": "/public/SIALG/Indicadores.cdfde",
  "layout": {
   "rows": [
+   {
+    "id": "365d3073-e02d-1e9a-bfb0-5a2d9357ccd1",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "${solution:stupidtable.js}",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     }
+    ]
+   },
    {
     "id": "13a27efa-1051-8b87-64fd-4daca4dd6083",
     "parent": "UnIqEiD",
@@ -10704,7 +10763,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<table class=\"centered responsive-table \">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th>RANK</th>\n            <th>GEA</th>\n            <th>Aderência</th>\n            <th>Cobertura</th>\n            <th>Prazo</th>\n            <th>Planejamento</th>\n            <th>Corretude</th>\n            <th>Defeitos</th>\n            <th>Atendimento</th>\n            <th>Equipe</th>\n            <th>Individual</th>\n            <th>Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
+      "value": "<table class=\"centered responsive-table \" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">GEA</th>\n            <th>Aderência</th>\n            <th>Cobertura</th>\n            <th>Prazo</th>\n            <th>Planejamento</th>\n            <th>Corretude</th>\n            <th>Defeitos</th>\n            <th>Atendimento</th>\n            <th>Equipe</th>\n            <th>Individual</th>\n            <th>Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
      },
      {
       "name": "fontSize",

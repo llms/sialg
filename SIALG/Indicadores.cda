@@ -62,8 +62,7 @@ FROM [SIALG - RTC Indicadores]]]></Query>
          <Parameter default="" name="metaCorretude" type="String"/>
          <Parameter default="" name="metaDefeitos" type="String"/>
          <Parameter default="" name="metaAtendimento" type="String"/>
-         <Parameter default="" name="participacaoAderencia" type="String"/>
-         <Parameter default="" name="metaEquipe" type="String"/> 
+         <Parameter default="participacaoAderencia" name="metaEquipe" type="String"/>
          <Parameter default="" name="metaIndividual" type="String"/>
          <Parameter default="" name="participacaoCobertura" type="String"/>
          <Parameter default="" name="participacaoPrazo" type="String"/>
@@ -74,7 +73,7 @@ FROM [SIALG - RTC Indicadores]]]></Query>
          <Parameter default="" name="participacaoEquipe" type="String"/>
          <Parameter default="" name="participacaoIndividual" type="String"/>
          <Parameter default="" name="participacaoAderencia" type="String"/>
-         <Parameter default="" name="paramUnidade" type="String"/>
+         <Parameter default="paramUnidade" name="" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -99,8 +98,8 @@ member [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measu
 member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no PerÃ­odo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'
 
 set [Rows] as FILTER(
-[Organizacao.Gestao da Demanda].[${paramUnidade}].MEMBERS
-, [Organizacao.Gestao da Demanda].[${paramUnidade}].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],
 [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],
 [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],
 [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],
