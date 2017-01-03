@@ -1,6 +1,7 @@
 body{font-family: 'Open Sans', sans-serif!important;font-weight:300;}
 .row{margin-bottom:0px!important;}
-input {margin-bottom: 0px!important;}
+table input {height: 1rem!important;}
+th{padding-top:5px!important;padding-bottom:5px!important;}
 #indicadores{text-align:center;}
 .container {
     width: auto;
