@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="qualidadeDS" type="mondrian.jndi">
+      <Connection id="defeitosDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="corretudeDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
@@ -9,7 +13,11 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
-      <Connection id="produtividadeDS" type="mondrian.jndi">
+      <Connection id="individualDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="equipeDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
@@ -17,7 +25,15 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
-      <Connection id="agildiadeDS" type="mondrian.jndi">
+      <Connection id="efetividadeDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="prazoDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="coberturaDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
@@ -26,7 +42,26 @@
          <Jndi>SIALG</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" connection="qualidadeDS" id="qualidadeDS" type="mdx">
+   <DataAccess access="public" connection="defeitosDS" id="defeitosDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Defeitos] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -124,7 +159,23 @@ SELECT
 
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="produtividadeDS" id="produtividadeDS" type="mdx">
+   <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+SELECT
+[Rows] ON ROWS
+,[Measures].[Produtividade] ON COLUMNS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -157,7 +208,28 @@ SELECT
 
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="agildiadeDS" id="agildiadeDS" type="mdx">
+   <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
+ 
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Efetividade] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -170,13 +242,31 @@ member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Ef
  
 set [Rows] as FILTER(
 [Unidades.GEA].[GEA].members
-, [Measures].[Agilidade] > 0 )
+, [Measures].[Cumprimento] > 0 )
 
 SELECT
 [Rows] ON ROWS
-,[Measures].[Agilidade] ON COLUMNS
+,[Measures].[Cumprimento] ON COLUMNS
 
 FROM [SIALG - RTC Indicadores]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Cobertura] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="aderenciaDS" id="aderenciaDS" type="mdx">
       <BandedMode>classic</BandedMode>

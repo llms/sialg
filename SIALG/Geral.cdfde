@@ -5644,21 +5644,21 @@
    },
    {
     "id": "bfe0d1f1-eaf5-a80e-1623-c21bafbf2617",
-    "type": "ComponentsFunction",
-    "typeDesc": "JavaScript function",
     "parent": "SCRIPT",
     "properties": [
      {
       "name": "name",
-      "value": "numberFormat",
-      "type": "Id"
+      "type": "Id",
+      "value": "numberFormat"
      },
      {
       "name": "javaScript",
-      "value": "function numberFormat( number, decimals, dec_point, thousands_sep ) {\r\n \r\n    var n = number, prec = decimals;\r\n    n = !isFinite(+n) ? 0 : +n;\r\n    prec = !isFinite(+prec) ? 0 : Math.abs(prec);\r\n    var sep = (typeof thousands_sep == \"undefined\") ? ',' : thousands_sep;\r\n    var dec = (typeof dec_point == \"undefined\") ? '.' : dec_point;\r\n \r\n    var s = (prec > 0) ? n.toFixed(prec) : Math.round(n).toFixed(prec); //fix for IE  parseFloat(0.55).toFixed(0) = 0;\r\n\r\n    var abs = Math.abs(n).toFixed(prec);\r\n    var _, i;\r\n    if (abs >= 1000) {\r\n        _ = abs.split(/\\D/);\r\n        i = _[0].length % 3 || 3;\r\n \r\n        _[0] = s.slice(0,i + (n < 0)) +\r\n              _[0].slice(i).replace(/(\\d{3})/g, sep+'$1');\r\n\r\n        s = _.join(dec);\r\n    } else {\r\n        s = s.replace('.', dec);\r\n    }\r\n    return s;\r\n} ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "function numberFormat( number, decimals, dec_point, thousands_sep ) {\r\n \r\n    var n = number, prec = decimals;\r\n    n = !isFinite(+n) ? 0 : +n;\r\n    prec = !isFinite(+prec) ? 0 : Math.abs(prec);\r\n    var sep = (typeof thousands_sep == \"undefined\") ? ',' : thousands_sep;\r\n    var dec = (typeof dec_point == \"undefined\") ? '.' : dec_point;\r\n \r\n    var s = (prec > 0) ? n.toFixed(prec) : Math.round(n).toFixed(prec); //fix for IE  parseFloat(0.55).toFixed(0) = 0;\r\n\r\n    var abs = Math.abs(n).toFixed(prec);\r\n    var _, i;\r\n    if (abs >= 1000) {\r\n        _ = abs.split(/\\D/);\r\n        i = _[0].length % 3 || 3;\r\n \r\n        _[0] = s.slice(0,i + (n < 0)) +\r\n              _[0].slice(i).replace(/(\\d{3})/g, sep+'$1');\r\n\r\n        s = _.join(dec);\r\n    } else {\r\n        s = s.replace('.', dec);\r\n    }\r\n    return s;\r\n} "
      }
-    ]
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
    }
   ]
  },
@@ -8719,7 +8719,7 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "hide"
      }
     ],
     "type": "LayoutRow",

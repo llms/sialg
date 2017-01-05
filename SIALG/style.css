@@ -22,6 +22,12 @@ legend{margin-bottom:0px;}
 input{text-align:center;}
 
 .hide{display:none;}
+/** Tabela **/
+#tabelaIndicadores{border: 1px solid #000;}
+#tabelaIndicadores td, th{border-left: 1px solid #000;}
+#tabelaIndicadores input{border:none;margin-bottom:0px;font-size:0.8em;}
+#tabelaIndicadores tr{border-bottom:1px solid #000;}
+#tabelaIndicadores td, th{font-size:0.9em; padding-top:3px;padding-bottom:3px;}
 /* ================= Cores ================*/
 .diamante{background:#b9f2ff;}
 .ouro{background:#FFEE6F;}
