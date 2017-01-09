@@ -12879,6 +12879,62 @@
     "typeDesc": "Simple parameter"
    },
    {
+    "id": "896e97de-5064-ac95-f810-53b0dad090e1",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataFim"
+     },
+     {
+      "name": "propertyDateValue",
+      "type": "Date",
+      "value": "yesterday"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsDateParameter",
+    "typeDesc": "Date Parameter"
+   },
+   {
+    "id": "ce6833ab-352a-8835-c145-21f741602414",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataInicio"
+     },
+     {
+      "name": "propertyDateValue",
+      "type": "Date",
+      "value": "2016-01-01"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsDateParameter",
+    "typeDesc": "Date Parameter"
+   },
+   {
     "id": "SELECTORS",
     "name": "Selects",
     "parent": "UnIqEiD",
@@ -14734,12 +14790,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSET [SLICER] AS 'NONEMPTYCROSSJOIN([Rows],[Filtro])'\r\nSET [SLICER_AXIS] AS 'GENERATE([SLICER], {([Data Resolucao Pai].CURRENTMEMBER)})'\r\n\r\nSET [Filtro] AS 'FILTER(descendants([Data Resolucao Pai].MEMBERS, [Data Resolucao Pai].[Data de Resolucao Pai (D)]), ( [Data Resolucao Pai].CURRENTMEMBER IN ({[Data Resolucao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Resolucao Filha].MEMBERS, [Data Resolucao Filha].[Data de Resolucao Filha (D)]), ( [Data Resolucao Filha].CURRENTMEMBER IN ({[Data Resolucao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union  FILTER(descendants([Data Criacao Pai].MEMBERS, [Data Criacao Pai].[Data Criacao Pai (D)]), ( [Data Criacao Pai].CURRENTMEMBER IN ({[Data Criacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Criacao Filha].MEMBERS, [Data Criacao Filha].[Data Criacao Filha (D)]), ( [Data Criacao Filha].CURRENTMEMBER IN ({[Data Criacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modificacao Pai].MEMBERS, [Data Modificacao Pai].[Data Modificacao Pai (D)]), ( [Data Modificacao Pai].CURRENTMEMBER IN ({[Data Modificacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modificacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modifcacao Filha].MEMBERS, [Data Modifcacao Filha].[Data Modifcacao Filha (D)]), ( [Data Modifcacao Filha].CURRENTMEMBER IN ({[Data Modifcacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modifcacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]})))'\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\nFROM [SIALG - Demandas]  where ([SLICER_AXIS])"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"dataInicio\",\"\",\"String\",\"\"],[\"dataFim\",\"\",\"String\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -15519,6 +15575,29 @@
  "filename": "/public/SIALG/Indicadores.cdfde",
  "layout": {
   "rows": [
+   {
+    "id": "f23d7605-8788-7af1-2bdc-ff1d2456f42c",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "sialgjs"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:js/sialgjs.js}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
    {
     "id": "365d3073-e02d-1e9a-bfb0-5a2d9357ccd1",
     "parent": "UnIqEiD",

@@ -47,19 +47,24 @@
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Output indexes="2,3" mode="include"/>
-      <Parameters/>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 set [Rows] as FILTER(
 [Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
 , [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+SET [SLICER] AS 'NONEMPTYCROSSJOIN([Rows],[Filtro])'
+SET [SLICER_AXIS] AS 'GENERATE([SLICER], {([Data Resolucao Pai].CURRENTMEMBER)})'
 
+SET [Filtro] AS 'FILTER(descendants([Data Resolucao Pai].MEMBERS, [Data Resolucao Pai].[Data de Resolucao Pai (D)]), ( [Data Resolucao Pai].CURRENTMEMBER IN ({[Data Resolucao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Resolucao Filha].MEMBERS, [Data Resolucao Filha].[Data de Resolucao Filha (D)]), ( [Data Resolucao Filha].CURRENTMEMBER IN ({[Data Resolucao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union  FILTER(descendants([Data Criacao Pai].MEMBERS, [Data Criacao Pai].[Data Criacao Pai (D)]), ( [Data Criacao Pai].CURRENTMEMBER IN ({[Data Criacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Criacao Filha].MEMBERS, [Data Criacao Filha].[Data Criacao Filha (D)]), ( [Data Criacao Filha].CURRENTMEMBER IN ({[Data Criacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modificacao Pai].MEMBERS, [Data Modificacao Pai].[Data Modificacao Pai (D)]), ( [Data Modificacao Pai].CURRENTMEMBER IN ({[Data Modificacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modificacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modifcacao Filha].MEMBERS, [Data Modifcacao Filha].[Data Modifcacao Filha (D)]), ( [Data Modifcacao Filha].CURRENTMEMBER IN ({[Data Modifcacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modifcacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]})))'
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
-
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Demandas]  where ([SLICER_AXIS])]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <BandedMode>classic</BandedMode>

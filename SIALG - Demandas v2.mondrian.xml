@@ -147,7 +147,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data  Aprocacao Filha">
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data Aprocacao Filha">
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
@@ -352,19 +352,19 @@
     </DimensionUsage>
     <DimensionUsage source="Tipo e Status da Demanda" name="Tipo e Status da Demanda" visible="true" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Criacao Filha" name="Data Criacao Filha" caption="Data Cria&#231;&#227;o Filha" visible="true" foreignKey="CO_DT_CRIACAO">
+    <DimensionUsage source="Data  Criacao Filha" name="Data Criacao Filha" caption="Data Cria&#231;&#227;o Filha" visible="true" foreignKey="CO_DT_CRIACAO" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Modificacao Pai" name="Data Modificacao Pai" caption="Data Modifica&#231;&#227;o Pai" visible="true" foreignKey="CO_DT_MODIFICACAO_PAI">
+    <DimensionUsage source="Data  Modificacao Pai" name="Data Modificacao Pai" caption="Data Modifica&#231;&#227;o Pai" visible="true" foreignKey="CO_DT_MODIFICACAO_PAI" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Modificacao Filha" name="Data Modifcacao Filha" visible="true" foreignKey="CO_DT_MODIFICACAO">
+    <DimensionUsage source="Data  Modificacao Filha" name="Data Modifcacao Filha" visible="true" foreignKey="CO_DT_MODIFICACAO" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Resolucao Pai" name="Data Resolucao Pai" visible="true" foreignKey="CO_DT_RESOLUCAO_PAI">
+    <DimensionUsage source="Data Resolucao Pai" name="Data Resolucao Pai" visible="true" foreignKey="CO_DT_RESOLUCAO_PAI" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Resolucao Filha" name="Data Resolucao Filha" visible="true" foreignKey="CO_DT_RESOLUCAO">
+    <DimensionUsage source="Data  Resolucao Filha" name="Data Resolucao Filha" visible="true" foreignKey="CO_DT_RESOLUCAO" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Aprocacao Filha" name="Data Aprovacao Filha" visible="true" foreignKey="CO_DT_APROVADA">
+    <DimensionUsage source="Data Aprocacao Filha" name="Data Aprovacao Filha" visible="true" foreignKey="CO_DT_APROVADA" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data Max Aprovacao Filha" name="Data Max Aprovacao Filha" visible="true" foreignKey="CO_MAX_DT_APROVADA">
+    <DimensionUsage source="Data Max Aprovacao Filha" name="Data Max Aprovacao Filha" visible="true" foreignKey="CO_MAX_DT_APROVADA" highCardinality="false">
     </DimensionUsage>
     <Measure name="Contagem de RTC Pai" column="ID RTC Pai" formatString="#" aggregator="distinct count">
     </Measure>
