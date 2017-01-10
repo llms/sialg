@@ -37,6 +37,10 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
+      <Connection id="notaDS" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
       <Connection id="aderenciaDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
@@ -270,6 +274,24 @@ set [Rows] as FILTER(
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
+
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
+      <BandedMode>classic</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="2,3" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
+set [Rows] as FILTER(
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Indice - Nota Final] ON COLUMNS
 
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>

@@ -112,7 +112,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    indicadoresIframe.src = indicadoresIframe.src;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n} "
+      "value": "function postChange(){\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?dataInicio=\"+dataInicio+\"&dataFim=\"+dataFim;\n    indicadoresIframe.src = urlIndicadores;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n} "
      },
      {
       "name": "tooltip",

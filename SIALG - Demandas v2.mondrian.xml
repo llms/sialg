@@ -51,7 +51,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data  Criacao Pai">
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data Criacao Pai">
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
@@ -67,7 +67,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data  Criacao Filha">
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Data Criacao Filha">
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
@@ -346,13 +346,13 @@
     </Table>
     <DimensionUsage source="Organizacao" name="Organizacao" caption="Organiza&#231;&#227;o" visible="true" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Criacao Pai" name="Data Criacao Pai" caption="Data Cria&#231;&#227;o Pai" visible="true" foreignKey="CO_DT_CRIACAO_PAI" highCardinality="false">
+    <DimensionUsage source="Data Criacao Pai" name="Data Criacao Pai" caption="Data Cria&#231;&#227;o Pai" visible="true" foreignKey="CO_DT_CRIACAO_PAI" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Situa&#231;&#227;o" name="Situa&#231;&#227;o" visible="true" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Tipo e Status da Demanda" name="Tipo e Status da Demanda" visible="true" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Data  Criacao Filha" name="Data Criacao Filha" caption="Data Cria&#231;&#227;o Filha" visible="true" foreignKey="CO_DT_CRIACAO" highCardinality="false">
+    <DimensionUsage source="Data Criacao Filha" name="Data Criacao Filha" caption="Data Cria&#231;&#227;o Filha" visible="true" foreignKey="CO_DT_CRIACAO" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Data  Modificacao Pai" name="Data Modificacao Pai" caption="Data Modifica&#231;&#227;o Pai" visible="true" foreignKey="CO_DT_MODIFICACAO_PAI" highCardinality="false">
     </DimensionUsage>
