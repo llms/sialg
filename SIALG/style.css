@@ -29,11 +29,11 @@ input{text-align:center;}
 #tabelaIndicadores tr{border-bottom:1px solid #000;}
 #tabelaIndicadores td, th{font-size:0.9em; padding-top:3px;padding-bottom:3px;}
 /* ================= Cores ================*/
-.diamante{background:#b9f2ff;}
-.ouro{background:#FFEE6F;}
-.prata{background:#E8E8EA;}
+.diamante{background:#2F75B5;}
+.ouro{background:#92D050;}
+.prata{background:#FFD966;}
 .bronze{background:#cd7f32;}
-.cobre{background:#ff9d9d;}
+.cobre{background:#FF3300;}
 
 
 

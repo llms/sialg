@@ -28,7 +28,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Individual"
      },
      {
       "name": "listeners",
@@ -48,7 +48,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -63,7 +63,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -238,12 +238,12 @@
      {
       "name": "baseAxisTitleAlign",
       "type": "cccBaseAxisTitleAlignCustom",
-      "value": ""
+      "value": "left"
      },
      {
       "name": "baseAxisTitleFont",
       "type": "String",
-      "value": "12px sans-serif"
+      "value": "10px sans-serif"
      },
      {
       "name": "baseAxisTitleMargins",
@@ -1118,22 +1118,22 @@
      {
       "name": "titleAlign",
       "type": "cccTitleAlignCustom",
-      "value": ""
+      "value": "left"
      },
      {
       "name": "titleFont",
       "type": "String",
-      "value": "14px sans-serif"
+      "value": "10px sans-serif"
      },
      {
       "name": "titleMargins",
       "type": "String",
-      "value": "0"
+      "value": ""
      },
      {
       "name": "titlePaddings",
       "type": "String",
-      "value": "0"
+      "value": ""
      },
      {
       "name": "titlePosition",
@@ -1332,7 +1332,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Equipe"
      },
      {
       "name": "listeners",
@@ -1352,7 +1352,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -1367,7 +1367,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -2656,7 +2656,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -2671,7 +2671,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -3940,7 +3940,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Defeitos"
      },
      {
       "name": "listeners",
@@ -3960,7 +3960,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -3975,7 +3975,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -5244,7 +5244,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Corretude"
      },
      {
       "name": "listeners",
@@ -5264,7 +5264,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -5279,7 +5279,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -6548,7 +6548,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Planejamento"
      },
      {
       "name": "listeners",
@@ -6568,7 +6568,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -6583,7 +6583,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -7852,7 +7852,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Cumprimento do Prazo"
      },
      {
       "name": "listeners",
@@ -7872,7 +7872,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -7887,7 +7887,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -9156,7 +9156,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Cobertura"
      },
      {
       "name": "listeners",
@@ -9171,12 +9171,12 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "aderenciaDS"
+      "value": "coberturaDS"
      },
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -9191,7 +9191,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -9601,7 +9601,7 @@
      {
       "name": "legendFont",
       "type": "String",
-      "value": "10px sans-serif"
+      "value": "10px 'Open Sans', sans-serif"
      },
      {
       "name": "legendItemPadding",
@@ -10251,7 +10251,7 @@
      {
       "name": "titleFont",
       "type": "String",
-      "value": "14px sans-serif"
+      "value": "12px Open sans"
      },
      {
       "name": "titleMargins",
@@ -10480,7 +10480,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -10495,7 +10495,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -11764,7 +11764,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": ""
+      "value": "Aderência"
      },
      {
       "name": "listeners",
@@ -11784,7 +11784,7 @@
      {
       "name": "height",
       "type": "Integer",
-      "value": "200"
+      "value": "100"
      },
      {
       "name": "priority",
@@ -11799,7 +11799,7 @@
      {
       "name": "width",
       "type": "Integer",
-      "value": "200"
+      "value": ""
      },
      {
       "name": "colors",
@@ -12209,7 +12209,7 @@
      {
       "name": "legendFont",
       "type": "String",
-      "value": "10px sans-serif"
+      "value": "10px 'Open Sans', sans-serif"
      },
      {
       "name": "legendItemPadding",
@@ -12859,7 +12859,7 @@
      {
       "name": "titleFont",
       "type": "String",
-      "value": "14px sans-serif"
+      "value": "12px 'Open Sans', sans-serif"
      },
      {
       "name": "titleMargins",
@@ -13135,7 +13135,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "  function color(valor, y){\r\n    var meta = getMeta(y);  \r\n    var x = valor;\r\n    if(x >= 1.2*meta){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*meta){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*meta){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*meta){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+      "value": "  function color(valor, y){\r\n    var meta = getMeta(y);  \r\n    \r\n    var x = valor;\r\n    if(x >= 1.2*meta){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*meta){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*meta){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*meta){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
      }
     ],
     "type": "ComponentsFunction",
@@ -13153,7 +13153,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function getMeta(y){\n    var metaRetorno = 0;\n    switch (y){\n        case 1:\n            metaRetorno=  metaAderencia;\n            break;\n        case 2:\n            metaRetorno=  metaCobertura;\n            break;\n        case 3:\n            metaRetorno = metaPrazo;\n            break;\n        case 4:\n            metaRetorno = metaPlanejamento;\n            break;\n        case 5:\n            metaRetorno = metaCorretude;\n            break;\n        case 6:\n            metaRetorno = metaDefeitos;\n            break;\n        case 7:\n            metaRetorno = metaAtendimento;\n            break;\n        case 8:\n            metaRetorno = metaEquipe;\n            break;\n        case 9:\n            metaRetorno = metaIndividual;\n            break;\n    }\n    \n    return metaRetorno;  \n} "
+      "value": "function getMeta(y){\n    var metaRetorno = 0;\n    switch (y){\n        case 3:\n            metaRetorno=  metaAderencia/100;\n            break;\n        case 4:\n            metaRetorno=  metaCobertura/100;\n            break;\n        case 5:\n            metaRetorno = metaPrazo/100;\n            break;\n        case 6:\n            metaRetorno = metaPlanejamento/100;\n            break;\n        case 7:\n            metaRetorno = metaCorretude/100;\n            break;\n        case 8:\n            metaRetorno = metaDefeitos;\n            break;\n        case 9:\n            metaRetorno = metaAtendimento/100;\n            break;\n        case 10:\n            metaRetorno = metaEquipe/100;\n            break;\n        case 11:\n            metaRetorno = metaIndividual/100;\n            break;\n    }\n    \n    return metaRetorno;  \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -13363,7 +13363,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n        tr += \"<td>\"+l+\"</td>\";\r\n        tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n        tr += \"<td>\"+l+\"</td>\";\r\n        tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -14730,36 +14730,36 @@
    },
    {
     "id": "0393b5a3-8d2b-d568-514b-33a50140b1a0",
-    "type": "ComponentsJavascriptParameter",
-    "typeDesc": "Custom parameter",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
-      "value": "init",
-      "type": "Id"
+      "type": "Id",
+      "value": "init"
      },
      {
       "name": "javaScript",
-      "value": "init(); ",
-      "type": "JavaScript"
+      "type": "JavaScript",
+      "value": "init(); "
      },
      {
       "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
      },
      {
       "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      },
      {
       "name": "public",
-      "value": "false",
-      "type": "Boolean"
+      "type": "Boolean",
+      "value": "false"
      }
-    ]
+    ],
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom parameter"
    },
    {
     "id": "SELECTORS",
@@ -17437,7 +17437,7 @@
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17452,7 +17452,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17622,6 +17622,1394 @@
     "typeDesc": "Resource"
    },
    {
+    "id": "e3dd6425-1950-a32d-ef86-b8378417b87f",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "a77d4956-50ee-6402-3613-36a367563456",
+    "parent": "e3dd6425-1950-a32d-ef86-b8378417b87f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "card-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "e8a5e334-99db-6ff5-21e7-cb5d979a3794",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "a77d4956-50ee-6402-3613-36a367563456",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "902bac3c-d471-7c57-49da-dfdc5f732b68",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "e8a5e334-99db-6ff5-21e7-cb5d979a3794",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3292c76e-dd2b-1f09-693a-8b042f75354b",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "902bac3c-d471-7c57-49da-dfdc5f732b68",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h6>Aderência ao Negócio</h6> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "64f50574-1826-7609-9303-05ffb42d38e7",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "a77d4956-50ee-6402-3613-36a367563456",
+    "properties": [
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "5",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ce0343fc-e4ec-1756-149f-d7ddeab2bfee",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "a77d4956-50ee-6402-3613-36a367563456",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-content",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "21a931ae-3e63-e2eb-e77e-82c40439b16d",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "ce0343fc-e4ec-1756-149f-d7ddeab2bfee",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d52c3202-d166-54ee-6ad3-24fd7ad357fc",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "21a931ae-3e63-e2eb-e77e-82c40439b16d",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div id=\"aderenciaHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d1049e1f-b4e9-cc4b-aa18-4869dcac9325",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "ce0343fc-e4ec-1756-149f-d7ddeab2bfee",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "df14eed1-4275-60fc-13bb-f33135b6667d",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "d1049e1f-b4e9-cc4b-aa18-4869dcac9325",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div id=\"coberturaHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "01ba0626-f52d-f408-8e4e-eeae5e3f911c",
+    "parent": "e3dd6425-1950-a32d-ef86-b8378417b87f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "card-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "6d704130-e236-bb49-46fb-266636e9b142",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "01ba0626-f52d-f408-8e4e-eeae5e3f911c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4e4db185-f967-bd72-6f70-eb75761ddc45",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "6d704130-e236-bb49-46fb-266636e9b142",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "33dcec7b-3ed2-48ef-2fe1-ec2e1e2191f7",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "4e4db185-f967-bd72-6f70-eb75761ddc45",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h6>Agilidade</h6> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f7f408b4-dd80-4289-484b-2286a39ed43e",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "01ba0626-f52d-f408-8e4e-eeae5e3f911c",
+    "properties": [
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "5",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d9df1131-4de0-d3c2-2ece-4f2f2e1a23e7",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "01ba0626-f52d-f408-8e4e-eeae5e3f911c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-content",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6665f695-df8e-c2f7-626e-f48c062b2db1",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "d9df1131-4de0-d3c2-2ece-4f2f2e1a23e7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f0c3c6d3-7232-145c-5495-42a524bbe715",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "6665f695-df8e-c2f7-626e-f48c062b2db1",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "   <div id=\"prazoHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5c88745c-bd09-4514-216a-c5d67a487bb4",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "d9df1131-4de0-d3c2-2ece-4f2f2e1a23e7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d7204504-a3e2-e108-f27a-f444c5299a83",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "5c88745c-bd09-4514-216a-c5d67a487bb4",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "    <div id=\"planejamentoHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "22409fd4-355e-e3e4-683f-aca4ffc740ef",
+    "parent": "e3dd6425-1950-a32d-ef86-b8378417b87f",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "card-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "4322b882-056d-8800-d749-1ab34ac5af64",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "22409fd4-355e-e3e4-683f-aca4ffc740ef",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4f90bcf3-f997-ca54-b97d-a5dc92893b54",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4322b882-056d-8800-d749-1ab34ac5af64",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3609f5c3-5cf7-44cd-afbe-49974f7cd59c",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "4f90bcf3-f997-ca54-b97d-a5dc92893b54",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h6>Qualidade</h6> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ecaee224-8c68-a52c-ce0d-cf139e2882e4",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "22409fd4-355e-e3e4-683f-aca4ffc740ef",
+    "properties": [
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "5",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "742f335d-ef4a-9e81-d5ad-f722f9b0f59b",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "22409fd4-355e-e3e4-683f-aca4ffc740ef",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-content",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "35d82ccf-6e96-150d-5fd4-42374aa3c1b7",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "742f335d-ef4a-9e81-d5ad-f722f9b0f59b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c896592b-b1d7-8f3a-e76f-e94e7cb209da",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "35d82ccf-6e96-150d-5fd4-42374aa3c1b7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": " <div id=\"corretudeHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4f4a48d8-54d3-34bf-8a2f-2e9e2bac9a34",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "742f335d-ef4a-9e81-d5ad-f722f9b0f59b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0cec0c0e-a74e-3d40-6e96-ef8ff0994b88",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "4f4a48d8-54d3-34bf-8a2f-2e9e2bac9a34",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "    <div id=\"defeitosHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
     "parent": "UnIqEiD",
     "properties": [
@@ -17660,6 +19048,810 @@
     "typeDesc": "Row"
    },
    {
+    "id": "8f177861-b1c1-5158-3067-bd00c829b6a2",
+    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "card-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "e21d1cbd-8c22-88d8-3068-5a01e6d9e66c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "8f177861-b1c1-5158-3067-bd00c829b6a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "6f933bd5-6ae0-66a7-b1b4-faf0970e612e",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "e21d1cbd-8c22-88d8-3068-5a01e6d9e66c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "18694630-1db4-7f02-6244-5bb5ee0b90dd",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "6f933bd5-6ae0-66a7-b1b4-faf0970e612e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h6>Atendimento</h6> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e464ece4-3ff2-039a-365f-98dd976aeee9",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "8f177861-b1c1-5158-3067-bd00c829b6a2",
+    "properties": [
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "5",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "872acc85-84db-5f2b-9256-3a031dc88e86",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "8f177861-b1c1-5158-3067-bd00c829b6a2",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-content",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c0744c4e-cf04-eb78-838e-d01c9c75983b",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "872acc85-84db-5f2b-9256-3a031dc88e86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "e26554a7-6fd9-908d-bb52-790577f1fb86",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "c0744c4e-cf04-eb78-838e-d01c9c75983b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div id=\"atendimentoHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "646aba07-39d4-3958-535b-49795bdc63f3",
+    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "card-panel"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "dab307bd-ab5f-76c0-3ac9-ec5032e32bf9",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "646aba07-39d4-3958-535b-49795bdc63f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-title",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "44a2c28b-2757-3f40-8833-3e0f704c346a",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "dab307bd-ab5f-76c0-3ac9-ec5032e32bf9",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "abce88fd-f6d9-f50c-0ac7-6e3060f70d7b",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "44a2c28b-2757-3f40-8833-3e0f704c346a",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h6>Produtividade</h6> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a1b40a47-8720-5503-5a52-ad8a118662ab",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "646aba07-39d4-3958-535b-49795bdc63f3",
+    "properties": [
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "5",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "c8c528ba-8c87-e214-ce40-e6577a8d8226",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "646aba07-39d4-3958-535b-49795bdc63f3",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "card-content",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0bf5ab88-ac38-c291-3ebf-8b0a4ca55e76",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "c8c528ba-8c87-e214-ce40-e6577a8d8226",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "f20130e0-068a-897c-ecf2-2ccf50d69d92",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "0bf5ab88-ac38-c291-3ebf-8b0a4ca55e76",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "  <div id=\"equipeHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3cead528-8773-0948-4fb3-ce7b7575b8c1",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "c8c528ba-8c87-e214-ce40-e6577a8d8226",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "bedf0810-bb86-bae5-c329-b796034ada5e",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "3cead528-8773-0948-4fb3-ce7b7575b8c1",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div id=\"individualHTML\"></div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "b9f590bb-4d50-8a60-4629-4610db410412",
     "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
     "properties": [
@@ -17671,7 +19863,7 @@
      {
       "name": "bootstrapExtraSmall",
       "type": "String",
-      "value": "3"
+      "value": "4"
      },
      {
       "name": "bootstrapSmall",
@@ -17723,939 +19915,295 @@
     "typeDesc": "Column"
    },
    {
-    "id": "5e9dbf9a-9b85-3e49-de6e-f7cae35e1292",
+    "id": "2ccd57dc-6633-a8f5-a7f3-6a07dd39596a",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
     "parent": "b9f590bb-4d50-8a60-4629-4610db410412",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Aderência</h6></div>\n<div class=\"card-content\">\n    <div id=\"aderenciaHTML\"></div>\n</div> "
+      "name": "height",
+      "value": "",
+      "type": "Integer"
      },
      {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
      },
      {
-      "name": "color",
-      "type": "Color",
-      "value": ""
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": ""
+      "value": "card-title",
+      "type": "String"
      }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
+    ]
    },
    {
-    "id": "0512ddde-59ef-e7cc-743d-400b44057950",
-    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
+    "id": "1e5b5ca9-c2e7-499d-4c41-5faa29c70837",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "2ccd57dc-6633-a8f5-a7f3-6a07dd39596a",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
+      "value": "12",
+      "type": "String"
      },
      {
       "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "height",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
+      "value": "",
+      "type": "RoundCorners"
      },
      {
       "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
+      "value": "",
+      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
+      "value": "",
+      "type": "String"
      }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
+    ]
    },
    {
-    "id": "3c0e6d16-6131-487d-7659-949db63e0e67",
-    "parent": "0512ddde-59ef-e7cc-743d-400b44057950",
+    "id": "a68b3492-6333-a975-5b15-d78cda7994b5",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "1e5b5ca9-c2e7-499d-4c41-5faa29c70837",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Cobertura</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"coberturaHTML\"></div>\r\n</div> "
+      "value": "<h6>Nota Final</h6> ",
+      "type": "Html"
      },
      {
       "name": "fontSize",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "color",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
+    ]
    },
    {
-    "id": "1cc1ad68-ee48-2e5a-b3c9-a5ed7698526c",
-    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
+    "id": "4f6c48cc-69e4-e17d-3f1c-02e0d0f4aa43",
+    "type": "LayoutSpace",
+    "typeDesc": "Space",
+    "parent": "b9f590bb-4d50-8a60-4629-4610db410412",
     "properties": [
      {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "height",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
+      "value": "5",
+      "type": "String"
      }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
+    ]
    },
    {
-    "id": "c372081b-7753-f841-1ec1-354d5dbc46e2",
-    "parent": "1cc1ad68-ee48-2e5a-b3c9-a5ed7698526c",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Prazo</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"prazoHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "55170a51-b986-6b8c-0cbe-6f139a144d32",
-    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "7b964b6a-07e0-e2b0-cd6a-6971eb8b0b21",
-    "parent": "55170a51-b986-6b8c-0cbe-6f139a144d32",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Planejamento</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"planejamentoHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "edd16145-e8f4-ab89-f2b1-7c4e6ed61475",
-    "parent": "bc406793-6a8d-84f1-b3b3-b88109d519a8",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "3"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "48c2cbe6-b66a-325d-3aef-523e4af7f69c",
-    "parent": "edd16145-e8f4-ab89-f2b1-7c4e6ed61475",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Nota Final</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"notaHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
+    "id": "e3ae196f-6f75-f1ab-2175-8a46e6bdb01c",
     "type": "LayoutRow",
-    "typeDesc": "Row"
-   },
-   {
-    "id": "16cc247f-b6fc-c9bb-eadb-95c87546db5c",
-    "parent": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
+    "typeDesc": "Row",
+    "parent": "b9f590bb-4d50-8a60-4629-4610db410412",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "3"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "height",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
+      "value": "",
+      "type": "RoundCorners"
      },
      {
       "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
+      "value": "",
+      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
+      "value": "card-content",
+      "type": "String"
      }
-    ],
+    ]
+   },
+   {
+    "id": "d21ec313-b612-33cb-49e8-84024ca3a647",
     "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "7968577e-b484-305e-7ac8-6180eb680607",
-    "parent": "16cc247f-b6fc-c9bb-eadb-95c87546db5c",
+    "typeDesc": "Column",
+    "parent": "e3ae196f-6f75-f1ab-2175-8a46e6bdb01c",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Corretude</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"corretudeHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "effa077e-61eb-b6f8-b92d-7ae85c6de747",
-    "parent": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
+      "value": "12",
+      "type": "String"
      },
      {
       "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      },
      {
       "name": "height",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
+      "value": "",
+      "type": "RoundCorners"
      },
      {
       "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
+      "value": "",
+      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
+      "value": "",
+      "type": "String"
      }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
+    ]
    },
    {
-    "id": "b2db5ca0-c6a2-2066-6c49-1e32eb9f1e3e",
-    "parent": "effa077e-61eb-b6f8-b92d-7ae85c6de747",
+    "id": "9a911732-5b49-fc18-823a-cee62fb91bd5",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "d21ec313-b612-33cb-49e8-84024ca3a647",
     "properties": [
      {
       "name": "name",
-      "type": "Id",
-      "value": ""
+      "value": "",
+      "type": "Id"
      },
      {
       "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Defeitos</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"defeitosHTML\"></div>\r\n</div> "
+      "value": "<div id=\"notaHTML\"></div> ",
+      "type": "Html"
      },
      {
       "name": "fontSize",
-      "type": "Integer",
-      "value": ""
+      "value": "",
+      "type": "Integer"
      },
      {
       "name": "color",
-      "type": "Color",
-      "value": ""
+      "value": "",
+      "type": "Color"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "99aab34f-3208-e215-22f3-5044b8157119",
-    "parent": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "fbea0135-c6ae-2b08-ddd1-565917e4900f",
-    "parent": "99aab34f-3208-e215-22f3-5044b8157119",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Atendimento</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"atendimentoHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "2b09ef66-561e-262e-0038-79a9db2f9686",
-    "parent": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "2"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "a8e79991-1113-9e00-979e-5e54bb3cf284",
-    "parent": "2b09ef66-561e-262e-0038-79a9db2f9686",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Equipe</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"equipeHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
-   },
-   {
-    "id": "f3d4522d-2632-604f-acf4-4a0734a95629",
-    "parent": "5643f1cb-aad1-7b61-3cd6-6e38861f53f0",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "3"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": "card-panel"
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "d0e12143-0ecd-6a03-de5c-4c520aba2dd2",
-    "parent": "f3d4522d-2632-604f-acf4-4a0734a95629",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": ""
-     },
-     {
-      "name": "html",
-      "type": "Html",
-      "value": "<div class=\"card-title\"><h6>Individual</h6></div>\r\n<div class=\"card-content\">\r\n    <div id=\"individualHTML\"></div>\r\n</div> "
-     },
-     {
-      "name": "fontSize",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "color",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutHtml",
-    "typeDesc": "Html"
+    ]
    },
    {
     "id": "f9493eb8-9a48-21a2-63f4-2b7ba36823eb",

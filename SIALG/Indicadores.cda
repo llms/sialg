@@ -296,10 +296,9 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="aderenciaDS" id="aderenciaDS" type="mdx">
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Output indexes="2,3" mode="include"/>
       <Parameters/>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
