@@ -19,6 +19,7 @@
       </Connection>
    </DataSources>
    <DataAccess access="public" connection="contratoDS" id="contratoDS" type="sql">
+      <Name>contratoDS</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -33,6 +34,7 @@
   ORDER BY data."NU_ANO"]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="demandasDS" id="demandasDS" type="sql">
+      <Name>demandasDS</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -47,6 +49,7 @@
   ORDER BY status."NO_STATUS"]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="contratoGNDS" id="contratoGNDS" type="sql">
+      <Name>contratoGNDS</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -59,6 +62,7 @@
   ORDER BY unidades."SG_GEC"]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="realizeDS" id="realizeDS" type="sql">
+      <Name>realizeDS</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -73,6 +77,7 @@
   ORDER BY DATA."NU_MES"]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
+      <Name>indicadoresDS</Name>
       <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>

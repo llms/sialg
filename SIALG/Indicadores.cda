@@ -45,8 +45,12 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
+      <Connection id="teste" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="defeitosDS" id="defeitosDS" type="mdx">
+      <Name>defeitosDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -54,16 +58,29 @@
       <Parameters>
          <Parameter default="" name="dataInicio" type="String"/>
          <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="" name="dataCriacaoPaiInicio" type="String"/>
+         <Parameter default="" name="dataCriacaoPaiFim" type="String"/>
+         <Parameter default="" name="dataCriacaoFilhaInicio" type="String"/>
+         <Parameter default="" name="dataCriacaoFilhaFim" type="String"/>
+         <Parameter default="" name="dataModificacaoPaiInicio" type="String"/>
+         <Parameter default="" name="dataModificacaoPaiFim" type="String"/>
+         <Parameter default="" name="dataModificacaoFilhaInicio" type="String"/>
+         <Parameter default="" name="dataModificacaoFilhaFim" type="String"/>
+         <Parameter default="" name="dataResolucaoPaiInicio" type="String"/>
+         <Parameter default="" name="dataResolucaoPaiFim" type="String"/>
+         <Parameter default="" name="dataResolucaoFilhaInicio" type="String"/>
+         <Parameter default="" name="dataResolucaoFilhaFim" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 set [Rows] as FILTER(
 [Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
 , [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
 SET [SLICER] AS 'NONEMPTYCROSSJOIN([Rows],[Filtro])'
 SET [SLICER_AXIS] AS 'GENERATE([SLICER], {([Data Resolucao Pai].CURRENTMEMBER)})'
 
-SET [Filtro] AS 'FILTER(descendants([Data Resolucao Pai].MEMBERS, [Data Resolucao Pai].[Data de Resolucao Pai (D)]), ( [Data Resolucao Pai].CURRENTMEMBER IN ({[Data Resolucao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Resolucao Filha].MEMBERS, [Data Resolucao Filha].[Data de Resolucao Filha (D)]), ( [Data Resolucao Filha].CURRENTMEMBER IN ({[Data Resolucao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Resolucao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union  FILTER(descendants([Data Criacao Pai].MEMBERS, [Data Criacao Pai].[Data Criacao Pai (D)]), ( [Data Criacao Pai].CURRENTMEMBER IN ({[Data Criacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Criacao Filha].MEMBERS, [Data Criacao Filha].[Data Criacao Filha (D)]), ( [Data Criacao Filha].CURRENTMEMBER IN ({[Data Criacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Criacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modificacao Pai].MEMBERS, [Data Modificacao Pai].[Data Modificacao Pai (D)]), ( [Data Modificacao Pai].CURRENTMEMBER IN ({[Data Modificacao Pai].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modificacao Pai].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]}))) union FILTER(descendants([Data Modifcacao Filha].MEMBERS, [Data Modifcacao Filha].[Data Modifcacao Filha (D)]), ( [Data Modifcacao Filha].CURRENTMEMBER IN ({[Data Modifcacao Filha].[2016].[4].[10].[Outubro].[2016-10-01 00:00:00.0]:[Data Modifcacao Filha].[2016].[4].[12].[Dezembro].[2016-12-28 00:00:00.0]})))'
+SET [Filtro] AS 'FILTER(descendants([Data Resolucao Pai].MEMBERS, [Data Resolucao Pai].[Data de Resolucao Pai (D)]), ( [Data Resolucao Pai].CURRENTMEMBER IN ({${dataResolucaoPaiInicio}:${dataResolucaoPaiFim}}))) union FILTER(descendants([Data Resolucao Filha].MEMBERS, [Data Resolucao Filha].[Data de Resolucao Filha (D)]), ( [Data Resolucao Filha].CURRENTMEMBER IN ({${dataResolucaoFilhaInicio}:${dataResolucaoFilhaFim}}))) union  FILTER(descendants([Data Criacao Pai].MEMBERS, [Data Criacao Pai].[Data Criacao Pai (D)]), ( [Data Criacao Pai].CURRENTMEMBER IN ({${dataCriacaoPaiInicio}:${dataCriacaoPaiFim}}))) union FILTER(descendants([Data Criacao Filha].MEMBERS, [Data Criacao Filha].[Data Criacao Filha (D)]), ( [Data Criacao Filha].CURRENTMEMBER IN ({${dataCriacaoFilhaInicio}:${dataCriacaoFilhaFim}}))) union FILTER(descendants([Data Modificacao Pai].MEMBERS, [Data Modificacao Pai].[Data Modificacao Pai (D)]), ( [Data Modificacao Pai].CURRENTMEMBER IN ({${dataModificacaoPaiInicio}:${dataModificacaoPaiFim}}))) union FILTER(descendants([Data Modifcacao Filha].MEMBERS, [Data Modifcacao Filha].[Data Modifcacao Filha (D)]), ( [Data Modifcacao Filha].CURRENTMEMBER IN ({${dataModificacaoFilhaInicio}:${dataModificacaoFilhaFim}})))'
 
 SELECT
 [Rows] ON ROWS
@@ -71,6 +88,7 @@ SELECT
 FROM [SIALG - Demandas]  where ([SLICER_AXIS])]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
+      <Name>corretudeDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -89,6 +107,7 @@ SELECT
 FROM [SIALG - RTC Indicadores]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
+      <Name>indicadoresDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -139,7 +158,7 @@ member [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe
 
 member [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'
 
-member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no PerÃ­odo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no PerÃ­odo]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos FunÃ§Ã£o de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de FunÃ§Ã£o SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'
+member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no Período]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Período]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no Período]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'
 
 set [Rows] as FILTER(
 [Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS
@@ -169,6 +188,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
+      <Name>individualDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -185,6 +205,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
+      <Name>equipeDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -201,6 +222,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
+      <Name>atendimentoDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -218,6 +240,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
+      <Name>efetividadeDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -239,6 +262,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
+      <Name>prazoDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -260,6 +284,7 @@ SELECT
 FROM [SIALG - RTC Indicadores]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
+      <Name>coberturaDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -278,6 +303,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
+      <Name>notaDS</Name>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -296,6 +322,7 @@ SELECT
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="aderenciaDS" id="aderenciaDS" type="mdx">
+      <Name>aderenciaDS</Name>
       <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
@@ -311,5 +338,42 @@ SELECT
 ,[Measures].[Aderencia] ON COLUMNS
 
 FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="teste" id="teste" type="sql">
+      <Name>teste</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="Integer"/>
+         <Parameter default="" name="dataFim" type="Integer"/>
+      </Parameters>
+      <Query><![CDATA[SELECT     
+    'SUCTI' AS "Sigla GEC",
+	case when SUM("É Defeito em Produção (QU)")= 0 THEN 0 ELSE sum("Qt Pontos Função de DMS ou DNS Implantadas")/SUM("É Defeito em Produção (QU)") END AS indicador_defeito
+       
+FROM   "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+WHERE "Sigla GEC" <> 'NI' AND ( "CO_DT_CRIACAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_MODIFICACAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_RESOLUCAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_CRIACAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_MODIFICACAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_RESOLUCAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_APROVADA" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_MAX_DT_APROVADA" BETWEEN ${dataInicio} AND ${dataFim})
+UNION ALL
+SELECT 	
+    "Sigla GEC",
+	case when SUM("É Defeito em Produção (QU)")= 0 THEN 0 ELSE sum("Qt Pontos Função de DMS ou DNS Implantadas")/SUM("É Defeito em Produção (QU)") END AS indicador_defeito
+
+FROM   "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+WHERE "Sigla GEC" <> 'NI' AND ("CO_DT_CRIACAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_MODIFICACAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_RESOLUCAO_PAI" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_CRIACAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_MODIFICACAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_RESOLUCAO" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_DT_APROVADA" BETWEEN ${dataInicio} AND ${dataFim} OR 
+      "CO_MAX_DT_APROVADA" BETWEEN ${dataInicio} AND ${dataFim})
+GROUP BY "Sigla GEC"]]></Query>
    </DataAccess>
 </CDADescriptor>
