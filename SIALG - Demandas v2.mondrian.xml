@@ -55,15 +55,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Cria&#231;&#227;o Pai" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Criacao Pai" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Cria&#231;&#227;o Pai">
       </Level>
-      <Level name="Trimestre Cria&#231;&#227;o Pai (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Trimestre Criacao Pai (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre Cria&#231;&#227;o Pai (N)">
       </Level>
-      <Level name="M&#234;s Cria&#231;&#227;o Pai" visible="true" column="NU_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Criacao Pai" visible="true" column="NU_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Cria&#231;&#227;o Pai">
       </Level>
-      <Level name="M&#234;s Cria&#231;&#227;o Pai (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Criacao Pai (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Cria&#231;&#227;o Pai (T)">
       </Level>
-      <Level name="Data de Cria&#231;&#227;o Pai (D)" visible="true" column="NO_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Criacao Pai (D)" visible="true" column="NO_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Cria&#231;&#227;o Pai (D)">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -71,15 +71,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Cria&#231;&#227;o Filha" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Criacao Filha" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Cria&#231;&#227;o Filha">
       </Level>
-      <Level name="Trimestre Cria&#231;&#227;o Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Trimestre Criacao Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre Cria&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="M&#234;s Cria&#231;&#227;o Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Criacao Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Cria&#231;&#227;o Filha">
       </Level>
-      <Level name="M&#234;s Cria&#231;&#227;o Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Criacao Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Cria&#231;&#227;o Filha (T)">
       </Level>
-      <Level name="Data de Cria&#231;&#227;o Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Criacao Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Cria&#231;&#227;o Filha (D)">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -87,15 +87,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Modifica&#231;&#227;o Pai" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Modificacao Pai" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Modifica&#231;&#227;o Pai">
       </Level>
-      <Level name="Trimestre Modifica&#231;&#227;o Pai (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Trimestre Modificacao Pai (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre Modifica&#231;&#227;o Pai (N)">
       </Level>
-      <Level name="M&#234;s Modifica&#231;&#227;o Pai" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Modificacao Pai" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Modifica&#231;&#227;o Pai">
       </Level>
-      <Level name="M&#234;s Modifica&#231;&#227;o Pai (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Modificacao Pai (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Modifica&#231;&#227;o Pai (T)">
       </Level>
-      <Level name="Data de Modifica&#231;&#227;o Pai (D)" visible="true" column="NO_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Modificacao Pai (D)" visible="true" column="NO_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Modifica&#231;&#227;o Pai (D)">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -103,15 +103,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Modifica&#231;&#227;o Filha" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Modificacao Filha" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Modifica&#231;&#227;o Filha">
       </Level>
-      <Level name="Trimestre Modifica&#231;&#227;o Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Trimestre Modificacao Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre Modifica&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="M&#234;s Modifica&#231;&#227;o Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Modificacao Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Modifica&#231;&#227;o Filha">
       </Level>
-      <Level name="M&#234;s Modifica&#231;&#227;o Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Modificacao Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Modifica&#231;&#227;o Filha (T)">
       </Level>
-      <Level name="Data de Modifica&#231;&#227;o Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Modificacao Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Modifica&#231;&#227;o Filha (D)">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -151,15 +151,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Aprova&#231;&#227;o Filha (N)" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Aprovacao Filha (N)" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Aprova&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="Trimestre Aprova&#231;&#227;o Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Trimestre Aprovacao Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Trimestre Aprova&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="M&#234;s Aprova&#231;&#227;o Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Aprovacao Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Aprova&#231;&#227;o Filha">
       </Level>
-      <Level name="M&#234;s Aprova&#231;&#227;o Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Aprovacao Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Aprova&#231;&#227;o Filha (T)">
       </Level>
-      <Level name="Data de Aprova&#231;&#227;o Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Aprovacao Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Aprova&#231;&#227;o Filha (D)">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -167,15 +167,15 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="Todos" primaryKey="CO_DATA">
       <Table name="ALGTB001_DIM_DATA" schema="ALGSC002_SIALG">
       </Table>
-      <Level name="Ano Max Aprova&#231;&#227;o Filha (N)" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Ano Max Aprovacao Filha (N)" visible="true" column="CO_ANO" type="Numeric" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" caption="Ano Max Aprova&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="Trimestre Modifica&#231;&#227;o Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Trimestre Modificacao Filha (N)" visible="true" column="NU_QUARTO" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre Modifica&#231;&#227;o Filha (N)">
       </Level>
-      <Level name="M&#234;s Max Aprova&#231;&#227;o Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Max Aprovacao Filha" visible="true" column="NU_MES" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Max Aprova&#231;&#227;o Filha">
       </Level>
-      <Level name="M&#234;s Max Aprova&#231;&#227;o Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Mes Max Aprovacao Filha (T)" visible="true" column="NO_MES" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" caption="M&#234;s Max Aprova&#231;&#227;o Filha (T)">
       </Level>
-      <Level name="Data de Max Aprova&#231;&#227;o Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Data de Max Aprovacao Filha (D)" visible="true" column="DT_DATA" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" caption="Data de Max Aprova&#231;&#227;o Filha (D)">
       </Level>
     </Hierarchy>
   </Dimension>
