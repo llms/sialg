@@ -6,6 +6,17 @@ th{padding-top:5px!important;padding-bottom:5px!important;}
 .container {
     width: auto;
 }
+
+card-panel-test {
+    margin-left: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+    card-panel-test {
+        background-color: lightblue;
+    }
+}
+
  h3{font-weight:bold;}
 .info{font-weight:bold;padding: 5px 0;text-align:center;}
 .infoLabel{font-size:10px;text-align:left;padding: 5px 0px;clear:both;width:100%;display:block;}

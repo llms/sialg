@@ -45,7 +45,19 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
-      <Connection id="teste" type="sql.jndi">
+      <Connection id="atendimentoSQL" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="equipeSQL" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="individualSQL" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="corretudeSQL" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="defeitoSQL" type="sql.jndi">
          <Jndi>SIALG</Jndi>
       </Connection>
    </DataSources>
@@ -339,8 +351,56 @@ SELECT
 
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="teste" id="teste" type="sql">
-      <Name>teste</Name>
+   <DataAccess access="public" connection="atendimentoSQL" id="atendimentoSQL" type="sql">
+      <Name>atendimentoSQL</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT  "Sigla GEC",
+    CASE WHEN SUM("É DN Criada (AT)") >0 THEN (SUM("É DN Implantada (AT) ")::double precision/SUM("É DN Criada (AT)")::double precision) ELSE 0 END AS ATENDIMENTO
+  FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+  WHERE "Sigla GEC" <> 'NI'
+  GROUP BY "Sigla GEC"
+  ORDER BY "Sigla GEC" ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="equipeSQL" id="equipeSQL" type="sql">
+      <Name>equipeSQL</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT  "Sigla GEC",
+    CASE WHEN SUM("Qt Pontos de Função SUCTI") >0 THEN (SUM("Qt Pontos Função de DMS ou DNS Implantadas")/MAX("Qt Pontos de Função SUCTI")) ELSE 0 END AS PRODUTIVIDADE
+  FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+  WHERE "Sigla GEC" <> 'NI'
+  GROUP BY "Sigla GEC"
+  ORDER BY "Sigla GEC" ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="individualSQL" id="individualSQL" type="sql">
+      <Name>individualSQL</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT  "Sigla GEC",
+    CASE WHEN SUM("Qt Pontos de Função SUCTI") >0 THEN (SUM("PF por Empregado")/MAX("Qt Pontos de Função SUCTI"))*100 ELSE 0 END AS PRODUTIVIDADE
+  FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+  WHERE "Sigla GEC" <> 'NI'
+  GROUP BY "Sigla GEC"
+  ORDER BY "Sigla GEC" ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="corretudeSQL" id="corretudeSQL" type="sql">
+      <Name>corretudeSQL</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT "SG_GEC" AS NOME,
+       CASE WHEN sum("NU_DEMANDA_DEFEITO_CRIADO_QUALIDADE")>0 THEN (sum("NU_DEMANDA_CRIADA_QUALIDADE")/sum("NU_DEMANDA_DEFEITO_CRIADO_QUALIDADE")) ELSE 0 END AS INDICADOR
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
+  WHERE "SG_GEC" <> 'NI'
+  GROUP BY "SG_GEC"
+  ORDER BY "SG_GEC" ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="defeitoSQL" id="defeitoSQL" type="sql">
+      <Name>defeitoSQL</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
