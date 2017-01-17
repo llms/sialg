@@ -6,6 +6,17 @@ th{padding-top:5px!important;padding-bottom:5px!important;}
 .container {
     width: auto;
 }
+
+card-panel-test {
+    margin-left: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+    card-panel-test {
+        background-color: lightblue;
+    }
+}
+
  h3{font-weight:bold;}
 .info{font-weight:bold;padding: 5px 0;text-align:center;}
 .infoLabel{font-size:10px;text-align:left;padding: 5px 0px;clear:both;width:100%;display:block;}
@@ -19,6 +30,7 @@ legend{margin-bottom:0px;}
 .col3{padding:0px!important;}
 .space{border:none;margin-top:5px;margin-bottom:5px;}
 #contratosBar{padding:3px;}
+
 input{text-align:center;}
 
 .hide{display:none;}
@@ -29,12 +41,16 @@ input{text-align:center;}
 #tabelaIndicadores tr{border-bottom:1px solid #000;}
 #tabelaIndicadores td, th{font-size:0.9em; padding-top:3px;padding-bottom:3px;}
 /* ================= Cores ================*/
-.diamante{background:#2F75B5;}
-.ouro{background:#92D050;}
-.prata{background:#FFD966;}
-.bronze{background:#cd7f32;}
-.cobre{background:#FF3300;}
+.diamante{background:#82b1ff;}
+.ouro{background:#aed581;}
+.prata{background:#fff176;}
+.bronze{background:#FFFFFF;}
+.cobre{background:#ff8a80;}
 
+.imp-green{color:#92D050;}
+.imp-red{color:#ff8a80;}
+.imp-yellow{color:#fff176;}
+.imp-blue{color:#82b1ff;}
 
 
 
