@@ -97,12 +97,12 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\n  console.log(this);\n} "
+      "value": ""
      },
      {
       "name": "postExecution",
       "type": "JavaScript",
-      "value": "function f(){\n    console.log(\"Objeto\");\n    console.log(this);\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -112,7 +112,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?dataInicio=\"+dataInicio+\"&dataFim=\"+dataFim;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n} "
+      "value": "function postChange(){\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?dataInicio=\"+dataInicio+\"&dataFim=\"+dataFim;\n    indicadoresIframe.src = urlIndicadores;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n} "
      },
      {
       "name": "tooltip",
@@ -136,17 +136,17 @@
      {
       "name": "parameter",
       "type": "Parameter",
-      "value": "paramGEC_SUB"
+      "value": "${p:paramGEC_SUB}"
      },
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\",\"${p:paramGEC_SUB}\"]"
+      "value": "[\"${p:paramGEC_SQL}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC_SQL\",\"paramGEC_SQL\"]]"
      },
      {
       "name": "externalPlugin",
@@ -216,7 +216,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    console.log('### Newval_SUB')\n    console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newValGEC + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n    console.log('###EStou aqui SUB...###');\n    //alert(Dashboards.getParam('paramGEC'));\n    \n   \n    \n} "
      },
      {
       "name": "tooltip",
@@ -265,7 +265,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "unidGEC"
+      "value": "unidGEC_new"
      },
      {
       "name": "valuesArray",
@@ -310,7 +310,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(cda){\n    //var defaultVal = cda.resultset[0][0];\n    console.log('###cda###');\n    console.log(cda); \n    //Dashboards.setParam('paramGEC_sql',defaultVal);\n} "
      },
      {
       "name": "preChange",
@@ -320,7 +320,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function postChange(){\n    // var newVal = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal = Dashboards.getParam('paramGEC');\n    console.log('### Newval')\n    console.log(newVal);\n       \n    //capturando o valor do paramGEC_sub\n    paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n    var newValSUB = Dashboards.getParam('paramGEC_SUB');\n\n    \n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\"}}';\n    var bookmark = encodeURI(strBookmark); \n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\n    indicadoresIframe.src = urlIndicadores;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n    \n    console.log('###EStou aqui...###');\n    console.log(strBookmark);\n    \n    var param_temp = newVal;\n    console.log(newVal);\n    var array_final = [];\n    \n    for (i = 0; i < param_temp.length; i++) { \n      var res = param_temp[i].split(\".\");\n      var res1 = res[3];\n      var res2 = res1.replace(\"]\",\"\");\n      var res3 = res2.replace(\"[\",\"\");\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\n      if(res3 == \"MEMBERS\"){\n          res3 = \"Todos\";\n      }\n      array_final.push(res3);\n      \n    } \n    console.log(array_final);\n    Dashboards.setParam('paramGEC_SQL',array_final);\n    Dashboards.fireChange('paramGEC_SQL', array_final);\n    console.log(Dashboards.getParam('paramGEC_SQL'));\n    //alert(paramGEC_SQL);\n    \n} "
      },
      {
       "name": "tooltip",
@@ -595,7 +595,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "-1"
+      "value": "[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS"
      },
      {
       "name": "parameterViewRole",
@@ -629,7 +629,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "-1"
+      "value": ""
      },
      {
       "name": "parameterViewRole",
@@ -683,6 +683,73 @@
     ],
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "509eaca7-9f43-cfd1-428d-4efcece7f6f8",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "paramGEC_SQL"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "Todos"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "SCRIPT",
+    "name": "Scripts",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "Scripts"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "0b67aa14-7d31-dc25-fa4e-196aa64a5c10",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "FullWidth"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "$(\"body > div.container\")\n.removeClass(\"container\")\n.addClass(\"container-fluid\"); "
+     }
+    ],
+    "rowName": "Function",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
    }
   ]
  },
@@ -727,12 +794,84 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "Select *  from \n    (SELECT \n        -1 \"CO_SUB_GEC\", \n        'Todas' as  \"SG_GEC_COMPLETO\"\n    union\n    SELECT distinct \n        \"CO_SUB_GEC\", \n        \"SG_GEC_COMPLETO\"      \n    FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\" \n    where \n        \"CO_GEC\" in (${paramGEC})) a \norder by \"CO_SUB_GEC\""
+      "value": "SELECT  SG_GEC_COMPLETO_MDX, \"SG_GEC_COMPLETO\" FROM(\n\n(SELECT 'Todos' as \"SG_GEC_COMPLETO\",\n('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS') as SG_GEC_COMPLETO_MDX,\n 0 as \"CO_GEC\")\nUNION\nSELECT distinct \"SG_GEC_COMPLETO\", \n    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || \"SG_GEC_COMPLETO\" || ']') as SG_GEC_COMPLETO_MDX,\n    \"CO_GEC\" \n\tFROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n\t\tWHERE  ('Todos' IN (${paramGEC_SQL}) or \"SG_GEC\" IN (${paramGEC_SQL}))  AND \"SG_GEC\" <> 'NI'\n\t\tORDER BY \"CO_GEC\",\"SG_GEC_COMPLETO\"\n\t\t\t\t\t\t     ) as SUB"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"paramGEC\",\"IntegerArray\",\"\",\"\"]]"
+      "value": "[[\"paramGEC_SQL\",\"\",\"StringArray\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "536ee322-471e-def0-692c-e9be04f34c22",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidGEC_new"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "select \"SG_GEC\", dis_SG_GEC  from (\n\n(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as \"SG_GEC\", 0 as \"CO_GEC\" )\n UNION \nSELECT distinct \"SG_GEC\" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || \"SG_GEC\" || ']') as \"SG_GEC\", \"CO_GEC\" \n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\" \n   where \"SG_GEC\" <> 'NI'\n   order by \"CO_GEC\",\"SG_GEC\") as sub;\n"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[]"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -917,6 +1056,266 @@
     "rowName": "sql over sqlJndi",
     "type": "Componentssql_sqlJndi",
     "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "MDX",
+    "name": "MDX Queries",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "MDX Queries"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "944fd24c-43a7-0508-c900-cda6cbb7f61f",
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidGEC_mdx"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "catalog",
+      "type": "MondrianCatalog",
+      "value": "mondrian:/SIALG+-+RTC"
+     },
+     {
+      "name": "query",
+      "type": "CurrentMdxQuery",
+      "value": "WITH\n\nSET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'\n\nSELECT\n[*BASE_MEMBERS__Measures_] ON COLUMNS\n,[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS ON ROWS\nFROM [SIALG - Demandas]"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[]"
+     },
+     {
+      "name": "bandedMode",
+      "type": "BandedMode",
+      "value": "compact"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[\"0\"]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "mdx over mondrianJndi",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi"
+   },
+   {
+    "id": "fa2ccb0d-5124-2623-a38c-6c4095810709",
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "teste_mdx"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "catalog",
+      "type": "MondrianCatalog",
+      "value": "mondrian:/SIALG+-+RTC"
+     },
+     {
+      "name": "query",
+      "type": "CurrentMdxQuery",
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({[Organizacao.Gestao da Demanda].[Sigla GEA].[GEARJ].Dimension.Name}, \n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+     },
+     {
+      "name": "bandedMode",
+      "type": "BandedMode",
+      "value": "compact"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[\"0\"]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "mdx over mondrianJndi",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi"
+   },
+   {
+    "id": "267adc09-d10b-6886-19e1-ac66e43a793d",
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidGEC_SUB_mdx"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "catalog",
+      "type": "MondrianCatalog",
+      "value": "mondrian:/SIALG+-+RTC"
+     },
+     {
+      "name": "query",
+      "type": "CurrentMdxQuery",
+      "value": "WITH\nSET [*NATIVE_CJ_SET_WITH_SLICER] AS '[*BASE_MEMBERS__Organizacao.Gestao da Demanda_]'\nSET [*NATIVE_CJ_SET] AS '[*NATIVE_CJ_SET_WITH_SLICER]'\nSET [*SORTED_ROW_AXIS] AS 'ORDER([*CJ_ROW_AXIS],ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]).ORDERKEY,BASC,ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER,[Organizacao.Gestao da Demanda].[SUCTI ]).ORDERKEY,BASC,[Organizacao.Gestao da Demanda].CURRENTMEMBER.ORDERKEY,BASC)'\n\nSET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'\n\nSET [*BASE_MEMBERS__Organizacao.Gestao da Demanda_] AS 'FILTER([Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS,ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]) IN {${paramGEC}})'\n\nSET [*CJ_ROW_AXIS] AS 'GENERATE([*NATIVE_CJ_SET], {([Organizacao.Gestao da Demanda].CURRENTMEMBER)})'\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\nSELECT\n[*BASE_MEMBERS__Measures_] ON COLUMNS\n,[*SORTED_ROW_AXIS] ON ROWS\nFROM [SIALG - Demandas]"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+     },
+     {
+      "name": "bandedMode",
+      "type": "BandedMode",
+      "value": "compact"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[\"0\"]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "mdx over mondrianJndi",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi"
    }
   ]
  },
@@ -1094,22 +1493,22 @@
     "typeDesc": "Column"
    },
    {
-    "id": "7d6faee1-e87c-5646-42f8-c6f504261859",
+    "id": "ab0289d2-01a3-1185-e132-f3cfa9e192e7",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
     "parent": "7ab07b78-32ad-50fa-12db-f88fdc70dbbd",
     "properties": [
      {
       "name": "url",
-      "type": "String",
-      "value": "${solution:CTools_dashboard_files/img/logo-caixa.png}"
+      "value": "${solution:CTools_dashboard_files/img/logo-caixa.png}",
+      "type": "String"
      },
      {
       "name": "cssClass",
-      "type": "String",
-      "value": ""
+      "value": "",
+      "type": "String"
      }
-    ],
-    "type": "LayoutImage",
-    "typeDesc": "Image"
+    ]
    },
    {
     "id": "790effd8-fa98-62ed-7cac-0cc17ee453f2",
@@ -1123,7 +1522,7 @@
      {
       "name": "bootstrapExtraSmall",
       "type": "String",
-      "value": "8"
+      "value": "7"
      },
      {
       "name": "bootstrapSmall",
@@ -1309,6 +1708,69 @@
     "typeDesc": "Row"
    },
    {
+    "id": "4ad814d4-5be6-6244-2281-4ef53abeca37",
+    "parent": "2b07d167-7480-0b08-e31d-72e64808d339",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dateObj"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "10"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
     "id": "c086e927-924b-db92-5762-f961bd7c0358",
     "parent": "2b07d167-7480-0b08-e31d-72e64808d339",
     "properties": [
@@ -1365,77 +1827,14 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": "fa fa-calendar fa-lg"
+      "value": "fa fa-calendar fa-lg white"
      }
     ],
     "type": "LayoutBootstrapColumn",
     "typeDesc": "Column"
    },
    {
-    "id": "4ad814d4-5be6-6244-2281-4ef53abeca37",
-    "parent": "2b07d167-7480-0b08-e31d-72e64808d339",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "dateObj"
-     },
-     {
-      "name": "bootstrapExtraSmall",
-      "type": "String",
-      "value": "10"
-     },
-     {
-      "name": "bootstrapSmall",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapMedium",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapLarge",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "bootstrapCssClass",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "height",
-      "type": "Integer",
-      "value": ""
-     },
-     {
-      "name": "backgroundColor",
-      "type": "Color",
-      "value": ""
-     },
-     {
-      "name": "roundCorners",
-      "type": "RoundCorners",
-      "value": ""
-     },
-     {
-      "name": "textAlign",
-      "type": "TextAlign",
-      "value": "left"
-     },
-     {
-      "name": "cssClass",
-      "type": "String",
-      "value": ""
-     }
-    ],
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column"
-   },
-   {
-    "id": "35ad5adb-9fd8-b91e-f9cd-7ce6153c817e",
+    "id": "3143c9e9-93a1-d933-e5c9-d3e2436b4858",
     "parent": "UnIqEiD",
     "properties": [
      {
@@ -1473,8 +1872,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "deaf8365-f61e-3cb2-dfba-02b53d2383dd",
-    "parent": "35ad5adb-9fd8-b91e-f9cd-7ce6153c817e",
+    "id": "60088269-f341-25cd-2e24-56c6bd956e33",
+    "parent": "3143c9e9-93a1-d933-e5c9-d3e2436b4858",
     "properties": [
      {
       "name": "name",
@@ -1536,8 +1935,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "ee639859-409d-4e03-c4e2-8abbf442ff88",
-    "parent": "deaf8365-f61e-3cb2-dfba-02b53d2383dd",
+    "id": "3486fcbd-3285-18d7-dfdc-bb0b336a215b",
+    "parent": "60088269-f341-25cd-2e24-56c6bd956e33",
     "properties": [
      {
       "name": "name",
@@ -1574,8 +1973,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "c84df507-2cc5-43c0-b31b-368291d5d0e8",
-    "parent": "ee639859-409d-4e03-c4e2-8abbf442ff88",
+    "id": "7b9c310e-4d98-e664-dd3a-07a2e16325ad",
+    "parent": "3486fcbd-3285-18d7-dfdc-bb0b336a215b",
     "properties": [
      {
       "name": "name",
@@ -1637,8 +2036,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "36fc2310-b699-a29b-4865-e42fde48e027",
-    "parent": "c84df507-2cc5-43c0-b31b-368291d5d0e8",
+    "id": "f45ec049-ff42-f3bf-7feb-3e24aa76a41d",
+    "parent": "7b9c310e-4d98-e664-dd3a-07a2e16325ad",
     "properties": [
      {
       "name": "name",
@@ -1648,7 +2047,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "    <div class=\"container-fluid\"> \n      <!-- Brand and toggle get grouped for better mobile display -->\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#menu_mobile\" >\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" href=\"#\">SIALG</a>\n      </div>\n      <!-- Collect the nav links, forms, and other content for toggling -->\n      <div class=\"navbar-collapse collapse \" id=\"menu_mobile\" >\n  <!-- Nav tabs -->\n  <ul class=\"nav navbar-nav\" role=\"tablist\">\n    <li role=\"presentation\" class=\"active\"><a href=\"#tab_geral\" aria-controls=\"tab_geral\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Geral</a></li>\n    <li role=\"presentation\"><a href=\"#tab_indicadores\" aria-controls=\"tab_indicadores\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Indicadores</a></li>\n    <li class=\"disabled\" role=\"presentation\"><a href=\"#tab_contratos\" aria-controls=\"tab_contratos\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Contratos</a></li>\n    <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_gestao\" aria-controls=\"tab_gestao\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Gestão de Demandas</a></li>\n    <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_auditoria\" aria-controls=\"tab_auditoria\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i> Auditoria</a></li>\n    <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_falha\" aria-controls=\"tab_falha\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Falha de Natureza Tecnológica</a></li>\n  </ul>\n </div>\n    </div>\n\n \n "
+      "value": "<div class=\"container-fluid\">\n     <!-- Brand and toggle get grouped for better mobile display -->\n     <div class=\"navbar-header\">\n       <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#menu_mobile\" >\n         <span class=\"sr-only\">Toggle navigation</span>\n         <span class=\"icon-bar\"></span>\n         <span class=\"icon-bar\"></span>\n         <span class=\"icon-bar\"></span>\n       </button>\n       <a class=\"navbar-brand\" href=\"#\">SIALG</a>\n     </div>\n     <!-- Collect the nav links, forms, and other content for toggling -->\n     <div class=\"navbar-collapse collapse \" id=\"menu_mobile\" >\n <!-- Nav tabs -->\n <ul class=\"nav navbar-nav\" role=\"tablist\">\n   <li role=\"presentation\" class=\"active\"><a href=\"#tab_geral\" aria-controls=\"tab_geral\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Geral</a></li>\n   <li role=\"presentation\"><a href=\"#tab_indicadores\" aria-controls=\"tab_indicadores\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Indicadores</a></li>\n   <li class=\"disabled\" role=\"presentation\"><a href=\"#tab_contratos\" aria-controls=\"tab_contratos\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Contratos</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_gestao\" aria-controls=\"tab_gestao\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Gestão de Demandas</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_auditoria\" aria-controls=\"tab_auditoria\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i> Auditoria</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_falha\" aria-controls=\"tab_falha\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Falha de Natureza Tecnológica</a></li>\n </ul>\n</div>\n   </div> "
      },
      {
       "name": "fontSize",
@@ -1670,7 +2069,7 @@
     "typeDesc": "Html"
    },
    {
-    "id": "314b074a-13b8-517f-5002-4aef78dac17a",
+    "id": "640663ed-1f72-3857-4576-3aad484de8a0",
     "parent": "UnIqEiD",
     "properties": [
      {
@@ -1708,8 +2107,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
-    "parent": "314b074a-13b8-517f-5002-4aef78dac17a",
+    "id": "d8027379-3163-4af8-311d-ef6c47238489",
+    "parent": "640663ed-1f72-3857-4576-3aad484de8a0",
     "properties": [
      {
       "name": "name",
@@ -1771,8 +2170,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "c1ad2d71-754d-b20a-430b-7daa8c3935d7",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "5009f3c6-5ab0-bafe-a90f-990c492bc85a",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -1809,8 +2208,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "68fa039f-ace9-f044-9d4a-f76ff8e4576d",
-    "parent": "c1ad2d71-754d-b20a-430b-7daa8c3935d7",
+    "id": "68439aef-4b2b-6195-1c99-108c93dff45e",
+    "parent": "5009f3c6-5ab0-bafe-a90f-990c492bc85a",
     "properties": [
      {
       "name": "name",
@@ -1872,8 +2271,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "84786847-698d-2e73-a7de-4e5c4f09709c",
-    "parent": "68fa039f-ace9-f044-9d4a-f76ff8e4576d",
+    "id": "748ec5a6-fc5b-995b-3a07-2efe8d06753b",
+    "parent": "68439aef-4b2b-6195-1c99-108c93dff45e",
     "properties": [
      {
       "name": "name",
@@ -1883,7 +2282,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n             id=\"geralIframe\"\n            width=\"100%\" height=\"2500px\" style=\"\n    border-left-width: 0px;\n    border-bottom-width: 0px;\n    border-right-width: 0px;\n    border-top-width: 0px;\"></iframe> "
+      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n            id=\"geralIframe\"\n           width=\"100%\" height=\"1200px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",
@@ -1905,8 +2304,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "cd181365-3f77-0edb-33b4-f9d5d3efc3ec",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "ec6009fe-6193-b47c-c884-6303e320706a",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -1943,8 +2342,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "68ddf813-5a9c-dd06-e586-5125127e4ebd",
-    "parent": "cd181365-3f77-0edb-33b4-f9d5d3efc3ec",
+    "id": "a766796b-0ed7-1560-3f07-3ce0e63bb86f",
+    "parent": "ec6009fe-6193-b47c-c884-6303e320706a",
     "properties": [
      {
       "name": "name",
@@ -1999,15 +2398,15 @@
      {
       "name": "cssClass",
       "type": "String",
-      "value": ""
+      "value": "left right"
      }
     ],
     "type": "LayoutBootstrapColumn",
     "typeDesc": "Column"
    },
    {
-    "id": "614ce0fe-7661-cddf-5924-980280ed6566",
-    "parent": "68ddf813-5a9c-dd06-e586-5125127e4ebd",
+    "id": "64d84b17-ec40-3986-84e0-e2b3347301f1",
+    "parent": "a766796b-0ed7-1560-3f07-3ce0e63bb86f",
     "properties": [
      {
       "name": "name",
@@ -2017,7 +2416,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<ul class=\"nav nav-pills\">\n  <li class=\"active\"><a data-toggle=\"pill\" href=\"#gea\">GEA</a></li>\n  <li><a data-toggle=\"pill\" href=\"#cedes\">CEDES</a></li>\n  <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#fsw\">FSW</a></li>\n  <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#vp\">VP</a></li>\n</ul> "
+      "value": "<ul class=\"nav nav-pills\">\n <li class=\"active\"  ><a data-toggle=\"pill\" href=\"#gea\"  >GEA</a></li>\n <li><a data-toggle=\"pill\" href=\"#cedes\">CEDES</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#fsw\">FSW</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#vp\">VP</a></li>\n</ul> "
      },
      {
       "name": "fontSize",
@@ -2039,8 +2438,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "bb8a2e6c-a7bf-3189-fa5f-0e8f55eb9e02",
-    "parent": "68ddf813-5a9c-dd06-e586-5125127e4ebd",
+    "id": "159cac60-18c3-d402-32bd-ac161aa65959",
+    "parent": "a766796b-0ed7-1560-3f07-3ce0e63bb86f",
     "properties": [
      {
       "name": "name",
@@ -2077,8 +2476,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "4d0205d9-2af1-b364-67ce-140091d92e1f",
-    "parent": "bb8a2e6c-a7bf-3189-fa5f-0e8f55eb9e02",
+    "id": "e773e831-4f06-775b-fce8-1cd546405328",
+    "parent": "159cac60-18c3-d402-32bd-ac161aa65959",
     "properties": [
      {
       "name": "name",
@@ -2140,8 +2539,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "8b24a68e-544d-f08f-8008-6d4e8321b232",
-    "parent": "4d0205d9-2af1-b364-67ce-140091d92e1f",
+    "id": "75ff6391-a7d1-ea94-fa73-49874b0017e4",
+    "parent": "e773e831-4f06-775b-fce8-1cd546405328",
     "properties": [
      {
       "name": "name",
@@ -2178,8 +2577,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "0b3da612-4c96-2261-41c0-12607954cb36",
-    "parent": "8b24a68e-544d-f08f-8008-6d4e8321b232",
+    "id": "71113518-38a9-c69c-3831-2004e58c5dd0",
+    "parent": "75ff6391-a7d1-ea94-fa73-49874b0017e4",
     "properties": [
      {
       "name": "name",
@@ -2241,8 +2640,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "27263243-e869-5a06-21e8-763bea21751d",
-    "parent": "0b3da612-4c96-2261-41c0-12607954cb36",
+    "id": "04856cd7-7771-c70f-982e-25d353fc2074",
+    "parent": "71113518-38a9-c69c-3831-2004e58c5dd0",
     "properties": [
      {
       "name": "name",
@@ -2252,7 +2651,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<h5>GEA</h5> "
+      "value": "<!-- <h5>GEA</h5> -->\n<br> "
      },
      {
       "name": "fontSize",
@@ -2274,8 +2673,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "ba99f1c4-cd19-4874-acdc-a33d092609aa",
-    "parent": "0b3da612-4c96-2261-41c0-12607954cb36",
+    "id": "0c1ea30a-8f23-4d6f-d170-54f4aef7dc8a",
+    "parent": "71113518-38a9-c69c-3831-2004e58c5dd0",
     "properties": [
      {
       "name": "name",
@@ -2312,8 +2711,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "ddc857bb-2049-2ce0-5cfd-0370b7f12740",
-    "parent": "ba99f1c4-cd19-4874-acdc-a33d092609aa",
+    "id": "61c8c04e-e602-9abf-7850-6d26c0360255",
+    "parent": "0c1ea30a-8f23-4d6f-d170-54f4aef7dc8a",
     "properties": [
      {
       "name": "name",
@@ -2375,8 +2774,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "aa776ed5-cd13-b598-a3e2-2f512b8fab44",
-    "parent": "ddc857bb-2049-2ce0-5cfd-0370b7f12740",
+    "id": "43c55a84-3b4e-593e-f311-1d5e99338932",
+    "parent": "61c8c04e-e602-9abf-7850-6d26c0360255",
     "properties": [
      {
       "name": "name",
@@ -2413,8 +2812,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "468c4105-65d5-c826-38dc-cb94c8915f9e",
-    "parent": "aa776ed5-cd13-b598-a3e2-2f512b8fab44",
+    "id": "3b3f4bfa-9141-0549-3f5d-caad86265536",
+    "parent": "43c55a84-3b4e-593e-f311-1d5e99338932",
     "properties": [
      {
       "name": "name",
@@ -2476,8 +2875,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "8f601456-24b2-e071-c360-2636585245f3",
-    "parent": "468c4105-65d5-c826-38dc-cb94c8915f9e",
+    "id": "56069e54-8f90-4244-306e-f0ce27cdb7af",
+    "parent": "3b3f4bfa-9141-0549-3f5d-caad86265536",
     "properties": [
      {
       "name": "name",
@@ -2514,8 +2913,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "2a84fa41-fbc7-e195-9f4f-5bc5ec94e75f",
-    "parent": "8f601456-24b2-e071-c360-2636585245f3",
+    "id": "ae72a98d-cc53-ed36-8564-484c9c132f01",
+    "parent": "56069e54-8f90-4244-306e-f0ce27cdb7af",
     "properties": [
      {
       "name": "name",
@@ -2577,8 +2976,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "edce6bb9-3cb3-63ce-97f1-68884c4b7f52",
-    "parent": "2a84fa41-fbc7-e195-9f4f-5bc5ec94e75f",
+    "id": "57293a2d-890c-4484-3c93-a397d0706d8a",
+    "parent": "ae72a98d-cc53-ed36-8564-484c9c132f01",
     "properties": [
      {
       "name": "name",
@@ -2588,7 +2987,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosGEC\" align=\"left\"><i class=\"fa fa-filter\"></i></button>\n                         <div id=\"filtrosGEC\" class=\"collapse\">\n                             <div id=\"filtroGEC\"></div>\n                            <div id=\"filtroGECSub\"></div>\n                         </div> "
+      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosGEC\" align=\"left\"><i class=\"fa fa-filter\"></i> Filtros</button>\n  <div id=\"filtrosGEC\" class=\"collapse column\">\n   <div class=\"col-md-6\" class=\"tamanho\" ><strong>Unidade </strong><div id=\"filtroGEC\"></div></div>\n   <div class=\"col-md-6\" class=\"tamanho\" ><strong>Subunidade</strong> <div id=\"filtroGECSub\"></div></div>\n</div> "
      },
      {
       "name": "fontSize",
@@ -2610,8 +3009,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "b68bb9ca-9709-e1c1-de72-10cacdf28276",
-    "parent": "ba99f1c4-cd19-4874-acdc-a33d092609aa",
+    "id": "e813a622-94b6-913c-3a7a-82a8ebe7cbab",
+    "parent": "0c1ea30a-8f23-4d6f-d170-54f4aef7dc8a",
     "properties": [
      {
       "name": "name",
@@ -2673,8 +3072,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "97954c10-267a-1523-378a-6ceed4b2169f",
-    "parent": "b68bb9ca-9709-e1c1-de72-10cacdf28276",
+    "id": "65c1d53b-461c-a5aa-bd6f-e7abca2ab55d",
+    "parent": "e813a622-94b6-913c-3a7a-82a8ebe7cbab",
     "properties": [
      {
       "name": "name",
@@ -2684,7 +3083,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe \n                src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?paramUnidade=GEC\" \n                id=\"indicadoresIframe\"\n                width=\"100%\" \n                height=\"2500px\" style=\"\n    border-left-width: 0px;\n    border-bottom-width: 0px;\n    border-right-width: 0px;\n    border-top-width: 0px;\"></iframe> "
+      "value": "<iframe\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramGEC\":\"[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\",\"paramGEC_SUB\":\"[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\"}}'\n               id=\"indicadoresIframe\"\n               width=\"100%\"\n               height=\"1600em\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",
@@ -2706,8 +3105,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "a7514dbb-8ebe-8f9a-43ab-55133691ec6f",
-    "parent": "4d0205d9-2af1-b364-67ce-140091d92e1f",
+    "id": "211b5975-3645-80d2-f34c-ad766a3263b2",
+    "parent": "e773e831-4f06-775b-fce8-1cd546405328",
     "properties": [
      {
       "name": "name",
@@ -2744,8 +3143,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "fc8aac22-d0e5-fa6a-9d6c-853919f6af4b",
-    "parent": "a7514dbb-8ebe-8f9a-43ab-55133691ec6f",
+    "id": "6ee370b6-8ba4-b760-2c82-4d4d4d0cc45a",
+    "parent": "211b5975-3645-80d2-f34c-ad766a3263b2",
     "properties": [
      {
       "name": "name",
@@ -2807,8 +3206,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "3891529c-7271-21ef-8351-a4ab590ee02d",
-    "parent": "fc8aac22-d0e5-fa6a-9d6c-853919f6af4b",
+    "id": "ae9060fa-6fd1-1370-b8d6-8349d9249e5e",
+    "parent": "6ee370b6-8ba4-b760-2c82-4d4d4d0cc45a",
     "properties": [
      {
       "name": "name",
@@ -2818,7 +3217,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<h5>CEDES</h5> "
+      "value": "<!-- <h5>CEDES</h5> -->\n<br> "
      },
      {
       "name": "fontSize",
@@ -2840,8 +3239,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "1c9fc243-2bea-b010-1203-c513392a3e21",
-    "parent": "fc8aac22-d0e5-fa6a-9d6c-853919f6af4b",
+    "id": "3017dff1-f3af-7cc2-2798-a68b96c25338",
+    "parent": "6ee370b6-8ba4-b760-2c82-4d4d4d0cc45a",
     "properties": [
      {
       "name": "name",
@@ -2878,8 +3277,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "6fa3d5bf-e284-f0c6-e837-fdf09bb656fa",
-    "parent": "1c9fc243-2bea-b010-1203-c513392a3e21",
+    "id": "6d6cc55b-98f4-0091-fe55-f49f1b076073",
+    "parent": "3017dff1-f3af-7cc2-2798-a68b96c25338",
     "properties": [
      {
       "name": "name",
@@ -2941,8 +3340,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "a9e5e8b2-d805-6ee3-4565-d3d08f484f02",
-    "parent": "6fa3d5bf-e284-f0c6-e837-fdf09bb656fa",
+    "id": "368926e5-5033-c714-5b44-971591346385",
+    "parent": "6d6cc55b-98f4-0091-fe55-f49f1b076073",
     "properties": [
      {
       "name": "name",
@@ -2979,8 +3378,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "24fee6fb-df2e-9300-712f-1fef71a54b5e",
-    "parent": "a9e5e8b2-d805-6ee3-4565-d3d08f484f02",
+    "id": "b16c94cb-bf4a-24f3-4876-82601396a585",
+    "parent": "368926e5-5033-c714-5b44-971591346385",
     "properties": [
      {
       "name": "name",
@@ -3042,8 +3441,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "690a04ed-bda7-158a-24a2-5936ebd17010",
-    "parent": "24fee6fb-df2e-9300-712f-1fef71a54b5e",
+    "id": "8e847827-bff1-d9e0-d355-c72a3d583eb3",
+    "parent": "b16c94cb-bf4a-24f3-4876-82601396a585",
     "properties": [
      {
       "name": "name",
@@ -3080,8 +3479,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "701e215d-2476-54fa-ee2b-5f9f5129a297",
-    "parent": "690a04ed-bda7-158a-24a2-5936ebd17010",
+    "id": "ef4fc231-c0e0-a2ca-fa3d-dae52ce2e3b8",
+    "parent": "8e847827-bff1-d9e0-d355-c72a3d583eb3",
     "properties": [
      {
       "name": "name",
@@ -3143,8 +3542,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "f9091299-e7ec-e12a-c956-2b022a728243",
-    "parent": "701e215d-2476-54fa-ee2b-5f9f5129a297",
+    "id": "7b3fd199-ed0e-85ff-cb1f-a3e0faf759dd",
+    "parent": "ef4fc231-c0e0-a2ca-fa3d-dae52ce2e3b8",
     "properties": [
      {
       "name": "name",
@@ -3154,7 +3553,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosCEDES\" align=\"left\"><i class=\"fa fa-filter\"></i></button>\n                         <div id=\"filtrosCEDES\" class=\"collapse\">\n                             <div id=\"filtroCEDES\">Teste</div>\n                            <div id=\"filtroCEDESSub\">Teste</div>\n                         </div> "
+      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosCEDES\" align=\"left\"><i class=\"fa fa-filter\"></i></button>\n                        <div id=\"filtrosCEDES\" class=\"collapse\">\n                            <div id=\"filtroCEDES\">Teste</div>\n                           <div id=\"filtroCEDESSub\">Teste</div>\n                        </div> "
      },
      {
       "name": "fontSize",
@@ -3176,8 +3575,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "42535f49-6028-ccd2-6353-fe3ff5fc471a",
-    "parent": "1c9fc243-2bea-b010-1203-c513392a3e21",
+    "id": "de3de390-2d8a-3fcf-0e04-77ab4d3c47b7",
+    "parent": "3017dff1-f3af-7cc2-2798-a68b96c25338",
     "properties": [
      {
       "name": "name",
@@ -3239,8 +3638,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "c6802425-1b0c-9628-c538-ffce65ba786e",
-    "parent": "42535f49-6028-ccd2-6353-fe3ff5fc471a",
+    "id": "cc63be06-1b94-4105-3f27-15ac61a5260b",
+    "parent": "de3de390-2d8a-3fcf-0e04-77ab4d3c47b7",
     "properties": [
      {
       "name": "name",
@@ -3250,7 +3649,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe \n                src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?paramUnidade=CEDES\" \n                id=\"indicadoresIframe\"\n                width=\"100%\" \n                height=\"2500px\" style=\"\n    border-left-width: 0px;\n    border-bottom-width: 0px;\n    border-right-width: 0px;\n    border-top-width: 0px;\"></iframe> "
+      "value": "<iframe\n               src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?paramUnidade=CEDES\"\n               id=\"indicadoresIframe\"\n               width=\"100%\"\n               height=\"2500px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",
@@ -3272,8 +3671,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "af80f1e1-b164-878e-41b7-787ab55a2ecf",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "13b945f2-d105-fef3-e213-e83a0a0308bf",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -3310,8 +3709,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "3a6db2bb-0b1e-6331-8fb9-c13cbe127918",
-    "parent": "af80f1e1-b164-878e-41b7-787ab55a2ecf",
+    "id": "6f4b29a2-6573-1cef-3e30-876f3fabbaf6",
+    "parent": "13b945f2-d105-fef3-e213-e83a0a0308bf",
     "properties": [
      {
       "name": "name",
@@ -3373,8 +3772,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "42323641-8a55-7857-0c99-b66809f91146",
-    "parent": "3a6db2bb-0b1e-6331-8fb9-c13cbe127918",
+    "id": "4df67732-c492-9861-6611-4d00de7ce137",
+    "parent": "6f4b29a2-6573-1cef-3e30-876f3fabbaf6",
     "properties": [
      {
       "name": "name",
@@ -3384,7 +3783,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "CONTRATOS "
+      "value": "Contratos "
      },
      {
       "name": "fontSize",
@@ -3406,8 +3805,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "33aab118-3799-c814-0520-a09f33e67046",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "ee0b3635-30ef-75dd-94a9-ce9fa545b78c",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -3444,8 +3843,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "76607ace-e24e-0eb9-76a4-de83c5f48d05",
-    "parent": "33aab118-3799-c814-0520-a09f33e67046",
+    "id": "ad2aa984-93df-97ce-873a-2410389b5ad6",
+    "parent": "ee0b3635-30ef-75dd-94a9-ce9fa545b78c",
     "properties": [
      {
       "name": "name",
@@ -3507,8 +3906,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "d55e0e92-7f5f-fcb7-464b-7864e5a0c9f4",
-    "parent": "76607ace-e24e-0eb9-76a4-de83c5f48d05",
+    "id": "d90ef311-81c7-5863-8a6b-b2c6f6ab06fb",
+    "parent": "ad2aa984-93df-97ce-873a-2410389b5ad6",
     "properties": [
      {
       "name": "name",
@@ -3518,7 +3917,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "GESTAO "
+      "value": "Gestao "
      },
      {
       "name": "fontSize",
@@ -3540,8 +3939,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "49b0ab51-d610-2120-ce14-52d39f057d6d",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "47b222b2-4092-6f83-e703-00f16a0b584e",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -3578,8 +3977,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "8c0652c9-504d-b049-85bc-741d6c141553",
-    "parent": "49b0ab51-d610-2120-ce14-52d39f057d6d",
+    "id": "b2dd0829-8b11-8bc1-900d-4ef796728e95",
+    "parent": "47b222b2-4092-6f83-e703-00f16a0b584e",
     "properties": [
      {
       "name": "name",
@@ -3641,8 +4040,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "71d07044-9185-b1da-63d8-e932811d4487",
-    "parent": "8c0652c9-504d-b049-85bc-741d6c141553",
+    "id": "58b5dfe0-63bd-333e-9546-11f22f5e12dc",
+    "parent": "b2dd0829-8b11-8bc1-900d-4ef796728e95",
     "properties": [
      {
       "name": "name",
@@ -3652,7 +4051,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "AUDITORIA "
+      "value": "Auditoria "
      },
      {
       "name": "fontSize",
@@ -3674,8 +4073,8 @@
     "typeDesc": "Html"
    },
    {
-    "id": "55e4803b-1acf-06c8-5a14-7972e68d67e9",
-    "parent": "381268c8-5a0d-08e5-7fb3-857b06b8be79",
+    "id": "79ac07d1-70e9-88de-88e8-d4c3fffc9236",
+    "parent": "d8027379-3163-4af8-311d-ef6c47238489",
     "properties": [
      {
       "name": "name",
@@ -3712,8 +4111,8 @@
     "typeDesc": "Row"
    },
    {
-    "id": "4a2d3995-d9a2-8241-8082-8462f89df1b6",
-    "parent": "55e4803b-1acf-06c8-5a14-7972e68d67e9",
+    "id": "03877a03-d3f5-9f71-ec9f-4048f1cd6ae1",
+    "parent": "79ac07d1-70e9-88de-88e8-d4c3fffc9236",
     "properties": [
      {
       "name": "name",
@@ -3775,8 +4174,8 @@
     "typeDesc": "Column"
    },
    {
-    "id": "d176408c-4bd7-f5a1-21a7-7317a77e7a55",
-    "parent": "4a2d3995-d9a2-8241-8082-8462f89df1b6",
+    "id": "d90d0e27-dd81-4853-866a-a1e869d3b73f",
+    "parent": "03877a03-d3f5-9f71-ec9f-4048f1cd6ae1",
     "properties": [
      {
       "name": "name",
@@ -3786,7 +4185,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "FALHA "
+      "value": "Falha "
      },
      {
       "name": "fontSize",
@@ -3808,7 +4207,7 @@
     "typeDesc": "Html"
    },
    {
-    "id": "cf6f7f1f-2c81-0f36-5e60-b4fa9b0a3600",
+    "id": "d6765603-4ab6-6c7b-3896-3edcac604a51",
     "parent": "UnIqEiD",
     "properties": [
      {

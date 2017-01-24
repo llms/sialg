@@ -33,12 +33,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -191,16 +191,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -341,11 +331,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -354,11 +339,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -496,11 +476,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -519,11 +494,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -621,11 +591,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -634,11 +599,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -681,18 +641,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -786,11 +741,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -799,11 +749,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -846,18 +791,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -971,11 +911,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -1056,19 +991,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -1103,26 +1028,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -1301,11 +1206,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -1437,12 +1337,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -1595,16 +1495,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -1745,11 +1635,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -1758,11 +1643,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -1900,11 +1780,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -1923,11 +1798,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -2025,11 +1895,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -2038,11 +1903,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -2085,18 +1945,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -2190,11 +2045,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -2203,11 +2053,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -2250,18 +2095,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -2375,11 +2215,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -2460,19 +2295,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -2507,26 +2332,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -2705,11 +2510,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -2841,12 +2641,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -2999,16 +2799,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -3149,11 +2939,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -3162,11 +2947,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -3304,11 +3084,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -3327,11 +3102,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -3429,11 +3199,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -3442,11 +3207,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -3489,18 +3249,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -3594,11 +3349,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -3607,11 +3357,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -3654,18 +3399,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -3779,11 +3519,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -3864,19 +3599,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -3911,26 +3636,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -4107,11 +3812,6 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
-     },
-     {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -4245,17 +3945,17 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"]]"
+      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "defeitoSQL"
+      "value": "defeitosDS"
      },
      {
       "name": "height",
@@ -4295,7 +3995,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\nconsole.log(\"Data de Resolucao Pai\" + dataResolucaoPaiFim);\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+      "value": "function f(){\r\n\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
      },
      {
       "name": "postExecution",
@@ -4401,16 +4101,6 @@
       "name": "baseAxisGrid",
       "type": "Boolean",
       "value": false
-     },
-     {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
      },
      {
       "name": "baseAxisLabelSpacingMin",
@@ -4553,11 +4243,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -4566,11 +4251,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -4708,11 +4388,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -4731,11 +4406,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -4833,11 +4503,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -4846,11 +4511,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -4893,18 +4553,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -4998,11 +4653,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -5011,11 +4661,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -5058,18 +4703,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -5183,11 +4823,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -5268,19 +4903,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -5315,26 +4940,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -5513,11 +5118,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -5649,17 +5249,17 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"]]"
+      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "corretudeSQL"
+      "value": "corretudeDS"
      },
      {
       "name": "height",
@@ -5807,16 +5407,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -5957,11 +5547,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -5970,11 +5555,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -6112,11 +5692,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -6135,11 +5710,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -6237,11 +5807,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -6250,11 +5815,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -6297,18 +5857,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -6402,11 +5957,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -6415,11 +5965,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -6462,18 +6007,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -6587,11 +6127,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -6672,19 +6207,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -6719,26 +6244,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -6917,11 +6422,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -7058,7 +6558,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -7211,16 +6711,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -7361,11 +6851,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -7374,11 +6859,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -7516,11 +6996,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -7539,11 +7014,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -7641,11 +7111,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -7654,11 +7119,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -7701,18 +7161,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -7806,11 +7261,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -7819,11 +7269,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -7866,18 +7311,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -7991,11 +7431,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -8076,19 +7511,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -8123,26 +7548,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -8321,11 +7726,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -8457,12 +7857,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -8615,16 +8015,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -8765,11 +8155,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -8778,11 +8163,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -8920,11 +8300,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -8943,11 +8318,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -9045,11 +8415,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -9058,11 +8423,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -9105,18 +8465,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -9210,11 +8565,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -9223,11 +8573,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -9270,18 +8615,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -9395,11 +8735,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -9480,19 +8815,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -9527,26 +8852,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -9725,11 +9030,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -9866,7 +9166,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -10019,16 +9319,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -10169,11 +9459,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -10182,11 +9467,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -10324,11 +9604,6 @@
       "value": "10px 'Open Sans', sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -10347,11 +9622,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -10449,11 +9719,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -10462,11 +9727,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -10509,18 +9769,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -10614,11 +9869,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -10627,11 +9877,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -10674,18 +9919,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -10799,11 +10039,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -10884,19 +10119,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -10931,26 +10156,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -11127,11 +10332,6 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
-     },
-     {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -11423,16 +10623,6 @@
       "value": false
      },
      {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
-     },
-     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -11573,11 +10763,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -11586,11 +10771,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -11728,11 +10908,6 @@
       "value": "10px sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -11751,11 +10926,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -11853,11 +11023,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -11866,11 +11031,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -11913,18 +11073,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -12018,11 +11173,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -12031,11 +11181,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -12078,18 +11223,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -12203,11 +11343,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -12288,19 +11423,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -12335,26 +11460,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -12533,11 +11638,6 @@
       "value": ""
      },
      {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -12669,12 +11769,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "dataSource",
@@ -12719,7 +11819,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  console.log('*******************************************');\r\n \r\n  console.log(Dashboards.getParam('paramGEC'));\r\n \r\n  console.log('*******************************************');\r\n} "
      },
      {
       "name": "postExecution",
@@ -12739,7 +11839,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": " function fu(){ \n     \n     console.log('*****paramGEC_SUB****');\n     console.log(Dashboards.getParam('paramGEC_SUB'));\n     console.log(Dashboards.getParam('paramGEC'));\n  \n } "
      },
      {
       "name": "extensionPoints",
@@ -12825,16 +11925,6 @@
       "name": "baseAxisGrid",
       "type": "Boolean",
       "value": false
-     },
-     {
-      "name": "baseAxisLabelDesiredAngles",
-      "type": "Array",
-      "value": "[]"
-     },
-     {
-      "name": "baseAxisLabelRotationDirection",
-      "type": "cccBaseAxisLabelRotationDirectionCustom",
-      "value": "clockwise"
      },
      {
       "name": "baseAxisLabelSpacingMin",
@@ -12977,11 +12067,6 @@
       "value": true
      },
      {
-      "name": "color2AxisPreserveMap",
-      "type": "Boolean",
-      "value": false
-     },
-     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -12990,11 +12075,6 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
-     },
-     {
-      "name": "colorPreserveMap",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "colorRole",
@@ -13132,11 +12212,6 @@
       "value": "10px 'Open Sans', sans-serif"
      },
      {
-      "name": "legendItemCountMax",
-      "type": "Float",
-      "value": ""
-     },
-     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -13155,11 +12230,6 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
-     },
-     {
-      "name": "legendOverflow",
-      "type": "cccLegendOverflowCustom",
-      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -13257,11 +12327,6 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisDomainAlign",
-      "type": "cccOrtho2AxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -13270,11 +12335,6 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "ortho2AxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -13317,18 +12377,13 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisOverlappedLabelsMode",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "ortho2AxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -13422,11 +12477,6 @@
       "value": ""
      },
      {
-      "name": "orthoAxisDomainAlign",
-      "type": "cccOrthoAxisDomainAlignCustom",
-      "value": "center"
-     },
-     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -13435,11 +12485,6 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
-     },
-     {
-      "name": "orthoAxisFixedLength",
-      "type": "Float",
-      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -13482,18 +12527,13 @@
       "value": ""
      },
      {
+      "name": "orthoAxisOverlappedLabelsMode",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisPreserveRatio",
-      "type": "Boolean",
-      "value": ""
-     },
-     {
-      "name": "orthoAxisRatio",
-      "type": "Float",
       "value": ""
      },
      {
@@ -13607,11 +12647,6 @@
       "value": false
      },
      {
-      "name": "plot2AreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
-     },
-     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -13692,19 +12727,9 @@
       "value": "false"
      },
      {
-      "name": "plotSizeMin",
-      "type": "String",
-      "value": ""
-     },
-     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
-     },
-     {
-      "name": "preserveLayout",
-      "type": "Boolean",
-      "value": false
      },
      {
       "name": "readers",
@@ -13739,26 +12764,6 @@
      {
       "name": "seriesRole",
       "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindow",
-      "type": "Boolean",
-      "value": false
-     },
-     {
-      "name": "slidingWindowDimension",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowLength",
-      "type": "String",
-      "value": ""
-     },
-     {
-      "name": "slidingWindowSelect",
-      "type": "JavaScript",
       "value": ""
      },
      {
@@ -13935,11 +12940,6 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
-     },
-     {
-      "name": "trendAreasFillOpacity",
-      "type": "Float",
-      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -14081,7 +13081,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
+      "value": "function init(){\n    \n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    console.log(\"Dentro de Indicadores\"+ paramGEC_SUB)\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    console.log(\"Dentro de Indicadores - Gec\"+ paramGEC)\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -14117,7 +13117,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "  function colorNota(valor){  \r\n    var x = valor;\r\n    if(x >= 12){\r\n      return \"diamante\";\r\n    }else if(x >= 10){\r\n      return \"ouro\";\r\n    }else if(x >= 8.5){\r\n      return \"prata\";\r\n    }else if(x >= 7){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+      "value": "  function colorNota(valor){  \r\n    var x = valor;\r\n    if(x >= 1.2*metaNota){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*metaNota){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*metaNota){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*metaNota){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
      }
     ],
     "type": "ComponentsFunction",
@@ -14135,7 +13135,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "  function color(valor, y){\r\n    var meta = getMeta(y);  \r\n    \r\n    var x = valor;\r\n    if(x >= 1.2*meta){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*meta){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*meta){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*meta){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+      "value": "  function color(valor, y){\r\n    var meta = getMeta(y);  \r\n    \r\n    var x = valor;\r\n    if(x >= 1.2*meta){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*meta){\r\n      return \"ouro\";\r\n    }else if(x >= 0.7*meta){\r\n      return \"prata\";\r\n    }else{\r\n        return \"bronze\";\r\n    }\r\n  } "
      }
     ],
     "type": "ComponentsFunction",
@@ -14208,7 +13208,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "['${p:pesoAderencia}','${p:pesoAgilidade}','${p:pesoQualidade}','${p:pesoAtendimento}','${p:pesoProdutividade}','${p:participacaoAderencia}','${p:participacaoCobertura}','${p:participacaoPrazo}','${p:participacaoPlanejamento}','${p:participacaoCorretude}','${p:participacaoDefeitos}','${p:participacaoAtendimento}','${p:participacaoEquipe}','${p:participacaoIndividual}','${p:metaAderencia}','${p:metaCobertura}','${p:metaPrazo}','${p:metaPlanejamento}','${p:metaCorretude}','${p:metaDefeitos}','${p:metaAtendimento}','${p:metaEquipe}','${p:metaIndividual}','${p:paramUnidade}']"
+      "value": "[\"${p:pesoAderencia}\",\"${p:pesoAgilidade}\",\"${p:pesoQualidade}\",\"${p:pesoAtendimento}\",\"${p:pesoProdutividade}\",\"${p:participacaoAderencia}\",\"${p:participacaoCobertura}\",\"${p:participacaoPrazo}\",\"${p:participacaoPlanejamento}\",\"${p:participacaoCorretude}\",\"${p:participacaoDefeitos}\",\"${p:participacaoAtendimento}\",\"${p:participacaoEquipe}\",\"${p:participacaoIndividual}\",\"${p:metaAderencia}\",\"${p:metaCobertura}\",\"${p:metaPrazo}\",\"${p:metaPlanejamento}\",\"${p:metaCorretude}\",\"${p:metaDefeitos}\",\"${p:metaAtendimento}\",\"${p:metaEquipe}\",\"${p:metaIndividual}\",\"${p:dataAprovacaoMaxFilhaFim}\",\"${p:dataAprovacaoMaxFilhaInicio}\",\"${p:dataAprovacaoFilhaFim}\",\"${p:dataAprovacaoFilhaInicio}\",\"${p:dataResolucaoFilhaFim}\",\"${p:dataResolucaoFilhaInicio}\",\"${p:dataResolucaoPaiFim}\",\"${p:dataResolucaoPaiInicio}\",\"${p:dataModificacaoFilhaFim}\",\"${p:dataModificacaoFilhaInicio}\",\"${p:dataModificacaoPaiFim}\",\"${p:dataModificacaoPaiInicio}\",\"${p:dataCriacaoFilhaFim}\",\"${p:dataCriacaoFilhaInicio}\",\"${p:dataCriacaoPaiFim}\",\"${p:dataCriacaoPaiInicio}\",\"${p:paramUnidade}\",\"${p:paramGEC}\",\"${p:paramGEC_SUB}\"]"
      },
      {
       "name": "oLanguage",
@@ -14253,7 +13253,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"]]"
+      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramGEC_SUB\",\"paramGEC_SUB\"],[\"paramGEC\",\"paramGEC\"]]"
      },
      {
       "name": "displayLength",
@@ -14349,11 +13349,6 @@
       "name": "paginateServerside",
       "type": "Boolean",
       "value": "false"
-     },
-     {
-      "name": "failureCallback",
-      "type": "JavaScript",
-      "value": ""
      },
      {
       "name": "preExecution",
@@ -15206,6 +14201,39 @@
     "typeDesc": "Simple parameter"
    },
    {
+    "id": "2922fc71-87c8-d218-f04a-ed4bda1ef321",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "metaNota"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "10"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
     "id": "b9551f6d-c6ce-2a85-788e-b59b24ed6fb3",
     "parent": "GENERIC",
     "properties": [
@@ -15831,6 +14859,74 @@
     ],
     "type": "ComponentsJavascriptParameter",
     "typeDesc": "Custom parameter"
+   },
+   {
+    "id": "f3f4579a-d657-0dec-97a6-0bc9de8ccf10",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "paramGEC"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "Todos"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "55e58946-2cf4-0dfc-1087-f1bed41002c2",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "paramGEC_SUB"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "Todos"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "SELECTORS",
@@ -17563,6 +16659,84 @@
     "typeDesc": "Text input Component"
    },
    {
+    "id": "3487dba9-a380-edf8-4849-50ad214c17f6",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "metaNotaComp"
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "metaNota"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "maxLength",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "size",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:metaNotaHTML}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component"
+   },
+   {
     "id": "b3fd4bf9-5163-7869-b657-706b204524b1",
     "parent": "SELECTORS",
     "properties": [
@@ -17688,12 +16862,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSET [SLICER] AS 'NONEMPTYCROSSJOIN([Rows],[Filtro])'\r\nSET [SLICER_AXIS] AS 'GENERATE([SLICER], {([Data Resolucao Pai].CURRENTMEMBER)})'\r\n\r\nSET [Filtro] AS 'FILTER(descendants([Data Resolucao Pai].MEMBERS, [Data Resolucao Pai].[Data de Resolucao Pai (D)]), ( [Data Resolucao Pai].CURRENTMEMBER IN ({${dataResolucaoPaiInicio}:${dataResolucaoPaiFim}}))) union FILTER(descendants([Data Resolucao Filha].MEMBERS, [Data Resolucao Filha].[Data de Resolucao Filha (D)]), ( [Data Resolucao Filha].CURRENTMEMBER IN ({${dataResolucaoFilhaInicio}:${dataResolucaoFilhaFim}}))) union  FILTER(descendants([Data Criacao Pai].MEMBERS, [Data Criacao Pai].[Data Criacao Pai (D)]), ( [Data Criacao Pai].CURRENTMEMBER IN ({${dataCriacaoPaiInicio}:${dataCriacaoPaiFim}}))) union FILTER(descendants([Data Criacao Filha].MEMBERS, [Data Criacao Filha].[Data Criacao Filha (D)]), ( [Data Criacao Filha].CURRENTMEMBER IN ({${dataCriacaoFilhaInicio}:${dataCriacaoFilhaFim}}))) union FILTER(descendants([Data Modificacao Pai].MEMBERS, [Data Modificacao Pai].[Data Modificacao Pai (D)]), ( [Data Modificacao Pai].CURRENTMEMBER IN ({${dataModificacaoPaiInicio}:${dataModificacaoPaiFim}}))) union FILTER(descendants([Data Modifcacao Filha].MEMBERS, [Data Modifcacao Filha].[Data Modifcacao Filha (D)]), ( [Data Modifcacao Filha].CURRENTMEMBER IN ({${dataModificacaoFilhaInicio}:${dataModificacaoFilhaFim}})))'\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\nFROM [SIALG - Demandas]  where ([SLICER_AXIS])"
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${paramGEC}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -17769,12 +16943,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nset [Rows] as FILTER(\r\n[Unidades.GEA].[GEA].members\r\n, [Measures].[Qualidade] > 0 )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Qualidade] ON COLUMNS\r\n\r\nFROM [SIALG - RTC Indicadores]"
+      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${paramGEC}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -17794,7 +16968,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"1\",\"2\"]"
+      "value": "[\"2\",\"3\"]"
      },
      {
       "name": "outputMode",
@@ -17850,12 +17024,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*0.8    ,0.8     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/(0.80*0.65*2) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*0.7    ,0.7     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/(0.70*0.35*2) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*0.8    ,0.8     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/(0.80*0.6*2.5) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*0.8    ,0.8     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/(0.80*0.4*2.5) + IIF(  [Measures].[Criadas no Período]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Período]>2*1.05    ,1.05    ,[Measures].[Implantadas]/[Measures].[Criadas no Período]   )   ,0  )/(1.05*1*1.5) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.05    ,0.05     ,[Measures].[Qt. Pontos Função de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.05*0.65*2) + IIF(  [Measures].[Qt. Pontos de Função SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]>2*0.01    ,0.01     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Função SUCTI]   )   ,0  )/(0.01*0.35*2) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*0.8    ,0.8     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/(0.8*0.6*2) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*1.3    ,1.3     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/(1.3*0.4*2)'\r\n\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows],[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\n\n\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\n\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\n\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'\n\nset [Rows] as FILTER(\n\n{${paramGEC_SUB}}\n\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\n )\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\n\n\n\nSELECT\n[SORTED_ROW] ON ROWS\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\n  ,[Measures].[Corretude],[Measures].[Defeitos]\n  , [Measures].[Atendimento], [Measures].[Equipe]\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\n\nFROM [SIALG - Demandas] \n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\"],[\"metaEquipe\",\"participacaoAderencia\",\"String\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\"],[\"\",\"paramUnidade\",\"String\",\"\"]]"
+      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"participacaoAderencia\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramGEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -17931,12 +17105,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18012,12 +17186,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18093,12 +17267,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${paramGEC}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18174,12 +17348,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${paramGEC}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18255,12 +17429,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n[Unidades.GEA].[GEA].members\r\n, [Measures].[Cumprimento] > 0 )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cumprimento] ON COLUMNS\r\n\r\nFROM [SIALG - RTC Indicadores]"
+      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18280,7 +17454,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"1\",\"2\"]"
+      "value": "[\"2\",\"3\"]"
      },
      {
       "name": "outputMode",
@@ -18336,12 +17510,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cobertura] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18498,12 +17672,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Aderencia] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${paramGEC}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18925,7 +18099,7 @@
    }
   ]
  },
- "filename": "/public/sialg-master/SIALG/Indicadores.cdfde",
+ "filename": "/public/SIALG/Indicadores.cdfde",
  "layout": {
   "rows": [
    {
@@ -21687,7 +20861,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">GEA</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
+      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th id=\"metaNotaHTML\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">GEA</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
      },
      {
       "name": "fontSize",
@@ -21710,534 +20884,534 @@
    },
    {
     "id": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "legendas",
-      "type": "Id"
+      "type": "Id",
+      "value": "legendas"
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
    },
    {
     "id": "e9afa662-1480-099f-8a93-ad20bb0dedc8",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "2",
-      "type": "String"
+      "type": "String",
+      "value": "2"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "3a865ac6-4c1b-6201-5e38-8d6b2f59cfdb",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
     "properties": [
      {
       "name": "name",
-      "value": "legenda01",
-      "type": "Id"
+      "type": "Id",
+      "value": "legenda01"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "2",
-      "type": "String"
+      "type": "String",
+      "value": "2"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "2e76a4ef-cdbd-01c6-41c2-67e7f34867d6",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
     "parent": "3a865ac6-4c1b-6201-5e38-8d6b2f59cfdb",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "html",
-      "value": "<span class=\"fa fa-square imp-blue \" aria-hidden=\"true\"></span>\r\nMuito Satisfatório ",
-      "type": "Html"
+      "type": "Html",
+      "value": "<span class=\"fa fa-square imp-blue \" aria-hidden=\"true\"></span>\r\nMuito Satisfatório "
      },
      {
       "name": "fontSize",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "color",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    },
    {
     "id": "d0e1f402-8b64-7388-698f-2450dc68fbc8",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
     "properties": [
      {
       "name": "name",
-      "value": "legenda02",
-      "type": "Id"
+      "type": "Id",
+      "value": "legenda02"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "2",
-      "type": "String"
+      "type": "String",
+      "value": "2"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "14364b26-b8c1-8563-da16-89be931d8012",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
     "parent": "d0e1f402-8b64-7388-698f-2450dc68fbc8",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "html",
-      "value": "<span class=\"fa fa-square imp-green\" aria-hidden=\"true\"></span>\r\nSatisfatório ",
-      "type": "Html"
+      "type": "Html",
+      "value": "<span class=\"fa fa-square imp-green\" aria-hidden=\"true\"></span>\r\nSatisfatório "
      },
      {
       "name": "fontSize",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "color",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    },
    {
     "id": "22d2828a-95fa-b04a-7a96-3f4571eeba89",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
     "properties": [
      {
       "name": "name",
-      "value": "legenda03",
-      "type": "Id"
+      "type": "Id",
+      "value": "legenda03"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "2",
-      "type": "String"
+      "type": "String",
+      "value": "2"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "72cef352-1f34-cac0-7359-a4051c077d6b",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
     "parent": "22d2828a-95fa-b04a-7a96-3f4571eeba89",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "html",
-      "value": "<span class=\"fa fa-square imp-yellow\" aria-hidden=\"true\"></span>\r\nNecessita de melhorias ",
-      "type": "Html"
+      "type": "Html",
+      "value": "<span class=\"fa fa-square imp-yellow\" aria-hidden=\"true\"></span>\r\nNecessita de melhorias "
      },
      {
       "name": "fontSize",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "color",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    },
    {
     "id": "7f74f2a6-eb51-9d0c-a61e-c544d9572aa6",
-    "type": "LayoutSpace",
-    "typeDesc": "Space",
     "parent": "22d2828a-95fa-b04a-7a96-3f4571eeba89",
     "properties": [
      {
       "name": "height",
-      "value": "10",
-      "type": "Integer"
+      "type": "Integer",
+      "value": "10"
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutSpace",
+    "typeDesc": "Space"
    },
    {
     "id": "baef08be-9473-b1ac-9af3-8fb7a5d2a06e",
-    "type": "LayoutBootstrapColumn",
-    "typeDesc": "Column",
     "parent": "5b0f424e-9b91-7e3b-6632-e2126d7e956d",
     "properties": [
      {
       "name": "name",
-      "value": "legenda04",
-      "type": "Id"
+      "type": "Id",
+      "value": "legenda04"
      },
      {
       "name": "bootstrapExtraSmall",
-      "value": "3",
-      "type": "String"
+      "type": "String",
+      "value": "3"
      },
      {
       "name": "bootstrapSmall",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapMedium",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapLarge",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "bootstrapCssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      },
      {
       "name": "height",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
+      "type": "RoundCorners",
+      "value": ""
      },
      {
       "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
+      "type": "TextAlign",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
    },
    {
     "id": "fac758cf-c7f2-8d33-edbf-a27ceb50926f",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
     "parent": "baef08be-9473-b1ac-9af3-8fb7a5d2a06e",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
+      "type": "Id",
+      "value": ""
      },
      {
       "name": "html",
-      "value": "<span class=\"fa fa-square imp-red\" aria-hidden=\"true\"></span>\nNecessita de melhorias importantes ",
-      "type": "Html"
+      "type": "Html",
+      "value": "<span class=\"fa fa-square imp-red\" aria-hidden=\"true\"></span>\nNecessita de melhorias importantes "
      },
      {
       "name": "fontSize",
-      "value": "",
-      "type": "Integer"
+      "type": "Integer",
+      "value": ""
      },
      {
       "name": "color",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
    },
    {
     "id": "7267813d-dfb8-f117-b4d9-d15cdb3a65c8",
-    "type": "LayoutSpace",
-    "typeDesc": "Space",
     "parent": "baef08be-9473-b1ac-9af3-8fb7a5d2a06e",
     "properties": [
      {
       "name": "height",
-      "value": "10",
-      "type": "Integer"
+      "type": "Integer",
+      "value": "10"
      },
      {
       "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
+      "type": "Color",
+      "value": ""
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutSpace",
+    "typeDesc": "Space"
    }
   ],
   "title": "CDF - Sample structure"
