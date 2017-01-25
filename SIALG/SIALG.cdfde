@@ -216,7 +216,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    console.log('### Newval_SUB')\n    console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newValGEC + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n    console.log('###EStou aqui SUB...###');\n    //alert(Dashboards.getParam('paramGEC'));\n    \n   \n    \n} "
+      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    console.log('### Newval_SUB')\n    console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newValGEC + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n    console.log('###EStou aqui SUB...###');\n    //alert(Dashboards.getParam('paramGEC'));\n    \n   //alert(\"paramGEC_SUB: \" + paramGEC_SUB);\n    \n} "
      },
      {
       "name": "tooltip",
@@ -310,7 +310,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function f(cda){\n    //var defaultVal = cda.resultset[0][0];\n    console.log('###cda###');\n    console.log(cda); \n    //Dashboards.setParam('paramGEC_sql',defaultVal);\n} "
+      "value": "function f(cda){\n    //var defaultVal = cda.resultset[0][0];\n    //console.log('###cda###');\n    //console.log(cda); \n    //Dashboards.setParam('paramGEC_sql',defaultVal);\n} "
      },
      {
       "name": "preChange",
@@ -320,7 +320,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\n    // var newVal = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal = Dashboards.getParam('paramGEC');\n    console.log('### Newval')\n    console.log(newVal);\n       \n    //capturando o valor do paramGEC_sub\n    paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n    var newValSUB = Dashboards.getParam('paramGEC_SUB');\n\n    \n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\"}}';\n    var bookmark = encodeURI(strBookmark); \n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\n    indicadoresIframe.src = urlIndicadores;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n    \n    console.log('###EStou aqui...###');\n    console.log(strBookmark);\n    \n    var param_temp = newVal;\n    console.log(newVal);\n    var array_final = [];\n    \n    for (i = 0; i < param_temp.length; i++) { \n      var res = param_temp[i].split(\".\");\n      var res1 = res[3];\n      var res2 = res1.replace(\"]\",\"\");\n      var res3 = res2.replace(\"[\",\"\");\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\n      if(res3 == \"MEMBERS\"){\n          res3 = \"Todos\";\n      }\n      array_final.push(res3);\n      \n    } \n    console.log(array_final);\n    Dashboards.setParam('paramGEC_SQL',array_final);\n    Dashboards.fireChange('paramGEC_SQL', array_final);\n    console.log(Dashboards.getParam('paramGEC_SQL'));\n    //alert(paramGEC_SQL);\n    \n} "
+      "value": "function postChange(){\n    // var newVal = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal = Dashboards.getParam('paramGEC');\n    console.log('### Newval')\n    console.log(newVal);\n       \n    //capturando o valor do paramGEC_sub\n   // paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n   // var newValSUB = Dashboards.getParam('paramGEC_SUB');\n\n\n\n  //Toda vez que o filtro unidade for clicado, sera atribuido o \n    //valor de unidade.MEMBERS para a subunidade.\n  //####################  \n    var param_temp = newVal;\n    console.log(newVal);\n    var array_final = [];\n    \n    for (i = 0; i < param_temp.length; i++) { \n      var res = param_temp[i].split(\".\");\n      var res1 = res[3];\n      var res2 = res1.replace(\"]\",\"\");\n      var res3 = res2.replace(\"[\",\"\");\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\n      if(res3 == \"MEMBERS\"){\n          res3 = \"Todos\";\n      }\n      array_final.push(res3);\n      \n    }\n    \n    \n     arrayAux = array_final;\n    arraySubunidade = [];\n    \n    for (i = 0; i < arrayAux.length; i++) { \n     \n      var temp_array = arrayAux[i];\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\n      arraySubunidade.push(final);\n    \n    }\nvar newValSUB = arraySubunidade;\n//alert('ArraySubunidade: '+arraySubunidade);\n\n\n//#########################\n    \n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\"}}';\n    var bookmark = encodeURI(strBookmark); \n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\n    indicadoresIframe.src = urlIndicadores;\n     var geralIframe = document.getElementById(\"geralIframe\");\n    geralIframe.src = geralIframe.src;\n    \n    console.log('###EStou aqui...###');\n    console.log(strBookmark);\n    \n    var param_temp = newVal;\n    console.log(newVal);\n    var array_final = [];\n    \n    for (i = 0; i < param_temp.length; i++) { \n      var res = param_temp[i].split(\".\");\n      var res1 = res[3];\n      var res2 = res1.replace(\"]\",\"\");\n      var res3 = res2.replace(\"[\",\"\");\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\n      if(res3 == \"MEMBERS\"){\n          res3 = \"Todos\";\n      }\n      array_final.push(res3);\n      \n    } \n    console.log(array_final);\n    Dashboards.setParam('paramGEC_SQL',array_final);\n    Dashboards.fireChange('paramGEC_SQL', array_final);\n    console.log(Dashboards.getParam('paramGEC_SQL'));\n    //alert(paramGEC_SQL);\n    \n    /*\n    //Toda vez que o filtro unidade for clicado, sera atribuido o \n    //valor de unidade.MEMBERS para a subunidade.\n    \n    arrayAux = array_final;\n    arraySubunidade = [];\n    \n    for (i = 0; i < arrayAux.length; i++) { \n     \n      var temp_array = arrayAux[i];\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\n      arraySubunidade.push(final);\n    \n    }\n    \n   //alert(\"Valor q vai para o paramGEC_SUB: \" + arraySubunidade);\n    Dashboards.setParam('paramGEC_SUB',arraySubunidade);\n    Dashboards.fireChange('paramGEC_SUB',arraySubunidade);\n   */\n}    "
      },
      {
       "name": "tooltip",
@@ -1494,21 +1494,21 @@
    },
    {
     "id": "ab0289d2-01a3-1185-e132-f3cfa9e192e7",
-    "type": "LayoutImage",
-    "typeDesc": "Image",
     "parent": "7ab07b78-32ad-50fa-12db-f88fdc70dbbd",
     "properties": [
      {
       "name": "url",
-      "value": "${solution:CTools_dashboard_files/img/logo-caixa.png}",
-      "type": "String"
+      "type": "String",
+      "value": "${solution:CTools_dashboard_files/img/logo-caixa.png}"
      },
      {
       "name": "cssClass",
-      "value": "",
-      "type": "String"
+      "type": "String",
+      "value": ""
      }
-    ]
+    ],
+    "type": "LayoutImage",
+    "typeDesc": "Image"
    },
    {
     "id": "790effd8-fa98-62ed-7cac-0cc17ee453f2",

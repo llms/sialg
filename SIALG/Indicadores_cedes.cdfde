@@ -13363,7 +13363,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        if(x < 10){\r\n            tr += \"<td class='diamante'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n            tr += \"<td class='diamante'>\"+l+\"</td>\";\r\n            tr += \"<td class='diamante'>\"+a.resultset[x][1]+\"</td>\";    \r\n        }else{\r\n            tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n            tr += \"<td>\"+l+\"</td>\";\r\n            tr += \"<td>\"+a.resultset[x][1]+\"</td>\";    \r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n        tr += \"<td>\"+l+\"</td>\";\r\n        tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -18096,10 +18096,82 @@
     "rowName": "sql over sqlJndi",
     "type": "Componentssql_sqlJndi",
     "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "45ae2b11-4ebb-f402-0fcd-d13e93860c7b",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "value": "teste",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "",
+      "type": "Jndi"
+     },
+     {
+      "name": "query",
+      "value": "",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cacheKeys",
+      "value": "[]",
+      "type": "CacheKeysValues"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "rowName": "sql over sqlJndi"
    }
   ]
  },
- "filename": "/public/SIALG/Indicadores.cdfde",
+ "filename": "/public/SIALG/Indicadores_cedes.cdfde",
  "layout": {
   "rows": [
    {
