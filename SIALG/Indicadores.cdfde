@@ -6613,7 +6613,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": ""
+      "value": "function postFetchPlanejamento(c){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetPlanejamento = [];\n    tempMetadataPlanejamento = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataPlanejamento.push(c.metadata[3]);\n            tempMetadataPlanejamento.push(c.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<c.resultset.length;y++){\n         \n                tempResultsetPlanejamento.push(c.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataPlanejamento.push(c.metadata[2]);\n                tempMetadataPlanejamento.push(c.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<c.resultset.length;x++){\n         \n                    tempResultsetPlanejamento.push(c.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    c.metadata = tempMetadataPlanejamento;\n        \n           \n    console.log('###tempMetadataPlanejamento###');\n    console.log(tempMetadataPlanejamento);\n    \n    console.log('###tempResultsetPlanejamento###');\n    console.log(tempResultsetPlanejamento);\n    \n    console.log('###postFetchPlanejamento###');\n    console.log(c);\n\n} "
      },
      {
       "name": "preChange",
@@ -7917,7 +7917,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": ""
+      "value": "function postFetchPrazo(b){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetPrazo = [];\n    tempMetadataPrazo = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataPrazo.push(b.metadata[3]);\n            tempMetadataPrazo.push(b.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<b.resultset.length;y++){\n         \n                tempResultsetPrazo.push(b.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataPrazo.push(b.metadata[2]);\n                tempMetadataPrazo.push(b.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<b.resultset.length;x++){\n         \n                    tempResultsetPrazo.push(b.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    b.metadata = tempMetadataPrazo;\n        \n           \n    console.log('###tempMetadataPrazo###');\n    console.log(tempMetadataPrazo);\n    \n    console.log('###tempResultsetPrazo###');\n    console.log(tempResultsetPrazo);\n    \n    console.log('###postFetchPrazo###');\n    console.log(b);\n\n} "
      },
      {
       "name": "preChange",
@@ -9161,7 +9161,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
@@ -9211,7 +9211,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  //alert(Dashboards.getParam('paramGEC'));\r\n} "
      },
      {
       "name": "postExecution",
@@ -9221,7 +9221,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": ""
+      "value": "function postFetchCobertura(a){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetCobertura = [];\n    tempMetadataCobertura = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataCobertura.push(a.metadata[3]);\n            tempMetadataCobertura.push(a.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<a.resultset.length;y++){\n         \n                tempResultsetCobertura.push(a.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataCobertura.push(a.metadata[2]);\n                tempMetadataCobertura.push(a.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<a.resultset.length;x++){\n         \n                    tempResultsetCobertura.push(a.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    a.metadata = tempMetadataCobertura;\n        \n           \n    console.log('###tempMetadataCobertura###');\n    console.log(tempMetadataCobertura);\n    \n    console.log('###tempResultsetCobertura###');\n    console.log(tempResultsetCobertura);\n    \n    console.log('###postFetchCobertura###');\n    console.log(a);\n\n} "
      },
      {
       "name": "preChange",
@@ -13363,7 +13363,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        if(x < 10){\r\n            tr += \"<td class='diamante'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n            tr += \"<td class='diamante'>\"+l+\"</td>\";\r\n            tr += \"<td class='diamante'>\"+a.resultset[x][1]+\"</td>\";    \r\n        }else{\r\n            tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n            tr += \"<td>\"+l+\"</td>\";\r\n            tr += \"<td>\"+a.resultset[x][1]+\"</td>\";    \r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n            if(x < 10){\r\n                tr += \"<td class='diamante'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='diamante'>\"+l+\"</td>\";\r\n                tr += \"<td class='diamante'>\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable();\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -17373,7 +17373,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17454,7 +17454,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17535,7 +17535,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",

@@ -262,7 +262,6 @@ FROM [SIALG - Demandas]]]></Query>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Output indexes="2,3" mode="include"/>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
       </Parameters>
@@ -286,7 +285,6 @@ FROM [SIALG - Demandas]]]></Query>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Output indexes="2,3" mode="include"/>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
       </Parameters>
@@ -309,7 +307,6 @@ FROM [SIALG - Demandas]]]></Query>
       <BandedMode>classic</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Output indexes="2,3" mode="include"/>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
       </Parameters>
