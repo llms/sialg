@@ -125,6 +125,110 @@
     "typeDesc": "Date range input Component"
    },
    {
+    "id": "61bb928c-835b-15a2-83be-4d30528590e9",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "filtroCEDES_SUB"
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "${p:paramCEDES_SUB}"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:paramCEDES_SQL}\"]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[[\"paramCEDES_SQL\",\"paramCEDES_SQL\"]]"
+     },
+     {
+      "name": "externalPlugin",
+      "type": "externalPluginCustom",
+      "value": ""
+     },
+     {
+      "name": "valueAsId",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "unidCEDES_SUB"
+     },
+     {
+      "name": "valuesArray",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "size",
+      "type": "Integer",
+      "value": "4"
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:${p:filtroCEDES_Sub}}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtro_CEDES option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramCEDES_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramCEDES_SQL','paramCEDES');\n    var newVal_sub = Dashboards.getParam('paramCEDES_SUB');\n    console.log('### Newval_SUB')\n    console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValCEDES = Dashboards.getParam('paramCEDES');\n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramCEDES_SUB\":\"' + newVal_sub + '\",\"paramCEDES\":\"' + newValCEDES + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframeCEDES\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_CEDES.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n    console.log('###EStou aqui SUB...###');\n    //alert(Dashboards.getParam('paramGEC'));\n    \n   \n    \n} "
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "SelectMulti Component",
+    "type": "ComponentsSelectMulti",
+    "typeDesc": "Multiple Select Component"
+   },
+   {
     "id": "6e62fff3-3eac-8ac1-74c5-6a1e170553de",
     "parent": "SELECTORS",
     "properties": [
@@ -217,6 +321,110 @@
       "name": "postChange",
       "type": "JavaScript",
       "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    console.log('### Newval_SUB')\n    console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    \n    \n    \n    \n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newVal_sub + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n    console.log('###EStou aqui SUB...###');\n\n    /*\n    temp_paramGEC = Dashboards.getParam('paramGEC_SUB');\n    alert(\"paramGEC no SUB: \" + temp_paramGEC);\n    Dashboards.setParam(' paramGEC',temp_paramGEC);\n    Dashboards.fireChange('paramGEC',temp_paramGEC);\n    */\n    \n  //  aux_paramGEC = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].' ++;\n    \n    //Dashboards.setParam('paramGEC',);\n    //Dashboards.fireChange('paramGEC',);\n    \n    \n    \n} "
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "SelectMulti Component",
+    "type": "ComponentsSelectMulti",
+    "typeDesc": "Multiple Select Component"
+   },
+   {
+    "id": "6e1c3dd8-e3fb-3b2f-2165-8ef6b3d8da15",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "filtroCEDES"
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "${p:paramCEDES}"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:paramCEDES}\"]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "externalPlugin",
+      "type": "externalPluginCustom",
+      "value": ""
+     },
+     {
+      "name": "valueAsId",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "unidCEDES_new"
+     },
+     {
+      "name": "valuesArray",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "size",
+      "type": "Integer",
+      "value": "4"
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:${p:filtro_CEDES}}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": "function f(cda){\n    //var defaultVal = cda.resultset[0][0];\n    //console.log('###cda###');\n    //console.log(cda); \n    //Dashboards.setParam('paramGEC_sql',defaultVal);\n} "
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": "function postChange(){\r\n    // var newVal = $(\"#filtro_CEDES option:selected\").val();\r\n   \r\n    //var newVal = Dashboards.getParam('paramCEDES_SUB');\r\n    \r\n    //##LIXO##Dashboards.setParam('paramCEDES_SQL','paramCEDES');\r\n    var newVal = Dashboards.getParam('paramCEDES');\r\n    console.log('### Newval')\r\n    console.log(newVal);\r\n       \r\n    //capturando o valor do paramCEDES_sub\r\n    paramCEDES_SUB = '[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members';\r\n    var newValSUB = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    \r\n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newVal + '\",\"paramCEDES_SUB\":\"' + newValSUB + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_CEDES.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    console.log('###EStou aqui...###');\r\n    console.log(strBookmark);\r\n    \r\n    var param_temp = newVal;\r\n    console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) { \r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[5];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3 == \"MEMBERS\"){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    } \r\n    console.log(array_final);\r\n    Dashboards.setParam('paramCEDES_SQL',array_final);\r\n    Dashboards.fireChange('paramCEDES_SQL', array_final);\r\n    console.log('###array_fina###');\r\n    console.log(Dashboards.getParam('paramCEDES_SQL'));\r\n    //alert(paramCEDES_SQL);\r\n    \r\n} "
      },
      {
       "name": "tooltip",
@@ -719,6 +927,108 @@
     "typeDesc": "Simple parameter"
    },
    {
+    "id": "5aa77095-99ce-079f-c7d3-3b45c9910e53",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "paramCEDES",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "public",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ],
+    "rowName": "Simple Parameter"
+   },
+   {
+    "id": "397b7c12-1e3f-696d-a403-281c95207bde",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "paramCEDES_SUB",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "public",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ],
+    "rowName": "Simple Parameter"
+   },
+   {
+    "id": "6df9afe1-3646-fa73-0a42-f7cb621a35ae",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "paramCEDES_SQL",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "Todos",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "public",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ],
+    "rowName": "Simple Parameter"
+   },
+   {
     "id": "SCRIPT",
     "name": "Scripts",
     "parent": "UnIqEiD",
@@ -770,6 +1080,78 @@
     "typeDesc": "<i>Group</i>"
    },
    {
+    "id": "11c5dd1e-ffc8-71b3-151a-3c461ca548da",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidCEDES_SUB"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "SELECT  SG_CEDES_COMPLETO_MDX, \"Coord TI Detalhe\" FROM(\r\n\r\n(SELECT 'Todos' as \"Coord TI Detalhe\",\r\n('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as \"Sigla Coord TI\")\r\nUNION\r\nSELECT distinct \"Coord TI Detalhe\", \r\n    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || \"Coord TI Detalhe\" || ']') as SG_CEDES_COMPLETO_MDX,\r\n    \"Sigla Coord TI\"\r\n    FROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\n    \tWHERE  ('Todos' IN (${paramCEDES_SQL}) or \"Coord TI Site\" IN (${paramCEDES_SQL}))  AND \"Sigla Coord TI\" <> 'NI' and \"Sigla Coord TI\" <> 'GITEC'\r\n\t\tORDER BY \"Sigla Coord TI\", \"Coord TI Detalhe\") as SUB\r\n\t\t"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[[\"paramCEDES_SQL\",\"\",\"StringArray\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
     "id": "07cd75c8-e299-680d-bbe7-c21b4519b869",
     "meta": "CDA",
     "meta_conntype": "sql.jndi",
@@ -800,6 +1182,78 @@
       "name": "parameters",
       "type": "CdaParameters",
       "value": "[[\"paramGEC_SQL\",\"\",\"StringArray\",\"\",\"\"]]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "sql over sqlJndi",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   },
+   {
+    "id": "49896274-0085-4105-d1b2-6c97b7b6f99b",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidCEDES_new"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": "select \"Coord TI Site\", dis_SG_CEDES   from (\r\n\r\n(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as \"Coord TI Site\",  'a' as \"Sigla Coord TI\" )\r\n UNION \r\nSELECT distinct \"Coord TI Site\" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || \"Coord TI Site\" || ']') as \"Coord TI Site\",\r\n  \"Sigla Coord TI\"\r\nFROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\nwhere \"Sigla Coord TI\" <> 'NI' and \"Sigla Coord TI\" <> 'GITEC'\r\norder by \"Sigla Coord TI\",\"Coord TI Site\") as sub;\r\n"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[]"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -1070,6 +1524,88 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "93393abe-e84b-4c69-be7b-ca0007e5f264",
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "unidCEDES_mdx"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": "SIALG"
+     },
+     {
+      "name": "catalog",
+      "type": "MondrianCatalog",
+      "value": "mondrian:/SIALG+-+RTC"
+     },
+     {
+      "name": "query",
+      "type": "CurrentMdxQuery",
+      "value": "WITH\r\n\r\nSET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'\r\n\r\nSELECT\r\n[*BASE_MEMBERS__Measures_] ON COLUMNS\r\n,[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members ON ROWS\r\nFROM [SIALG - Demandas]"
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[]"
+     },
+     {
+      "name": "bandedMode",
+      "type": "BandedMode",
+      "value": "compact"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[\"0\"]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "rowName": "mdx over mondrianJndi",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi"
    },
    {
     "id": "944fd24c-43a7-0508-c900-cda6cbb7f61f",
@@ -2987,7 +3523,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosGEC\" align=\"left\"><i class=\"fa fa-filter\"></i> Filtros</button>\n  <div id=\"filtrosGEC\" class=\"collapse column\">\n   <div class=\"col-md-6\" class=\"tamanho\" ><strong>Unidade </strong><div id=\"filtroGEC\"></div></div>\n   <div class=\"col-md-6\" class=\"tamanho\" ><strong>Subunidade</strong> <div id=\"filtroGECSub\"></div></div>\n</div> "
+      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosGEC\" align=\"left\"><i class=\"fa fa-filter\"></i> Filtros</button>\n  <div id=\"filtrosGEC\" class=\"collapse column\">\n   <div class=\"col-md-6\" class=\"tamanho\" align=\"left\" ><strong>Unidade </strong><div id=\"filtroGEC\"></div></div>\n   <div class=\"col-md-6\" class=\"tamanho\" align=\"left\"><strong>Subunidade</strong> <div id=\"filtroGECSub\"></div></div>\n</div> "
      },
      {
       "name": "fontSize",
@@ -3553,7 +4089,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosCEDES\" align=\"left\"><i class=\"fa fa-filter\"></i></button>\n                        <div id=\"filtrosCEDES\" class=\"collapse\">\n                            <div id=\"filtroCEDES\">Teste</div>\n                           <div id=\"filtroCEDESSub\">Teste</div>\n                        </div> "
+      "value": "<button class=\"btn btn-default\" data-toggle=\"collapse\" data-target=\"#filtrosCEDES\" align=\"left\"><i class=\"fa fa-filter\"></i> Filtros</button>\r\n  <div id=\"filtrosCEDES\" class=\"collapse column\">\r\n   <div class=\"col-md-6\" class=\"tamanho\" align = \"left\"><strong>Unidade</strong><div id=\"filtro_CEDES\"></div></div>\r\n   <div class=\"col-md-6\" class=\"tamanho\" align = \"left\" ><strong>Subunidade</strong> <div id=\"filtroCEDES_Sub\"></div></div>\r\n</div> \r\n "
      },
      {
       "name": "fontSize",
@@ -3649,7 +4185,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe\n               src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?paramUnidade=CEDES\"\n               id=\"indicadoresIframe\"\n               width=\"100%\"\n               height=\"2500px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
+      "value": "<iframe\r\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_CEDES.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramCEDES\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members\",\"paramCEDES_SUB\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members\"}}'\r\n               id=\"indicadoresIframeCEDES\"\r\n               width=\"100%\"\r\n               height=\"1600px\" style=\"\r\n   border-left-width: 0px;\r\n   border-bottom-width: 0px;\r\n   border-right-width: 0px;\r\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",
