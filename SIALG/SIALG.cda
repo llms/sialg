@@ -49,7 +49,7 @@
 ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as "Sigla Coord TI")
 UNION
 SELECT distinct "Coord TI Detalhe", 
-    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || "Coord TI Detalhe" || ']') as SG_CEDES_COMPLETO_MDX,
+    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || "Coord TI Detalhe" || ']') as SG_CEDES_COMPLETO_MDX,
     "Sigla Coord TI"
     FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
     	WHERE  ('Todos' IN (${paramCEDES_SQL}) or "Coord TI Site" IN (${paramCEDES_SQL}))  AND "Sigla Coord TI" <> 'NI' and "Sigla Coord TI" <> 'GITEC'
