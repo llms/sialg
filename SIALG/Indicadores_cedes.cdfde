@@ -28,7 +28,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Individual"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -1332,7 +1332,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Equipe"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -3940,7 +3940,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Defeitos"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -5244,7 +5244,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Corretude"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -6548,7 +6548,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Planejamento"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -7852,7 +7852,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Prazo"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -9156,7 +9156,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Cobertura"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -11764,7 +11764,7 @@
      {
       "name": "title",
       "type": "String",
-      "value": "Aderência"
+      "value": ""
      },
      {
       "name": "listeners",
@@ -13393,6 +13393,537 @@
     ],
     "type": "ComponentsTable",
     "typeDesc": "table Component"
+   },
+   {
+    "id": "3398a5b4-3817-2047-cec0-bbbb71239b84",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloIndividual"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaIndividual}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Individual (\" + Dashboards.getParameterValue(\"metaIndividual\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:individual_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "29d0c73e-12bd-b8a4-76f6-7301e09c2176",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloEquipe"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaEquipe}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Equipe (\" + Dashboards.getParameterValue(\"metaEquipe\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:equipe_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "7af744b3-f62d-a4ef-2835-3153ef70629b",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloDefeitos"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaDefeitos}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Defeitos (\" + Dashboards.getParameterValue(\"metaDefeitos\")+ \")\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:defeitos_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "82b64e2f-e940-9c65-b1b0-c23bca7b4317",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloCorretude"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaCorretude}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Corretude (\" + Dashboards.getParameterValue(\"metaCorretude\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:corretude_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "e2b20844-eab4-298a-3fb0-6928219a2b80",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloAtendimento"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaAtendimento}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Atendimento (\" + Dashboards.getParameterValue(\"metaAtendimento\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:atendimento_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "1dce898d-3ee5-0edb-16b3-a21e2bb18c6e",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloPlanejamento"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaPlanejamento}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Planejamento (\" + Dashboards.getParameterValue(\"metaPlanejamento\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:planejamento_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "0d9a0a65-94c3-56c7-d755-d1e7d3446c0b",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloPrazo"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaPrazo}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Prazo (\" + Dashboards.getParameterValue(\"metaPrazo\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:prazo_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "12a59ac0-ec0b-3b97-b179-c511cc5aaf31",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloCobertura"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaCobertura}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Cobertura (\" + Dashboards.getParameterValue(\"metaCobertura\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:cobertura_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "3c59d936-bcab-f469-5fb1-df9507761830",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tituloAderencia"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:metaAderencia}\"]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function (){\r\n     return \"Aderência (\" + Dashboards.getParameterValue(\"metaAderencia\")+ \"%)\";\r\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:aderencia_param}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
    },
    {
     "id": "GENERIC",
@@ -18420,7 +18951,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Aderencia"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -18589,7 +19120,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<h6>Aderência</h6> "
+      "value": "<h6> Aderência</h6> "
      },
      {
       "name": "fontSize",
@@ -18617,7 +19148,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoAderencia"
      },
      {
       "name": "height",
@@ -18655,7 +19186,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Aderencia"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -18712,13 +19243,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "aa635dc9-d3b1-f17f-91a4-cbbb48831814",
+    "parent": "21a931ae-3e63-e2eb-e77e-82c40439b16d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"aderencia_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "d52c3202-d166-54ee-6ad3-24fd7ad357fc",
     "parent": "21a931ae-3e63-e2eb-e77e-82c40439b16d",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -18774,7 +19338,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoCobertura"
      },
      {
       "name": "height",
@@ -18812,7 +19376,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Cobertura"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -18869,13 +19433,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "639e781c-9464-1843-ae56-c011bb90a015",
+    "parent": "d1049e1f-b4e9-cc4b-aa18-4869dcac9325",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"cobertura_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "df14eed1-4275-60fc-13bb-f33135b6667d",
     "parent": "d1049e1f-b4e9-cc4b-aa18-4869dcac9325",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -18908,7 +19505,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Agilidade"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -19105,7 +19702,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoPrazo"
      },
      {
       "name": "height",
@@ -19143,7 +19740,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Prazo"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -19200,13 +19797,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "2ac097f9-d827-2827-63df-2d9fba3092a8",
+    "parent": "18ab94bc-6ac5-43ba-9861-48375332fd76",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"prazo_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "ddfb070e-3187-ef14-1bc3-d275f0cd5d6f",
     "parent": "18ab94bc-6ac5-43ba-9861-48375332fd76",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -19262,7 +19892,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoPlanejamento"
      },
      {
       "name": "height",
@@ -19300,7 +19930,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Planejamento"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -19357,13 +19987,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "8e7e6557-9497-7300-07cf-0812f83b8368",
+    "parent": "8dfc671c-3e1b-4e7a-5ebf-de7548bc5772",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"planejamento_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "3bfe12de-4614-4a0f-783d-28b0cfe3113e",
     "parent": "8dfc671c-3e1b-4e7a-5ebf-de7548bc5772",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -19396,7 +20059,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Atendimento"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -19711,13 +20374,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "377ae802-7d1f-7252-4a81-2ed3cb6701f8",
+    "parent": "c0744c4e-cf04-eb78-838e-d01c9c75983b",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"atendimento_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "e26554a7-6fd9-908d-bb52-790577f1fb86",
     "parent": "c0744c4e-cf04-eb78-838e-d01c9c75983b",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -19750,7 +20446,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Qualidade"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -19947,7 +20643,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoCorretude"
      },
      {
       "name": "height",
@@ -19985,7 +20681,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Corretude"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -20042,13 +20738,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "1103488d-f3ca-2ca7-78ea-a7772a98a0e7",
+    "parent": "35d82ccf-6e96-150d-5fd4-42374aa3c1b7",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"corretude_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "c896592b-b1d7-8f3a-e76f-e94e7cb209da",
     "parent": "35d82ccf-6e96-150d-5fd4-42374aa3c1b7",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -20104,7 +20833,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoDefeitos"
      },
      {
       "name": "height",
@@ -20142,7 +20871,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Defeitos"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -20199,13 +20928,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "c209f1ea-ed73-25d5-d6e3-2e5790409d3f",
+    "parent": "4f4a48d8-54d3-34bf-8a2f-2e9e2bac9a34",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"defeitos_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "0cec0c0e-a74e-3d40-6e96-ef8ff0994b88",
     "parent": "4f4a48d8-54d3-34bf-8a2f-2e9e2bac9a34",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -20238,7 +21000,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Produtividade"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -20458,7 +21220,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoEquipe"
      },
      {
       "name": "height",
@@ -20496,7 +21258,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Equipe"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -20553,13 +21315,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "64486ebe-aa28-21e1-d519-7261a3fa1cca",
+    "parent": "0bf5ab88-ac38-c291-3ebf-8b0a4ca55e76",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"equipe_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "f20130e0-068a-897c-ecf2-2ccf50d69d92",
     "parent": "0bf5ab88-ac38-c291-3ebf-8b0a4ca55e76",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -20592,7 +21387,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "GraficoIndividual"
      },
      {
       "name": "height",
@@ -20630,7 +21425,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "Individual"
      },
      {
       "name": "bootstrapExtraSmall",
@@ -20687,13 +21482,46 @@
     "typeDesc": "Column"
    },
    {
+    "id": "b023efc0-db65-27ce-65f3-faf3e99756af",
+    "parent": "3cead528-8773-0948-4fb3-ce7b7575b8c1",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "MostrarParametro"
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": "<div id=\"individual_param\" align= \"center\"></div> "
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
     "id": "bedf0810-bb86-bae5-c329-b796034ada5e",
     "parent": "3cead528-8773-0948-4fb3-ce7b7575b8c1",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "MostrarGrafico"
      },
      {
       "name": "html",
@@ -20933,7 +21761,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th id=\"metaNotaHTML\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">GEA</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
+      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th id=\"metaNotaHTML\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">CEDES</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n    </thead>\n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
      },
      {
       "name": "fontSize",
