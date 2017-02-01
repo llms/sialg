@@ -38,7 +38,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -1342,7 +1342,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -2646,7 +2646,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -3950,7 +3950,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -5254,7 +5254,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -6558,7 +6558,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -6613,7 +6613,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchPlanejamento(c){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetPlanejamento = [];\n    tempMetadataPlanejamento = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataPlanejamento.push(c.metadata[3]);\n            tempMetadataPlanejamento.push(c.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<c.resultset.length;y++){\n         \n                tempResultsetPlanejamento.push(c.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataPlanejamento.push(c.metadata[2]);\n                tempMetadataPlanejamento.push(c.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<c.resultset.length;x++){\n         \n                    tempResultsetPlanejamento.push(c.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    c.metadata = tempMetadataPlanejamento;\n        \n           \n    console.log('###tempMetadataPlanejamento###');\n    console.log(tempMetadataPlanejamento);\n    \n    console.log('###tempResultsetPlanejamento###');\n    console.log(tempResultsetPlanejamento);\n    \n    console.log('###postFetchPlanejamento###');\n    console.log(c);\n\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -7862,7 +7862,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -7917,7 +7917,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchPrazo(b){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetPrazo = [];\n    tempMetadataPrazo = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataPrazo.push(b.metadata[3]);\n            tempMetadataPrazo.push(b.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<b.resultset.length;y++){\n         \n                tempResultsetPrazo.push(b.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataPrazo.push(b.metadata[2]);\n                tempMetadataPrazo.push(b.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<b.resultset.length;x++){\n         \n                    tempResultsetPrazo.push(b.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    b.metadata = tempMetadataPrazo;\n        \n           \n    console.log('###tempMetadataPrazo###');\n    console.log(tempMetadataPrazo);\n    \n    console.log('###tempResultsetPrazo###');\n    console.log(tempResultsetPrazo);\n    \n    console.log('###postFetchPrazo###');\n    console.log(b);\n\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -9166,7 +9166,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -9211,7 +9211,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  //alert(Dashboards.getParam('paramGEC'));\r\n} "
+      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n \r\n} "
      },
      {
       "name": "postExecution",
@@ -9221,7 +9221,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchCobertura(a){\n    \n    // retorno necessario para a Unidade. Antigo output column [2,3].\n    //0:\"GEABR\" 1:0.8111111111111111\n\n    \n    tempResultsetCobertura = [];\n    tempMetadataCobertura = [];\n    var temp_param = paramGEC;\n\n         if(temp_param.match(/Sigla GEA Completa.*/)){\n               \n            //Ajustando Metadados.\n            tempMetadataCobertura.push(a.metadata[3]);\n            tempMetadataCobertura.push(a.metadata[4]);\n                           \n            //Ajustando o resultset. \n            for (y=0;y<a.resultset.length;y++){\n         \n                tempResultsetCobertura.push(a.resultset[y].splice(0,3));\n            } \n            \n            console.log('###Estou no IF###');\n\n          } else{\n              \n                console.log('###Estou no ELSE###');\n              \n              //Ajustando Metadados.\n                tempMetadataCobertura.push(a.metadata[2]);\n                tempMetadataCobertura.push(a.metadata[3]);\n               \n                //Ajustando o resultset. \n                for (x=0;x<a.resultset.length;x++){\n         \n                    tempResultsetCobertura.push(a.resultset[x].splice(0,2));\n                } \n            }\n            \n    // Atribuindo a nova metadata\n    a.metadata = tempMetadataCobertura;\n        \n           \n    console.log('###tempMetadataCobertura###');\n    console.log(tempMetadataCobertura);\n    \n    console.log('###tempResultsetCobertura###');\n    console.log(tempResultsetCobertura);\n    \n    console.log('###postFetchCobertura###');\n    console.log(a);\n\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -11774,7 +11774,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -11789,7 +11789,7 @@
      {
       "name": "priority",
       "type": "Integer",
-      "value": 5
+      "value": "4"
      },
      {
       "name": "refreshPeriod",
@@ -11819,7 +11819,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  console.log('*******************************************');\r\n \r\n  console.log(Dashboards.getParam('paramGEC'));\r\n \r\n  console.log('*******************************************');\r\n} "
+      "value": "function f(){\r\n    \r\n    \r\n     //#####Chamando a funcao que manipula os params no final do codigo#####\r\n    \r\n    \r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n\r\n     //Chamando a funcao que manipula os params.\r\n     manipulaParams();\r\n} "
      },
      {
       "name": "postExecution",
@@ -11839,7 +11839,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": " function fu(){ \n     \n     console.log('*****paramGEC_SUB****');\n     console.log(Dashboards.getParam('paramGEC_SUB'));\n     console.log(Dashboards.getParam('paramGEC'));\n  \n } "
+      "value": ""
      },
      {
       "name": "extensionPoints",
@@ -13081,7 +13081,25 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n    \n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    console.log(\"Dentro de Indicadores\"+ paramGEC_SUB)\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    console.log(\"Dentro de Indicadores - Gec\"+ paramGEC)\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
+      "value": "function init(){\n    \n    //Funcao iniciada por um Custom Param.  \n            \n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "2ddcaec6-1d70-e0a9-2822-192135b4521c",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "manipulaParams"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function manipulaParams(){\n\n//Esta sendo chamada dentro do chart de aderencia. Prioridade de execucao\n//atualizada para 4, assim garantindo a execucao desse script antes de todo.\n\n//Valores dos Paramns GEC e GEC_SUB.\n\n    var paramgec_temp = Dashboards.getParam('paramGEC');\n    var paramgec_sub_temp = Dashboards.getParam('paramGEC_SUB');\n    \n    var completa_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n\n//Valores temporarios para manipulacao via setParam.    \n    \n    var tempgec_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS';\n        \n//Chamando a funcao que manipula os params.\n     \n     Dashboards.setParam('param_chart_GEC_SUB',paramgec_temp);\n     Dashboards.setParam('param_table_GEC',paramgec_sub_temp);\n    if(paramgec_sub_temp == '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS'){\n    \n        Dashboards.setParam('param_chart_GEC_SUB',tempgec_sub);\n        Dashboards.setParam('param_table_GEC',completa_sub);\n        \n    } \n    \n    \n    \n    param_table_GEC_temp = '[Organizacao.Gestao da Demanda].[Sigla GEA].[Todos].children';\n    \n    if(param_table_GEC == param_table_GEC_temp){\n        Dashboards.setParam('param_table_GEC',completa_sub);\n    }\n    //alert(\"param_table_GEC= \"+ param_table_GEC);\n            \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -13253,7 +13271,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramGEC_SUB\",\"paramGEC_SUB\"],[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramGEC_SUB\",\"paramGEC_SUB\"],[\"paramGEC\",\"paramGEC\"],[\"param_table_GEC\",\"param_table_GEC\"]]"
      },
      {
       "name": "displayLength",
@@ -14917,6 +14935,142 @@
       "name": "bookmarkable",
       "type": "Boolean",
       "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "d2c36beb-77d6-ef5c-4850-85877d36c0ae",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_chart_GEC"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "98f7c7b0-db84-1740-a2c7-555b4f34b6ce",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_chart_GEC_SUB"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "719bf4d2-e863-14b6-1cbb-03a53009db2b",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_table_GEC"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "3507fc3a-c213-261f-f88c-0c48f0c3a996",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_table_GEC_SUB"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
      },
      {
       "name": "public",
@@ -16862,17 +17016,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${paramGEC}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -16887,7 +17041,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -16943,17 +17097,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${paramGEC}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -16968,7 +17122,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17024,12 +17178,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\n\n\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\n\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\n\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'\n\nset [Rows] as FILTER(\n\n{${paramGEC_SUB}}\n\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\n )\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\n\n\n\nSELECT\n[SORTED_ROW] ON ROWS\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\n  ,[Measures].[Corretude],[Measures].[Defeitos]\n  , [Measures].[Atendimento], [Measures].[Equipe]\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\n\nFROM [SIALG - Demandas] \n"
+      "value": "with\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota])'\n\n\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\n\nmember [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'\n\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'\n\nset [Rows] as FILTER(\n\n{${param_table_GEC}}\n\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],\n[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}\n )\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\n\n\n\nSELECT\n[SORTED_ROW] ON ROWS\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\n  ,[Measures].[Corretude],[Measures].[Defeitos]\n  , [Measures].[Atendimento], [Measures].[Equipe]\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\n\nFROM [SIALG - Demandas] \n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"participacaoAderencia\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramGEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"participacaoAderencia\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramGEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_GEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -17105,17 +17259,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17130,7 +17284,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17186,17 +17340,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17211,7 +17365,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17267,17 +17421,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${paramGEC}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17292,7 +17446,7 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"2\",\"3\"]"
+      "value": "[]"
      },
      {
       "name": "outputMode",
@@ -17348,17 +17502,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${paramGEC}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17429,17 +17583,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17510,17 +17664,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${paramGEC}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_GEC\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17672,12 +17826,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${paramGEC}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
