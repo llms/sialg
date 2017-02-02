@@ -46,6 +46,10 @@ input{text-align:center;}
 .prata{background:#fff176;}
 .bronze{background:#ff8a80;}
 .cobre{background:#FFFFFF;}
+.cabecalho{background-color: #256cb8;
+color: whitesmoke;}
+
+.ranking{background-color:#b3ddff;}
 
 .imp-green{color:#92D050;}
 .imp-red{color:#ff8a80;}

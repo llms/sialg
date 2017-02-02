@@ -38,7 +38,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -93,7 +93,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchIndividualCEDES(d){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetIndividual = [];\r\n    tempMetadataIndividual = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataIndividual.push(d.metadata[3]);\r\n            tempMetadataIndividual.push(d.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<d.resultset.length;y++){\r\n         \r\n                tempResultsetIndividual.push(d.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataIndividual.push(d.metadata[2]);\r\n                tempMetadataIndividual.push(d.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<d.resultset.length;x++){\r\n         \r\n                    tempResultsetIndividual.push(d.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    d.metadata = tempMetadataIndividual;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -1342,7 +1342,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -1397,7 +1397,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchEquipeCEDES(e){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetEquipe = [];\r\n    tempMetadataEquipe = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataEquipe.push(e.metadata[3]);\r\n            tempMetadataEquipe.push(e.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<e.resultset.length;y++){\r\n         \r\n                tempResultsetEquipe.push(e.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataEquipe.push(e.metadata[2]);\r\n                tempMetadataEquipe.push(e.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<e.resultset.length;x++){\r\n         \r\n                    tempResultsetEquipe.push(e.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    e.metadata = tempMetadataEquipe;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -2646,7 +2646,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -2701,7 +2701,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchAtendimentoCEDES(f){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetAtendimento = [];\r\n    tempMetadataAtendimento = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataAtendimento.push(f.metadata[3]);\r\n            tempMetadataAtendimento.push(f.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<f.resultset.length;y++){\r\n         \r\n                tempResultsetAtendimento.push(f.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataAtendimento.push(f.metadata[2]);\r\n                tempMetadataAtendimento.push(f.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<f.resultset.length;x++){\r\n         \r\n                    tempResultsetAtendimento.push(f.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    f.metadata = tempMetadataAtendimento;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -3950,7 +3950,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -4005,7 +4005,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchDefeitosCEDES(g){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetDefeitos = [];\r\n    tempMetadataDefeitos = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataDefeitos.push(g.metadata[3]);\r\n            tempMetadataDefeitos.push(g.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<g.resultset.length;y++){\r\n         \r\n                tempResultsetDefeitos.push(g.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataDefeitos.push(g.metadata[2]);\r\n                tempMetadataDefeitos.push(g.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<g.resultset.length;x++){\r\n         \r\n                    tempResultsetDefeitos.push(g.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    g.metadata = tempMetadataDefeitos;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -5254,7 +5254,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -5309,7 +5309,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchCorretudeCEDES(h){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetCorretude = [];\r\n    tempMetadataCorretude = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataCorretude.push(h.metadata[3]);\r\n            tempMetadataCorretude.push(h.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<h.resultset.length;y++){\r\n         \r\n                tempResultsetCorretude.push(h.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataCorretude.push(h.metadata[2]);\r\n                tempMetadataCorretude.push(h.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<h.resultset.length;x++){\r\n         \r\n                    tempResultsetCorretude.push(h.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    h.metadata = tempMetadataCorretude;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -6558,7 +6558,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -6613,7 +6613,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchPlanejamentoCEDES(c){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetPlanejamento = [];\r\n    tempMetadataPlanejamento = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla GEA Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataPlanejamento.push(c.metadata[3]);\r\n            tempMetadataPlanejamento.push(c.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<c.resultset.length;y++){\r\n         \r\n                tempResultsetPlanejamento.push(c.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataPlanejamento.push(c.metadata[2]);\r\n                tempMetadataPlanejamento.push(c.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<c.resultset.length;x++){\r\n         \r\n                    tempResultsetPlanejamento.push(c.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    c.metadata = tempMetadataPlanejamento;\r\n        \r\n           \r\n    //console.log('###tempMetadataPlanejamento###');\r\n    //console.log(tempMetadataPlanejamento);\r\n    \r\n    //console.log('###tempResultsetPlanejamento###');\r\n    //console.log(tempResultsetPlanejamento);\r\n    \r\n    //console.log('###postFetchPlanejamento###');\r\n    //console.log(c);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -7862,7 +7862,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -7917,7 +7917,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchPrazoCEDES(b){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetPrazo = [];\r\n    tempMetadataPrazo = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla GEA Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataPrazo.push(b.metadata[3]);\r\n            tempMetadataPrazo.push(b.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<b.resultset.length;y++){\r\n         \r\n                tempResultsetPrazo.push(b.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataPrazo.push(b.metadata[2]);\r\n                tempMetadataPrazo.push(b.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<b.resultset.length;x++){\r\n         \r\n                    tempResultsetPrazo.push(b.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    b.metadata = tempMetadataPrazo;\r\n        \r\n           \r\n    //console.log('###tempMetadataPrazo###');\r\n    //console.log(tempMetadataPrazo);\r\n    \r\n    //console.log('###tempResultsetPrazo###');\r\n    //console.log(tempResultsetPrazo);\r\n    \r\n    //console.log('###postFetchPrazo###');\r\n    //console.log(b);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -9166,7 +9166,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -9221,7 +9221,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetchCoberturaCEDES(a){\r\n    \r\n    // retorno necessario para a Unidade. Antigo output column [2,3].\r\n    //0:\"GEABR\" 1:0.8111111111111111\r\n\r\n    \r\n    tempResultsetCobertura = [];\r\n    tempMetadataCobertura = [];\r\n    var temp_param = paramCEDES;\r\n\r\n         if(temp_param.match(/Sigla CEDES Completa.*/)){\r\n               \r\n            //Ajustando Metadados.\r\n            tempMetadataCobertura.push(a.metadata[3]);\r\n            tempMetadataCobertura.push(a.metadata[4]);\r\n                           \r\n            //Ajustando o resultset. \r\n            for (y=0;y<a.resultset.length;y++){\r\n         \r\n                tempResultsetCobertura.push(a.resultset[y].splice(0,3));\r\n            } \r\n            \r\n            //console.log('###Estou no IF###');\r\n\r\n          } else{\r\n              \r\n                //console.log('###Estou no ELSE###');\r\n              \r\n              //Ajustando Metadados.\r\n                tempMetadataCobertura.push(a.metadata[2]);\r\n                tempMetadataCobertura.push(a.metadata[3]);\r\n               \r\n                //Ajustando o resultset. \r\n                for (x=0;x<a.resultset.length;x++){\r\n         \r\n                    tempResultsetCobertura.push(a.resultset[x].splice(0,2));\r\n                } \r\n            }\r\n            \r\n    // Atribuindo a nova metadata\r\n    a.metadata = tempMetadataCobertura;\r\n        \r\n           \r\n    //console.log('###tempMetadataCobertura###');\r\n    //console.log(tempMetadataCobertura);\r\n    \r\n    //console.log('###tempResultsetCobertura###');\r\n    //console.log(tempResultsetCobertura);\r\n    \r\n    //console.log('###postFetchCobertura###');\r\n    //console.log(a);\r\n\r\n} "
+      "value": ""
      },
      {
       "name": "preChange",
@@ -11774,7 +11774,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
      },
      {
       "name": "dataSource",
@@ -11789,7 +11789,7 @@
      {
       "name": "priority",
       "type": "Integer",
-      "value": 5
+      "value": "4"
      },
      {
       "name": "refreshPeriod",
@@ -11819,7 +11819,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  console.log('*******************************************');\r\n \r\n  console.log(Dashboards.getParam('paramGEC'));\r\n \r\n  console.log('*******************************************');\r\n} "
+      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n\r\nmanipulaParamsCEDES();\r\n\r\n} "
      },
      {
       "name": "postExecution",
@@ -11839,7 +11839,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": " function fu(){ \n     \n     console.log('*****paramGEC_SUB****');\n     console.log(Dashboards.getParam('paramGEC_SUB'));\n     console.log(Dashboards.getParam('paramGEC'));\n  \n } "
+      "value": ""
      },
      {
       "name": "extensionPoints",
@@ -13082,6 +13082,24 @@
       "name": "javaScript",
       "type": "JavaScript",
       "value": "function init(){\n    \n    //Param SUB CEDES\n    paramCEDES_SUB = Dashboards.getQueryParameter(\"paramCEDES_SUB\");\n    console.log(\"Dentro de Indicadores\"+ paramCEDES_SUB)\n    //Param do CEDES\n    paramCEDES = Dashboards.getQueryParameter(\"paramCEDES\");\n    console.log(\"Dentro de Indicadores - Gec\"+ paramCEDES)\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "67b62291-1bcf-7a87-056d-f48442a7ee98",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "manipulaParamsCEDES"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function manipulaParamsCEDES(){\r\n\r\n//Esta sendo chamada dentro do chart de aderencia. Prioridade de execucao\r\n//atualizada para 4, assim garantindo a execucao desse script antes de todo.\r\n\r\n//Valores dos Paramns CEDES e CEDES_SUB.\r\n\r\n    var paramcedes_temp = Dashboards.getParam('paramCEDES');\r\n    var paramcedes_sub_temp = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    \r\n    var completacedes_sub = '[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].MEMBERS';\r\n\r\n//Valores temporarios para manipulacao via setParam.    \r\n    \r\n    var tempcedes_sub = '[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].MEMBERS';\r\n        \r\n//Chamando a funcao que manipula os params.\r\n     \r\n     //Dashboards.setParam('param_chart_CEDES_SUB',paramcedes_temp);\r\n     //Dashboards.setParam('param_table_CEDES',paramcedes_sub_temp);\r\n    Dashboards.fireChange('param_chart_CEDES_SUB',paramcedes_temp);\r\n    Dashboards.fireChange('param_table_CEDES',paramcedes_sub_temp);\r\n\r\n    if(paramcedes_sub_temp == '[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members'){\r\n    \r\n        //Dashboards.setParam('param_chart_CEDES_SUB',tempcedes_sub);\r\n        //Dashboards.setParam('param_table_CEDES',completacedes_sub);\r\n        Dashboards.fireChange('param_chart_CEDES_SUB',tempcedes_sub);\r\n        Dashboards.fireChange('param_table_CEDES',completacedes_sub);\r\n        \r\n    } \r\n    \r\n    \r\n    \r\n    param_table_CEDES_temp = '[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[Todos].children';\r\n    \r\n    if(param_table_CEDES == param_table_CEDES_temp){\r\n        //Dashboards.setParam('param_table_CEDES',completacedes_sub);\r\n        Dashboards.fireChange('param_table_CEDES',completacedes_sub);\r\n    }\r\n    //alert(\"param_table_CEDES= \"+ param_table_CEDES);\r\n        //alert(\"PARAM_CEDES_SUB: \" +paramCEDES_SUB );\r\n        alert(\"param_chart_CEDES_SUB = \"+ param_chart_CEDES_SUB);\r\n            \r\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -15460,6 +15478,142 @@
     "typeDesc": "Simple parameter"
    },
    {
+    "id": "da401823-b0b7-c7a6-e92d-5e980fe4a52a",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_chart_CEDES"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "c2b9586e-2eb1-a162-b83a-173aac986278",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_chart_CEDES_SUB"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "a0999139-51ae-69df-a41a-f08744347de7",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_table_CEDES"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "99d527f2-50b6-3dd8-5126-26d3846ca97b",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "param_table_CEDES_SUB"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
     "id": "SELECTORS",
     "name": "Selects",
     "parent": "UnIqEiD",
@@ -17393,17 +17547,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\nFROM [SIALG - Demandas]\r\n"
+      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\nFROM [SIALG - Demandas]\r\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17474,17 +17628,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Qualidade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Qualidade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17717,17 +17871,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]\r\n"
+      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]\r\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17798,17 +17952,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17879,17 +18033,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as  FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as  FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -17960,17 +18114,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -18041,17 +18195,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cumprimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cumprimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -18122,17 +18276,17 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nset [Rows] as  FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cobertura] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nset [Rows] as  FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cobertura] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -18284,12 +18438,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as  FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Aderencia] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as  FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]\r\n\r\n} )\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Aderencia] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18784,58 +18938,58 @@
    {
     "id": "NONE",
     "name": "Compound Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Compound Queries",
-      "type": "Label"
+      "type": "Label",
+      "value": "Compound Queries"
      }
-    ]
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
    },
    {
     "id": "5d05879d-24cb-57ac-9469-d21188206f19",
-    "type": "Componentsunion",
-    "typeDesc": "union",
+    "meta": "CDA",
+    "meta_conntype": "",
+    "meta_datype": "union",
     "parent": "NONE",
     "properties": [
      {
       "name": "name",
-      "value": "indicadoresUnion",
-      "type": "Id"
+      "type": "Id",
+      "value": "indicadoresUnion"
      },
      {
       "name": "bottom",
-      "value": "indicadoresDS",
-      "type": "Datasource"
+      "type": "Datasource",
+      "value": "indicadoresDS"
      },
      {
       "name": "top",
-      "value": "indicadoresCEDES_DS",
-      "type": "Datasource"
+      "type": "Datasource",
+      "value": "indicadoresCEDES_DS"
      },
      {
       "name": "parameters",
-      "value": "[[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"]]",
-      "type": "CdaParameters"
+      "type": "CdaParameters",
+      "value": "[[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
      },
      {
       "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
+      "type": "CdaColumnsArray",
+      "value": "[]"
      }
     ],
-    "meta": "CDA",
-    "meta_conntype": "",
-    "meta_datype": "union",
-    "rowName": "union"
+    "rowName": "union",
+    "type": "Componentsunion",
+    "typeDesc": "union"
    }
   ]
  },
@@ -21898,7 +22052,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th  colspan=\"3\">&nbsp;</th>\n            <th colspan=\"2\">Aderência ao Negócio</th>\n            <th colspan=\"2\">Agilidade</th>\n            <th colspan=\"2\">Qualidade</th>\n            <th>Atendimento</th>\n            <th colspan=\"2\">Produtividade</th>\n            <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th id=\"metaNotaHTML\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">CEDES</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n          \n    </thead>\n    \n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
+      "value": "<table class=\"centered responsive-table bordered\" id=\"tabelaIndicadores\">\n    <thead>\n        <tr>\n            <th class=\"cabecalho\" colspan=\"3\">&nbsp;</th>\n            <th class=\"cabecalho\" colspan=\"2\">Aderência ao Negócio</th>\n            <th class=\"cabecalho\" colspan=\"2\">Agilidade</th>\n            <th class=\"cabecalho\" colspan=\"2\">Qualidade</th>\n            <th class=\"cabecalho\">Atendimento</th>\n            <th class=\"cabecalho\" colspan=\"2\">Produtividade</th>\n            <th class=\"cabecalho\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Peso da Dimensão</th>\n            <th colspan=\"2\" id=\"pesoAderenciaHTML\"></th>\n            <th colspan=\"2\" id=\"pesoAgilidadeHTML\"></th>\n            <th colspan=\"2\" id=\"pesoQualidadeHTML\"></th>\n            <th id=\"pesoAtendimentoHTML\"></th>\n            <th colspan=\"2\" id=\"pesoProdutividadeHTML\">45</th>\n             <th>&nbsp;</th>\n        </tr>\n         <tr>\n            <th colspan=\"3\">Participação</th>\n            <th id=\"partAderenciaHTML\"></th>\n            <th id=\"partCoberturaHTML\"></th>\n            <th id=\"partPrazoHTML\"></th>\n            <th id=\"partPlanejamentoHTML\"></th>\n            <th id=\"partCorretudeHTML\"></th>\n            <th id=\"partDefeitosHTML\"></th>\n            <th id=\"partAtendimentoHTML\"></th>\n            <th id=\"partEquipeHTML\"></th>\n            <th id=\"partIndividualHTML\"></th>\n             <th>&nbsp;</th>\n        </tr>\n        <tr>\n            <th colspan=\"3\">Metas</th>\n            <th id=\"metaAderenciaHTML\"></th>\n            <th id=\"metaCoberturaHTML\"></th>\n            <th id=\"metaPrazoHTML\"></th>\n            <th id=\"metaPlanejamentoHTML\"></th>\n            <th id=\"metaCorretudeHTML\"></th>\n            <th id=\"metaDefeitosHTML\"></th>\n            <th id=\"metaAtendimentoHTML\"></th>\n            <th id=\"metaEquipeHTML\"></th>\n            <th id=\"metaIndividualHTML\"></th>\n            <th id=\"metaNotaHTML\">&nbsp;</th>\n        </tr>\n        <tr>\n            <th>Medalha</th>\n            <th data-sort=\"int\">RANK</th>\n            <th data-sort=\"string\">CEDES</th>\n            <th data-sort=\"float\">Aderência</th>\n            <th data-sort=\"float\">Cobertura</th>\n            <th data-sort=\"float\">Prazo</th>\n            <th data-sort=\"float\">Planejamento</th>\n            <th data-sort=\"float\">Corretude</th>\n            <th data-sort=\"float\">Defeitos</th>\n            <th data-sort=\"float\">Atendimento</th>\n            <th data-sort=\"float\">Equipe</th>\n            <th data-sort=\"float\">Individual</th>\n            <th data-sort=\"float\">Nota</th>\n        </tr>\n          \n    </thead>\n    \n    <tbody id=\"indicadores\">\n        \n    </tbody>\n    \n</table>\n\n<div id=\"indicadoresHTML\" style=\"display:none\"></div> "
      },
      {
       "name": "fontSize",

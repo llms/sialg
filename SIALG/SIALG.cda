@@ -68,13 +68,13 @@ SELECT distinct "Coord TI Detalhe",
 ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS') as SG_GEC_COMPLETO_MDX,
  0 as "CO_GEC")
 UNION
-SELECT distinct "SG_GEC_COMPLETO", 
+SELECT distinct "SG_GEC_COMPLETO",
     ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || "SG_GEC_COMPLETO" || ']') as SG_GEC_COMPLETO_MDX,
     "CO_GEC" 
-	FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
-		WHERE  ('Todos' IN (${paramGEC_SQL}) or "SG_GEC" IN (${paramGEC_SQL}))  AND "SG_GEC" <> 'NI'
-		ORDER BY "CO_GEC","SG_GEC_COMPLETO"
-						     ) as SUB]]></Query>
+    FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
+        WHERE  ('Todos' IN (${paramGEC_SQL}) or "SG_GEC" IN (${paramGEC_SQL}))  AND "SG_GEC" <> 'NI'
+        ORDER BY "CO_GEC","SG_GEC_COMPLETO"
+                             ) as SUB]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidCEDES_new" id="unidCEDES_new" type="sql">
       <Name>unidCEDES_new</Name>
@@ -100,8 +100,8 @@ order by "Sigla Coord TI","Coord TI Site") as sub;]]></Query>
 
 (select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as "SG_GEC", 0 as "CO_GEC" )
  UNION 
-SELECT distinct "SG_GEC" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || "SG_GEC" || ']') as "SG_GEC", "CO_GEC" 
-  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" 
+SELECT distinct "SG_GEC" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || "SG_GEC" || ']') as "SG_GEC", "CO_GEC"
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
    where "SG_GEC" <> 'NI'
    order by "CO_GEC","SG_GEC") as sub;]]></Query>
    </DataAccess>

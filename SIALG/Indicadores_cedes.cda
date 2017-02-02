@@ -70,7 +70,7 @@
    </DataSources>
    <DataAccess access="public" connection="defeitosDS" id="defeitosDS" type="mdx">
       <Name>defeitosDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -89,10 +89,11 @@
          <Parameter default="" name="dataResolucaoFilhaInicio" type="String"/>
          <Parameter default="" name="dataResolucaoFilhaFim" type="String"/>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -122,15 +123,16 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <Name>corretudeDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -316,15 +318,16 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
       <Name>individualDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -354,15 +357,16 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <Name>equipeDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -392,15 +396,16 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
-set [Rows] as  FILTER({${paramCEDES}},
+set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -431,18 +436,19 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
       <Name>efetividadeDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
 member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -473,18 +479,19 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <Name>prazoDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
 member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -515,15 +522,16 @@ FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
       <Name>coberturaDS</Name>
-      <BandedMode>classic</BandedMode>
+      <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-set [Rows] as  FILTER({${paramCEDES}},
+set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
@@ -597,10 +605,11 @@ FROM [SIALG - Demandas]]]></Query>
       <Columns/>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
+         <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-set [Rows] as  FILTER({${paramCEDES}},
+set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
