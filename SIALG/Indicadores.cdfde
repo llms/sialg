@@ -13088,6 +13088,42 @@
     "typeDesc": "JavaScript function"
    },
    {
+    "id": "de65f01f-c103-797d-3dd9-33cfe7de68a2",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "toNum"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function toNum(num){\n    return parseFloat(num.replace(/\\./g, '').replace(/\\,/g, '.'));\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "fd7536be-f0cb-391e-9e3a-aab1634b49a7",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "manipulaParams_new"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function manipulaParams(){\n\n\n//alert('paraGEC_aux: '+Dashboards.getParam('paramGEC_aux'));\nif(Dashboards.getParam('paramGEC') == ''){\n    \n    var aux_temp = Dashboards.getParam('paramGEC_aux');\n    Dashboards.fireChange('paramGEC',aux_temp);\n    \n    // param_chart_CEDES_SUB\n    \n  //  alert(\"Estou no if null\");\n    \n}\n\n\n\n\n//Esta sendo chamada dentro do chart de aderencia. Prioridade de execucao\n//atualizada para 4, assim garantindo a execucao desse script antes de todo.\n\n//Valores dos Paramns GEC e GEC_SUB.\n\n    var paramgec_temp = Dashboards.getParam('paramGEC');\n    var paramgec_sub_temp = Dashboards.getParam('paramGEC_SUB');\n    \n    var completa_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n\n//Valores temporarios para manipulacao via setParam.    \n    \n    var tempgec_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS';\n        \n//Chamando a funcao que manipula os params.\n     \n     Dashboards.setParam('param_chart_GEC_SUB',paramgec_temp);\n     Dashboards.setParam('param_table_GEC',paramgec_sub_temp);\n    if(paramgec_sub_temp == '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS'){\n    \n        Dashboards.setParam('param_chart_GEC_SUB',tempgec_sub);\n        Dashboards.setParam('param_table_GEC',completa_sub);\n        \n    } \n    \n    \n    \n    param_table_GEC_temp = '[Organizacao.Gestao da Demanda].[Sigla GEA].[Todos].children';\n    \n    if(param_table_GEC == param_table_GEC_temp){\n        Dashboards.setParam('param_table_GEC',completa_sub);\n    }\n    //alert(\"param_table_GEC= \"+ param_table_GEC);\n    //alert(\"paramGEC | param_chart_GEC_SUB: \"+ paramGEC + '####' + param_chart_GEC_SUB);\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
     "id": "2ddcaec6-1d70-e0a9-2822-192135b4521c",
     "parent": "SCRIPT",
     "properties": [
@@ -13381,7 +13417,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n            if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking'>\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      //$('#tabelaIndicadores').stupidtable();\r\n      \r\n      //jquery tabledort\r\n        $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n            if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking'>\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n      //jquery tabledort\r\n       /* $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );*/\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
      },
      {
       "name": "preChange",
