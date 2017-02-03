@@ -198,6 +198,7 @@ FROM [SIALG - Demandas]]]></Query>
          <Parameter default="" name="participacaoAderencia" type="String"/>
          <Parameter default="" name="metaCobertura" type="String"/>
          <Parameter default="" name="paramCEDES_SUB" type="String"/>
+         <Parameter default="" name="param_table_CEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -272,6 +273,7 @@ FROM [SIALG - Demandas]]]></Query>
          <Parameter default="" name="participacaoAderencia" type="String"/>
          <Parameter default="" name="metaCobertura" type="String"/>
          <Parameter default="" name="paramCEDES_SUB" type="String"/>
+         <Parameter default="" name="param_table_CEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -295,7 +297,7 @@ member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0  
 
 set [Rows] as FILTER(
 
-{${paramCEDES_SUB}}
+{${param_table_CEDES}}
 
 , [Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].currentMember in { 
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESBR].CHILDREN,
