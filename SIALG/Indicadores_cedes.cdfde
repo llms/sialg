@@ -191,6 +191,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -331,6 +341,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -339,6 +354,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -476,6 +496,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -494,6 +519,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -591,6 +621,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -599,6 +634,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -641,13 +681,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -741,6 +786,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -749,6 +799,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -791,13 +846,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -911,6 +971,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -991,9 +1056,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -1028,6 +1103,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -1204,6 +1299,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -1495,6 +1595,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -1635,6 +1745,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -1643,6 +1758,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -1780,6 +1900,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -1798,6 +1923,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -1895,6 +2025,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -1903,6 +2038,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -1945,13 +2085,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -2045,6 +2190,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -2053,6 +2203,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -2095,13 +2250,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -2215,6 +2375,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -2295,9 +2460,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -2332,6 +2507,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -2508,6 +2703,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -2799,6 +2999,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -2939,6 +3149,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -2947,6 +3162,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -3084,6 +3304,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -3102,6 +3327,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -3199,6 +3429,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -3207,6 +3442,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -3249,13 +3489,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -3349,6 +3594,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -3357,6 +3607,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -3399,13 +3654,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -3519,6 +3779,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -3599,9 +3864,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -3636,6 +3911,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -3812,6 +4107,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -4103,6 +4403,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -4243,6 +4553,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -4251,6 +4566,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -4388,6 +4708,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -4406,6 +4731,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -4503,6 +4833,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -4511,6 +4846,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -4553,13 +4893,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -4653,6 +4998,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -4661,6 +5011,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -4703,13 +5058,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -4823,6 +5183,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -4903,9 +5268,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -4940,6 +5315,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -5116,6 +5511,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -5407,6 +5807,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -5547,6 +5957,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -5555,6 +5970,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -5692,6 +6112,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -5710,6 +6135,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -5807,6 +6237,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -5815,6 +6250,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -5857,13 +6297,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -5957,6 +6402,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -5965,6 +6415,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -6007,13 +6462,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -6127,6 +6587,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -6207,9 +6672,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -6244,6 +6719,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -6420,6 +6915,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -6711,6 +7211,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -6851,6 +7361,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -6859,6 +7374,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -6996,6 +7516,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -7014,6 +7539,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -7111,6 +7641,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -7119,6 +7654,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -7161,13 +7701,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -7261,6 +7806,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -7269,6 +7819,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -7311,13 +7866,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -7431,6 +7991,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -7511,9 +8076,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -7548,6 +8123,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -7724,6 +8319,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -8015,6 +8615,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -8155,6 +8765,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -8163,6 +8778,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -8300,6 +8920,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -8318,6 +8943,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -8415,6 +9045,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -8423,6 +9058,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -8465,13 +9105,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -8565,6 +9210,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -8573,6 +9223,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -8615,13 +9270,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -8735,6 +9395,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -8815,9 +9480,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -8852,6 +9527,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -9028,6 +9723,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -9319,6 +10019,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -9459,6 +10169,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -9467,6 +10182,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -9604,6 +10324,11 @@
       "value": "10px 'Open Sans', sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -9622,6 +10347,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -9719,6 +10449,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -9727,6 +10462,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -9769,13 +10509,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -9869,6 +10614,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -9877,6 +10627,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -9919,13 +10674,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -10039,6 +10799,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -10119,9 +10884,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -10156,6 +10931,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -10332,6 +11127,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -10623,6 +11423,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -10763,6 +11573,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -10771,6 +11586,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -10908,6 +11728,11 @@
       "value": "10px sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -10926,6 +11751,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -11023,6 +11853,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -11031,6 +11866,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -11073,13 +11913,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -11173,6 +12018,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -11181,6 +12031,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -11223,13 +12078,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -11343,6 +12203,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -11423,9 +12288,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -11460,6 +12335,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -11636,6 +12531,11 @@
       "name": "tooltipUseCorners",
       "type": "Boolean",
       "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
      },
      {
       "name": "trendAreasVisible",
@@ -11927,6 +12827,16 @@
       "value": false
      },
      {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
       "name": "baseAxisLabelSpacingMin",
       "type": "Float",
       "value": ""
@@ -12067,6 +12977,11 @@
       "value": true
      },
      {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
       "name": "color2AxisTransform",
       "type": "JavaScript",
       "value": ""
@@ -12075,6 +12990,11 @@
       "name": "color2AxisUnbound",
       "type": "String",
       "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "colorRole",
@@ -12212,6 +13132,11 @@
       "value": "10px 'Open Sans', sans-serif"
      },
      {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
       "name": "legendItemPadding",
       "type": "String",
       "value": "2.5"
@@ -12230,6 +13155,11 @@
       "name": "legendMarkerSize",
       "type": "Float",
       "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
      },
      {
       "name": "legendPaddings",
@@ -12327,6 +13257,11 @@
       "value": ""
      },
      {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "ortho2AxisDomainRoundMode",
       "type": "cccOrtho2AxisDomainRoundModeCustom",
       "value": "tick"
@@ -12335,6 +13270,11 @@
       "name": "ortho2AxisDomainScope",
       "type": "cccOrtho2AxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "ortho2AxisFixedMax",
@@ -12377,13 +13317,18 @@
       "value": ""
      },
      {
-      "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "ortho2AxisPosition",
       "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -12477,6 +13422,11 @@
       "value": ""
      },
      {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
       "name": "orthoAxisDomainRoundMode",
       "type": "cccOrthoAxisDomainRoundModeCustom",
       "value": "tick"
@@ -12485,6 +13435,11 @@
       "name": "orthoAxisDomainScope",
       "type": "cccOrthoAxisDomainScopeCustom",
       "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
      },
      {
       "name": "orthoAxisFixedMax",
@@ -12527,13 +13482,18 @@
       "value": ""
      },
      {
-      "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
-     },
-     {
       "name": "orthoAxisPosition",
       "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
       "value": ""
      },
      {
@@ -12647,6 +13607,11 @@
       "value": false
      },
      {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "plot2AreasVisible",
       "type": "Boolean",
       "value": false
@@ -12727,9 +13692,19 @@
       "value": "false"
      },
      {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
       "name": "pointingMode",
       "type": "cccPointingModeCustom",
       "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
      },
      {
       "name": "readers",
@@ -12764,6 +13739,26 @@
      {
       "name": "seriesRole",
       "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
       "value": ""
      },
      {
@@ -12942,6 +13937,11 @@
       "value": ""
      },
      {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
       "name": "trendAreasVisible",
       "type": "Boolean",
       "value": false
@@ -13068,6 +14068,24 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "aea46081-765a-ab2c-59af-24fe068f1e7f",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "detalhaTabela"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function drill(g) { \r\n   var win = window.open('http://localhost:8080/pentaho/api/repos/%3Apublic%3ASIALG%3Aanalise_indicadores_cedes.xanalyzer/editor?param_cedes_completa='+ g);\r\n\r\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
    },
    {
     "id": "fac11f06-b72b-d7a9-c737-3a1306e243be",
@@ -13387,6 +14405,11 @@
       "value": "false"
      },
      {
+      "name": "failureCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
       "name": "preExecution",
       "type": "JavaScript",
       "value": ""
@@ -13399,7 +14422,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n            if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking'>\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      \r\n           $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n            if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      \r\n           $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -14284,7 +15307,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "65"
+      "value": "60"
      },
      {
       "name": "parameterViewRole",
@@ -14317,7 +15340,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "35"
+      "value": "40"
      },
      {
       "name": "parameterViewRole",
@@ -14350,7 +15373,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "65"
+      "value": "60"
      },
      {
       "name": "parameterViewRole",
@@ -14383,7 +15406,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "35"
+      "value": "40"
      },
      {
       "name": "parameterViewRole",
@@ -14416,7 +15439,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "1"
+      "value": "100"
      },
      {
       "name": "parameterViewRole",
@@ -14680,7 +15703,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "1500"
+      "value": "130"
      },
      {
       "name": "parameterViewRole",
@@ -19011,7 +20034,7 @@
    }
   ]
  },
- "filename": "/public/SIALG/Indicadores_CEDES.cdfde",
+ "filename": "/public/SIALG/Indicadores_cedes.cdfde",
  "layout": {
   "rows": [
    {

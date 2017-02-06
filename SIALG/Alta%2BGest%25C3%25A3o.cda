@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="unidCEDES_SUB" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC_SUB" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidCEDES_new" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC_new" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGECv2" type="sql.jndi">
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidCEDES_mdx" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC_mdx" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="teste_mdx" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="unidGEC_SUB_mdx" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="unidCEDES_SUB" id="unidCEDES_SUB" type="sql">
+      <Name>unidCEDES_SUB</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="paramCEDES_SQL" type="StringArray"/>
+      </Parameters>
+      <Query><![CDATA[SELECT  SG_CEDES_COMPLETO_MDX, "Coord TI Detalhe" FROM(
+
+(SELECT 'Todos' as "Coord TI Detalhe",
+('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as "Sigla Coord TI")
+UNION
+SELECT distinct "Coord TI Detalhe", 
+    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || "Coord TI Detalhe" || ']') as SG_CEDES_COMPLETO_MDX,
+    "Sigla Coord TI"
+    FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+    	WHERE  ('Todos' IN (${paramCEDES_SQL}) or "Coord TI Site" IN (${paramCEDES_SQL}))  AND "Sigla Coord TI" <> 'NI' and "Sigla Coord TI" <> 'GITEC'
+		ORDER BY "Sigla Coord TI", "Coord TI Detalhe") as SUB]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC_SUB" id="unidGEC_SUB" type="sql">
+      <Name>unidGEC_SUB</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="paramGEC_SQL" type="StringArray"/>
+      </Parameters>
+      <Query><![CDATA[SELECT  SG_GEC_COMPLETO_MDX, "SG_GEC_COMPLETO" FROM(
+
+(SELECT 'Todos' as "SG_GEC_COMPLETO",
+('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS') as SG_GEC_COMPLETO_MDX,
+ 0 as "CO_GEC")
+UNION
+SELECT distinct "SG_GEC_COMPLETO",
+    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || "SG_GEC_COMPLETO" || ']') as SG_GEC_COMPLETO_MDX,
+    "CO_GEC" 
+    FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
+        WHERE  ('Todos' IN (${paramGEC_SQL}) or "SG_GEC" IN (${paramGEC_SQL}))  AND "SG_GEC" <> 'NI'
+        ORDER BY "CO_GEC","SG_GEC_COMPLETO"
+                             ) as SUB]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidCEDES_new" id="unidCEDES_new" type="sql">
+      <Name>unidCEDES_new</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select "Coord TI Site", dis_SG_CEDES   from (
+
+(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as "Coord TI Site",  'a' as "Sigla Coord TI" )
+ UNION 
+SELECT distinct "Coord TI Site" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || "Coord TI Site" || ']') as "Coord TI Site",
+  "Sigla Coord TI"
+FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
+where "Sigla Coord TI" <> 'NI' and "Sigla Coord TI" <> 'GITEC'
+order by "Sigla Coord TI","Coord TI Site") as sub;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC_new" id="unidGEC_new" type="sql">
+      <Name>unidGEC_new</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select "SG_GEC", dis_SG_GEC  from (
+
+(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as "SG_GEC", 0 as "CO_GEC" )
+ UNION 
+SELECT distinct "SG_GEC" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || "SG_GEC" || ']') as "SG_GEC", "CO_GEC"
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
+   where "SG_GEC" <> 'NI'
+   order by "CO_GEC","SG_GEC") as sub;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC" id="unidGEC" type="sql">
+      <Name>unidGEC</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select * from (select -1 "CO_GEC", 'Todas' "SG_GEC"       
+union
+SELECT distinct "CO_GEC", "SG_GEC"       
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC") a order by "CO_GEC";]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGECv2" id="unidGECv2" type="sql">
+      <Name>unidGECv2</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT distinct "CO_SUB_GEC", "SG_GEC_COMPLETO", "CO_GEC", "SG_GEC"       
+FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidCEDES_mdx" id="unidCEDES_mdx" type="mdx">
+      <Name>unidCEDES_mdx</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[WITH
+
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'
+
+SELECT
+[*BASE_MEMBERS__Measures_] ON COLUMNS
+,[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members ON ROWS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC_mdx" id="unidGEC_mdx" type="mdx">
+      <Name>unidGEC_mdx</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[WITH
+
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'
+
+SELECT
+[*BASE_MEMBERS__Measures_] ON COLUMNS
+,[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS ON ROWS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="teste_mdx" id="teste_mdx" type="mdx">
+      <Name>teste_mdx</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters>
+         <Parameter default="" name="paramGEC" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with
+member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
+set [Rows] as FILTER({[Organizacao.Gestao da Demanda].[Sigla GEA].[GEARJ].Dimension.Name}, 
+[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember <> [Organizacao.Gestao da Demanda].[SUCTI].[NI] )
+
+SELECT
+[Rows] ON ROWS
+,[Measures].[Defeitos] ON COLUMNS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="unidGEC_SUB_mdx" id="unidGEC_SUB_mdx" type="mdx">
+      <Name>unidGEC_SUB_mdx</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters>
+         <Parameter default="" name="paramGEC" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*NATIVE_CJ_SET_WITH_SLICER] AS '[*BASE_MEMBERS__Organizacao.Gestao da Demanda_]'
+SET [*NATIVE_CJ_SET] AS '[*NATIVE_CJ_SET_WITH_SLICER]'
+SET [*SORTED_ROW_AXIS] AS 'ORDER([*CJ_ROW_AXIS],ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]).ORDERKEY,BASC,ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER,[Organizacao.Gestao da Demanda].[SUCTI ]).ORDERKEY,BASC,[Organizacao.Gestao da Demanda].CURRENTMEMBER.ORDERKEY,BASC)'
+
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[*ZERO]}'
+
+SET [*BASE_MEMBERS__Organizacao.Gestao da Demanda_] AS 'FILTER([Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS,ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]) IN {${paramGEC}})'
+
+SET [*CJ_ROW_AXIS] AS 'GENERATE([*NATIVE_CJ_SET], {([Organizacao.Gestao da Demanda].CURRENTMEMBER)})'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+SELECT
+[*BASE_MEMBERS__Measures_] ON COLUMNS
+,[*SORTED_ROW_AXIS] ON ROWS
+FROM [SIALG - Demandas]]]></Query>
+   </DataAccess>
+</CDADescriptor>

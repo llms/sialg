@@ -1,1 +1,0 @@
-define(function() {  var myObj = {    name: 'Joe',    sayHello: function() {       return 'Hello ' + this.name}  };  return myObj;});
