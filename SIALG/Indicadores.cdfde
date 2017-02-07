@@ -17601,7 +17601,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
@@ -17682,7 +17682,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -17925,7 +17925,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
@@ -18006,7 +18006,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18087,7 +18087,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18168,7 +18168,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18249,7 +18249,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18330,7 +18330,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18411,7 +18411,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Indice - Nota Final] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Indice - Nota Final] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18492,7 +18492,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[NI] })\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",

@@ -72,7 +72,7 @@ SELECT distinct "SG_GEC_COMPLETO",
     ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || "SG_GEC_COMPLETO" || ']') as SG_GEC_COMPLETO_MDX,
     "CO_GEC" 
     FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
-        WHERE  ('Todos' IN (${paramGEC_SQL}) or "SG_GEC" IN (${paramGEC_SQL}))  AND "SG_GEC" <> 'NI'
+        WHERE  ('Todos' IN (${paramGEC_SQL}) or "SG_GEC" IN (${paramGEC_SQL}))  AND "SG_GEC" like '%GEA%'
         ORDER BY "CO_GEC","SG_GEC_COMPLETO"
                              ) as SUB]]></Query>
    </DataAccess>
@@ -102,7 +102,7 @@ order by "Sigla Coord TI","Coord TI Site") as sub;]]></Query>
  UNION 
 SELECT distinct "SG_GEC" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || "SG_GEC" || ']') as "SG_GEC", "CO_GEC"
   FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"
-   where "SG_GEC" <> 'NI'
+    WHERE "SG_GEC" like '%GEA%'
    order by "CO_GEC","SG_GEC") as sub;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidGEC" id="unidGEC" type="sql">
@@ -113,7 +113,8 @@ SELECT distinct "SG_GEC" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla
       <Query><![CDATA[select * from (select -1 "CO_GEC", 'Todas' "SG_GEC"       
 union
 SELECT distinct "CO_GEC", "SG_GEC"       
-  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC") a order by "CO_GEC";]]></Query>
+  FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES"  WHERE "SG_GEC" like '%GEA%' 
+  order by "SG_GEC") a order by "CO_GEC";]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidGECv2" id="unidGECv2" type="sql">
       <Name>unidGECv2</Name>
@@ -121,7 +122,8 @@ SELECT distinct "CO_GEC", "SG_GEC"
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT distinct "CO_SUB_GEC", "SG_GEC_COMPLETO", "CO_GEC", "SG_GEC"       
-FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
+FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" WHERE "SG_GEC" like '%GEA%'
+order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidCEDES_mdx" id="unidCEDES_mdx" type="mdx">
       <Name>unidCEDES_mdx</Name>

@@ -1244,7 +1244,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT  SG_GEC_COMPLETO_MDX, \"SG_GEC_COMPLETO\" FROM(\n\n(SELECT 'Todos' as \"SG_GEC_COMPLETO\",\n('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS') as SG_GEC_COMPLETO_MDX,\n 0 as \"CO_GEC\")\nUNION\nSELECT distinct \"SG_GEC_COMPLETO\",\n    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || \"SG_GEC_COMPLETO\" || ']') as SG_GEC_COMPLETO_MDX,\n    \"CO_GEC\" \n    FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n        WHERE  ('Todos' IN (${paramGEC_SQL}) or \"SG_GEC\" IN (${paramGEC_SQL}))  AND \"SG_GEC\" <> 'NI'\n        ORDER BY \"CO_GEC\",\"SG_GEC_COMPLETO\"\n                             ) as SUB"
+      "value": "SELECT  SG_GEC_COMPLETO_MDX, \"SG_GEC_COMPLETO\" FROM(\n\n(SELECT 'Todos' as \"SG_GEC_COMPLETO\",\n('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS') as SG_GEC_COMPLETO_MDX,\n 0 as \"CO_GEC\")\nUNION\nSELECT distinct \"SG_GEC_COMPLETO\",\n    ('[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[' || \"SG_GEC_COMPLETO\" || ']') as SG_GEC_COMPLETO_MDX,\n    \"CO_GEC\" \n    FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n        WHERE  ('Todos' IN (${paramGEC_SQL}) or \"SG_GEC\" IN (${paramGEC_SQL}))  AND \"SG_GEC\" like '%GEA%'\n        ORDER BY \"CO_GEC\",\"SG_GEC_COMPLETO\"\n                             ) as SUB"
      },
      {
       "name": "parameters",
@@ -1388,7 +1388,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select \"SG_GEC\", dis_SG_GEC  from (\n\n(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as \"SG_GEC\", 0 as \"CO_GEC\" )\n UNION \nSELECT distinct \"SG_GEC\" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || \"SG_GEC\" || ']') as \"SG_GEC\", \"CO_GEC\"\n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n   where \"SG_GEC\" <> 'NI'\n   order by \"CO_GEC\",\"SG_GEC\") as sub;"
+      "value": "select \"SG_GEC\", dis_SG_GEC  from (\n\n(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as \"SG_GEC\", 0 as \"CO_GEC\" )\n UNION \nSELECT distinct \"SG_GEC\" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || \"SG_GEC\" || ']') as \"SG_GEC\", \"CO_GEC\"\n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n    WHERE \"SG_GEC\" like '%GEA%'\n   order by \"CO_GEC\",\"SG_GEC\") as sub;"
      },
      {
       "name": "parameters",
@@ -1460,7 +1460,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select * from (select -1 \"CO_GEC\", 'Todas' \"SG_GEC\"       \nunion\nSELECT distinct \"CO_GEC\", \"SG_GEC\"       \n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\" order by \"SG_GEC\") a order by \"CO_GEC\";"
+      "value": "select * from (select -1 \"CO_GEC\", 'Todas' \"SG_GEC\"       \nunion\nSELECT distinct \"CO_GEC\", \"SG_GEC\"       \n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"  WHERE \"SG_GEC\" like '%GEA%' \n  order by \"SG_GEC\") a order by \"CO_GEC\";"
      },
      {
       "name": "parameters",
@@ -1532,7 +1532,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT distinct \"CO_SUB_GEC\", \"SG_GEC_COMPLETO\", \"CO_GEC\", \"SG_GEC\"       \nFROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\" order by \"SG_GEC\", \"SG_GEC_COMPLETO\""
+      "value": "SELECT distinct \"CO_SUB_GEC\", \"SG_GEC_COMPLETO\", \"CO_GEC\", \"SG_GEC\"       \nFROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\" WHERE \"SG_GEC\" like '%GEA%'\norder by \"SG_GEC\", \"SG_GEC_COMPLETO\""
      },
      {
       "name": "parameters",
@@ -2679,7 +2679,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": ""
+      "value": "conteudo"
      },
      {
       "name": "height",
@@ -3687,7 +3687,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramGEC\":\"[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\",\"paramGEC_SUB\":\"[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\"}}'\n               id=\"indicadoresIframe\"\n               width=\"100%\"\n               height=\"1600em\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
+      "value": "<iframe\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramGEC\":\"[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\",\"paramGEC_SUB\":\"[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\"}}'\n               id=\"indicadoresIframe\"\n               width=\"100%\"\n               height=\"1700em\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",
