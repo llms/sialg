@@ -762,6 +762,7 @@ GROUP BY "Sigla GEC"]]></Query>
          <Parameter default="" name="pesoQualidade" type="String"/>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="paramCEDES_SUB" type="String"/>
+         <Parameter default="" name="param_table_CEDES" type="String"/>
       </Parameters>
       <Top id="indicadoresCEDES_DS"/>
    </CompoundDataAccess>
