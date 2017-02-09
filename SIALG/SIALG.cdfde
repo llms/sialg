@@ -4253,7 +4253,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe\r\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramCEDES\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members\",\"paramCEDES_SUB\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members\"}}'\r\n               id=\"indicadoresIframeCEDES\"\r\n               width=\"100%\"\r\n               height=\"2100px\" style=\"\r\n   border-left-width: 0px;\r\n   border-bottom-width: 0px;\r\n   border-right-width: 0px;\r\n   border-top-width: 0px;\"></iframe> \r\n   \r\n   "
+      "value": "<iframe\r\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramCEDES\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members\",\"paramCEDES_SUB\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members\"}}'\r\n               id=\"indicadoresIframeCEDES\"\r\n               width=\"100%\"\r\n               height=\"2500em\" style=\"\r\n   border-left-width: 0px;\r\n   border-bottom-width: 0px;\r\n   border-right-width: 0px;\r\n   border-top-width: 0px;\"></iframe> \r\n   \r\n   "
      },
      {
       "name": "fontSize",
