@@ -13,10 +13,6 @@
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
       </Connection>
-      <Connection id="indicadoresGEA_DS" type="mondrian.jndi">
-         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
-         <Jndi>SIALG</Jndi>
-      </Connection>
       <Connection id="individualDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
@@ -138,7 +134,7 @@ FROM [SIALG - Demandas]]]></Query>
          <Parameter default="" name="metaCorretude" type="String"/>
          <Parameter default="" name="metaDefeitos" type="String"/>
          <Parameter default="" name="metaAtendimento" type="String"/>
-         <Parameter default="participacaoAderencia" name="metaEquipe" type="String"/>
+         <Parameter default="" name="metaEquipe" type="String"/>
          <Parameter default="" name="metaIndividual" type="String"/>
          <Parameter default="" name="participacaoCobertura" type="String"/>
          <Parameter default="" name="participacaoPrazo" type="String"/>
@@ -186,14 +182,7 @@ member [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla 
 
 MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'
 
-member [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'
-member [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'
-member [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'
-member [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'
-
-member [Measures].[Nota2] as '(([Measures].[Aderencia]/${pesoAderencia})+([Measures].[Agilidade]/${pesoAgilidade})+([Measures].[Atendimento]/${pesoAtendimento})+([Measures].[Qualidade]/${pesoQualidade})+([Measures].[Produtividade]/${pesoProdutividade}))/10'
-
-member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'
+member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaIndividual}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'
 
 member [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), [Measures].[Nota])))'
 
@@ -249,141 +238,6 @@ set [Rows] as FILTER(
  )
 set [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'
 
-
-
-SELECT
-[SORTED_ROW] ON ROWS
-,{ [Measures].[Rank] , [Measures].[Prioridades1],[Measures].[Cobertura1]
-  ,[Measures].[CumprimentoPrazo1], [Measures].[Efetividade1]
-  ,[Measures].[Corretude1],[Measures].[Defeitos1]
-  , [Measures].[Atendimento1], [Measures].[Equipe1]
-  , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS
-
-FROM [SIALG - Demandas]]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="indicadoresGEA_DS" id="indicadoresGEA_DS"
-               type="mdx">
-      <Name>indicadoresGEA_DS</Name>
-      <BandedMode>classic</BandedMode>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Output indexes="0,1" mode="exclude"/>
-      <Parameters>
-         <Parameter default="" name="pesoAderencia" type="String"/>
-         <Parameter default="" name="pesoAgilidade" type="String"/>
-         <Parameter default="" name="pesoQualidade" type="String"/>
-         <Parameter default="" name="pesoAtendimento" type="String"/>
-         <Parameter default="" name="pesoProdutividade" type="String"/>
-         <Parameter default="" name="metaCobertura" type="String"/>
-         <Parameter default="" name="metaAderencia" type="String"/>
-         <Parameter default="" name="metaPrazo" type="String"/>
-         <Parameter default="" name="metaPlanejamento" type="String"/>
-         <Parameter default="" name="metaCorretude" type="String"/>
-         <Parameter default="" name="metaDefeitos" type="String"/>
-         <Parameter default="" name="metaAtendimento" type="String"/>
-         <Parameter default="participacaoAderencia" name="metaEquipe" type="String"/>
-         <Parameter default="" name="metaIndividual" type="String"/>
-         <Parameter default="" name="participacaoCobertura" type="String"/>
-         <Parameter default="" name="participacaoPrazo" type="String"/>
-         <Parameter default="" name="participacaoPlanejamento" type="String"/>
-         <Parameter default="" name="participacaoCorretude" type="String"/>
-         <Parameter default="" name="participacaoDefeitos" type="String"/>
-         <Parameter default="" name="participacaoAtendimento" type="String"/>
-         <Parameter default="" name="participacaoEquipe" type="String"/>
-         <Parameter default="" name="participacaoIndividual" type="String"/>
-         <Parameter default="" name="paramUnidade" type="String"/>
-         <Parameter default="" name="paramGEC" type="String"/>
-         <Parameter default="" name="participacaoAderencia" type="String"/>
-         <Parameter default="" name="metaCobertura" type="String"/>
-         <Parameter default="" name="paramGEC_SUB" type="String"/>
-         <Parameter default="" name="param_table_GEC" type="String"/>
-      </Parameters>
-      <Query><![CDATA[with
-member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-member [Measures].[Prioridades1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Prioridades]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Prioridades]), [Measures].[Prioridades])))'
-
-member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-member [Measures].[Cobertura1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cobertura]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cobertura]), [Measures].[Cobertura])))'
-
-member [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
-member [Measures].[CumprimentoPrazo1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cumprimento Prazo]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]), [Measures].[Cumprimento Prazo])))'
-
-member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
-member [Measures].[Efetividade1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Efetividade]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Efetividade]), [Measures].[Efetividade])))'
-
-member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
-member [Measures].[Corretude1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Corretude]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Corretude]), [Measures].[Corretude])))'
-
-member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
-member [Measures].[Defeitos1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Defeitos]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Defeitos]), [Measures].[Defeitos])))'
-
-member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
-member [Measures].[Atendimento1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Atendimento]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Atendimento]), [Measures].[Atendimento])))'
-
-member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-member [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), [Measures].[Equipe])))'
-
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
-member [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), [Measures].[Individual])))'
-
-
-MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'
-
-member [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'
-member [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'
-member [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'
-member [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'
-
-
-member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'
-
-member [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), [Measures].[Nota])))'
-
-
-set [CONJUNTO1] as '{
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'
-
-set [CONJUNTO2] as '{
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'
-
-set [CONJUNTO3] as '{
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR14],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR16]}'
-
-set [Rows] as FILTER(
-
-{${param_table_GEC}}
-, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember in {
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10],
-[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10]} )
-
-set [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'
 
 
 SELECT

@@ -14412,7 +14412,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\n    if(participacaoAtendimento != 100){\n        participacaoAtendimento = 100;\n        Dashboards.fireChange(\"participacaoAtendimento\", participacaoAtendimento);\n    }   \n} "
      },
      {
       "name": "postExecution",
@@ -14422,7 +14422,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n     var contUnidadesApresentada = 0;\r\n     for(x=0;x<a.resultset.length;x++){\r\n\t\t var tr = \"<tr>\";\r\n\t\t var nota = \"\";\r\n\t\tif((\ta.resultset[x][1] == 'CEDESBR')||( a.resultset[x][1] ==\"CEDESRJ\") || (a.resultset[x][1] ==\"CEDESSP\") ){\r\n\t\t\t//Não vai ter nota, nem medalha, nem cor\r\n\t\t\ttr += \"<td> - </td>\";\r\n            tr += \"<td> - </td>\";\r\n            tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n\t\t\tnota += \"<td data-sort-value='-100000000000'> - </td>\";\r\n\t\t\tcontUnidadesApresentada++;\r\n\t    }else{\r\n\t\t\t//Top 10 e o Resto\r\n\t\t\tvar l = x+1-contUnidadesApresentada;\r\n\t\t\t nota = \"<td data-sort-value='\"+a.resultset[x][12]+\"' class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\"; \r\n\t\t\tif(x < 10+contUnidadesApresentada){\r\n\t\t\t\t//Top 10\r\n\t\t\t\ttr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking'>\"+a.resultset[x][1]+\"</td>\";\r\n               \r\n\t\t\t\t\r\n\t\t\t}else{\r\n\t\t\t\t//Resto\r\n\t\t\t\ttr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+a.resultset[x][2]+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t\t\r\n\r\n\t\t}\r\n\t\t\t//MIOLO DA TABELA\r\n\t\t\t for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n\t\t\t\t\tif(a.resultset[x][y]!==null){\r\n\t\t\t\t\t\ttr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n\t\t\t\t\t\tif(y != 8){\r\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n\t\t\t\t\t\t}else{\r\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\ttr +=  a.resultset[x][y];\r\n\t\t\t\t\t\ttr += \"</td>\";\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\ttr += \"<td>-</td>\"; \r\n\t\t\t\t\t}\r\n            \r\n\t\t\t}\r\n\t\t\t\r\n\t\t\ttr += nota;\r\n\t\t\t tr += \"</tr>\";\r\n\t\t\t$('#indicadores').append(tr);\r\n       \r\n        }\r\n         $('#tabelaIndicadores').stupidtable({\r\n                        \r\n        });\r\n      }\r\n     \r\n      \r\n    \r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n     var contUnidadesApresentada = 0;\r\n     for(x=0;x<a.resultset.length;x++){\r\n\t\t var tr = \"<tr>\";\r\n\t\t var nota = \"\";\r\n\t\tif((\ta.resultset[x][1] == 'CEDESBR')||( a.resultset[x][1] ==\"CEDESRJ\") || (a.resultset[x][1] ==\"CEDESSP\") ){\r\n\t\t\t//Não vai ter nota, nem medalha, nem cor\r\n\t\t\ttr += \"<td> - </td>\";\r\n            tr += \"<td> - </td>\";\r\n            tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n\t\t\tnota += \"<td data-sort-value='-100000000000'> - </td>\";\r\n\t\t\tcontUnidadesApresentada++;\r\n\t    }else{\r\n\t\t\t//Top 10 e o Resto\r\n\t\t\tvar l = x+1-contUnidadesApresentada;\r\n\t\t\t nota = \"<td data-sort-value='\"+a.resultset[x][12]+\"' class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\"; \r\n\t\t\tif(x < 10+contUnidadesApresentada){\r\n\t\t\t\t//Top 10\r\n\t\t\t\ttr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking'>\"+a.resultset[x][1]+\"</td>\";\r\n               \r\n\t\t\t\t\r\n\t\t\t}else{\r\n\t\t\t\t//Resto\r\n\t\t\t\ttr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td>\"+a.resultset[x][1]+\"</td>\";\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t\t\r\n\r\n\t\t}\r\n\t\t\t//MIOLO DA TABELA\r\n\t\t\t for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n\t\t\t\t\tif(a.resultset[x][y]!==null){\r\n\t\t\t\t\t\ttr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n\t\t\t\t\t\tif(y != 8){\r\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n\t\t\t\t\t\t}else{\r\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\ttr +=  a.resultset[x][y];\r\n\t\t\t\t\t\ttr += \"</td>\";\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\ttr += \"<td>-</td>\"; \r\n\t\t\t\t\t}\r\n            \r\n\t\t\t}\r\n\t\t\t\r\n\t\t\ttr += nota;\r\n\t\t\t tr += \"</tr>\";\r\n\t\t\t$('#indicadores').append(tr);\r\n       \r\n        }\r\n         $('#tabelaIndicadores').stupidtable({\r\n                        \r\n        });\r\n      }\r\n     \r\n      \r\n    \r\n "
      },
      {
       "name": "preChange",
@@ -17075,7 +17075,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoCobertura}\"]"
      },
      {
       "name": "maxLength",
@@ -17125,7 +17125,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoAderencia')>=100){\r\n        var valor = 65;\r\n        Dashboards.fireChange('participacaoAderencia',valor);\r\n        Dashboards.fireChange('participacaoCobertura',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoAderencia');\r\n        Dashboards.fireChange('participacaoCobertura',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17153,7 +17153,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoAderencia}\"]"
      },
      {
       "name": "maxLength",
@@ -17203,7 +17203,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoCobertura')>100){\r\n        var valor = 35;\r\n        Dashboards.fireChange('participacaoCobertura',valor);\r\n        Dashboards.fireChange('participacaoAderencia',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoCobertura');\r\n        Dashboards.fireChange('participacaoAderencia',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17231,7 +17231,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoPlanejamento}\"]"
      },
      {
       "name": "maxLength",
@@ -17281,7 +17281,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoPrazo')>100){\r\n        var valor = 60;\r\n        Dashboards.fireChange('participacaoPrazo',valor);\r\n        Dashboards.fireChange('participacaoPlanejamento',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoPrazo');\r\n        Dashboards.fireChange('participacaoPlanejamento',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17309,7 +17309,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoPrazo}\"]"
      },
      {
       "name": "maxLength",
@@ -17359,7 +17359,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoPlanejamento')>100){\r\n        var valor = 40;\r\n        Dashboards.fireChange('participacaoPlanejamento',valor);\r\n        Dashboards.fireChange('participacaoPrazo',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoPlanejamento');\r\n        Dashboards.fireChange('participacaoPrazo',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17387,7 +17387,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoDefeitos}\"]"
      },
      {
       "name": "maxLength",
@@ -17437,7 +17437,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoCorretude')>100){\r\n        var valor = 60;\r\n        Dashboards.fireChange('participacaoCorretude',valor);\r\n        Dashboards.fireChange('participacaoDefeitos',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoCorretude');\r\n        Dashboards.fireChange('participacaoDefeitos',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17465,7 +17465,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoCorretude}\"]"
      },
      {
       "name": "maxLength",
@@ -17515,7 +17515,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoDefeitos')>100){\r\n        var valor = 40;\r\n        Dashboards.fireChange('participacaoDefeitos',valor);\r\n        Dashboards.fireChange('participacaoCorretude',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoDefeitos');\r\n        Dashboards.fireChange('participacaoCorretude',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17543,7 +17543,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoAtendimento}\"]"
      },
      {
       "name": "maxLength",
@@ -17621,7 +17621,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoIndividual}\"]"
      },
      {
       "name": "maxLength",
@@ -17671,7 +17671,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoEquipe')>100){\r\n        var valor = 65;\r\n        Dashboards.fireChange('participacaoEquipe',valor);\r\n        Dashboards.fireChange('participacaoIndividual',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoEquipe');\r\n        Dashboards.fireChange('participacaoIndividual',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -17699,7 +17699,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:participacaoEquipe}\"]"
      },
      {
       "name": "maxLength",
@@ -17749,7 +17749,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": ""
+      "value": "function f(){\r\n    if(Dashboards.getParam('participacaoIndividual')>100){\r\n        var valor = 35;\r\n        Dashboards.fireChange('participacaoIndividual',valor);\r\n        Dashboards.fireChange('participacaoEquipe',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoIndividual');\r\n        Dashboards.fireChange('participacaoEquipe',valor1);   \r\n    }\r\n} "
      },
      {
       "name": "tooltip",
@@ -18831,7 +18831,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*${pesoAderencia}) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*${pesoAderencia}) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*${pesoAgilidade}) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*${pesoAgilidade}) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*${pesoAtendimento}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*${pesoProdutividade}) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*${pesoQualidade}) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*${pesoQualidade})'\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${param_table_CEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESBR].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESRJ].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESSP].CHILDREN}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas] \r\n\r\n"
+      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    ,(${metaAderencia}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   )   ,0  )/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) + IIF(  [Measures].[Priorizadas]>0   ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100)    ,(${metaCobertura}/100)     ,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   )   ,0  )/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) + IIF(  [Measures].[Planejadas]>0   ,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    ,(${metaPrazo}/100)     ,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   )   ,0  )/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) + IIF(  [Measures].[Planejadas e Implantadas]>0   ,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    ,${metaPlanejamento}     ,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   )   ,0  )/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) + IIF(  [Measures].[Criadas no Periodo]>0   ,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    ,(${metaAtendimento}/100)    ,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   )   ,0  )/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)    ,(${metaEquipe}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) + IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   ,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    ,(${metaIndividual}/100)     ,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   )   ,0  )/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) + IIF(  [Measures].[DMS DNS STE Defeito Criados]>0   ,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    ,(${metaCorretude}/100)     ,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   )   ,0  )/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) + IIF(  [Measures].[Defeito Criado em PRD]>0   ,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    ,(${metaDefeitos}/100)     ,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   )   ,0  )/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${param_table_CEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESBR].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESRJ].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESSP].CHILDREN}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas] \r\n\r\n"
      },
      {
       "name": "parameters",
