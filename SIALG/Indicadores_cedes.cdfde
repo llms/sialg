@@ -642,8 +642,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -792,8 +792,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -2056,8 +2056,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -2206,8 +2206,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -3470,8 +3470,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -3620,8 +3620,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -4884,8 +4884,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -5034,8 +5034,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -6298,8 +6298,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -6448,8 +6448,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -7712,8 +7712,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -7862,8 +7862,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -9126,8 +9126,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -9276,8 +9276,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -10540,8 +10540,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -10690,8 +10690,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -11954,8 +11954,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -12104,8 +12104,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -13368,8 +13368,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -13518,8 +13518,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -14181,7 +14181,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function drill(g) { \n      var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g);\n\n} "
+      "value": "function drill(g) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3Aanalise_indicadores_cedes.xanalyzer/editor?param_cedes_completa='+ g);\r\n\r\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -14517,7 +14517,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\n     $('#indicadores').html(\"\");\n     var contUnidadesApresentada = 0;\n     for(x=0;x<a.resultset.length;x++){\n    \t var tr = \"<tr>\";\n\t\t var nota = \"\";\n\t\tif((\ta.resultset[x][1] == 'CEDESBR')||( a.resultset[x][1] ==\"CEDESRJ\") || (a.resultset[x][1] ==\"CEDESSP\") ){\n\t\t\t//Não vai ter nota, nem medalha, nem cor\n\t\t\ttr += \"<td class='geacedestotal' data-sort-value='-100000000000'></td>\";\n            tr += \"<td class='geacedestotal' data-sort-value='-100000000000'></td>\";\n            tr += \"<td class='geacedestotal' data-sort-value='-100000000000'>\"+a.resultset[x][1]+\"</td>\";\n\t\t\tnota += \"<td class='geacedestotal' data-sort-value='-100000000000'>  </td>\";\n\t\t\tcontUnidadesApresentada++;\n\t    }else{\n\t\t\t//Top 10 e o Resto\n\t\t\tvar l = x+1-contUnidadesApresentada;\n\t\t\t nota = \"<td data-sort-value='\"+a.resultset[x][12]+\"' class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\"; \n\t\t\tif(x < 10+contUnidadesApresentada){\n\t\t\t\t//Top 10\n\t\t\t\ttr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\n               \n\t\t\t\t\n\t\t\t}else{\n\t\t\t\t//Resto\n\t\t\t\ttr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\n                tr += \"<td>\"+a.resultset[x][2]+\"</td>\";\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\n\t\t\t\t\n\t\t\t}\n\t\t\t\n\n\t\t}\n\t\t\t//MIOLO DA TABELA\n\t\t\t for(y=3;y<a.resultset[x].length-1;y++){\n            \n\t\t\t\t\tif(a.resultset[x][y]!==null){\n\t\t\t\t\t\ttr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \n\t\t\t\t\t\tif(y != 8){\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\n\t\t\t\t\t\t}else{\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\n\t\t\t\t\t\t}\n\t\t\t\t\t\ttr +=  a.resultset[x][y];\n\t\t\t\t\t\ttr += \"</td>\";\n\t\t\t\t\t}else{\n\t\t\t\t\t\ttr += \"<td class='geacedestotal' data-sort-value='-100000000000'>-</td>\"; \n\t\t\t\t\t}\n            \n\t\t\t}\n\t\t\t\n\t\t\ttr += nota;\n\t\t\t tr += \"</tr>\";\n\t\t\t$('#indicadores').append(tr);\n       \n        }\n         $('#tabelaIndicadores').stupidtable({\n                        \n        });\n      }\n     \n      \n    "
+      "value": "function postFetch(a){\n     $('#indicadores').html(\"\");\n     var contUnidadesApresentada = 0;\n     for(x=0;x<a.resultset.length;x++){\n    \t var tr = \"<tr>\";\n\t\t var nota = \"\";\n\t\tif((\ta.resultset[x][1] == 'CEDESBR')||( a.resultset[x][1] ==\"CEDESRJ\") || (a.resultset[x][1] ==\"CEDESSP\") ){\n\t\t\t//Não vai ter nota, nem medalha, nem cor\n\t\t\ttr += \"<td class='geacedestotal' data-sort-value='-100000000000'></td>\";\n            tr += \"<td class='geacedestotal' data-sort-value='-100000000000'></td>\";\n            tr += \"<td class='geacedestotal' data-sort-value='-100000000000'>\"+a.resultset[x][1]+\"</td>\";\n\t\t\tnota += \"<td class='geacedestotal' data-sort-value='-100000000000'>  </td>\";\n\t\t\tcontUnidadesApresentada++;\n\t    }else{\n\t\t\t//Top 10 e o Resto\n\t\t\tvar l = x+1-contUnidadesApresentada;\n\t\t\t nota = \"<td data-sort-value='\"+a.resultset[x][12]+\"' class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\"; \n\t\t\tif(x < 10+contUnidadesApresentada){\n\t\t\t\t//Top 10\n\t\t\t\ttr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\n                tr += \"<td class='ranking cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\n               \n\t\t\t\t\n\t\t\t}else{\n\t\t\t\t//Resto\n\t\t\t\ttr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\n                tr += \"<td>\"+a.resultset[x][2]+\"</td>\";\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\n\t\t\t\t\n\t\t\t}\n\t\t\t\n\n\t\t}\n\t\t\t//MIOLO DA TABELA\n\t\t\t for(y=3;y<a.resultset[x].length-1;y++){\n            \n\t\t\t\t\tif(a.resultset[x][y]!==null){\n\t\t\t\t\t\ttr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \n\t\t\t\t\t\tif(y != 8){\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\n\t\t\t\t\t\t}else{\n\t\t\t\t\t\ta.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\n\t\t\t\t\t\t}\n\t\t\t\t\t\ttr +=  a.resultset[x][y];\n\t\t\t\t\t\ttr += \"</td>\";\n\t\t\t\t\t}else{\n\t\t\t\t\t\ttr += \"<td class='geacedestotal' data-sort-value='-100000000000'>-</td>\"; \n\t\t\t\t\t}\n            \n\t\t\t}\n\t\t\t\n\t\t\ttr += nota;\n\t\t\t tr += \"</tr>\";\n\t\t\t$('#indicadores').append(tr);\n       \n        }\n         $('#tabelaIndicadores').stupidtable({\n                        \n        });\n      }\n     \n      \n    "
      },
      {
       "name": "preChange",

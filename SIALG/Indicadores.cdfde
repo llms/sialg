@@ -642,8 +642,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -792,8 +792,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -2056,8 +2056,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -2206,8 +2206,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -3470,8 +3470,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -3620,8 +3620,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -4884,8 +4884,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -5034,8 +5034,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -6298,8 +6298,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -6448,8 +6448,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -7712,8 +7712,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -7862,8 +7862,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -9126,8 +9126,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -9276,8 +9276,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -10540,8 +10540,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -10690,8 +10690,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -11954,8 +11954,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -12104,8 +12104,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -13368,8 +13368,8 @@
      },
      {
       "name": "ortho2AxisOverlappedLabelsMode",
-      "type": "cccOrtho2AxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
      },
      {
       "name": "ortho2AxisPosition",
@@ -13518,8 +13518,8 @@
      },
      {
       "name": "orthoAxisOverlappedLabelsMode",
-      "type": "cccOrthoAxisOverlappedLabelsModeCustom",
-      "value": "hide"
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
      },
      {
       "name": "orthoAxisPosition",
@@ -14181,7 +14181,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function drill(g) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g);\r\n\r\n} "
+      "value": "function drill(g) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3Aanalise_indicadores.xanalyzer/editor?param_gea_completa='+ g);\r\n\r\n} "
      }
     ],
     "type": "ComponentsFunction",
