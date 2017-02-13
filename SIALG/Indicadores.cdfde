@@ -17125,7 +17125,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function f(){\r\n    alert(\"Antes aderencia:\" + Dashboards.getParam('participacaoAderencia'));\r\n    alert(\"Antes cobertura:\" + Dashboards.getParam('participacaoCobertura'));\r\n    if(Dashboards.getParam('participacaoAderencia')>100){\r\n        var valor = 65;\r\n        Dashboards.fireChange('participacaoAderencia',valor);\r\n        Dashboards.fireChange('participacaoCobertura',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoAderencia');\r\n        Dashboards.fireChange('participacaoCobertura',valor1);  \r\n        alert(\"Depois Aderencia:\" + Dashboards.getParam('participacaoAderencia'));\r\n        alert(\"Depois cobertura:\" + Dashboards.getParam('participacaoCobertura'));\r\n    }\r\n} "
+      "value": "function f(){\r\n    // alert(\"Antes aderencia:\" + Dashboards.getParam('participacaoAderencia'));\r\n    // alert(\"Antes cobertura:\" + Dashboards.getParam('participacaoCobertura'));\r\n    if(Dashboards.getParam('participacaoAderencia')>100){\r\n        var valor = 65;\r\n        Dashboards.fireChange('participacaoAderencia',valor);\r\n        Dashboards.fireChange('participacaoCobertura',100 -valor);\r\n    } else {\r\n        var valor1= 100 - Dashboards.getParam('participacaoAderencia');\r\n        Dashboards.fireChange('participacaoCobertura',valor1);  \r\n        // alert(\"Depois Aderencia:\" + Dashboards.getParam('participacaoAderencia'));\r\n        // alert(\"Depois cobertura:\" + Dashboards.getParam('participacaoCobertura'));\r\n    }\r\n} "
      },
      {
       "name": "tooltip",
