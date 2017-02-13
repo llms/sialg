@@ -225,16 +225,7 @@ set [Rows] as FILTER(
 
 {${param_table_GEC}}
 
-, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember not in { [Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR03],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR05],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR07],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR10],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEABR12],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEARJ02],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP01],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP02],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP07],
-[Organizacao.Gestao da Demanda].[SUCTI].[NI].[GEASP08]}
+, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
  )
 set [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'
 
