@@ -1172,7 +1172,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT  SG_CEDES_COMPLETO_MDX, \"Coord TI Detalhe\" FROM(\r\n\r\n(SELECT 'Todos' as \"Coord TI Detalhe\",\r\n('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as \"Sigla Coord TI\")\r\nUNION\r\nSELECT distinct \"Coord TI Detalhe\", \r\n    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || \"Coord TI Detalhe\" || ']') as SG_CEDES_COMPLETO_MDX,\r\n    \"Sigla Coord TI\"\r\n    FROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\n    \tWHERE  ('Todos' IN (${paramCEDES_SQL}) or \"Coord TI Site\" IN (${paramCEDES_SQL}))  AND \"Sigla Coord TI\" <> 'NI' and \"Sigla Coord TI\" <> 'GITEC'\r\n\t\tORDER BY \"Sigla Coord TI\", \"Coord TI Detalhe\") as SUB\r\n\t\t"
+      "value": "SELECT  SG_CEDES_COMPLETO_MDX, \"Coord TI Detalhe\" FROM(\r\n\r\n(SELECT 'Todos' as \"Coord TI Detalhe\",\r\n('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as \"Sigla Coord TI\")\r\nUNION\r\nSELECT distinct \"Coord TI Detalhe\", \r\n    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || \"Coord TI Detalhe\" || ']') as SG_CEDES_COMPLETO_MDX,\r\n    \"Sigla Coord TI\"\r\n    FROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\n    \tWHERE  ('Todos' IN (${paramCEDES_SQL}) or \"Coord TI Site\" IN (${paramCEDES_SQL}))  AND \"Sigla Coord TI\" like '%CEDES%'\r\n\t\tORDER BY \"Sigla Coord TI\", \"Coord TI Detalhe\") as SUB\r\n\t\t"
      },
      {
       "name": "parameters",
@@ -1316,7 +1316,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select \"Coord TI Site\", dis_SG_CEDES   from (\r\n\r\n(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as \"Coord TI Site\",  'a' as \"Sigla Coord TI\" )\r\n UNION \r\nSELECT distinct \"Coord TI Site\" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || \"Coord TI Site\" || ']') as \"Coord TI Site\",\r\n  \"Sigla Coord TI\"\r\nFROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\nwhere \"Sigla Coord TI\" <> 'NI' and \"Sigla Coord TI\" <> 'GITEC'\r\norder by \"Sigla Coord TI\",\"Coord TI Site\") as sub;\r\n"
+      "value": "select \"Coord TI Site\", dis_SG_CEDES   from (\r\n\r\n(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as \"Coord TI Site\",  'a' as \"Sigla Coord TI\" )\r\n UNION \r\nSELECT distinct \"Coord TI Site\" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || \"Coord TI Site\" || ']') as \"Coord TI Site\",\r\n  \"Sigla Coord TI\"\r\nFROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\nwhere \"Sigla Coord TI\" like '%CEDES%'\r\norder by \"Sigla Coord TI\",\"Coord TI Site\") as sub;\r\n"
      },
      {
       "name": "parameters",

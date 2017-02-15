@@ -52,7 +52,7 @@ SELECT distinct "Coord TI Detalhe",
     ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || "Coord TI Detalhe" || ']') as SG_CEDES_COMPLETO_MDX,
     "Sigla Coord TI"
     FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
-    	WHERE  ('Todos' IN (${paramCEDES_SQL}) or "Coord TI Site" IN (${paramCEDES_SQL}))  AND "Sigla Coord TI" <> 'NI' and "Sigla Coord TI" <> 'GITEC'
+    	WHERE  ('Todos' IN (${paramCEDES_SQL}) or "Coord TI Site" IN (${paramCEDES_SQL}))  AND "Sigla Coord TI" like '%CEDES%'
 		ORDER BY "Sigla Coord TI", "Coord TI Detalhe") as SUB]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidGEC_SUB" id="unidGEC_SUB" type="sql">
@@ -88,7 +88,7 @@ SELECT distinct "SG_GEC_COMPLETO",
 SELECT distinct "Coord TI Site" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || "Coord TI Site" || ']') as "Coord TI Site",
   "Sigla Coord TI"
 FROM "ALGSC002_SIALG"."ALGVW001_DEMANDAS_DIMENSIONADASv2"
-where "Sigla Coord TI" <> 'NI' and "Sigla Coord TI" <> 'GITEC'
+where "Sigla Coord TI" like '%CEDES%'
 order by "Sigla Coord TI","Coord TI Site") as sub;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidGEC_new" id="unidGEC_new" type="sql">
