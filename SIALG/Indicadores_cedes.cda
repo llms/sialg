@@ -93,29 +93,7 @@
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
@@ -132,29 +110,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 
 SELECT
@@ -399,29 +355,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
@@ -438,29 +372,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
@@ -477,29 +389,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
-set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
@@ -520,29 +410,7 @@ member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[P
 member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Efetividade] ON COLUMNS
@@ -563,29 +431,7 @@ member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[P
 member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cumprimento] ON COLUMNS
@@ -603,29 +449,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
@@ -640,30 +464,7 @@ FROM [SIALG - Demandas]]]></Query>
       <Parameters/>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-
-set [Rows] as FILTER([Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].MEMBERS,
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Indice - Nota Final] ON COLUMNS
@@ -681,29 +482,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-set [Rows] as  FILTER({${param_chart_CEDES_SUB}},
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember NOT IN { 
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECCT],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFL],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECFO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECPO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRE],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECSP],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[GITECBH],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NI02],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIBR],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIGO],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NINI],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NIRJ],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISA],
-[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[NISP]
-
-} )
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
