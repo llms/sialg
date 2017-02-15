@@ -86,11 +86,8 @@
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER({${param_chart_GEC_SUB}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
+
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
@@ -107,11 +104,8 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER( {${param_chart_GEC_SUB}},
+[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 
 
 
@@ -328,11 +322,8 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER({${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
@@ -349,11 +340,8 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER({${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
@@ -371,10 +359,8 @@ FROM [SIALG - Demandas]]]></Query>
       <Query><![CDATA[with
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
 set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+{${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
@@ -396,10 +382,8 @@ member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
 set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+{${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 
 SELECT
 [Rows] ON ROWS
@@ -421,11 +405,8 @@ member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[P
 member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER({${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 
 SELECT
 [Rows] ON ROWS
@@ -444,11 +425,9 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER( {${param_chart_GEC_SUB}}
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
+
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
@@ -465,10 +444,8 @@ FROM [SIALG - Demandas]]]></Query>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
 set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS
+, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
 
 SELECT
 [Rows] ON ROWS
@@ -487,11 +464,9 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-set [Rows] as FILTER(
-    {${param_chart_GEC_SUB}}
-    , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
-        [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*")
- )
+set [Rows] as FILTER( {${param_chart_GEC_SUB}},
+[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})
+
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
