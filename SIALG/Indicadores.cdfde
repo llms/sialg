@@ -14070,6 +14070,24 @@
     "typeDesc": "<i>Group</i>"
    },
    {
+    "id": "58525626-c4d8-0f30-e75d-97558cafa360",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "detalhaCentroTabela"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function detalha(g, h) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + ':' + h);\r\n\r\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
     "id": "16f1e526-4336-a47f-53f8-72ea4403968b",
     "parent": "SCRIPT",
     "properties": [
@@ -14171,7 +14189,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "  function colorNota(valor){  \r\n    var x = valor;\r\n    if(x >= 1.2*metaNota){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*metaNota){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*metaNota){\r\n      return \"prata\";\r\n    }else if(x >= 0.7*metaNota){\r\n      return \"bronze\";\r\n    }else{\r\n        return \"cobre\";\r\n    }\r\n  } "
+      "value": "  function colorNota(valor){  \r\n    var x = valor;\r\n    if(x >= 1.2*metaNota){\r\n      return \"diamante\";\r\n    }else if(x >= 1.0*metaNota){\r\n      return \"ouro\";\r\n    }else if(x >= 0.85*metaNota){\r\n      return \"prata\";\r\n    }else {\r\n      return \"bronze\";\r\n    }\r\n  } "
      }
     ],
     "type": "ComponentsFunction",
@@ -14422,7 +14440,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n           if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n      //jquery tabledort\r\n       /* $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );*/\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n           if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            \r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td style='cursor:pointer' onclick=\\\"detalha(\\'\"+a.resultset[x][1] +\"\\', \\'\"+ y +\"\\')\\\" class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n      //jquery tabledort\r\n       /* $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );*/\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -18621,7 +18639,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\")\n )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
@@ -18702,7 +18720,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -18864,7 +18882,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]\n"
      },
      {
       "name": "parameters",
@@ -18945,7 +18963,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19026,7 +19044,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19107,7 +19125,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19188,7 +19206,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER({${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19269,7 +19287,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}}\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19350,7 +19368,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER(\r\n[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Indice - Nota Final] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
+      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Indice - Nota Final] ON COLUMNS\r\n\r\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
@@ -19431,7 +19449,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER( {${param_chart_GEC_SUB}},\n[Organizacao.Gestao da Demanda].[Sigla GEA].currentMember NOT IN {[Organizacao.Gestao da Demanda].[SUCTI].[CEDES], [Organizacao.Gestao da Demanda].[SUCTI].[CETEC], [Organizacao.Gestao da Demanda].[SUCTI].[GEDTI], [Organizacao.Gestao da Demanda].[SUCTI].[GEPEM], [Organizacao.Gestao da Demanda].[SUCTI].[NI], [Organizacao.Gestao da Demanda].[SUCTI].[PECAC]})\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
+      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Demandas]"
      },
      {
       "name": "parameters",
