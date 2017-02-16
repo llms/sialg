@@ -167,7 +167,7 @@ member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
 member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
 MEMBER [Measures].[Rank] AS '0'
 
 

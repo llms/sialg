@@ -181,7 +181,7 @@ member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[M
 member [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), [Measures].[Equipe])))'
 
 
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
 member [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), [Measures].[Individual])))'
 
 MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'
