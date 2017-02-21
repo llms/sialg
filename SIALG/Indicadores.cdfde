@@ -12709,7 +12709,7 @@
      {
       "name": "htmlObject",
       "type": "HtmlObject",
-      "value": "aderenciaHTML"
+      "value": "${h:aderenciaHTML}"
      },
      {
       "name": "executeAtStart",
@@ -14056,6 +14056,1461 @@
     "typeDesc": "CCC Bar Chart"
    },
    {
+    "id": "503dd335-214d-42a8-2033-9867400682ca",
+    "meta_cdwSupport": "true",
+    "parent": "CHARTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "teste"
+     },
+     {
+      "name": "title",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[\"${p:paramGEC}\"]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": "aderenciaDS"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": "100"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": "4"
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "width",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "colors",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": ""
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": "function f(){\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "extensionPoints",
+      "type": "EditorValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     },
+     {
+      "name": "animate",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "areasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
+      "name": "areasVisible",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSize",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSizeMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSizeMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSpacing",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSpacingMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisBandSpacingMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisClickAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "baseAxisDesiredTickCount",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisDomainAlign",
+      "type": "cccBaseAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
+      "name": "baseAxisDomainRoundMode",
+      "type": "cccBaseAxisDomainRoundModeCustom",
+      "value": "tick"
+     },
+     {
+      "name": "baseAxisDomainScope",
+      "type": "cccBaseAxisDomainScopeCustom",
+      "value": "global"
+     },
+     {
+      "name": "baseAxisDoubleClickAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "baseAxisFixedLength",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisFixedMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisFixedMin",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisFont",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisGrid",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "baseAxisLabelDesiredAngles",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "baseAxisLabelRotationDirection",
+      "type": "cccBaseAxisLabelRotationDirectionCustom",
+      "value": "clockwise"
+     },
+     {
+      "name": "baseAxisLabelSpacingMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisMinorTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "baseAxisOffset",
+      "type": "Float",
+      "value": 0
+     },
+     {
+      "name": "baseAxisOriginIsZero",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "baseAxisOverlappedLabelsMode",
+      "type": "cccBaseAxisOverlappedLabelsModeCustom",
+      "value": "hide"
+     },
+     {
+      "name": "baseAxisPosition",
+      "type": "cccBaseAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "baseAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "baseAxisRatio",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTickExponentMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTickExponentMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTickFormatter",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "baseAxisTickUnit",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTickUnitMax",
+      "type": "String",
+      "value": "Infinity"
+     },
+     {
+      "name": "baseAxisTickUnitMin",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "baseAxisTitle",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTitleAlign",
+      "type": "cccBaseAxisTitleAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTitleFont",
+      "type": "String",
+      "value": "12px sans-serif"
+     },
+     {
+      "name": "baseAxisTitleMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "baseAxisTitleSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTitleSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "baseAxisTooltipAutoContent",
+      "type": "cccBaseAxisTooltipAutoContentCustom",
+      "value": "value"
+     },
+     {
+      "name": "baseAxisTooltipEnabled",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "baseAxisTooltipFormat",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "baseAxisVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "baseAxisZeroLine",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "categoryRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "clearSelectionMode",
+      "type": "cccClearSelectionModeCustom",
+      "value": "emptySpaceClick"
+     },
+     {
+      "name": "clickable",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "clickAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "color2AxisColors",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "color2AxisLegendClickMode",
+      "type": "cccColor2AxisLegendClickModeCustom",
+      "value": "toggleVisible"
+     },
+     {
+      "name": "color2AxisLegendDrawLine",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "color2AxisLegendDrawMarker",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "color2AxisLegendShape",
+      "type": "cccColor2AxisLegendShapeCustom",
+      "value": ""
+     },
+     {
+      "name": "color2AxisLegendVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "color2AxisPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "color2AxisTransform",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "color2AxisUnbound",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "colorPreserveMap",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "colorRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "colorTransform",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "colorUnbound",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "compatVersion",
+      "type": "Float",
+      "value": 2
+     },
+     {
+      "name": "contentMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "contentPaddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "crosstabMode",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "ctrlSelectMode",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "dataCategoriesCount",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "dataIgnoreMetadataLabels",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "dataMeasuresInColumns",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "dataPartRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "dataSeparator",
+      "type": "String",
+      "value": "~"
+     },
+     {
+      "name": "dataWhere",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "dotsVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "doubleClickAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "groupedLabelSep",
+      "type": "String",
+      "value": " ~ "
+     },
+     {
+      "name": "hoverable",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "ignoreNulls",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "interactive",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "isMultiValued",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "leafContentOverflow",
+      "type": "cccLeafContentOverflowCustom",
+      "value": "auto"
+     },
+     {
+      "name": "legend",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "legendAlign",
+      "type": "cccLegendAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "legendClickMode",
+      "type": "cccLegendClickModeCustom",
+      "value": "toggleVisible"
+     },
+     {
+      "name": "legendDrawLine",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "legendDrawMarker",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "legendFont",
+      "type": "String",
+      "value": "10px sans-serif"
+     },
+     {
+      "name": "legendItemCountMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "legendItemPadding",
+      "type": "String",
+      "value": "2.5"
+     },
+     {
+      "name": "legendItemSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "legendMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "legendMarkerSize",
+      "type": "Float",
+      "value": 15
+     },
+     {
+      "name": "legendOverflow",
+      "type": "cccLegendOverflowCustom",
+      "value": "clip"
+     },
+     {
+      "name": "legendPaddings",
+      "type": "String",
+      "value": "5"
+     },
+     {
+      "name": "legendPosition",
+      "type": "cccLegendPositionCustom",
+      "value": "bottom"
+     },
+     {
+      "name": "legendShape",
+      "type": "cccLegendShapeCustom",
+      "value": ""
+     },
+     {
+      "name": "legendSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "legendSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "legendTextMargin",
+      "type": "Float",
+      "value": 6
+     },
+     {
+      "name": "legendVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "margins",
+      "type": "String",
+      "value": "3"
+     },
+     {
+      "name": "measuresIndexes",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "multiChartColumnsMax",
+      "type": "Float",
+      "value": 3
+     },
+     {
+      "name": "multiChartIndexes",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "multiChartMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "multiChartOverflow",
+      "type": "cccMultiChartOverflowCustom",
+      "value": "grow"
+     },
+     {
+      "name": "multiChartRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "multiChartSingleColFillsHeight",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "multiChartSingleRowFillsHeight",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "nullInterpolationMode",
+      "type": "cccNullInterpolationModeCustom",
+      "value": "none"
+     },
+     {
+      "name": "orientation",
+      "type": "cccOrientationCustom",
+      "value": "vertical"
+     },
+     {
+      "name": "ortho2AxisDesiredTickCount",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisDomainAlign",
+      "type": "cccOrtho2AxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
+      "name": "ortho2AxisDomainRoundMode",
+      "type": "cccOrtho2AxisDomainRoundModeCustom",
+      "value": "tick"
+     },
+     {
+      "name": "ortho2AxisDomainScope",
+      "type": "cccOrtho2AxisDomainScopeCustom",
+      "value": "global"
+     },
+     {
+      "name": "ortho2AxisFixedLength",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisFixedMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisFixedMin",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisFont",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisGrid",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "ortho2AxisLabelSpacingMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisMinorTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "ortho2AxisOffset",
+      "type": "Float",
+      "value": 0
+     },
+     {
+      "name": "ortho2AxisOriginIsZero",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPosition",
+      "type": "cccOrtho2AxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisRatio",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTickExponentMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTickExponentMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTickFormatter",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "ortho2AxisTickUnit",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTickUnitMax",
+      "type": "String",
+      "value": "Infinity"
+     },
+     {
+      "name": "ortho2AxisTickUnitMin",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "ortho2AxisTitle",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTitleAlign",
+      "type": "cccOrtho2AxisTitleAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTitleFont",
+      "type": "String",
+      "value": "12px sans-serif"
+     },
+     {
+      "name": "ortho2AxisTitleMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "ortho2AxisTitleSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisTitleSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "ortho2AxisVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "ortho2AxisZeroLine",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "orthoAxisDesiredTickCount",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisDomainAlign",
+      "type": "cccOrthoAxisDomainAlignCustom",
+      "value": "center"
+     },
+     {
+      "name": "orthoAxisDomainRoundMode",
+      "type": "cccOrthoAxisDomainRoundModeCustom",
+      "value": "tick"
+     },
+     {
+      "name": "orthoAxisDomainScope",
+      "type": "cccOrthoAxisDomainScopeCustom",
+      "value": "global"
+     },
+     {
+      "name": "orthoAxisFixedLength",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisFixedMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisFixedMin",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisFont",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisGrid",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "orthoAxisLabelSpacingMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisMinorTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "orthoAxisOffset",
+      "type": "Float",
+      "value": 0
+     },
+     {
+      "name": "orthoAxisOriginIsZero",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPosition",
+      "type": "cccOrthoAxisPositionCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisPreserveRatio",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisRatio",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTickExponentMax",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTickExponentMin",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTickFormatter",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTicks",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "orthoAxisTickUnit",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTickUnitMax",
+      "type": "String",
+      "value": "Infinity"
+     },
+     {
+      "name": "orthoAxisTickUnitMin",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "orthoAxisTitle",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTitleAlign",
+      "type": "cccOrthoAxisTitleAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTitleFont",
+      "type": "String",
+      "value": "12px sans-serif"
+     },
+     {
+      "name": "orthoAxisTitleMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "orthoAxisTitleSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisTitleSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "orthoAxisVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "orthoAxisZeroLine",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "paddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "percentValueFormat",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "plot2",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "plot2AreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
+      "name": "plot2AreasVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "plot2ColorAxis",
+      "type": "Float",
+      "value": 2
+     },
+     {
+      "name": "plot2DotsVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "plot2LinesVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "plot2NullInterpolationMode",
+      "type": "cccPlot2NullInterpolationModeCustom",
+      "value": "none"
+     },
+     {
+      "name": "plot2OrthoAxis",
+      "type": "Float",
+      "value": 1
+     },
+     {
+      "name": "plot2Series",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "plot2SeriesIndexes",
+      "type": "Array",
+      "value": -1
+     },
+     {
+      "name": "plot2Stacked",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "plot2TrendLabel",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "plot2TrendType",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "plot2ValuesAnchor",
+      "type": "cccPlot2ValuesAnchorCustom",
+      "value": ""
+     },
+     {
+      "name": "plot2ValuesFont",
+      "type": "String",
+      "value": "10px sans-serif"
+     },
+     {
+      "name": "plot2ValuesMask",
+      "type": "String",
+      "value": "{value}"
+     },
+     {
+      "name": "plot2ValuesVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "plotFrameVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "plotSizeMin",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "pointingMode",
+      "type": "cccPointingModeCustom",
+      "value": "near"
+     },
+     {
+      "name": "preserveLayout",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "readers",
+      "type": "Array",
+      "value": "[]"
+     },
+     {
+      "name": "renderCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "renderedCallback",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "selectable",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "selectionChangedAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "seriesInRows",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "seriesRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindow",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "slidingWindowDimension",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowLength",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "slidingWindowSelect",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "smallAspectRatio",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "smallContentMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "smallContentPaddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "smallHeight",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "smallMargins",
+      "type": "String",
+      "value": "2%"
+     },
+     {
+      "name": "smallPaddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "smallTitleAlign",
+      "type": "cccSmallTitleAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "smallTitleFont",
+      "type": "String",
+      "value": "14px sans-serif"
+     },
+     {
+      "name": "smallTitleMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "smallTitlePaddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "smallTitlePosition",
+      "type": "cccSmallTitlePositionCustom",
+      "value": "top"
+     },
+     {
+      "name": "smallTitleSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "smallTitleSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "smallWidth",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "timeSeries",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "timeSeriesFormat",
+      "type": "String",
+      "value": "%Y-%m-%d"
+     },
+     {
+      "name": "titleAlign",
+      "type": "cccTitleAlignCustom",
+      "value": ""
+     },
+     {
+      "name": "titleFont",
+      "type": "String",
+      "value": "14px sans-serif"
+     },
+     {
+      "name": "titleMargins",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "titlePaddings",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "titlePosition",
+      "type": "cccTitlePositionCustom",
+      "value": "top"
+     },
+     {
+      "name": "titleSize",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "titleSizeMax",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "tooltipArrowVisible",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "tooltipClassName",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "tooltipEnabled",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "tooltipFade",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "tooltipFollowMouse",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "tooltipFormat",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltipGravity",
+      "type": "cccTooltipGravityCustom",
+      "value": ""
+     },
+     {
+      "name": "tooltipHtml",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "tooltipOffset",
+      "type": "Float",
+      "value": ""
+     },
+     {
+      "name": "tooltipOpacity",
+      "type": "Float",
+      "value": 0.9
+     },
+     {
+      "name": "tooltipUseCorners",
+      "type": "Boolean",
+      "value": ""
+     },
+     {
+      "name": "trendAreasFillOpacity",
+      "type": "Float",
+      "value": 0.5
+     },
+     {
+      "name": "trendAreasVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "trendColorAxis",
+      "type": "Float",
+      "value": 2
+     },
+     {
+      "name": "trendDotsVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "trendLabel",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "trendLinesVisible",
+      "type": "Boolean",
+      "value": true
+     },
+     {
+      "name": "trendOrthoAxis",
+      "type": "Float",
+      "value": 1
+     },
+     {
+      "name": "trendStacked",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "trendType",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "trendValuesAnchor",
+      "type": "cccTrendValuesAnchorCustom",
+      "value": "right"
+     },
+     {
+      "name": "trendValuesFont",
+      "type": "String",
+      "value": "10px sans-serif"
+     },
+     {
+      "name": "trendValuesMask",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "trendValuesVisible",
+      "type": "Boolean",
+      "value": false
+     },
+     {
+      "name": "userSelectionAction",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "valueFormat",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "valueRole",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "valuesAnchor",
+      "type": "cccValuesAnchorCustom",
+      "value": ""
+     },
+     {
+      "name": "valuesFont",
+      "type": "String",
+      "value": "10px sans-serif"
+     },
+     {
+      "name": "valuesMask",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "valuesVisible",
+      "type": "Boolean",
+      "value": ""
+     }
+    ],
+    "rowName": "CCC Line Chart",
+    "type": "ComponentscccLineChart",
+    "typeDesc": "CCC Line Chart"
+   },
+   {
     "id": "SCRIPT",
     "name": "Scripts",
     "parent": "UnIqEiD",
@@ -14375,7 +15830,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "indicadoresUnion"
+      "value": "indicadoresDS"
      },
      {
       "name": "sDom",
@@ -14440,7 +15895,7 @@
      {
       "name": "postFetch",
       "type": "JavaScript",
-      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n           if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        var z = 3;\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            z++;\r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td style='cursor:pointer' onclick=\\\"detalha(\\'\"+a.resultset[x][1] +\"\\', \\'\"+ z +\"\\')\\\" class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n      //jquery tabledort\r\n       /* $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );*/\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
+      "value": "function postFetch(a){\r\n     $('#indicadores').html(\"\");\r\n     console.log(\"***PostFech***\");\r\n     console.log(a);\r\n      for(x=0;x<a.resultset.length;x++){\r\n        var tr = \"<tr>\";\r\n        var l = x +1;\r\n        \r\n           if(x < 10){\r\n                tr += \"<td class='ranking'><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td class='ranking'>\"+l+\"</td>\";\r\n                tr += \"<td class='ranking' style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n                    \r\n        }   else{\r\n                tr += \"<td><img src='medal-\"+colorNota(a.resultset[x][12], 12)+\".png' height='20' width='20' /></td>\";\r\n                tr += \"<td>\"+l+\"</td>\";\r\n                tr += \"<td style='cursor:pointer'  onclick=\\\"drill(\\'\"+a.resultset[x][1]+\"\\')\\\">\"+a.resultset[x][1]+\"</td>\";\r\n        }\r\n        \r\n        var z = 3;\r\n        for(y=3;y<a.resultset[x].length-1;y++){\r\n            z++;\r\n            if(a.resultset[x][y]!==null){\r\n                tr += \"<td style='cursor:pointer' onclick=\\\"detalha(\\'\"+a.resultset[x][1] +\"\\', \\'\"+ z +\"\\')\\\" class='\"+color(a.resultset[x][y], y)+\"'>\"; \r\n                if(y != 8){\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y]*100, 2, ',', '.') + \"%\";\r\n                }else{\r\n                    a.resultset[x][y] = numberFormat(a.resultset[x][y], 2, ',', '.');\r\n                }\r\n                tr +=  a.resultset[x][y];\r\n                tr += \"</td>\";\r\n            }else{\r\n                tr += \"<td>-</td>\"; \r\n            }\r\n            \r\n        }\r\n        tr +=  \"<td class='\"+colorNota(a.resultset[x][12])+\"'>\" +numberFormat(a.resultset[x][12],2, ',', '.') + \"</td>\";\r\n \r\n        tr += \"</tr>\";\r\n       \r\n        $('#indicadores').append(tr);\r\n        \r\n      }\r\n      $('#tabelaIndicadores').stupidtable({\r\n            \"float\":function( a , b ){\r\n                    //console.log(toNum(a[0]) , toNum(b[0]));\r\n\r\n                     //console.log('####stupidtable####');\r\n                     //console.log('A: '+ a + ' | B: ' + b); \r\n                     \r\n                    return toNum(a) - toNum(b);\r\n                }\r\n            \r\n        });\r\n      \r\n      //jquery tabledort\r\n       /* $(document).ready(function()\r\n            { \r\n            $(\"#tabelaIndicadores\").tablesorter(); \r\n            } \r\n        );*/\r\n        \r\n        \r\n       /* $('#tabelaIndicadores').dataTable( {\r\n         \"columns\": [\r\n\r\n                { \"orderDataType\": \"dom-text\", \"type\": \"numeric\" }\r\n\r\n            ]\r\n        } ); */\r\n\r\n}\r\n "
      },
      {
       "name": "preChange",
@@ -18882,7 +20337,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Prioridades1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Prioridades]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Prioridades]), [Measures].[Prioridades])))'\r\n\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cobertura1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cobertura]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cobertura]), [Measures].[Cobertura])))'\r\n\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[CumprimentoPrazo1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cumprimento Prazo]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]), [Measures].[Cumprimento Prazo])))'\r\n\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Efetividade1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Efetividade]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Efetividade]), [Measures].[Efetividade])))'\r\n\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Corretude1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Corretude]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Corretude]), [Measures].[Corretude])))'\r\n\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Defeitos1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Defeitos]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Defeitos]), [Measures].[Defeitos])))'\r\n\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Atendimento1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Atendimento]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Atendimento]), [Measures].[Atendimento])))'\r\n\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), [Measures].[Equipe])))'\r\n\r\n\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nmember [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), [Measures].[Individual])))'\r\n\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n\t\t,(${metaAderencia}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nmember [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), [Measures].[Nota])))'\r\n\r\nset [CONJUNTO1] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'\r\n\r\nset [CONJUNTO2] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'\r\n\r\nset [CONJUNTO3] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR14],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR16]}'\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${param_table_GEC}}\r\n\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\")\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades1],[Measures].[Cobertura1]\r\n  ,[Measures].[CumprimentoPrazo1], [Measures].[Efetividade1]\r\n  ,[Measures].[Corretude1],[Measures].[Defeitos1]\r\n  , [Measures].[Atendimento1], [Measures].[Equipe1]\r\n  , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas] \r\n"
+      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Prioridades1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Prioridades]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Prioridades]), [Measures].[Prioridades]))))'\r\n\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cobertura1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cobertura]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Cobertura]), [Measures].[Cobertura]))))'\r\n\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[CumprimentoPrazo1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cumprimento Prazo]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]), [Measures].[Cumprimento Prazo]))))'\r\n\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Efetividade1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Efetividade]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Efetividade]),  [Measures].[Efetividade]))))'\r\n\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Corretude1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Corretude]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Corretude]),[Measures].[Corretude]))))'\r\n\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Defeitos1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Defeitos]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Defeitos]), [Measures].[Defeitos]))))'\r\n\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Atendimento1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Atendimento]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Atendimento]),  [Measures].[Atendimento]))))'\r\n\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Equipe]),[Measures].[Equipe]))))'\r\n\r\n\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nmember [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Individual]), [Measures].[Individual]))))'\r\n\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n        ,(${metaAderencia}/100)     \r\n        ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nmember [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Nota]), [Measures].[Nota]))))'\r\n\r\nset [CONJUNTO1] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'\r\n\r\nset [CONJUNTO2] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'\r\n\r\nset [CONJUNTO3] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP14],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP16]}'\r\n\r\nset [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'\r\n\r\nset [Rows] as UNION(FILTER(\r\n\r\n{${param_table_GEC}}\r\n\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember in {\r\n [CONJUNTO1], [CONJUNTO2], [CONJUNTO3], \r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10]\r\n}),[Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades1],[Measures].[Cobertura1]\r\n  ,[Measures].[CumprimentoPrazo1], [Measures].[Efetividade1]\r\n  ,[Measures].[Corretude1],[Measures].[Defeitos1]\r\n  , [Measures].[Atendimento1], [Measures].[Equipe1]\r\n  , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS\r\n\r\nFROM [SIALG - Demandas] \r\n"
      },
      {
       "name": "parameters",
@@ -18892,7 +20347,7 @@
      {
       "name": "bandedMode",
       "type": "BandedMode",
-      "value": "classic"
+      "value": "compact"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -18907,12 +20362,12 @@
      {
       "name": "output",
       "type": "IndexArray",
-      "value": "[\"0\",\"1\"]"
+      "value": "[\"0\",\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\"]"
      },
      {
       "name": "outputMode",
       "type": "OutputMode",
-      "value": "exclude"
+      "value": "include"
      },
      {
       "name": "cacheKeys",
@@ -18922,7 +20377,7 @@
      {
       "name": "cacheDuration",
       "type": "Integer",
-      "value": 3600
+      "value": "3600"
      },
      {
       "name": "cache",
