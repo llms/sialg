@@ -115,12 +115,51 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[WITH
 SET [~ROWS] AS
-    { [Organizacao.Gestao da Demanda].[SUCTI].[GEABR] ,[Organizacao.Gestao da Demanda].[SUCTI].[GEARJ], [Organizacao.Gestao da Demanda].[SUCTI].[GEASP]
+    { [Organizacao.Gestao da Demanda].[SUCTI].[GEABR] ,[Organizacao.Gestao da Demanda].[SUCTI].[GEARJ], [Organizacao.Gestao da Demanda].[SUCTI].[GEASP], [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS 
     }
-MEMBER [Organizacao.Gestao da Demanda].[SUCTI].[SUCTI] AS AVG([Measures].[Indice - Nota Final])
-  SELECT
-NON EMPTY {[Measures].[Indice - Nota Final]} ON COLUMNS,
-NON EMPTY {[~ROWS], [Organizacao.Gestao da Demanda].[SUCTI].[SUCTI]} ON ROWS
+
+member [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA].[GEABR], AVG([CONJUNTO1],[Measures].[Indice - Nota Final]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA].[GEARJ], AVG([CONJUNTO2],[Measures].[Indice - Nota Final]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA].[GEASP], AVG([CONJUNTO3],[Measures].[Indice - Nota Final]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Indice - Nota Final]), [Measures].[Indice - Nota Final]))))'
+
+set [CONJUNTO1] as '{
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'
+
+set [CONJUNTO2] as '{
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'
+
+set [CONJUNTO3] as '{
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP14],
+[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP16]}'
+
+set [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'
+
+SELECT
+{[Measures].[Nota1]} ON COLUMNS,
+{[~ROWS]} ON ROWS
 FROM [SIALG - Demandas]]]></Query>
    </DataAccess>
 </CDADescriptor>
