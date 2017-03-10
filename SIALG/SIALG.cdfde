@@ -2863,7 +2863,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n            id=\"geralIframe\"\n           width=\"100%\" height=\"1600px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
+      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n            id=\"geralIframe\"\n           width=\"100%\" height=\"1800px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",

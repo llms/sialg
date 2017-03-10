@@ -162,7 +162,7 @@ FROM [SIALG - Demandas]]]></Query>
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
 member [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
-member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0, 1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'
 member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
@@ -237,7 +237,7 @@ FROM [SIALG - Demandas]]]></Query>
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
 member [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
-member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'
 member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
@@ -253,7 +253,7 @@ member [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe
 
 member [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   
     ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    
-		,(${metaAderencia}/100)     
+    	,(${metaAderencia}/100)     
 		,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   
 	)   
 	,0  
@@ -415,7 +415,7 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
-member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'
+member [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'
 member [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'
  
 set [Rows] as FILTER({${param_chart_CEDES_SUB}},
