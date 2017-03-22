@@ -1148,7 +1148,7 @@
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "11c5dd1e-ffc8-71b3-151a-3c461ca548da",
+    "id": "536ee322-471e-def0-692c-e9be04f34c22",
     "meta": "CDA",
     "meta_conntype": "sql.jndi",
     "meta_datype": "sql",
@@ -1157,7 +1157,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "unidCEDES_SUB"
+      "value": "unidGEC_new"
      },
      {
       "name": "access",
@@ -1172,12 +1172,12 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "SELECT  SG_CEDES_COMPLETO_MDX, \"Coord TI Detalhe\" FROM(\r\n\r\n(SELECT 'Todos' as \"Coord TI Detalhe\",\r\n('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as \"Sigla Coord TI\")\r\nUNION\r\nSELECT distinct \"Coord TI Detalhe\", \r\n    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || \"Coord TI Detalhe\" || ']') as SG_CEDES_COMPLETO_MDX,\r\n    \"Sigla Coord TI\"\r\n    FROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\n    \tWHERE  ('Todos' IN (${paramCEDES_SQL}) or \"Coord TI Site\" IN (${paramCEDES_SQL}))  AND \"Sigla Coord TI\" like '%CEDES%'\r\n\t\tORDER BY \"Sigla Coord TI\", \"Coord TI Detalhe\") as SUB\r\n\t\t"
+      "value": "select \"SG_GEC\", dis_SG_GEC  from (\n\n(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as \"SG_GEC\", 0 as \"CO_GEC\" )\n UNION \nSELECT distinct \"SG_GEC\" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || \"SG_GEC\" || ']') as \"SG_GEC\", \"CO_GEC\"\n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n    WHERE \"SG_GEC\" like '%GEA%'\n   order by \"CO_GEC\",\"SG_GEC\") as sub;"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES_SQL\",\"\",\"StringArray\",\"\",\"\"]]"
+      "value": "[]"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -1316,7 +1316,7 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select \"Coord TI Site\", dis_SG_CEDES   from (\r\n\r\n(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as \"Coord TI Site\",  'a' as \"Sigla Coord TI\" )\r\n UNION \r\nSELECT distinct \"Coord TI Site\" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || \"Coord TI Site\" || ']') as \"Coord TI Site\",\r\n  \"Sigla Coord TI\"\r\nFROM \"ALGSC002_SIALG\".\"ALGVW001_DEMANDAS_DIMENSIONADASv2\"\r\nwhere \"Sigla Coord TI\" like '%CEDES%'\r\norder by \"Sigla Coord TI\",\"Coord TI Site\") as sub;\r\n"
+      "value": "select \"SG_COORDTI_SITE\", dis_SG_CEDES   from (\r\n\r\n(select 'Todos' as dis_SG_CEDES ,('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members') as \"SG_COORDTI_SITE\",  'a' as \"SG_COORDTI\" )\r\n UNION \r\nSELECT distinct \"SG_COORDTI_SITE\" as dis_SG_CEDES, ('[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[' || \"SG_COORDTI_SITE\" || ']') as \"SG_COORDTI_SITE\",\r\n  \"SG_COORDTI\"\r\nFROM \"ALGSC002_SIALG\".\"ALGTB002_DIM_UNIDADES\"\r\nwhere \"SG_COORDTI\" like '%CEDES%'\r\norder by \"SG_COORDTI\",\"SG_COORDTI_SITE\") as sub;"
      },
      {
       "name": "parameters",
@@ -1364,7 +1364,7 @@
     "typeDesc": "sql over sqlJndi"
    },
    {
-    "id": "536ee322-471e-def0-692c-e9be04f34c22",
+    "id": "11c5dd1e-ffc8-71b3-151a-3c461ca548da",
     "meta": "CDA",
     "meta_conntype": "sql.jndi",
     "meta_datype": "sql",
@@ -1373,7 +1373,7 @@
      {
       "name": "name",
       "type": "Id",
-      "value": "unidGEC_new"
+      "value": "unidCEDES_SUB"
      },
      {
       "name": "access",
@@ -1388,12 +1388,12 @@
      {
       "name": "query",
       "type": "SqlQuery",
-      "value": "select \"SG_GEC\", dis_SG_GEC  from (\n\n(select 'Todos' as dis_SG_GEC ,('[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS') as \"SG_GEC\", 0 as \"CO_GEC\" )\n UNION \nSELECT distinct \"SG_GEC\" as dis_SG_GEC, ('[Organizacao.Gestao da Demanda].[Sigla GEA].[' || \"SG_GEC\" || ']') as \"SG_GEC\", \"CO_GEC\"\n  FROM \"ALGSC002_SIALG\".\"ALGTBA001_RTC_INDICADORES\"\n    WHERE \"SG_GEC\" like '%GEA%'\n   order by \"CO_GEC\",\"SG_GEC\") as sub;"
+      "value": "SELECT  SG_CEDES_COMPLETO_MDX, \"SG_COORDTI_COMPLETO\" FROM(\r\n\r\n(SELECT 'Todos' as \"SG_COORDTI_COMPLETO\",\r\n('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members') as SG_CEDES_COMPLETO_MDX, 'a' as \"SG_COORDTI\")\r\nUNION\r\nSELECT distinct \"SG_COORDTI_COMPLETO\", \r\n    ('[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].[' || \"SG_COORDTI_COMPLETO\" || ']') as SG_CEDES_COMPLETO_MDX,\r\n    \"SG_COORDTI\"\r\n    FROM \"ALGSC002_SIALG\".\"ALGTB002_DIM_UNIDADES\"\r\n        WHERE  ('Todos' IN (${paramCEDES_SQL}) or \"SG_COORDTI_SITE\" IN (${paramCEDES_SQL}))  AND \"SG_COORDTI\" like '%CEDES%'\r\n\t\tORDER BY \"SG_COORDTI\", \"SG_COORDTI_COMPLETO\") as SUB\r\n\t\t"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[]"
+      "value": "[[\"paramCEDES_SQL\",\"\",\"StringArray\",\"\",\"\"]]"
      },
      {
       "name": "cdacalculatedcolumns",
@@ -2863,7 +2863,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n            id=\"geralIframe\"\n           width=\"100%\" height=\"1600px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
+      "value": "<iframe src=\"/pentaho/api/repos/%3Apublic%3ASIALG%3AGeral.wcdf/generatedContent\"\n            id=\"geralIframe\"\n           width=\"100%\" height=\"1400px\" style=\"\n   border-left-width: 0px;\n   border-bottom-width: 0px;\n   border-right-width: 0px;\n   border-top-width: 0px;\"></iframe> "
      },
      {
       "name": "fontSize",

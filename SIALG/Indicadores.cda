@@ -98,7 +98,8 @@ set [Rows] as FILTER(
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <Name>corretudeDS</Name>
@@ -121,7 +122,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Qualidade] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS_GEA" id="indicadoresDS_GEA"
                type="mdx">
@@ -311,7 +312,7 @@ SELECT
   , [Measures].[Atendimento1], [Measures].[Equipe1]
   , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
       <Name>indicadoresDS</Name>
@@ -375,7 +376,7 @@ member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[M
 member [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Equipe]),[Measures].[Equipe]))))'
 
 
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
 member [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Individual]), [Measures].[Individual]))))'
 
 MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'
@@ -429,9 +430,9 @@ IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0
 )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) 
 + 
 IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   
-	,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    
+	,IIF(   [Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    
 		,(${metaIndividual}/100)     
-		,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   
+		,[Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]   
 	)   
 	,0  
 )/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) 
@@ -511,7 +512,7 @@ SELECT
   , [Measures].[Atendimento1], [Measures].[Equipe1]
   , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
       <Name>individualDS</Name>
@@ -523,7 +524,7 @@ FROM [SIALG - Demandas]]]></Query>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
-member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
 set [Rows] as FILTER(
  {${param_chart_GEC_SUB}}
  , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
@@ -532,7 +533,8 @@ set [Rows] as FILTER(
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <Name>equipeDS</Name>
@@ -553,7 +555,8 @@ set [Rows] as FILTER(
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
@@ -575,7 +578,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
       <Name>efetividadeDS</Name>
@@ -600,7 +603,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Efetividade] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <Name>prazoDS</Name>
@@ -625,7 +628,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cumprimento] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
       <Name>coberturaDS</Name>
@@ -647,7 +650,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
       <Name>notaDS</Name>
@@ -689,7 +692,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoSQL" id="atendimentoSQL" type="sql">
       <Name>atendimentoSQL</Name>

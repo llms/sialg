@@ -98,7 +98,8 @@ set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <Name>corretudeDS</Name>
@@ -119,7 +120,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Qualidade] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresCEDES_DS" id="indicadoresCEDES_DS"
                type="mdx">
@@ -195,7 +196,7 @@ SELECT
   , [Measures].[Atendimento], [Measures].[Equipe]
   , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
       <Name>indicadoresDS</Name>
@@ -344,7 +345,7 @@ SELECT
   , [Measures].[Atendimento], [Measures].[Equipe]
   , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
       <Name>individualDS</Name>
@@ -356,14 +357,15 @@ FROM [SIALG - Demandas]]]></Query>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
-member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
 set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <Name>equipeDS</Name>
@@ -382,7 +384,8 @@ set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
-FROM [SIALG - Demandas]]]></Query>
+
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
@@ -402,7 +405,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
       <Name>efetividadeDS</Name>
@@ -425,7 +428,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Efetividade] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <Name>prazoDS</Name>
@@ -448,7 +451,7 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cumprimento] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
       <Name>coberturaDS</Name>
@@ -461,14 +464,13 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
+set [Rows] as FILTER({${paramCEDES}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
-
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
       <Name>notaDS</Name>
@@ -499,14 +501,14 @@ FROM [SIALG - Demandas]]]></Query>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-set [Rows] as FILTER({${param_chart_CEDES_SUB}},
+set [Rows] as FILTER([Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].members,
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
 
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoSQL" id="atendimentoSQL" type="sql">
       <Name>atendimentoSQL</Name>

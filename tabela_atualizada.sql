@@ -1,0 +1,41 @@
+CREATE TABLE "ALGSC002_SIALG"."ALGTB002_DIM_UNIDADES"
+(
+  "CO_PLANEJADO_PARA" bigint,
+  "CO_DE_PLANEJADO_PARA" bigint,
+  "NO_PLANEJADO_PARA" character varying(64),
+  "SG_PLANEJADO_PARA" character varying(64),
+  "DE_PLANEJADO_PARA" character varying(64),
+  "NU_ANO_PLANEJADO_PARA" smallint,
+  "NU_TRIM_PLANEJADO_PARA" smallint,
+  "SG_GESTOR" character varying(64),
+  "NU_CGC_GESTOR" integer,
+  "CO_GEC" bigint,
+  "SG_GEC" character varying(16),
+  "SG_GEC_COMPLETO" character varying(128),
+  "CO_COORDPROJTI" bigint,
+  "SG_COORDPROJTI" character varying(16),
+  "SG_COORDPROJTI_COMPLETO" character varying(128),
+  "UF_COORDPROJTI" character varying(8),
+  "CO_COORDTI" bigint,
+  "SG_COORDTI" character varying(16),
+  "SG_COORDTI_COMPLETO" character varying(128),
+  "UF_COORDTI" character varying(8),
+  "NO_UNID_DES" character varying(128),
+  "NU_SUB_GEC" integer,
+  "NU_SUB_COORDPROJTI" integer,
+  "NU_SUB_COORDTI" integer,
+  "CO_SUB_COORDPROJTI" bigint,
+  "CO_SUB_COORDTI" bigint,
+  "CO_SUB_GEC" bigint,
+  "SG_VP" character varying(5),
+  "CO_UNIDADE" bigserial NOT NULL,
+  "NO_SUCTI" character varying(5),
+  "CO_GESTOR" double precision,
+  "CO_VP" bigint,
+  "SG_COORDTI_SITE" character varying(64),
+  "CO_COORDTI_SITE" bigint,
+  CONSTRAINT "PK_ALGTB002_DIM_UNIDADES" PRIMARY KEY ("CO_UNIDADE")
+)
+WITH (
+  OIDS=FALSE
+);

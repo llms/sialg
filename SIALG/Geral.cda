@@ -13,6 +13,34 @@
       <Connection id="realizeDS" type="sql.jndi">
          <Jndi>SIALG</Jndi>
       </Connection>
+      <Connection id="atendimentoDS_sucti" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="atendimentoDS_geabr" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="atendimentoDS_geasp" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="atendimentoDS_gearj" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="realizeDS_Corretude" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="realizeDS_Cumprimento" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="realizeDS_Aderencia" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
       <Connection id="atendimentoDS" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
@@ -79,6 +107,263 @@
   group by unidades."SG_GEC", data."NO_MES", DATA."NU_MES"
  
   ORDER BY DATA."NU_MES"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="atendimentoDS_sucti" id="atendimentoDS_sucti"
+               type="mdx">
+      <Name>atendimentoDS_sucti</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Realizado</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Tendência</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Meta</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]})'
+
+member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS), Descendants([Periodo.default].[2017],[Periodo.default].CurrentMember.Level), [Measures].[Indice - Nota Final] , Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS))'
+member [Measures].[Meta] as '10'
+
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows,
+crossjoin([Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS,[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="atendimentoDS_geabr" id="atendimentoDS_geabr"
+               type="mdx">
+      <Name>atendimentoDS_geabr</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Realizado</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Tendência</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Meta</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]})'
+
+member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS), Descendants([Periodo.default].[2017],[Periodo.default].CurrentMember.Level), [Measures].[Indice - Nota Final] , Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS))'
+member [Measures].[Meta] as '10'
+
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEABR],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="atendimentoDS_geasp" id="atendimentoDS_geasp"
+               type="mdx">
+      <Name>atendimentoDS_geasp</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Realizado</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Tendência</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Meta</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]})'
+member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS), Descendants([Periodo.default].[2017],[Periodo.default].CurrentMember.Level), [Measures].[Indice - Nota Final] , Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS))'
+member [Measures].[Meta] as '10'
+
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEASP],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="atendimentoDS_gearj" id="atendimentoDS_gearj"
+               type="mdx">
+      <Name>atendimentoDS_gearj</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>Realizado</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Tendência</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Meta</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]})'
+
+member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS), Descendants([Periodo.default].[2017],[Periodo.default].CurrentMember.Level), [Measures].[Indice - Nota Final] , Rank([Periodo.default].CurrentMember, [Periodo.default].CurrentMember.Level.MEMBERS))'
+member [Measures].[Meta] as '10'
+
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEARJ],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="realizeDS_Corretude" id="realizeDS_Corretude"
+               type="mdx">
+      <Name>realizeDS_Corretude</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>GEABR</Name>
+         </Column>
+         <Column idx="3">
+            <Name>GEARJ</Name>
+         </Column>
+         <Column idx="5">
+            <Name>GEASP</Name>
+         </Column>
+         <Column idx="7">
+            <Name>SUCTI</Name>
+         </Column>
+         <Column idx="8">
+            <Name>META</Name>
+         </Column>
+      </Columns>
+      <Output indexes="2,4,6" mode="exclude"/>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,(ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]}) AND (ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Trimestre]) IN {[Periodo.default].[2017].[T1]}))'
+MEMBER [Measures].[Valor] as '[Measures].[Índice Qualidade - Corretude]*100'
+MEMBER [Measures].[Meta] as '80'
+SET [~ROWS] AS
+    { [Organizacao.Gestao da Demanda].[SUCTI].[GEABR] ,[Organizacao.Gestao da Demanda].[SUCTI].[GEARJ], [Organizacao.Gestao da Demanda].[SUCTI].[GEASP], [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS 
+    }
+    
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,NON EMPTY
+crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="realizeDS_Cumprimento" id="realizeDS_Cumprimento"
+               type="mdx">
+      <Name>realizeDS_Cumprimento</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>GEABR</Name>
+         </Column>
+         <Column idx="3">
+            <Name>GEARJ</Name>
+         </Column>
+         <Column idx="5">
+            <Name>GEASP</Name>
+         </Column>
+         <Column idx="7">
+            <Name>SUCTI</Name>
+         </Column>
+         <Column idx="8">
+            <Name>META</Name>
+         </Column>
+      </Columns>
+      <Output indexes="2,4,6" mode="exclude"/>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,(ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]}) AND (ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Trimestre]) IN {[Periodo.default].[2017].[T1]}))'
+MEMBER [Measures].[Valor] as '[Measures].[Índice Agilidade - Cumprimento Prazo]*100'
+MEMBER [Measures].[Meta] as '80'
+
+SET [~ROWS] AS
+    { [Organizacao.Gestao da Demanda].[SUCTI].[GEABR] ,[Organizacao.Gestao da Demanda].[SUCTI].[GEARJ], [Organizacao.Gestao da Demanda].[SUCTI].[GEASP], [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS 
+    }
+    
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,NON EMPTY
+crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="realizeDS_Aderencia" id="realizeDS_Aderencia"
+               type="mdx">
+      <Name>realizeDS_Aderencia</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="1">
+            <Name>GEABR</Name>
+         </Column>
+         <Column idx="3">
+            <Name>GEARJ</Name>
+         </Column>
+         <Column idx="5">
+            <Name>GEASP</Name>
+         </Column>
+         <Column idx="7">
+            <Name>SUCTI</Name>
+         </Column>
+         <Column idx="8">
+            <Name>META</Name>
+         </Column>
+      </Columns>
+      <Output indexes="2,4,6" mode="exclude"/>
+      <Parameters>
+         <Parameter default="" name="dataInicio" type="String"/>
+         <Parameter default="" name="dataFim" type="String"/>
+      </Parameters>
+      <Query><![CDATA[WITH
+SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
+
+SET [*BASE_MEMBERS__Data Criacao Pai_] AS 'FILTER([Periodo.default].[Ano Mes].MEMBERS,(ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano]) IN {[Periodo.default].[2017]}) AND (ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Trimestre]) IN {[Periodo.default].[2017].[T1]}))'
+
+MEMBER [Measures].[Valor] as '[Measures].[Índice Aderência - Prioridades]*100'
+MEMBER [Measures].[Meta] as '80'
+
+SET [~ROWS] AS
+    { [Organizacao.Gestao da Demanda].[SUCTI].[GEABR] ,[Organizacao.Gestao da Demanda].[SUCTI].[GEARJ], [Organizacao.Gestao da Demanda].[SUCTI].[GEASP], [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS 
+    }
+    
+SELECT
+[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+,NON EMPTY
+crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
@@ -160,6 +445,6 @@ set [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'
 SELECT
 {[Measures].[Nota1]} ON COLUMNS,
 {[~ROWS]} ON ROWS
-FROM [SIALG - Demandas]]]></Query>
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
 </CDADescriptor>
