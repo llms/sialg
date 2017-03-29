@@ -87,6 +87,7 @@
          <Parameter default="" name="dataResolucaoFilhaFim" type="String"/>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
@@ -99,7 +100,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <Name>corretudeDS</Name>
@@ -109,6 +111,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
@@ -117,12 +120,12 @@ set [Rows] as FILTER(
  , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, 
  [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES ("(?i).*GEA.*"))
 
-
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Qualidade] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS_GEA" id="indicadoresDS_GEA"
                type="mdx">
@@ -349,6 +352,8 @@ FROM [SIALG - Indicadores GEA]]]></Query>
          <Parameter default="" name="metaCobertura" type="String"/>
          <Parameter default="" name="paramGEC_SUB" type="String"/>
          <Parameter default="" name="param_table_GEC" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
+         <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -512,7 +517,8 @@ SELECT
   , [Measures].[Atendimento1], [Measures].[Equipe1]
   , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
       <Name>individualDS</Name>
@@ -522,6 +528,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
@@ -534,7 +541,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <Name>equipeDS</Name>
@@ -544,6 +552,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
@@ -556,7 +565,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
@@ -566,6 +576,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
@@ -578,7 +589,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
       <Name>efetividadeDS</Name>
@@ -588,6 +600,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
@@ -603,7 +616,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Efetividade] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <Name>prazoDS</Name>
@@ -613,6 +627,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
@@ -628,7 +643,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cumprimento] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
       <Name>coberturaDS</Name>
@@ -638,6 +654,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Parameters>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
          <Parameter default="" name="param_GEC" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
@@ -650,7 +667,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
       <Name>notaDS</Name>
@@ -680,6 +698,7 @@ FROM [SIALG - Demandas]]]></Query>
       <Parameters>
          <Parameter default="" name="paramGEC" type="String"/>
          <Parameter default="" name="param_chart_GEC_SUB" type="String"/>
+         <Parameter default="" name="dataMes" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -692,7 +711,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMes}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoSQL" id="atendimentoSQL" type="sql">
       <Name>atendimentoSQL</Name>

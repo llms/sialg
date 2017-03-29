@@ -83,7 +83,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+      "value": "function f(){\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  datas();\r\n} "
      },
      {
       "name": "postExecution",
@@ -17139,6 +17139,721 @@
     "typeDesc": "CCC Bar Chart"
    },
    {
+    "id": "d3c1a773-1d4c-638f-f6c2-efff4548c298",
+    "type": "ComponentscccPieChart",
+    "typeDesc": "CCC Pie Chart",
+    "parent": "CHARTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "teste1",
+      "type": "Id"
+     },
+     {
+      "name": "title",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "dataSource",
+      "value": "atendimentoDS_geasp",
+      "type": "Datasource"
+     },
+     {
+      "name": "height",
+      "value": "200",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "width",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "colors",
+      "value": "[\"#FFFFFF\",\"#9e9e9e\"]",
+      "type": "Array"
+     },
+     {
+      "name": "htmlObject",
+      "value": "",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "function color(){\r\n     this.chartDefinition.colorMap = {\r\n        \"201701\": '#FFFFFF',\r\n        \"201702\": '#FFFFFF',\r\n        \"201703\": '#FFFFFF',\r\n        \"201704\": '#FFFFFF'\r\n    };\r\n} ",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "extensionPoints",
+      "value": "[]",
+      "type": "EditorValuesArray"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "activeSliceRadius",
+      "value": "5%",
+      "type": "String"
+     },
+     {
+      "name": "animate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "categoryRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "clearSelectionMode",
+      "value": "emptySpaceClick",
+      "type": "cccClearSelectionModeCustom"
+     },
+     {
+      "name": "clickable",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "clickAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "colorPreserveMap",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "colorRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "colorTransform",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "colorUnbound",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "compatVersion",
+      "value": 2,
+      "type": "Float"
+     },
+     {
+      "name": "contentMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "contentPaddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "crosstabMode",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "ctrlSelectMode",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "dataCategoriesCount",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "dataIgnoreMetadataLabels",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "dataMeasuresInColumns",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataPartRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "dataSeparator",
+      "value": "~",
+      "type": "String"
+     },
+     {
+      "name": "dataWhere",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "doubleClickAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "explodedSliceIndex",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "explodedSliceRadius",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "groupedLabelSep",
+      "value": " ~ ",
+      "type": "String"
+     },
+     {
+      "name": "hoverable",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "ignoreNulls",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "interactive",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "isMultiValued",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "legend",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "legendAlign",
+      "value": "",
+      "type": "cccLegendAlignCustom"
+     },
+     {
+      "name": "legendClickMode",
+      "value": "toggleVisible",
+      "type": "cccLegendClickModeCustom"
+     },
+     {
+      "name": "legendDrawLine",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "legendDrawMarker",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "legendFont",
+      "value": "10px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "legendItemCountMax",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "legendItemPadding",
+      "value": "2.5",
+      "type": "String"
+     },
+     {
+      "name": "legendItemSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "legendMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "legendMarkerSize",
+      "value": 15,
+      "type": "Float"
+     },
+     {
+      "name": "legendOverflow",
+      "value": "clip",
+      "type": "cccLegendOverflowCustom"
+     },
+     {
+      "name": "legendPaddings",
+      "value": "5",
+      "type": "String"
+     },
+     {
+      "name": "legendPosition",
+      "value": "bottom",
+      "type": "cccLegendPositionCustom"
+     },
+     {
+      "name": "legendShape",
+      "value": "",
+      "type": "cccLegendShapeCustom"
+     },
+     {
+      "name": "legendSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "legendSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "legendTextMargin",
+      "value": 6,
+      "type": "Float"
+     },
+     {
+      "name": "legendVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "linkHandleWidth",
+      "value": 0.5,
+      "type": "Float"
+     },
+     {
+      "name": "linkInsetRadius",
+      "value": "5%",
+      "type": "String"
+     },
+     {
+      "name": "linkLabelSize",
+      "value": "15%",
+      "type": "String"
+     },
+     {
+      "name": "linkLabelSpacingMin",
+      "value": 0.5,
+      "type": "Float"
+     },
+     {
+      "name": "linkMargin",
+      "value": "2.5%",
+      "type": "String"
+     },
+     {
+      "name": "linkOutsetRadius",
+      "value": "2.5%",
+      "type": "String"
+     },
+     {
+      "name": "margins",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "measuresIndexes",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "multiChartColumnsMax",
+      "value": 3,
+      "type": "Float"
+     },
+     {
+      "name": "multiChartIndexes",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "multiChartMax",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "multiChartOverflow",
+      "value": "grow",
+      "type": "cccMultiChartOverflowCustom"
+     },
+     {
+      "name": "multiChartRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "multiChartSingleColFillsHeight",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "multiChartSingleRowFillsHeight",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "paddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "percentValueFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "plotSizeMin",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "pointingMode",
+      "value": "near",
+      "type": "cccPointingModeCustom"
+     },
+     {
+      "name": "preserveLayout",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "readers",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "renderCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "renderedCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "selectable",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "selectionChangedAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "seriesInRows",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "slidingWindow",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "slidingWindowDimension",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "slidingWindowLength",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "slidingWindowSelect",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "smallAspectRatio",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "smallContentMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "smallContentPaddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "smallHeight",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "smallMargins",
+      "value": "2%",
+      "type": "String"
+     },
+     {
+      "name": "smallPaddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "smallTitleAlign",
+      "value": "",
+      "type": "cccSmallTitleAlignCustom"
+     },
+     {
+      "name": "smallTitleFont",
+      "value": "14px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "smallTitleMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "smallTitlePaddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "smallTitlePosition",
+      "value": "top",
+      "type": "cccSmallTitlePositionCustom"
+     },
+     {
+      "name": "smallTitleSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "smallTitleSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "smallWidth",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "timeSeries",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "timeSeriesFormat",
+      "value": "%Y-%m-%d",
+      "type": "String"
+     },
+     {
+      "name": "titleAlign",
+      "value": "",
+      "type": "cccTitleAlignCustom"
+     },
+     {
+      "name": "titleFont",
+      "value": "14px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "titleMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "titlePaddings",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "titlePosition",
+      "value": "top",
+      "type": "cccTitlePositionCustom"
+     },
+     {
+      "name": "titleSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "titleSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "tooltipArrowVisible",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "tooltipClassName",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "tooltipEnabled",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "tooltipFade",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "tooltipFollowMouse",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "tooltipFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltipGravity",
+      "value": "",
+      "type": "cccTooltipGravityCustom"
+     },
+     {
+      "name": "tooltipHtml",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "tooltipOffset",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "tooltipOpacity",
+      "value": 0.9,
+      "type": "Float"
+     },
+     {
+      "name": "tooltipUseCorners",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "userSelectionAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "valueFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "valueRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "valuesAnchor",
+      "value": "",
+      "type": "cccValuesAnchorCustom"
+     },
+     {
+      "name": "valuesFont",
+      "value": "10px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "valuesLabelStyle",
+      "value": "linked",
+      "type": "cccValuesLabelStyleCustom"
+     },
+     {
+      "name": "valuesMask",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "valuesOptimizeLegibility",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "valuesOverflow",
+      "value": "hide",
+      "type": "cccValuesOverflowCustom"
+     },
+     {
+      "name": "valuesVisible",
+      "value": "",
+      "type": "Boolean"
+     }
+    ],
+    "meta_cdwSupport": "true",
+    "rowName": "CCC Pie Chart"
+   },
+   {
     "id": "GENERIC",
     "name": "Generic",
     "parent": "UnIqEiD",
@@ -17476,6 +18191,24 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "6f4068e4-eb31-c8ca-7847-d48f9c7a24ed",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "teste"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function datas() {\r\nvar data = new Date();\r\nconsole.log(data);\r\nano = data.getFullYear();\r\nvar anos =[];\r\nvar json = [];\r\nvar teste = [1, 2, 3];\r\n\r\nfor (var i=0; i<3; i++){\r\n  anos[i]= ano;\r\n  ano--;\r\n  if(i===0){\r\n  json[i]=[\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"]\",\"parent\":\"#\",\"text\":\"\"+anos[i]+\"\",\"type\":\"root\",\"state\":{selected:true}},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T1\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"01]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"JAN\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"02]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"FEV\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"03]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"MAR\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T2\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"04]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"ABR\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"05]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"MAI\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"06]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"JUN\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T3\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"07]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"JUL\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"08]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"AGO\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"09]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"SET\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T4\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"10]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"OUT\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"11]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"NOV\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"12]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"DEZ\",\"type\":\"child\"}\r\n];} else {json[i]=[\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"]\",\"parent\":\"#\",\"text\":\"\"+anos[i]+\"\",\"type\":\"root\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T1\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"01]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"JAN\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"02]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"FEV\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T1].[\"+anos[i]+\"03]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T1]\",\"text\":\"MAR\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T2\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"04]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"ABR\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"05]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"MAI\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T2].[\"+anos[i]+\"06]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T2]\",\"text\":\"JUN\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T3\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"07]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"JUL\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"08]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"AGO\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T3].[\"+anos[i]+\"09]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T3]\",\"text\":\"SET\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"]\",\"text\":\"T4\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"10]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"OUT\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"11]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"NOV\",\"type\":\"child\"},\r\n{\"id\":\"[Periodo.default].[\"+anos[i]+\"].[T4].[\"+anos[i]+\"12]\",\"parent\":\"[Periodo.default].[\"+anos[i]+\"].[T4]\",\"text\":\"DEZ\",\"type\":\"child\"}\r\n];}\r\n}\r\n\r\njson1 = JSON.stringify(json);\r\n//json2 = json1.substring(0,-1,(json1.length));\r\nconsole.log(\"AQUIIIIII \" +json1);\r\n\r\nconsole.log(teste);\r\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
    },
    {
     "id": "d9b0ee55-54a8-ecc3-d291-7870318dc2e2",

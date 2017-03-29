@@ -33,12 +33,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -1437,12 +1437,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -2841,12 +2841,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -4245,12 +4245,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -5649,12 +5649,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -7053,12 +7053,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -8457,12 +8457,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -9861,12 +9861,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"]]"
+      "value": "[[\"paramCEDES\",\"paramCEDES\"],[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -12669,12 +12669,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramCEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[[\"param_chart_CEDES_SUB\",\"param_chart_CEDES_SUB\"],[\"paramCEDES\",\"paramCEDES\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "dataSource",
@@ -14117,7 +14117,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n    \n    //Param SUB CEDES\n    paramCEDES_SUB = Dashboards.getQueryParameter(\"paramCEDES_SUB\");\n    console.log(\"Dentro de Indicadores\"+ paramCEDES_SUB)\n    //Param do CEDES\n    paramCEDES = Dashboards.getQueryParameter(\"paramCEDES\");\n    paramCEDES_aux = Dashboards.getQueryParameter(\"paramCEDES_aux\");\n    \n    console.log(\"Dentro de Indicadores - Gec\"+ paramCEDES)\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
+      "value": "function init(){\n    \n    //Data\n    dataMesCEDES = Dashboards.getQueryParameter(\"dataMesCEDES\");\n    //Param SUB CEDES\n    paramCEDES_SUB = Dashboards.getQueryParameter(\"paramCEDES_SUB\");\n    console.log(\"Dentro de Indicadores\"+ paramCEDES_SUB)\n    //Param do CEDES\n    paramCEDES = Dashboards.getQueryParameter(\"paramCEDES\");\n    paramCEDES_aux = Dashboards.getQueryParameter(\"paramCEDES_aux\");\n    \n    console.log(\"Dentro de Indicadores - Gec\"+ paramCEDES)\n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n    \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -14280,7 +14280,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:updateEvent}\",\"${p:pesoAderencia}\",\"${p:pesoAgilidade}\",\"${p:pesoQualidade}\",\"${p:pesoAtendimento}\",\"${p:pesoProdutividade}\",\"${p:participacaoAtendimento}\",\"${p:metaAderencia}\",\"${p:metaCobertura}\",\"${p:metaPrazo}\",\"${p:metaPlanejamento}\",\"${p:metaCorretude}\",\"${p:metaDefeitos}\",\"${p:metaAtendimento}\",\"${p:metaEquipe}\",\"${p:metaIndividual}\",\"${p:dataAprovacaoMaxFilhaFim}\",\"${p:dataAprovacaoMaxFilhaInicio}\",\"${p:dataAprovacaoFilhaFim}\",\"${p:dataAprovacaoFilhaInicio}\",\"${p:dataResolucaoFilhaFim}\",\"${p:dataResolucaoFilhaInicio}\",\"${p:dataResolucaoPaiFim}\",\"${p:dataResolucaoPaiInicio}\",\"${p:dataModificacaoFilhaFim}\",\"${p:dataModificacaoFilhaInicio}\",\"${p:dataModificacaoPaiFim}\",\"${p:dataModificacaoPaiInicio}\",\"${p:dataCriacaoFilhaFim}\",\"${p:dataCriacaoFilhaInicio}\",\"${p:dataCriacaoPaiFim}\",\"${p:dataCriacaoPaiInicio}\",\"${p:paramUnidade}\",\"${p:paramCEDES}\",\"${p:paramCEDES_SUB}\",\"${p:param_table_CEDES}\"]"
+      "value": "[\"${p:dataMesCEDES}\",\"${p:updateEvent}\",\"${p:pesoAderencia}\",\"${p:pesoAgilidade}\",\"${p:pesoQualidade}\",\"${p:pesoAtendimento}\",\"${p:pesoProdutividade}\",\"${p:participacaoAtendimento}\",\"${p:metaAderencia}\",\"${p:metaCobertura}\",\"${p:metaPrazo}\",\"${p:metaPlanejamento}\",\"${p:metaCorretude}\",\"${p:metaDefeitos}\",\"${p:metaAtendimento}\",\"${p:metaEquipe}\",\"${p:metaIndividual}\",\"${p:dataAprovacaoMaxFilhaFim}\",\"${p:dataAprovacaoMaxFilhaInicio}\",\"${p:dataAprovacaoFilhaFim}\",\"${p:dataAprovacaoFilhaInicio}\",\"${p:dataResolucaoFilhaFim}\",\"${p:dataResolucaoFilhaInicio}\",\"${p:dataResolucaoPaiFim}\",\"${p:dataResolucaoPaiInicio}\",\"${p:dataModificacaoFilhaFim}\",\"${p:dataModificacaoFilhaInicio}\",\"${p:dataModificacaoPaiFim}\",\"${p:dataModificacaoPaiInicio}\",\"${p:dataCriacaoFilhaFim}\",\"${p:dataCriacaoFilhaInicio}\",\"${p:dataCriacaoPaiFim}\",\"${p:dataCriacaoPaiInicio}\",\"${p:paramUnidade}\",\"${p:paramCEDES}\",\"${p:paramCEDES_SUB}\",\"${p:param_table_CEDES}\"]"
      },
      {
       "name": "oLanguage",
@@ -14325,7 +14325,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramCEDES_SUB\",\"paramCEDES_SUB\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_table_CEDES\",\"param_table_CEDES\"]]"
+      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramCEDES_SUB\",\"paramCEDES_SUB\"],[\"paramCEDES\",\"paramCEDES\"],[\"param_table_CEDES\",\"param_table_CEDES\"],[\"dataMesCEDES\",\"dataMesCEDES\"]]"
      },
      {
       "name": "displayLength",
@@ -15015,6 +15015,39 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "acc93d77-29ab-a3bc-ceb9-97e78d02e8d1",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataMesCEDES"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "d00376b6-1126-5269-bcb6-3ff7833cf793",
@@ -18639,12 +18672,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Defeitos] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18720,12 +18753,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Qualidade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Qualidade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18801,12 +18834,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "\r\nwith\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0, 1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nMEMBER [Measures].[Rank] AS '0'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as \"s/n\"\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${paramCEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI  (s/ GEA)].[CEDES].CHILDREN}\r\n )\r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\n"
+      "value": "\r\nwith\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0, 1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nMEMBER [Measures].[Rank] AS '0'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as \"s/n\"\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${paramCEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI  (s/ GEA)].[CEDES].CHILDREN}\r\n )\r\n\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})\r\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_CEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_CEDES\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18882,12 +18915,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n    \t,(${metaAderencia}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${param_table_CEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESBR].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESRJ].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESSP].CHILDREN}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].CURRENTMEMBER),[Rows],[Measures].[Nota])'\r\n\r\n\r\nmember [Measures].[Aderencia] as '(([Measures].[Prioridades]/${participacaoAderencia})+([Measures].[Cobertura]/${participacaoCobertura}))/10'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento Prazo]/${participacaoPrazo})+([Measures].[Efetividade]/${participacaoPlanejamento}))/10'\r\nmember [Measures].[Qualidade] as '(([Measures].[Corretude]/${participacaoCorretude})+([Measures].[Defeitos]/${participacaoDefeitos}))/10'\r\nmember [Measures].[Produtividade] as '(([Measures].[Equipe]/${participacaoEquipe})+([Measures].[Individual]/${participacaoIndividual}))/10'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n    \t,(${metaAderencia}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nset [Rows] as FILTER(\r\n\r\n{${param_table_CEDES}}\r\n\r\n, [Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].currentMember in { \r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESBR].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESRJ].CHILDREN,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].[CEDESSP].CHILDREN}\r\n )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\n\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades],[Measures].[Cobertura]\r\n  ,[Measures].[Cumprimento Prazo], [Measures].[Efetividade]\r\n  ,[Measures].[Corretude],[Measures].[Defeitos]\r\n  , [Measures].[Atendimento], [Measures].[Equipe]\r\n  , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_CEDES\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramCEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_CEDES\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -18963,12 +18996,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\n"
+      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})\r\n"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19044,12 +19077,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Produtividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19125,12 +19158,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19206,12 +19239,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19287,12 +19320,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cumprimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cumprimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19368,12 +19401,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nset [Rows] as FILTER({${paramCEDES}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cobertura] ON COLUMNS\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Cobertura] ON COLUMNS\r\nFROM [SIALG - Indicadores CEDES]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -19530,12 +19563,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER([Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].members,\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Aderencia] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nset [Rows] as FILTER({${param_chart_CEDES_SUB}},\r\n[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES (\"(?i).*CEDES.*\")) \r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Aderencia] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]\r\nwhere({${dataMesCEDES}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramCEDES\",\"\",\"String\",\"\",\"\"],[\"param_chart_CEDES_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMesCEDES\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",

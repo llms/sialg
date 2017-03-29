@@ -33,12 +33,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -83,7 +83,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  \r\n} "
+      "value": "function f(){\r\n    this.chartDefinition.orthoAxisLabel_text = function(a){\r\n        \r\n        return a.vars.tick.label*100 + \"%\";\r\n    }\r\n    \r\n    \r\nvar myself = this;\r\n  // Set initial width to match the placeholder\r\n  myself.chartDefinition.width = myself.placeholder().width();\r\n\r\n  // Attach the resize handler only on the first execution of the chart component\r\n  if (!this.resizeHandlerAttached){\r\n\r\n    // Ensure render is only triggered after resize events have stopped\r\n    var debouncedResize = _.debounce(function(){\r\n\r\n      // Show chart again.\r\n      myself.placeholder().children().css('visibility','visible');\r\n\r\n      // Change chart width\r\n      myself.chartDefinition.width = myself.placeholder().width();\r\n      myself.render( myself.query.lastResults() );\r\n    }, 200);\r\n\r\n    // Attach resize handler\r\n    $(window).resize(function(){\r\n\r\n      // Only trigger resize if the container has changed width\r\n      if ( myself.chartDefinition.width != myself.placeholder().width()){\r\n\r\n        // Temporarily hide chart so that overflow does not happen\r\n        myself.placeholder().children().css('visibility','hidden');\r\n\r\n        // Trigger the resize with debounce\r\n        debouncedResize();\r\n      }    \r\n    });\r\n\r\n    this.resizeHandlerAttached = true;\r\n  }\r\n  //alert(\"chart\"+Dashboards.getParam('paramGEC_SUB'));\r\n  \r\n} "
      },
      {
       "name": "postExecution",
@@ -1437,12 +1437,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -2841,12 +2841,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -4245,12 +4245,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"dataInicio\",\"dataInicio\"],[\"dataFim\",\"dataFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -5649,12 +5649,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"dataCriacaoPaiInicio\",\"dataCriacaoPaiInicio\"],[\"dataCriacaoPaiFim\",\"dataCriacaoPaiFim\"],[\"dataCriacaoFilhaInicio\",\"dataCriacaoFilhaInicio\"],[\"dataCriacaoFilhaFim\",\"dataCriacaoFilhaFim\"],[\"dataModificacaoPaiInicio\",\"dataModificacaoPaiInicio\"],[\"dataModificacaoPaiFim\",\"dataModificacaoPaiFim\"],[\"dataModificacaoFilhaInicio\",\"dataModificacaoFilhaInicio\"],[\"dataModificacaoFilhaFim\",\"dataModificacaoFilhaFim\"],[\"dataResolucaoPaiInicio\",\"dataResolucaoPaiInicio\"],[\"dataResolucaoPaiFim\",\"dataResolucaoPaiFim\"],[\"dataResolucaoFilhaInicio\",\"dataResolucaoFilhaInicio\"],[\"dataResolucaoFilhaFim\",\"dataResolucaoFilhaFim\"],[\"dataAprovacaoFilhaFim\",\"dataAprovacaoFilhaFim\"],[\"dataMaxAprovacaoFilhaInicio\",\"dataMaxAprovacaoFilhaInicio\"],[\"dataMaxAprovacaoFilhaFim\",\"dataMaxAprovacaoFilhaFim\"],[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -7053,12 +7053,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -8457,12 +8457,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -9861,12 +9861,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -12669,12 +12669,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:paramGEC}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
+      "value": "[[\"paramGEC\",\"paramGEC\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"],[\"dataMes\",\"dataMes\"]]"
      },
      {
       "name": "dataSource",
@@ -15572,7 +15572,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n    \n    //Funcao iniciada por um Custom Param.  \n            \n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
+      "value": "function init(){\n    \n    //Funcao iniciada por um Custom Param.  \n    //Data-----\n    dataMes = Dashboards.getQueryParameter(\"dataMes\");\n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -15608,7 +15608,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function manipulaParams(){\n\n\n//alert('paraGEC_aux: '+Dashboards.getParam('paramGEC_aux'));\nif(Dashboards.getParam('paramGEC') == ''){\n    \n    var aux_temp = Dashboards.getParam('paramGEC_aux');\n    Dashboards.fireChange('paramGEC',aux_temp);\n    \n    // param_chart_CEDES_SUB\n    \n  //  alert(\"Estou no if null\");\n    \n}\n\n\n\n\n//Esta sendo chamada dentro do chart de aderencia. Prioridade de execucao\n//atualizada para 4, assim garantindo a execucao desse script antes de todo.\n\n//Valores dos Paramns GEC e GEC_SUB.\n\n    var paramgec_temp = Dashboards.getParam('paramGEC');\n    var paramgec_sub_temp = Dashboards.getParam('paramGEC_SUB');\n    \n    var completa_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\n\n//Valores temporarios para manipulacao via setParam.    \n    \n    var tempgec_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS';\n        \n//Chamando a funcao que manipula os params.\n     \n     Dashboards.setParam('param_chart_GEC_SUB',paramgec_temp);\n     Dashboards.setParam('param_table_GEC',paramgec_sub_temp);\n    if(paramgec_sub_temp == '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS'){\n    \n        Dashboards.setParam('param_chart_GEC_SUB',tempgec_sub);\n        Dashboards.setParam('param_table_GEC',completa_sub);\n        \n    } \n    \n    \n    \n    param_table_GEC_temp = '[Organizacao.Gestao da Demanda].[Sigla GEA].[Todos].children';\n    \n    if(param_table_GEC == param_table_GEC_temp){\n        Dashboards.setParam('param_table_GEC',completa_sub);\n    }\n    //alert(\"param_table_GEC= \"+ param_table_GEC);\n    //alert(\"paramGEC | param_chart_GEC_SUB: \"+ paramGEC + '####' + param_chart_GEC_SUB);\n} "
+      "value": "function manipulaParams(){\r\n\r\n//alert(Dashboards.getParam('dataAno'));\r\n//alert('paraGEC_aux: '+Dashboards.getParam('paramGEC_aux'));\r\nif(Dashboards.getParam('paramGEC') == ''){\r\n    \r\n    var aux_temp = Dashboards.getParam('paramGEC_aux');\r\n    Dashboards.fireChange('paramGEC',aux_temp);\r\n    \r\n    // param_chart_CEDES_SUB\r\n    \r\n  //  alert(\"Estou no if null\");\r\n    \r\n}\r\n\r\n\r\n\r\n\r\n//Esta sendo chamada dentro do chart de aderencia. Prioridade de execucao\r\n//atualizada para 4, assim garantindo a execucao desse script antes de todo.\r\n\r\n//Valores dos Paramns GEC e GEC_SUB.\r\n\r\n    var paramgec_temp = Dashboards.getParam('paramGEC');\r\n    var paramgec_sub_temp = Dashboards.getParam('paramGEC_SUB');\r\n    \r\n    var completa_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\r\n\r\n//Valores temporarios para manipulacao via setParam.    \r\n    \r\n    var tempgec_sub = '[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS';\r\n        \r\n//Chamando a funcao que manipula os params.\r\n     \r\n     Dashboards.setParam('param_chart_GEC_SUB',paramgec_temp);\r\n     Dashboards.setParam('param_table_GEC',paramgec_sub_temp);\r\n    if(paramgec_sub_temp == '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS'){\r\n    \r\n        Dashboards.setParam('param_chart_GEC_SUB',tempgec_sub);\r\n        Dashboards.setParam('param_table_GEC',completa_sub);\r\n        \r\n    } \r\n    \r\n    \r\n    \r\n    param_table_GEC_temp = '[Organizacao.Gestao da Demanda].[Sigla GEA].[Todos].children';\r\n    \r\n    if(param_table_GEC == param_table_GEC_temp){\r\n        Dashboards.setParam('param_table_GEC',completa_sub);\r\n    }\r\n    //alert(\"param_table_GEC= \"+ param_table_GEC);\r\n    //alert(\"paramGEC | param_chart_GEC_SUB: \"+ paramGEC + '####' + param_chart_GEC_SUB);\r\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -15735,7 +15735,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:updateEvent}\",\"${p:pesoAderencia}\",\"${p:pesoAgilidade}\",\"${p:pesoQualidade}\",\"${p:pesoAtendimento}\",\"${p:pesoProdutividade}\",\"${p:participacaoAtendimento}\",\"${p:metaAderencia}\",\"${p:metaCobertura}\",\"${p:metaPrazo}\",\"${p:metaPlanejamento}\",\"${p:metaCorretude}\",\"${p:metaDefeitos}\",\"${p:metaAtendimento}\",\"${p:metaEquipe}\",\"${p:metaIndividual}\",\"${p:dataAprovacaoMaxFilhaFim}\",\"${p:dataAprovacaoMaxFilhaInicio}\",\"${p:dataAprovacaoFilhaFim}\",\"${p:dataAprovacaoFilhaInicio}\",\"${p:dataResolucaoFilhaFim}\",\"${p:dataResolucaoFilhaInicio}\",\"${p:dataResolucaoPaiFim}\",\"${p:dataResolucaoPaiInicio}\",\"${p:dataModificacaoFilhaFim}\",\"${p:dataModificacaoFilhaInicio}\",\"${p:dataModificacaoPaiFim}\",\"${p:dataModificacaoPaiInicio}\",\"${p:dataCriacaoFilhaFim}\",\"${p:dataCriacaoFilhaInicio}\",\"${p:dataCriacaoPaiFim}\",\"${p:dataCriacaoPaiInicio}\",\"${p:paramUnidade}\",\"${p:paramGEC}\",\"${p:paramGEC_SUB}\"]"
+      "value": "[\"${p:dataMes}\",\"${p:updateEvent}\",\"${p:pesoAderencia}\",\"${p:pesoAgilidade}\",\"${p:pesoQualidade}\",\"${p:pesoAtendimento}\",\"${p:pesoProdutividade}\",\"${p:participacaoAtendimento}\",\"${p:metaAderencia}\",\"${p:metaCobertura}\",\"${p:metaPrazo}\",\"${p:metaPlanejamento}\",\"${p:metaCorretude}\",\"${p:metaDefeitos}\",\"${p:metaAtendimento}\",\"${p:metaEquipe}\",\"${p:metaIndividual}\",\"${p:dataAprovacaoMaxFilhaFim}\",\"${p:dataAprovacaoMaxFilhaInicio}\",\"${p:dataAprovacaoFilhaFim}\",\"${p:dataAprovacaoFilhaInicio}\",\"${p:dataResolucaoFilhaFim}\",\"${p:dataResolucaoFilhaInicio}\",\"${p:dataResolucaoPaiFim}\",\"${p:dataResolucaoPaiInicio}\",\"${p:dataModificacaoFilhaFim}\",\"${p:dataModificacaoFilhaInicio}\",\"${p:dataModificacaoPaiFim}\",\"${p:dataModificacaoPaiInicio}\",\"${p:dataCriacaoFilhaFim}\",\"${p:dataCriacaoFilhaInicio}\",\"${p:dataCriacaoPaiFim}\",\"${p:dataCriacaoPaiInicio}\",\"${p:paramUnidade}\",\"${p:paramGEC}\",\"${p:paramGEC_SUB}\",\"${p:param_chart_GEC_SUB}\"]"
      },
      {
       "name": "oLanguage",
@@ -15780,7 +15780,7 @@
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramGEC_SUB\",\"paramGEC_SUB\"],[\"paramGEC\",\"paramGEC\"],[\"param_table_GEC\",\"param_table_GEC\"]]"
+      "value": "[[\"participacaoAderencia\",\"participacaoAderencia\"],[\"participacaoCobertura\",\"participacaoCobertura\"],[\"participacaoPrazo\",\"participacaoPrazo\"],[\"participacaoPlanejamento\",\"participacaoPlanejamento\"],[\"participacaoCorretude\",\"participacaoCorretude\"],[\"participacaoDefeitos\",\"participacaoDefeitos\"],[\"participacaoAtendimento\",\"participacaoAtendimento\"],[\"participacaoEquipe\",\"participacaoEquipe\"],[\"participacaoIndividual\",\"participacaoIndividual\"],[\"pesoAderencia\",\"pesoAderencia\"],[\"pesoAgilidade\",\"pesoAgilidade\"],[\"pesoQualidade\",\"pesoQualidade\"],[\"pesoAtendimento\",\"pesoAtendimento\"],[\"pesoProdutividade\",\"pesoProdutividade\"],[\"metaAderencia\",\"metaAderencia\"],[\"metaCobertura\",\"metaCobertura\"],[\"metaPrazo\",\"metaPrazo\"],[\"metaPlanejamento\",\"metaPlanejamento\"],[\"metaCorretude\",\"metaCorretude\"],[\"metaDefeitos\",\"metaDefeitos\"],[\"metaAtendimento\",\"metaAtendimento\"],[\"metaEquipe\",\"metaEquipe\"],[\"metaIndividual\",\"metaIndividual\"],[\"paramUnidade\",\"paramUnidade\"],[\"paramGEC_SUB\",\"paramGEC_SUB\"],[\"paramGEC\",\"paramGEC\"],[\"param_table_GEC\",\"param_table_GEC\"],[\"dataMes\",\"dataMes\"],[\"param_chart_GEC_SUB\",\"param_chart_GEC_SUB\"]]"
      },
      {
       "name": "displayLength",
@@ -15885,7 +15885,7 @@
      {
       "name": "preExecution",
       "type": "JavaScript",
-      "value": "function g(){\r\n     if(Dashboards.getParam('participacaoAtendimento')!= 100){\r\n         participacao=100;\r\n         Dashboards.fireChange('participacaoAtendimento',participacao);\r\n        }  \r\n    }\r\n\r\n "
+      "value": "function g(){\r\n     if(Dashboards.getParam('participacaoAtendimento')!= 100){\r\n         participacao=100;\r\n         Dashboards.fireChange('participacaoAtendimento',participacao);\r\n        }  \r\n        \r\n            }\r\n\r\n "
      },
      {
       "name": "postExecution",
@@ -16470,6 +16470,105 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "a1507221-f161-2a59-d782-b709ee5ba057",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataAno"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "40e0a4ae-7fc1-68a8-2062-fd8610ffe538",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataTrimestre"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "b43d6ba3-ebdf-d0b9-ccae-0345311a1212",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataMes"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "8d4f9072-f58f-689e-128c-9377f8f2324e",
@@ -20094,12 +20193,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\")\n )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\n"
+      "value": "with\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\")\n )\nSELECT\n[Rows] ON ROWS\n,[Measures].[Defeitos] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"dataInicio\",\"\",\"String\",\"\",\"\"],[\"dataFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataCriacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataModificacaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoPaiFim\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaInicio\",\"\",\"String\",\"\",\"\"],[\"dataResolucaoFilhaFim\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20175,12 +20274,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\nmember [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Qualidade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20337,12 +20436,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Prioridades1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Prioridades]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Prioridades]), [Measures].[Prioridades]))))'\r\n\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cobertura1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cobertura]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Cobertura]), [Measures].[Cobertura]))))'\r\n\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[CumprimentoPrazo1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cumprimento Prazo]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]), [Measures].[Cumprimento Prazo]))))'\r\n\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Efetividade1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Efetividade]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Efetividade]),  [Measures].[Efetividade]))))'\r\n\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Corretude1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Corretude]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Corretude]),[Measures].[Corretude]))))'\r\n\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Defeitos1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Defeitos]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Defeitos]), [Measures].[Defeitos]))))'\r\n\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Atendimento1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Atendimento]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Atendimento]),  [Measures].[Atendimento]))))'\r\n\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Equipe]),[Measures].[Equipe]))))'\r\n\r\n\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nmember [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Individual]), [Measures].[Individual]))))'\r\n\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n        ,(${metaAderencia}/100)     \r\n        ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n    )   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nmember [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Nota]), [Measures].[Nota]))))'\r\n\r\nset [CONJUNTO1] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'\r\n\r\nset [CONJUNTO2] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'\r\n\r\nset [CONJUNTO3] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP14],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP16]}'\r\n\r\nset [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'\r\n\r\nset [Rows] as UNION(FILTER(\r\n\r\n{${param_table_GEC}}\r\n\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember in {\r\n [CONJUNTO1], [CONJUNTO2], [CONJUNTO3], \r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10]\r\n}),[Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades1],[Measures].[Cobertura1]\r\n  ,[Measures].[CumprimentoPrazo1], [Measures].[Efetividade1]\r\n  ,[Measures].[Corretude1],[Measures].[Defeitos1]\r\n  , [Measures].[Atendimento1], [Measures].[Equipe1]\r\n  , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nmember [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\r\nmember [Measures].[Prioridades1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Prioridades]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Prioridades]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Prioridades]), [Measures].[Prioridades]))))'\r\n\r\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\r\nmember [Measures].[Cobertura1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cobertura]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cobertura]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Cobertura]), [Measures].[Cobertura]))))'\r\n\r\nmember [Measures].[Cumprimento Prazo] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[CumprimentoPrazo1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Cumprimento Prazo]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO3],[Measures].[Cumprimento Prazo]), [Measures].[Cumprimento Prazo]))))'\r\n\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Efetividade1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Efetividade]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Efetividade]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Efetividade]),  [Measures].[Efetividade]))))'\r\n\r\nmember [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'\r\nmember [Measures].[Corretude1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Corretude]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Corretude]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Corretude]),[Measures].[Corretude]))))'\r\n\r\nmember [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'\r\nmember [Measures].[Defeitos1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Defeitos]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Defeitos]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Defeitos]), [Measures].[Defeitos]))))'\r\n\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nmember [Measures].[Atendimento1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Atendimento]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Atendimento]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Atendimento]),  [Measures].[Atendimento]))))'\r\n\r\nmember [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\r\nmember [Measures].[Equipe1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Equipe]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Equipe]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Equipe]),[Measures].[Equipe]))))'\r\n\r\n\r\nmember [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'\r\nmember [Measures].[Individual1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Individual]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Individual]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Individual]), [Measures].[Individual]))))'\r\n\r\nMEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER),[Rows],[Measures].[Nota1])'\r\n\r\nmember [Measures].[Nota] as 'IIF(  [Measures].[Implantadas (Planejado Para)]>0   \r\n    ,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]>2*(${metaAderencia}/100)    \r\n        ,(${metaAderencia}/100)     \r\n        ,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)]   \r\n    )   \r\n\t,0  \r\n)/((${metaAderencia}/100)*(${participacaoAderencia}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Priorizadas]>0   \r\n\t,IIF(   [Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]>2*(${metaCobertura}/100) \r\n\t\t,(${metaCobertura}/100)     \r\n\t\t,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCobertura}/100)*(${participacaoCobertura}/100)*(${pesoAderencia}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas]>0   \r\n\t,IIF(   [Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]>2*(${metaPrazo}/100)    \r\n\t\t,(${metaPrazo}/100)     \r\n\t\t,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPrazo}/100)*(${participacaoPrazo}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Planejadas e Implantadas]>0   \r\n\t,IIF(   [Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]>2*(${metaPlanejamento}/100)    \r\n\t\t,(${metaPlanejamento}/100)     \r\n\t\t,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]   \r\n\t)   \r\n\t,0  \r\n)/((${metaPlanejamento}/100)*(${participacaoPlanejamento}/100)*(${pesoAgilidade}/10)) \r\n+ \r\nIIF(  [Measures].[Criadas no Periodo]>0   \r\n\t,IIF(   [Measures].[Implantadas]/[Measures].[Criadas no Periodo]>2*(${metaAtendimento}/100)    \r\n\t\t,(${metaAtendimento}/100)    \r\n\t\t,[Measures].[Implantadas]/[Measures].[Criadas no Periodo]   \r\n\t)   \r\n\t,0  \r\n)/((${metaAtendimento}/100)*(${participacaoAtendimento}/100)*(${pesoAtendimento}/10)) \r\n+\r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaEquipe}/100)   \r\n\t\t,(${metaEquipe}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) \r\n+ \r\nIIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   \r\n\t,IIF(   [Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    \r\n\t\t,(${metaIndividual}/100)     \r\n\t\t,[Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI]   \r\n\t)   \r\n\t,0  \r\n)/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) \r\n+\r\nIIF(  [Measures].[DMS DNS STE Defeito Criados]>0   \r\n\t,IIF(   [Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]>2*(${metaCorretude}/100)    \r\n\t\t,(${metaCorretude}/100)     \r\n\t\t,[Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]   \r\n\t)   \r\n\t,0  \r\n)/((${metaCorretude}/100)*(${participacaoCorretude}/100)*(${pesoQualidade}/10)) \r\n+ \r\nIIF(  [Measures].[Defeito Criado em PRD]>0   \r\n\t,IIF(   [Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]>2*(${metaDefeitos}/100)    \r\n\t\t,(${metaDefeitos}/100)     \r\n\t\t,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]   \r\n\t)   \r\n\t,0  \r\n)/((${metaDefeitos}/100)*(${participacaoDefeitos}/100)*(${pesoQualidade}/10))'\r\n\r\nmember [Measures].[Nota1] as 'IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10], AVG([CONJUNTO1],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10], AVG([CONJUNTO2],[Measures].[Nota]),IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10], AVG([CONJUNTO3],[Measures].[Nota]), IIF( [Organizacao.Gestao da Demanda].[Sigla GEA Completa].CURRENTMEMBER IN [Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS, AVG([CONJUNTO4],[Measures].[Nota]), [Measures].[Nota]))))'\r\n\r\nset [CONJUNTO1] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR11],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR12]}'\r\n\r\nset [CONJUNTO2] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ11]}'\r\n\r\nset [CONJUNTO3] as '{\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP01],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP02],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP03],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP04],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP05],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP06],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP07],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP08],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP09],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP14],\r\n[Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP16]}'\r\n\r\nset [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'\r\n\r\nset [Rows] as UNION(FILTER(\r\n\r\n{${param_table_GEC}}\r\n\r\n, [Organizacao.Gestao da Demanda].[Sigla GEA Completa].currentMember in {\r\n [CONJUNTO1], [CONJUNTO2], [CONJUNTO3], \r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEABR10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEARJ10],\r\n [Organizacao.Gestao da Demanda].[Sigla GEA Completa].[GEASP10]\r\n}),[Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS )\r\nset [SORTED_ROW] as 'ORDER([Rows] ,[Measures].[Rank],BASC)'\r\n\r\nSELECT\r\n[SORTED_ROW] ON ROWS\r\n,{ [Measures].[Rank] , [Measures].[Prioridades1],[Measures].[Cobertura1]\r\n  ,[Measures].[CumprimentoPrazo1], [Measures].[Efetividade1]\r\n  ,[Measures].[Corretude1],[Measures].[Defeitos1]\r\n  , [Measures].[Atendimento1], [Measures].[Equipe1]\r\n  , [Measures].[Individual1] , [Measures].[Nota1]} ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]\r\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramGEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_GEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"pesoAderencia\",\"\",\"String\",\"\",\"\"],[\"pesoAgilidade\",\"\",\"String\",\"\",\"\"],[\"pesoQualidade\",\"\",\"String\",\"\",\"\"],[\"pesoAtendimento\",\"\",\"String\",\"\",\"\"],[\"pesoProdutividade\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"metaAderencia\",\"\",\"String\",\"\",\"\"],[\"metaPrazo\",\"\",\"String\",\"\",\"\"],[\"metaPlanejamento\",\"\",\"String\",\"\",\"\"],[\"metaCorretude\",\"\",\"String\",\"\",\"\"],[\"metaDefeitos\",\"\",\"String\",\"\",\"\"],[\"metaAtendimento\",\"\",\"String\",\"\",\"\"],[\"metaEquipe\",\"\",\"String\",\"\",\"\"],[\"metaIndividual\",\"\",\"String\",\"\",\"\"],[\"participacaoCobertura\",\"\",\"String\",\"\",\"\"],[\"participacaoPrazo\",\"\",\"String\",\"\",\"\"],[\"participacaoPlanejamento\",\"\",\"String\",\"\",\"\"],[\"participacaoCorretude\",\"\",\"String\",\"\",\"\"],[\"participacaoDefeitos\",\"\",\"String\",\"\",\"\"],[\"participacaoAtendimento\",\"\",\"String\",\"\",\"\"],[\"participacaoEquipe\",\"\",\"String\",\"\",\"\"],[\"participacaoIndividual\",\"\",\"String\",\"\",\"\"],[\"paramUnidade\",\"\",\"String\",\"\",\"\"],[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"participacaoAderencia\",\"\",\"String\",\"\",\"\"],[\"metaCobertura\",\"\",\"String\",\"\",\"\"],[\"paramGEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_table_GEC\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20418,12 +20517,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\n"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado GEA]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20499,12 +20598,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\nmember [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'\nset [Rows] as FILTER(\n {${param_chart_GEC_SUB}}\n , ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n [Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Produtividade] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20580,12 +20679,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nmember [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'\r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Atendimento] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]\r\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20661,12 +20760,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\r\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,1-([Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas]) ,0)'\r\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\r\n \r\nset [Rows] as FILTER(\r\n{${param_chart_GEC_SUB}}\r\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \r\n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\r\n\r\nSELECT\r\n[Rows] ON ROWS\r\n,[Measures].[Efetividade] ON COLUMNS\r\n\r\nFROM [SIALG - Indicadores GEA]\r\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20742,12 +20841,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\nmember [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'\nmember [Measures].[Efetividade] as 'IIF([Measures].[Planejadas e Implantadas]>0,[Measures].[Replanejadas e Implantadas]/[Measures].[Planejadas e Implantadas] ,0)'\nmember [Measures].[Agilidade] as '(([Measures].[Cumprimento]*35)+([Measures].[Efetividade]*65))/100'\n \nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cumprimento] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20823,12 +20922,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\nmember [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Cobertura] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_GEC\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"param_GEC\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",
@@ -20985,12 +21084,12 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\nmember [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'\nset [Rows] as FILTER(\n{${param_chart_GEC_SUB}}\n, ANCESTOR([Organizacao.Gestao da Demanda].CURRENTMEMBER, \n[Organizacao.Gestao da Demanda].[Sigla GEA]).CAPTION MATCHES (\"(?i).*GEA.*\"))\n\nSELECT\n[Rows] ON ROWS\n,[Measures].[Aderencia] ON COLUMNS\n\nFROM [SIALG - Indicadores GEA]\nwhere({${dataMes}})"
      },
      {
       "name": "parameters",
       "type": "CdaParameters",
-      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"]]"
+      "value": "[[\"paramGEC\",\"\",\"String\",\"\",\"\"],[\"param_chart_GEC_SUB\",\"\",\"String\",\"\",\"\"],[\"dataMes\",\"\",\"String\",\"\",\"\"]]"
      },
      {
       "name": "bandedMode",

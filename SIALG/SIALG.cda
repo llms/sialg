@@ -19,6 +19,34 @@
       <Connection id="unidGECv2" type="sql.jndi">
          <Jndi>SIALG</Jndi>
       </Connection>
+      <Connection id="anoCEDES" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="trimestreCEDES" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="mesCEDES" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="ano" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="trimestre" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="mes" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
+      <Connection id="filtroNovo" type="mondrian.jndi">
+         <Catalog>mondrian:/SIALG+-+RTC</Catalog>
+         <Jndi>SIALG</Jndi>
+      </Connection>
       <Connection id="unidCEDES_mdx" type="mondrian.jndi">
          <Catalog>mondrian:/SIALG+-+RTC</Catalog>
          <Jndi>SIALG</Jndi>
@@ -124,6 +152,137 @@ SELECT distinct "CO_GEC", "SG_GEC"
       <Query><![CDATA[SELECT distinct "CO_SUB_GEC", "SG_GEC_COMPLETO", "CO_GEC", "SG_GEC"       
 FROM "ALGSC002_SIALG"."ALGTBA001_RTC_INDICADORES" WHERE "SG_GEC" like '%GEA%'
 order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="anoCEDES" id="anoCEDES" type="mdx">
+      <Name>anoCEDES</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+[Periodo.default].[Ano].MEMBERS on 1
+FROM [SIALG - Indicadores CEDES]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="trimestreCEDES" id="trimestreCEDES" type="mdx">
+      <Name>trimestreCEDES</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+filter(
+[Periodo.default].[Trimestre].MEMBERS,
+ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])
+in { [Periodo.default].[2017]}) on 1
+FROM [SIALG - Indicadores CEDES]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="mesCEDES" id="mesCEDES" type="mdx">
+      <Name>mesCEDES</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters>
+         <Parameter default="dataMes_auxCEDES" name="dataMes_auxCEDES" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+FILTER(
+[Periodo.default].[Ano Mes].MEMBERS,
+ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) 
+in{ ${dataMes_auxCEDES}}) on 1
+FROM [SIALG - Indicadores CEDES]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ano" id="ano" type="mdx">
+      <Name>ano</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+[Periodo.default].[Ano].MEMBERS on 1
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="trimestre" id="trimestre" type="mdx">
+      <Name>trimestre</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+filter(
+[Periodo.default].[Trimestre].MEMBERS,
+ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])
+in { [Periodo.default].[2017]}) on 1
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="mes" id="mes" type="mdx">
+      <Name>mes</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters>
+         <Parameter default="dataMes_aux" name="dataMes_aux" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+select
+[Measures.Zero] on 0,
+FILTER(
+[Periodo.default].[Ano Mes].MEMBERS,
+ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) 
+in{ ${dataMes_aux}}) on 1
+FROM [SIALG - Indicadores GEA]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="filtroNovo" id="filtroNovo" type="mdx">
+      <Name>filtroNovo</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[with
+SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
+MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
+set [MeasuresANO] as '{[Measures].[*ANO]}'
+set [MeasuresTrimestre] as '{[Measures].[*Trimestre]}'
+set [MeasuresTotal Anos] as '{[Measures].[*Total Anos]}'
+set [MeasuresMeses] as '{[Measures].[*Meses]}'
+MEMBER [Measures].[*ANO] as '[Periodo.default].[2017].Name'
+MEMBER [Measures].[*Trimestre] as '[Periodo.default].CurrentMember.Parent.Name'
+member [Measures].[*Meses] as '[Periodo.default].CurrentMember.Name'
+member [Measures].[*Total Anos] as "Todos os anos"
+
+select
+
+{[MeasuresTotal Anos],[MeasuresANO], [MeasuresTrimestre], [MeasuresMeses]} on 0,
+Descendants([Periodo.default], [Periodo.default].[Trimestre], AFTER) on rows
+FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="unidCEDES_mdx" id="unidCEDES_mdx" type="mdx">
       <Name>unidCEDES_mdx</Name>

@@ -74,22 +74,9 @@
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
-         <Parameter default="" name="dataCriacaoPaiInicio" type="String"/>
-         <Parameter default="" name="dataCriacaoPaiFim" type="String"/>
-         <Parameter default="" name="dataCriacaoFilhaInicio" type="String"/>
-         <Parameter default="" name="dataCriacaoFilhaFim" type="String"/>
-         <Parameter default="" name="dataModificacaoPaiInicio" type="String"/>
-         <Parameter default="" name="dataModificacaoPaiFim" type="String"/>
-         <Parameter default="" name="dataModificacaoFilhaInicio" type="String"/>
-         <Parameter default="" name="dataModificacaoFilhaFim" type="String"/>
-         <Parameter default="" name="dataResolucaoPaiInicio" type="String"/>
-         <Parameter default="" name="dataResolucaoPaiFim" type="String"/>
-         <Parameter default="" name="dataResolucaoFilhaInicio" type="String"/>
-         <Parameter default="" name="dataResolucaoFilhaFim" type="String"/>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
@@ -99,7 +86,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Defeitos] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="corretudeDS" id="corretudeDS" type="mdx">
       <Name>corretudeDS</Name>
@@ -109,6 +97,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Qualidade] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0,([Measures].[DMS DNS STE Criados]/[Measures].[DMS DNS STE Defeito Criados]),0)'
@@ -120,7 +109,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Qualidade] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresCEDES_DS" id="indicadoresCEDES_DS"
                type="mdx">
@@ -158,6 +148,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
          <Parameter default="" name="metaCobertura" type="String"/>
          <Parameter default="" name="paramCEDES_SUB" type="String"/>
          <Parameter default="" name="param_table_CEDES" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -168,7 +159,7 @@ member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
 member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*1000,0)'
 MEMBER [Measures].[Rank] AS '0'
 
 
@@ -196,7 +187,8 @@ SELECT
   , [Measures].[Atendimento], [Measures].[Equipe]
   , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="indicadoresDS" id="indicadoresDS" type="mdx">
       <Name>indicadoresDS</Name>
@@ -233,6 +225,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
          <Parameter default="" name="metaCobertura" type="String"/>
          <Parameter default="" name="paramCEDES_SUB" type="String"/>
          <Parameter default="" name="param_table_CEDES" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Prioridades] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
@@ -243,7 +236,7 @@ member [Measures].[Corretude] as 'IIF([Measures].[DMS DNS STE Defeito Criados]>0
 member [Measures].[Defeitos] as 'IIF([Measures].[Defeito Criado em PRD]>0,([Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Defeito Criado em PRD]),0)'
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
 member [Measures].[Equipe] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
-member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
+member [Measures].[Individual] as 'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
 MEMBER [Measures].[Rank] AS 'Rank(([Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].CURRENTMEMBER),[Rows],[Measures].[Nota])'
 
 
@@ -301,9 +294,9 @@ IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0
 )/((${metaEquipe}/100)*(${participacaoEquipe}/100)*(${pesoProdutividade}/10)) 
 + 
 IIF(  [Measures].[Qt. Pontos de Funcao SUCTI]>0   
-	,IIF(   [Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    
+	,IIF(   [Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI]>2*(${metaIndividual}/100)    
 		,(${metaIndividual}/100)     
-		,[Measures].[Qt. PF por Empregado]/[Measures].[Qt. Pontos de Funcao SUCTI]   
+		,[Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI]   
 	)   
 	,0  
 )/((${metaIndividual}/100)*(${participacaoIndividual}/100)*(${pesoProdutividade}/10)) 
@@ -345,7 +338,8 @@ SELECT
   , [Measures].[Atendimento], [Measures].[Equipe]
   , [Measures].[Individual] , [Measures].[Nota]} ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="individualDS" id="individualDS" type="mdx">
       <Name>individualDS</Name>
@@ -355,6 +349,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,([Measures].[Qt. PF por Empregado CEDES]/[Measures].[Qt. Pontos de Funcao SUCTI])*100,0)'
@@ -365,7 +360,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="equipeDS" id="equipeDS" type="mdx">
       <Name>equipeDS</Name>
@@ -375,6 +371,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Produtividade] as  'IIF([Measures].[Qt. Pontos de Funcao SUCTI]>0,[Measures].[Qt. Pontos Funcao de DMS ou DNS Implantadas]/[Measures].[Qt. Pontos de Funcao SUCTI] ,0)'
@@ -385,7 +382,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Produtividade] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoDS" id="atendimentoDS" type="mdx">
       <Name>atendimentoDS</Name>
@@ -395,6 +393,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Atendimento] as  'IIF([Measures].[Criadas no Periodo]>0,[Measures].[Implantadas]/[Measures].[Criadas no Periodo] ,0)'
@@ -405,7 +404,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Atendimento] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="efetividadeDS" id="efetividadeDS" type="mdx">
       <Name>efetividadeDS</Name>
@@ -415,6 +415,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
@@ -428,7 +429,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Efetividade] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="prazoDS" id="prazoDS" type="mdx">
       <Name>prazoDS</Name>
@@ -438,6 +440,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cumprimento] as  'IIF([Measures].[Planejadas]>0,[Measures].[Planejadas e Implantadas no Prazo]/[Measures].[Planejadas] ,0)'
@@ -451,7 +454,8 @@ SELECT
 [Rows] ON ROWS
 ,[Measures].[Cumprimento] ON COLUMNS
 
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="coberturaDS" id="coberturaDS" type="mdx">
       <Name>coberturaDS</Name>
@@ -461,16 +465,18 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Cobertura] as 'IIF([Measures].[Priorizadas]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Priorizadas] ,0)'
-set [Rows] as FILTER({${paramCEDES}},
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Cobertura] ON COLUMNS
-FROM [SIALG - Indicadores CEDES]]]></Query>
+FROM [SIALG - Indicadores CEDES]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="notaDS" id="notaDS" type="mdx">
       <Name>notaDS</Name>
@@ -498,17 +504,19 @@ FROM [SIALG - Demandas]]]></Query>
       <Parameters>
          <Parameter default="" name="paramCEDES" type="String"/>
          <Parameter default="" name="param_chart_CEDES_SUB" type="String"/>
+         <Parameter default="" name="dataMesCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
 member [Measures].[Aderencia] as 'IIF([Measures].[Implantadas (Planejado Para)]>0,[Measures].[Priorizadas Implantadas]/[Measures].[Implantadas (Planejado Para)] ,0)'
-set [Rows] as FILTER([Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].members,
+set [Rows] as FILTER({${param_chart_CEDES_SUB}},
 [Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].currentMember.CAPTION MATCHES ("(?i).*CEDES.*")) 
 
 SELECT
 [Rows] ON ROWS
 ,[Measures].[Aderencia] ON COLUMNS
 
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${dataMesCEDES}})]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="atendimentoSQL" id="atendimentoSQL" type="sql">
       <Name>atendimentoSQL</Name>
