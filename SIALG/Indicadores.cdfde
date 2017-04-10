@@ -15572,7 +15572,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n    \n    //Funcao iniciada por um Custom Param.  \n    //Data-----\n    dataMes = Dashboards.getQueryParameter(\"dataMes\");\n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
+      "value": "function init(){\n\n        \n    //Funcao iniciada por um Custom Param.  \n    //Data-----\n    dataMes = Dashboards.getQueryParameter(\"dataMes\");\n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -16470,6 +16470,39 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "e4aa5f9f-6dd3-e148-30a9-7b0cec99dff6",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "trimestreCorrente"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "a1507221-f161-2a59-d782-b709ee5ba057",

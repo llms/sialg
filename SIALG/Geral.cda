@@ -125,8 +125,7 @@
          </Column>
       </Columns>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
@@ -136,7 +135,7 @@ member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMembe
 member [Measures].[Meta] as '10'
 
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows,
+{${tempoGeral}} ON rows,
 crossjoin([Organizacao.Gestao da Demanda].[SUCTI ].MEMBERS,[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
@@ -157,8 +156,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
          </Column>
       </Columns>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
@@ -168,7 +166,7 @@ member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMembe
 member [Measures].[Meta] as '10'
 
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEABR],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
@@ -189,8 +187,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
          </Column>
       </Columns>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
@@ -199,7 +196,7 @@ member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMembe
 member [Measures].[Meta] as '10'
 
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEASP],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
@@ -220,8 +217,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
          </Column>
       </Columns>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Indice - Nota Final], [Measures].[Rglinear], [Measures].[Meta]}'
@@ -231,7 +227,7 @@ member [Measures].[Rglinear] as 'LinRegPoint(Rank([Periodo.default].CurrentMembe
 member [Measures].[Meta] as '10'
 
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,crossjoin([Organizacao.Gestao da Demanda].[Sigla GEA].[GEARJ],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
@@ -259,8 +255,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       </Columns>
       <Output indexes="2,4,6" mode="exclude"/>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
@@ -272,7 +267,7 @@ SET [~ROWS] AS
     }
     
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,NON EMPTY
 crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
@@ -301,8 +296,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       </Columns>
       <Output indexes="2,4,6" mode="exclude"/>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
@@ -315,7 +309,7 @@ SET [~ROWS] AS
     }
     
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,NON EMPTY
 crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
@@ -344,8 +338,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       </Columns>
       <Output indexes="2,4,6" mode="exclude"/>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [*BASE_MEMBERS__Measures_] AS '{[Measures].[Valor], [Measures].[Meta]}'
@@ -360,7 +353,7 @@ SET [~ROWS] AS
     }
     
 SELECT
-[*BASE_MEMBERS__Data Criacao Pai_] ON rows
+{${tempoGeral}} ON rows
 ,NON EMPTY
 crossjoin([~ROWS],[*BASE_MEMBERS__Measures_]) ON columns
 FROM [SIALG - Indicadores GEA]]]></Query>
@@ -370,10 +363,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <BandedMode>compact</BandedMode>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
-      <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
-      </Parameters>
+      <Parameters/>
       <Query><![CDATA[WITH
 SET [*NATIVE_CJ_SET_WITH_SLICER] AS 'FILTER([*BASE_MEMBERS__Data Criacao Pai_], NOT ISEMPTY ([Measures].[Qt. Pontos de Funcao]))'
 SET [*NATIVE_CJ_SET] AS '[*NATIVE_CJ_SET_WITH_SLICER]'
@@ -395,8 +385,7 @@ FROM [SIALG - Demandas]]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
-         <Parameter default="" name="dataInicio" type="String"/>
-         <Parameter default="" name="dataFim" type="String"/>
+         <Parameter default="tempoGeral" name="tempoGeral" type="String"/>
       </Parameters>
       <Query><![CDATA[WITH
 SET [~ROWS] AS
@@ -445,6 +434,7 @@ set [CONJUNTO4] as '{[CONJUNTO1], [CONJUNTO2], [CONJUNTO3]}'
 SELECT
 {[Measures].[Nota1]} ON COLUMNS,
 {[~ROWS]} ON ROWS
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores GEA]
+where({${tempoGeral}})]]></Query>
    </DataAccess>
 </CDADescriptor>

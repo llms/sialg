@@ -161,11 +161,10 @@ order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
       <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-[Periodo.default].[Ano].MEMBERS on 1
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, 
+[Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="trimestreCEDES" id="trimestreCEDES" type="mdx">
@@ -176,14 +175,10 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-filter(
-[Periodo.default].[Trimestre].MEMBERS,
-ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])
-in { [Periodo.default].[2017]}) on 1
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, 
+[Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="mesCEDES" id="mesCEDES" type="mdx">
@@ -196,14 +191,10 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
          <Parameter default="dataMes_auxCEDES" name="dataMes_auxCEDES" type="String"/>
       </Parameters>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-FILTER(
-[Periodo.default].[Ano Mes].MEMBERS,
-ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) 
-in{ ${dataMes_auxCEDES}}) on 1
+[Measures].[*ZERO] on 0,
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {${dataMes_auxCEDES}}}) on 1
 FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="ano" id="ano" type="mdx">
@@ -214,11 +205,10 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-[Periodo.default].[Ano].MEMBERS on 1
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, 
+[Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="trimestre" id="trimestre" type="mdx">
@@ -229,14 +219,10 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-filter(
-[Periodo.default].[Trimestre].MEMBERS,
-ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])
-in { [Periodo.default].[2017]}) on 1
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, 
+[Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="mes" id="mes" type="mdx">
@@ -249,14 +235,10 @@ FROM [SIALG - Indicadores GEA]]]></Query>
          <Parameter default="dataMes_aux" name="dataMes_aux" type="String"/>
       </Parameters>
       <Query><![CDATA[with
-SET [Measures.Zero] AS '{[Measures].[*ZERO]}'
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-[Measures.Zero] on 0,
-FILTER(
-[Periodo.default].[Ano Mes].MEMBERS,
-ANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) 
-in{ ${dataMes_aux}}) on 1
+[Measures].[*ZERO] on 0,
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {${dataMes_aux}}}) on 1
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="filtroNovo" id="filtroNovo" type="mdx">

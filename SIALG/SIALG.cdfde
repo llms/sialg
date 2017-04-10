@@ -141,7 +141,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:dataTrimestre}\",\"${p:dataMes_aux}\",\"${p:dataMes}\",\"${p:paramGEC}\"]"
+      "value": "[\"${p:paramGEC}\"]"
      },
      {
       "name": "parameters",
@@ -216,7 +216,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    // var newVal = $(\"#filtroGEC option:selected\").val();\r\n    //var newVal = Dashboards.getParam('paramGEC_SUB');\r\n  \r\n    var dataAnotempo= Dashboards.getParam('dataAno');\r\n    var dataTrimestretempo= Dashboards.getParam('dataTrimestre');\r\n    var dataMestempo = Dashboards.getParam('dataMes');\r\n    var dataMesAux= Dashboards.getParam('dataMes_aux');\r\n    var anoFinaltempo = \"[Periodo.default].[\"+dataAnotempo+\"]\";\r\n    var trimestreFinaltempo = anoFinaltempo + \".[\"+dataTrimestretempo+\"]\";\r\n    //Recupera todos os trimestres selecionados\r\n    var arrayTrimestre3 = [];\r\n    for (i = 0; i < dataTrimestretempo.length; i++) {\r\n      var finalT3 = anoFinaltempo + \".[\" + dataTrimestretempo[i] + \"]\" + \".children\";\r\n      arrayTrimestre3.push(finalT3);\r\n    }\r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if(dataMestempo ==\"\"){\r\n         dataMesAux= arrayTrimestre3;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (i = 0; i < dataMestempo.length; i++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMestempo[i] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        dataMesAux = arrayMes;\r\n     }\r\n\r\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\r\n    var newVal = Dashboards.getParam('paramGEC');\r\n    //console.log('### Newval')\r\n    //console.log(newVal);\r\n      \r\n    //capturando o valor do paramGEC_sub\r\n   // paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\r\n   // var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n    Dashboards.fireChange('paramGEC_aux', newVal);\r\n\r\n\r\n //Toda vez que o filtro unidade for clicado, sera atribuido o\r\n    //valor de unidade.MEMBERS para a subunidade.\r\n  //####################  \r\n    var param_temp = newVal;\r\n    //console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) {\r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[3];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3 == \"MEMBERS\"){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    }\r\n    \r\n    \r\n     arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) {\r\n    \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\nvar newValSUB = arraySubunidade;\r\n//alert('ArraySubunidade: '+arraySubunidade);\r\n\r\n    //alert(\"gec\"+newVal);\r\n    //alert(\"sub\"+newValSUB);\r\n    \r\n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\",\"paramGEC_aux\":\"'+ newVal +'\",\"dataMes\":\"'+ dataMesAux +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    // console.log('###EStou aqui...###');\r\n    //console.log(strBookmark);\r\n    \r\n    var param_temp = newVal;\r\n    //console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) {\r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[3];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3 == \"MEMBERS\"){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    }\r\n    console.log(array_final);\r\n    Dashboards.setParam('paramGEC_SQL',array_final);\r\n    Dashboards.fireChange('paramGEC_SQL', array_final);\r\n    //Dashboards.fireChange('paramGEC_SUB', newValSUB);\r\n \r\n    //console.log(Dashboards.getParam('paramGEC_SQL'));\r\n    //alert(paramGEC_SQL);\r\n    \r\n    /*\r\n    //Toda vez que o filtro unidade for clicado, sera atribuido o\r\n    //valor de unidade.MEMBERS para a subunidade.\r\n    \r\n    arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) {\r\n    \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\n    \r\n   //alert(\"Valor q vai para o paramGEC_SUB: \" + arraySubunidade);\r\n    Dashboards.setParam('paramGEC_SUB',arraySubunidade);\r\n    Dashboards.fireChange('paramGEC_SUB',arraySubunidade);\r\n   */\r\n} "
+      "value": "function postChange(){\r\n    // var newVal = $(\"#filtroGEC option:selected\").val();\r\n    //var newVal = Dashboards.getParam('paramGEC_SUB');\r\n  \r\n    var dataMesAux= Dashboards.getParam('tempoGEA');\r\n        \r\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\r\n    var newVal = Dashboards.getParam('paramGEC');\r\n    //console.log('### Newval')\r\n    //console.log(newVal);\r\n      \r\n    //capturando o valor do paramGEC_sub\r\n   // paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\r\n   // var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n    Dashboards.fireChange('paramGEC_aux', newVal);\r\n\r\n\r\n //Toda vez que o filtro unidade for clicado, sera atribuido o\r\n    //valor de unidade.MEMBERS para a subunidade.\r\n  //####################  \r\n    var param_temp = newVal;\r\n    //console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) {\r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[3];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3 == \"MEMBERS\"){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    }\r\n    \r\n    \r\n     arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) {\r\n    \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\nvar newValSUB = arraySubunidade;\r\n//alert('ArraySubunidade: '+arraySubunidade);\r\n\r\n    //alert(\"gec\"+newVal);\r\n    //alert(\"sub\"+newValSUB);\r\n    \r\n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\",\"paramGEC_aux\":\"'+ newVal +'\",\"dataMes\":\"'+ dataMesAux +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    // console.log('###EStou aqui...###');\r\n    //console.log(strBookmark);\r\n    \r\n    var param_temp = newVal;\r\n    //console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) {\r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[3];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3 == \"MEMBERS\"){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    }\r\n    console.log(array_final);\r\n    Dashboards.setParam('paramGEC_SQL',array_final);\r\n    Dashboards.fireChange('paramGEC_SQL', array_final);\r\n    //Dashboards.fireChange('paramGEC_SUB', newValSUB);\r\n \r\n    //console.log(Dashboards.getParam('paramGEC_SQL'));\r\n    //alert(paramGEC_SQL);\r\n    \r\n    /*\r\n    //Toda vez que o filtro unidade for clicado, sera atribuido o\r\n    //valor de unidade.MEMBERS para a subunidade.\r\n    \r\n    arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) {\r\n    \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\n    \r\n   //alert(\"Valor q vai para o paramGEC_SUB: \" + arraySubunidade);\r\n    Dashboards.setParam('paramGEC_SUB',arraySubunidade);\r\n    Dashboards.fireChange('paramGEC_SUB',arraySubunidade);\r\n   */\r\n} "
      },
      {
       "name": "tooltip",
@@ -320,7 +320,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n  \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    var dataAnoGEA= Dashboards.getParam('dataAno');\n    var dataTrimestreGEA= Dashboards.getParam('dataTrimestre');\n    var dataMesGEA= Dashboards.getParam('dataMes');\n   \n    var anoFinal = \"[Periodo.default].[\"+dataAnoGEA+\"]\";\n    var trimestreFinal = anoFinal + \".[\"+dataTrimestreGEA+\"]\";\n    var mesFinal = trimestreFinal +\".CHILDREN\" ;\n    var dataMesGEAaux;\n    //Recupera todos os trimestres selecionados\n    var arrayTrimestre4 = [];\n    for (i = 0; i < dataTrimestreGEA.length; i++) {\n      var finalT4 = anoFinal + \".[\" + dataTrimestreGEA[i] + \"]\" + \".children\";\n      arrayTrimestre4.push(finalT4);\n    }\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\n    if(dataMesGEA ==\"\"){\n         dataMesGEAaux= arrayTrimestre4;\n    }else{\n        var arrayMes = [];\n        for (i = 0; i < dataMesGEA.length; i++) {\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMesGEA[i] + \"]\";\n            arrayMes.push(finalM);\n        }\n        dataMesGEAaux = arrayMes;\n     }\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    //console.log('### Newval_SUB')\n    //console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newVal_sub + '\", \"paramGEC_aux\": \"'+ newValGEC +'\", \"dataMes\": \"'+ dataMesGEAaux +'\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub);\n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n//    console.log('###EStou aqui SUB...###');\n\n   /*\n    temp_paramGEC = Dashboards.getParam('paramGEC_SUB');\n    alert(\"paramGEC no SUB: \" + temp_paramGEC);\n    Dashboards.setParam(' paramGEC',temp_paramGEC);\n    Dashboards.fireChange('paramGEC',temp_paramGEC);\n    */\n    \n  //  aux_paramGEC = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].' ++;\n    \n    //Dashboards.setParam('paramGEC',);\n    //Dashboards.fireChange('paramGEC',);\n    \n    \n    \n} "
+      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n  \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    var dataMesGEAaux= Dashboards.getParam('tempoGEA');   \n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    //console.log('### Newval_SUB')\n    //console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValGEC = Dashboards.getParam('paramGEC');\n    \n    \n    var strBookmark_sub = '{\"impl\":\"client\",\"params\":{\"paramGEC_SUB\":\"' + newVal_sub + '\",\"paramGEC\":\"' + newVal_sub + '\", \"paramGEC_aux\": \"'+ newValGEC +'\", \"dataMes\": \"'+ dataMesGEAaux +'\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub);\n    var indicadoresIframe_sub = document.getElementById(\"indicadoresIframe\");\n    var urlIndicadores_sub = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_sub.src = urlIndicadores_sub;\n\n//    console.log('###EStou aqui SUB...###');\n\n   /*\n    temp_paramGEC = Dashboards.getParam('paramGEC_SUB');\n    alert(\"paramGEC no SUB: \" + temp_paramGEC);\n    Dashboards.setParam(' paramGEC',temp_paramGEC);\n    Dashboards.fireChange('paramGEC',temp_paramGEC);\n    */\n    \n  //  aux_paramGEC = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].' ++;\n    \n    //Dashboards.setParam('paramGEC',);\n    //Dashboards.fireChange('paramGEC',);\n    \n    \n    \n} "
      },
      {
       "name": "tooltip",
@@ -349,7 +349,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:dataAno}\"]"
+      "value": "[]"
      },
      {
       "name": "parameters",
@@ -424,7 +424,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    \r\n    var dataAnoGEA= Dashboards.getParam('dataAno');\r\n    var dataTrimestreGEA= Dashboards.getParam('dataTrimestre');\r\n    var dataMesGEA= Dashboards.getParam('dataMes');\r\n   \r\n    var anoFinal = \"[Periodo.default].[\"+dataAnoGEA+\"]\";\r\n    var trimestreFinal = anoFinal + \".[\"+dataTrimestreGEA+\"]\";\r\n    var mesFinal = trimestreFinal +\".CHILDREN\" ;\r\n  \r\n    if (dataTrimestreGEA = \"\"){\r\n        mesFinal= anoFinal+\".chidren\";\r\n    }\r\n      \r\n    var newVal = Dashboards.getParam('paramGEC');\r\n    Dashboards.fireChange('paramGEC_aux', newVal);\r\n    Dashboards.fireChange('dataMes', mesFinal);\r\n    var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\",\"paramGEC_aux\":\"'+ newVal +'\",\"dataMes\":\"'+ mesFinal +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;   \r\n  \r\n} "
+      "value": "function postChangeAno(){\r\n    \r\n    var dataAnoGEA= Dashboards.getParam('dataAno');\r\n    var dataTrimestreGEA= Dashboards.getParam('dataTrimestre');\r\n    var dataMesGEA= Dashboards.getParam('dataMes');\r\n   \r\n    var anoFinal = \"[Periodo.default].[\"+dataAnoGEA+\"]\";\r\n        \r\n    if(dataAnoGEA==\"Todos\"){\r\n        mesFinal_aux=\"[Periodo.default].[Ano Mes].members\";\r\n        Dashboards.fireChange('dataMes_aux', mesFinal_aux);\r\n    } else {\r\n        mesFinal=\"[Periodo.default].[Ano Mes].members\";\r\n        mesFinal_aux= anoFinal+\".children\";\r\n        Dashboards.fireChange('dataMes_aux', mesFinal);\r\n    }\r\n      \r\n    var newVal = Dashboards.getParam('paramGEC');\r\n    Dashboards.fireChange('paramGEC_aux', newVal);\r\n    Dashboards.fireChange('tempoGEA', mesFinal_aux);\r\n    var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal + '\",\"paramGEC_SUB\":\"' + newValSUB + '\",\"paramGEC_aux\":\"'+ newVal +'\",\"dataMes\":\"'+ mesFinal_aux +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;   \r\n  \r\n} "
      },
      {
       "name": "tooltip",
@@ -453,12 +453,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:dataMes}\",\"${p:paramGEC}\"]"
+      "value": "[]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataMes\",\"dataMes\"],[\"paramGEC\",\"paramGEC\"]]"
+      "value": "[]"
      },
      {
       "name": "externalPlugin",
@@ -528,7 +528,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    //Captura dos parametros\r\n    var dataAno2= Dashboards.getParam('dataAno');\r\n    var dataTrimestre2= Dashboards.getParam('dataTrimestre');\r\n    var dataMes2= Dashboards.getParam('dataMes');\r\n    //Modificação paa o padrão MDX\r\n    var anoFinal2 = \"[Periodo.default].[\"+dataAno2+\"]\";\r\n    var trimestreFinal2 = anoFinal2 + \".[\"+dataTrimestre2+\"]\";\r\n    var arrayTrimestre = [];\r\n    //Quando for selecionado 1 ou mais trimestres\r\n    for (i = 0; i < dataTrimestre2.length; i++) {\r\n      var finalT = anoFinal2 + \".[\" + dataTrimestre2[i] + \"]\" + \".children\"\r\n      arrayTrimestre.push(finalT);\r\n    }\r\n    var mesFinal2 = arrayTrimestre;\r\n    var newVal2 = Dashboards.getParam('paramGEC');\r\n    Dashboards.fireChange('paramGEC_aux', newVal2);\r\n    Dashboards.fireChange('dataMes_aux', arrayTrimestre);\r\n    var newValSUB2 = Dashboards.getParam('paramGEC_SUB');\r\n    \r\n    // Passagem dos parametros para os gráficos\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal2 + '\",\"paramGEC_SUB\":\"' + newValSUB2 + '\",\"paramGEC_aux\":\"'+ newVal2 +'\",\"dataMes\":\"'+ mesFinal2 +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;   \r\n  \r\n} "
+      "value": "function postChangeTrimestre(){\r\n    //Captura dos parametros\r\n    var dataAno2= Dashboards.getParam('dataAno');\r\n    var dataTrimestre2= Dashboards.getParam('dataTrimestre');\r\n    var dataMes2= Dashboards.getParam('dataMes');\r\n    \r\n    //Modificação paa o padrão MDX\r\n    var anoFinal2 = \"[Periodo.default].[\"+dataAno2+\"]\";\r\n    var trimestreFinal2 = anoFinal2 + \".[\"+dataTrimestre2+\"]\";\r\n    var arrayTrimestre = [];\r\n    var mesFinal2, finalT;\r\n    if(dataAno2==\"Todos\"){\r\n        if(dataTrimestre2==\"Todos\"){\r\n            mesFinal2= \"[Periodo.default].[Ano Mes].members\";\r\n        }else{\r\n            for (i = 0; i < dataTrimestre2.length; i++) {\r\n            finalT = \"[Periodo.default].[Trimestre].[\" + dataTrimestre2[i] + \"]\" + \".children\";\r\n            arrayTrimestre.push(finalT);\r\n            }\r\n            mesFinal2 = arrayTrimestre;\r\n        }\r\n    }else{\r\n    //Quando for selecionado 1 ou mais trimestres\r\n        if(dataTrimestre2==\"Todos\"){\r\n            mesFinal2= \"[Periodo.default].[Ano Mes].members\";\r\n            \r\n        }else{\r\n            for (i = 0; i < dataTrimestre2.length; i++) {\r\n            finalT = anoFinal2 + \".[\" + dataTrimestre2[i] + \"].children\";\r\n            arrayTrimestre.push(finalT);\r\n            }\r\n        mesFinal2 = arrayTrimestre;\r\n       }\r\n    }\r\n    \r\n    var newVal2 = Dashboards.getParam('paramGEC');\r\n    //Dashboards.fireChange('paramGEC_aux', newVal2);\r\n    //Dashboards.fireChange('tempoGEA', mesFinal2);\r\n    var newValSUB2 = Dashboards.getParam('paramGEC_SUB');\r\n    Dashboards.fireChange('dataMes_aux', mesFinal2);\r\n    Dashboards.fireChange('dataMes', \"\");\r\n    \r\n    //Passagem dos parametros para os gráficos\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal2 + '\",\"paramGEC_SUB\":\"' + newValSUB2 + '\",\"paramGEC_aux\":\"'+ newVal2 +'\",\"dataMes\":\"'+ mesFinal2 +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n} "
      },
      {
       "name": "tooltip",
@@ -632,7 +632,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    //Captura dos parametros\r\n    var dataAno3= Dashboards.getParam('dataAno');\r\n    var dataTrimestre3= Dashboards.getParam('dataTrimestre');\r\n    var dataMes3= Dashboards.getParam('dataMes');\r\n    //Modificação para o padrão MDX\r\n    var anoFinal3 = \"[Periodo.default].[\"+dataAno3+\"]\";\r\n    var trimestreFinal3 = anoFinal3 + \".[\"+dataTrimestre3+\"]\";\r\n    var mesFinal3 = trimestreFinal3 +\".CHILDREN\" ;\r\n    var mesFinal_aux3 = trimestreFinal3 +\".[\"+ dataMes3 +\"]\" ;\r\n    //Recuperar todos os trimestres selecionados\r\n    var arrayTrimestre2 = [];\r\n    for (i = 0; i < dataTrimestre3.length; i++) {\r\n      var finalT2 = anoFinal3 + \".[\" + dataTrimestre3[i] + \"]\" + \".children\";\r\n      arrayTrimestre2.push(finalT2);\r\n    }\r\n    mesFinal3 = arrayTrimestre2 ;\r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if(dataMes3 ==\"\"){\r\n        mesFinal_aux3=mesFinal3;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (i = 0; i < dataMes3.length; i++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMes3[i] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        mesFinal_aux3 = arrayMes;\r\n     }\r\n    \r\n    alert(mesFinal_aux3);\r\n    \r\n    var newVal3 = Dashboards.getParam('paramGEC');\r\n    Dashboards.fireChange('paramGEC_aux', newVal3);\r\n    Dashboards.fireChange('dataMes_aux', mesFinal3);\r\n    var newValSUB3 = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal3 + '\",\"paramGEC_SUB\":\"' + newValSUB3 + '\",\"paramGEC_aux\":\"'+ newVal3 +'\",\"dataMes\":\"'+ mesFinal_aux3 +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;   \r\n  \r\n} "
+      "value": "function postChangeMes(){\r\n    //Captura dos parametros\r\n    var dataAno3= Dashboards.getParam('dataAno');\r\n    var dataTrimestre3= Dashboards.getParam('dataMes_aux');\r\n    var dataMes3= Dashboards.getParam('dataMes');\r\n        \r\n    //Modificação para o padrão MDX\r\n    var anoFinal3 = \"[Periodo.default].[\"+dataAno3+\"]\";\r\n               \r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if((dataMes3 ===\"\")||(dataMes3 ==\"Todos\")){\r\n        mesFinal_aux3=dataTrimestre3;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (j = 0; j < dataMes3.length; j++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMes3[j] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        mesFinal_aux3 = arrayMes;\r\n     }\r\n   \r\n    var newVal3 = Dashboards.getParam('paramGEC');\r\n    Dashboards.fireChange('paramGEC_aux', newVal3);\r\n    //Dashboards.fireChange('tempoGEA', mesFinal_aux3);\r\n    var newValSUB3 = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramGEC\":\"' + newVal3 + '\",\"paramGEC_SUB\":\"' + newValSUB3 + '\",\"paramGEC_aux\":\"'+ newVal3 +'\",\"dataMes\":\"'+ mesFinal_aux3 +'\"}}';\r\n    var bookmark = encodeURI(strBookmark);\r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframe\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;   \r\n  \r\n} "
      },
      {
       "name": "tooltip",
@@ -736,7 +736,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    // var newVal = $(\"#filtroGEC option:selected\").val();\r\n   \r\n    //var newVal = Dashboards.getParam('paramCEDES_SUB');\r\n    var dataAno4= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestre4= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMes4= Dashboards.getParam('dataMesCEDES');\r\n    var dataMesAux4= Dashboards.getParam('dataMes_auxCEDES');\r\n    var anoFinal4 = \"[Periodo.default].[\"+dataAno4+\"]\";\r\n    var trimestreFinal4 = anoFinal4 + \".[\"+dataTrimestre4+\"]\";\r\n    var mesFinal4 = trimestreFinal4 +\".CHILDREN\" ;\r\n    //Recupera todos os trimestres selecionados\r\n    var arrayTrimestre3C = [];\r\n    for (i = 0; i < dataTrimestre4.length; i++) {\r\n      var finalT3 = anoFinal4 + \".[\" + dataTrimestre4[i] + \"]\" + \".children\";\r\n      arrayTrimestre3C.push(finalT3);\r\n    }\r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if(dataMes4 ==\"\"){\r\n         dataMesAux4= arrayTrimestre3C;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (i = 0; i < dataMes4.length; i++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMes4[i] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        dataMesAux4 = arrayMes;\r\n     }\r\n    \r\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\r\n    var newVal = Dashboards.getParam('paramCEDES');\r\n    \r\n    //console.log('### Newval')\r\n    //console.log(newVal);\r\n   \r\n    //capturando o valor do paramGEC_sub\r\n   // paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\r\n   // var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    Dashboards.fireChange('paramCEDES_aux', newVal);\r\n    //Dashboards.fireChange('dataMes_auxCEDES', mesFinal4);\r\n    //alert(Dashboards.getParam('paramCEDES_aux'));\r\n\r\n  //Toda vez que o filtro unidade for clicado, sera atribuido o \r\n    //valor de unidade.MEMBERS para a subunidade.\r\n  //####################  \r\n    var param_temp = newVal;\r\n    console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) { \r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[5];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3.match(/MEMBER/gi)){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n      \r\n    }\r\n    \r\n    \r\n     arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) { \r\n     \r\n      var temp_array = arrayAux[i];\r\n      var final =\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\nvar newValSUB = arraySubunidade;\r\n//alert('ArraySubunidade: '+arraySubunidade);\r\n\r\n//#########################\r\n    \r\n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newVal + '\",\"paramCEDES_SUB\":\"' + newValSUB + '\",\"paramCEDES_aux\":\"' + newVal + '\",\"dataMesCEDES\":\"' + dataMesAux4 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    //console.log('###EStou aqui...###');\r\n    //console.log(strBookmark);\r\n    \r\n    var param_temp = newVal;\r\n    console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) { \r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[5];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3.match(/MEMBER/gi)){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    } \r\n    console.log(array_final);\r\n    Dashboards.setParam('paramCEDES_SQL',array_final);\r\n    Dashboards.fireChange('paramCEDES_SQL', array_final);\r\n    console.log(Dashboards.getParam('paramCEDES_SQL'));\r\n    //alert(paramGEC_SQL);\r\n    \r\n    /*\r\n    //Toda vez que o filtro unidade for clicado, sera atribuido o \r\n    //valor de unidade.MEMBERS para a subunidade.\r\n    \r\n    arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) { \r\n     \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\n    \r\n   //alert(\"Valor q vai para o paramGEC_SUB: \" + arraySubunidade);\r\n    Dashboards.setParam('paramGEC_SUB',arraySubunidade);\r\n    Dashboards.fireChange('paramGEC_SUB',arraySubunidade);\r\n   */\r\n}    "
+      "value": "function postChange(){\r\n    // var newVal = $(\"#filtroGEC option:selected\").val();\r\n   \r\n    //var newVal = Dashboards.getParam('paramCEDES_SUB');\r\n    var dataMesAux4 = Dashboards.getParam('tempoCEDES');\r\n    \r\n    \r\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\r\n    var newVal = Dashboards.getParam('paramCEDES');\r\n    \r\n    //console.log('### Newval')\r\n    //console.log(newVal);\r\n   \r\n    //capturando o valor do paramGEC_sub\r\n   // paramGEC_SUB = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS';\r\n   // var newValSUB = Dashboards.getParam('paramGEC_SUB');\r\n\r\n    Dashboards.fireChange('paramCEDES_aux', newVal);\r\n    //Dashboards.fireChange('dataMes_auxCEDES', mesFinal4);\r\n    //alert(Dashboards.getParam('paramCEDES_aux'));\r\n\r\n  //Toda vez que o filtro unidade for clicado, sera atribuido o \r\n    //valor de unidade.MEMBERS para a subunidade.\r\n  //####################  \r\n    var param_temp = newVal;\r\n    console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) { \r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[5];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3.match(/MEMBER/gi)){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n      \r\n    }\r\n    \r\n    \r\n     arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) { \r\n     \r\n      var temp_array = arrayAux[i];\r\n      var final =\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\nvar newValSUB = arraySubunidade;\r\n//alert('ArraySubunidade: '+arraySubunidade);\r\n\r\n//#########################\r\n    \r\n    //Passando os valores dos 2 filtros. Caso seja adicionado mais um filtro, o json precisa ser atualizado.\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newVal + '\",\"paramCEDES_SUB\":\"' + newValSUB + '\",\"paramCEDES_aux\":\"' + newVal + '\",\"dataMesCEDES\":\"' + dataMesAux4 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n     var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    //console.log('###EStou aqui...###');\r\n    //console.log(strBookmark);\r\n    \r\n    var param_temp = newVal;\r\n    console.log(newVal);\r\n    var array_final = [];\r\n    \r\n    for (i = 0; i < param_temp.length; i++) { \r\n      var res = param_temp[i].split(\".\");\r\n      var res1 = res[5];\r\n      var res2 = res1.replace(\"]\",\"\");\r\n      var res3 = res2.replace(\"[\",\"\");\r\n      //Estou cortando do MDX, Logo preciso do Replace abaixo.\r\n      if(res3.match(/MEMBER/gi)){\r\n          res3 = \"Todos\";\r\n      }\r\n      array_final.push(res3);\r\n      \r\n    } \r\n    console.log(array_final);\r\n    Dashboards.setParam('paramCEDES_SQL',array_final);\r\n    Dashboards.fireChange('paramCEDES_SQL', array_final);\r\n    console.log(Dashboards.getParam('paramCEDES_SQL'));\r\n    //alert(paramGEC_SQL);\r\n    \r\n    /*\r\n    //Toda vez que o filtro unidade for clicado, sera atribuido o \r\n    //valor de unidade.MEMBERS para a subunidade.\r\n    \r\n    arrayAux = array_final;\r\n    arraySubunidade = [];\r\n    \r\n    for (i = 0; i < arrayAux.length; i++) { \r\n     \r\n      var temp_array = arrayAux[i];\r\n      var final = \"[Organizacao.Gestao da Demanda].[Sigla GEA].\" + \"[\" + temp_array + \"]\" + \".\" +\"children\"\r\n      arraySubunidade.push(final);\r\n    \r\n    }\r\n    \r\n   //alert(\"Valor q vai para o paramGEC_SUB: \" + arraySubunidade);\r\n    Dashboards.setParam('paramGEC_SUB',arraySubunidade);\r\n    Dashboards.fireChange('paramGEC_SUB',arraySubunidade);\r\n   */\r\n}    "
      },
      {
       "name": "tooltip",
@@ -840,7 +840,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    var dataAno5= Dashboards.getParam('dataAnoCEDES');\n    var dataTrimestre5= Dashboards.getParam('dataTrimestreCEDES');\n    var dataMes5= Dashboards.getParam('dataMesCEDES');\n    var dataMesAux5= Dashboards.getParam('dataMes_auxCEDES');\n    var anoFinal5 = \"[Periodo.default].[\"+dataAno5+\"]\";\n    var trimestreFinal5 = anoFinal5 + \".[\"+dataTrimestre5+\"]\";\n    var mesFinal5 = trimestreFinal5 +\".CHILDREN\" ;\n    //Recupera todos os trimestres selecionados\n    var arrayTrimestre4C = [];\n    for (i = 0; i < dataTrimestre5.length; i++) {\n      var finalT4 = anoFinal5 + \".[\" + dataTrimestre5[i] + \"]\" + \".children\";\n      arrayTrimestre4C.push(finalT4);\n    }\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\n    if(dataMes5 ==\"\"){\n         dataMesAux5= arrayTrimestre4C;\n    }else{\n        var arrayMes = [];\n        for (i = 0; i < dataMes5.length; i++) {\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMes5[i] + \"]\";\n            arrayMes.push(finalM);\n        }\n        dataMesAux5 = arrayMes;\n     }\n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_subCEDES = Dashboards.getParam('paramCEDES_SUB');\n    //console.log('### Newval_SUB')\n    //console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValCEDES = Dashboards.getParam('paramCEDES');\n   \n    var strBookmark_sub =  '{\"impl\":\"client\",\"params\":{\"paramCEDES_SUB\":\"' + newVal_subCEDES + '\",\"paramCEDES\":\"' + newVal_subCEDES + '\", \"paramCEDES_aux\": \"' + newValCEDES + '\",\"dataMesCEDES\":\"' + dataMesAux5 + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_subCEDES = document.getElementById(\"indicadoresIframeCEDES\");\n    var urlIndicadores_subCEDES = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_subCEDES.src = urlIndicadores_subCEDES;\n\n    console.log('###EStou aqui SUB...###');\n\n    /*\n    temp_paramGEC = Dashboards.getParam('paramGEC_SUB');\n    alert(\"paramGEC no SUB: \" + temp_paramGEC);\n    Dashboards.setParam(' paramGEC',temp_paramGEC);\n    Dashboards.fireChange('paramGEC',temp_paramGEC);\n    */\n    \n  //  aux_paramGEC = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].' ++;\n    \n    //Dashboards.setParam('paramGEC',);\n    //Dashboards.fireChange('paramGEC',);\n    \n} "
+      "value": "function postChange(){\n    // var newVal_sub = $(\"#filtroGEC option:selected\").val();\n   \n    //var newVal_sub = Dashboards.getParam('paramGEC_SUB');\n    var dataMesAux5= Dashboards.getParam('tempoCEDES');\n    \n    //##LIXO##Dashboards.setParam('paramGEC_SQL','paramGEC');\n    var newVal_subCEDES = Dashboards.getParam('paramCEDES_SUB');\n    //console.log('### Newval_SUB')\n    //console.log(newVal_sub);\n    \n    //capturando o valor do paramGEC\n    var newValCEDES = Dashboards.getParam('paramCEDES');\n   \n    var strBookmark_sub =  '{\"impl\":\"client\",\"params\":{\"paramCEDES_SUB\":\"' + newVal_subCEDES + '\",\"paramCEDES\":\"' + newVal_subCEDES + '\", \"paramCEDES_aux\": \"' + newValCEDES + '\",\"dataMesCEDES\":\"' + dataMesAux5 + '\"}}';\n    \n    var bookmark_sub = encodeURI(strBookmark_sub); \n    var indicadoresIframe_subCEDES = document.getElementById(\"indicadoresIframeCEDES\");\n    var urlIndicadores_subCEDES = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark_sub;\n    indicadoresIframe_subCEDES.src = urlIndicadores_subCEDES;\n\n    console.log('###EStou aqui SUB...###');\n\n    /*\n    temp_paramGEC = Dashboards.getParam('paramGEC_SUB');\n    alert(\"paramGEC no SUB: \" + temp_paramGEC);\n    Dashboards.setParam(' paramGEC',temp_paramGEC);\n    Dashboards.fireChange('paramGEC',temp_paramGEC);\n    */\n    \n  //  aux_paramGEC = '[Organizacao.Gestao da Demanda].[Sigla GEA Completa].' ++;\n    \n    //Dashboards.setParam('paramGEC',);\n    //Dashboards.fireChange('paramGEC',);\n    \n} "
      },
      {
       "name": "tooltip",
@@ -869,7 +869,7 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:dataAnoCEDES}\"]"
+      "value": "[]"
      },
      {
       "name": "parameters",
@@ -944,7 +944,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    \r\n    var dataAnoCEDES1= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES1= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMesCEDES1= Dashboards.getParam('dataMesCEDES');\r\n   \r\n    var anoFinalCEDES1 = \"[Periodo.default].[\"+dataAnoCEDES1+\"]\";\r\n    var trimestreFinalCEDES1 = anoFinalCEDES1 + \".[\"+dataTrimestreCEDES1+\"]\";\r\n    var mesFinalCEDES1 = trimestreFinalCEDES1 +\".CHILDREN\" ;\r\n  \r\n    if (dataTrimestreCEDES1 = \"\"){\r\n        mesFinalCEDES1= anoFinalCEDES1+\".chidren\";\r\n    }\r\n     \r\n    var newValCEDES1 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES1);\r\n    Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES1);\r\n    var newValSUBCEDES1 = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValSUBCEDES1 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES1 + '\",\"paramCEDES_aux\":\"' + newValCEDES1 + '\",\"dataMesCEDES\":\"' + mesFinalCEDES1 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    //alert(mesFinalCEDES2);\r\n} "
+      "value": "function postChangeAnoCedes(){\r\n    \r\n    var dataAnoCEDES1= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES1= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMesCEDES1= Dashboards.getParam('dataMesCEDES');\r\n   \r\n    var anoFinalCEDES1 = \"[Periodo.default].[\"+dataAnoCEDES1+\"]\";\r\n    var trimestreFinalCEDES1 = anoFinalCEDES1 + \".[\"+dataTrimestreCEDES1+\"]\";\r\n    var mesFinalCEDES1 = trimestreFinalCEDES1 +\".CHILDREN\" ;\r\n  \r\n    if(dataAnoCEDES1==\"Todos\"){\r\n        mesFinalCEDES1=\"[Periodo.default].[Ano Mes].members\";\r\n        Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES1);\r\n    } else if (dataTrimestreCEDES1 = \"\"){\r\n        mesFinalCEDES1= anoFinalCEDES1+\".children\";\r\n        mesFinalCEDES1aux=\"[Periodo.default].[Ano Mes].members\";\r\n        Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES1aux);\r\n    }\r\n      \r\n     \r\n    var newValCEDES1 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES1);\r\n    Dashboards.fireChange('tempoGEA', mesFinalCEDES1);\r\n    var newValSUBCEDES1 = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValSUBCEDES1 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES1 + '\",\"paramCEDES_aux\":\"' + newValCEDES1 + '\",\"dataMesCEDES\":\"' + mesFinalCEDES1 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n\r\n} "
      },
      {
       "name": "tooltip",
@@ -973,12 +973,12 @@
      {
       "name": "listeners",
       "type": "Listeners",
-      "value": "[\"${p:dataMesCEDES}\",\"${p:paramCEDES}\"]"
+      "value": "[]"
      },
      {
       "name": "parameters",
       "type": "ValuesArray",
-      "value": "[[\"dataMesCEDES\",\"dataMesCEDES\"],[\"paramCEDES\",\"paramCEDES\"]]"
+      "value": "[]"
      },
      {
       "name": "externalPlugin",
@@ -1048,7 +1048,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    //Captura dos parametros de data\r\n    var dataAnoCEDES2= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES2= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMesCEDES2= Dashboards.getParam('dataMesCEDES');\r\n    //Modificação para o padrão MDX\r\n    var anoFinalCEDES2 = \"[Periodo.default].[\"+dataAnoCEDES2+\"]\";\r\n    var trimestreFinalCEDES2 = anoFinalCEDES2 + \".[\"+dataTrimestreCEDES2+\"]\";\r\n    var mesFinalCEDES2 = trimestreFinalCEDES2 +\".CHILDREN\" ;\r\n    //Quando for selecionado 1 ou mais trimestres\r\n    var arrayTrimestreCEDES=[];\r\n    for (i = 0; i < dataTrimestreCEDES2.length; i++) {\r\n      var finalTC = anoFinalCEDES2 + \".[\" + dataTrimestreCEDES2[i] + \"]\" + \".children\"\r\n      arrayTrimestreCEDES.push(finalTC);\r\n    } \r\n    var mesFinalCEDES2 = arrayTrimestreCEDES;\r\n    var newValCEDES2 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES2);\r\n    Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES2);\r\n    var newValSUBCEDES2 = Dashboards.getParam('paramCEDES_SUB');\r\n    \r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValCEDES2 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES2 + '\",\"paramCEDES_aux\":\"' + newValCEDES2 + '\",\"dataMesCEDES\":\"' + mesFinalCEDES2 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    \r\n    //alert(newValSUBCEDES2);\r\n    alert(mesFinalCEDES2);\r\n} "
+      "value": "function postChangeTrimetreCedes(){\r\n    //Captura dos parametros de data\r\n    var dataAnoCEDES2= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES2= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMesCEDES2= Dashboards.getParam('dataMesCEDES');\r\n    \r\n    //Modificação para o padrão MDX\r\n    var anoFinalCEDES2 = \"[Periodo.default].[\"+dataAnoCEDES2+\"]\";\r\n    var arrayTrimestreCEDES=[]; \r\n    \r\n    if(dataAnoCEDES2==\"Todos\"){\r\n        if(dataTrimestreCEDES2==\"Todos\"){\r\n        mesFinalCEDES2= \"[Periodo.default].[Ano Mes].members\";\r\n        \r\n    }else{        \r\n        for (i = 0; i < dataTrimestreCEDES2.length; i++) {\r\n            var finalTC = \"[Periodo.default].[Trimestre].[\" + dataTrimestreCEDES2[i] + \"].children\"\r\n            arrayTrimestreCEDES.push(finalTC);\r\n        } \r\n        mesFinalCEDES2 = arrayTrimestreCEDES;\r\n        \r\n        }        \r\n    } else  {    \r\n    //Quando for selecionado 1 ou mais trimestres\r\n        if(dataTrimestreCEDES2==\"Todos\"){\r\n            mesFinalCEDES2= \"[Periodo.default].[Ano Mes].members\";\r\n        \r\n    }else{\r\n        for (i = 0; i < dataTrimestreCEDES2.length; i++) {\r\n            var finalTC = anoFinalCEDES2 + \".[\" + dataTrimestreCEDES2[i] + \"].children\"\r\n            arrayTrimestreCEDES.push(finalTC);\r\n        } \r\n        mesFinalCEDES2 = arrayTrimestreCEDES;\r\n  \r\n     \r\n     }\r\n    }\r\n    \r\n    var newValCEDES2 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES2);\r\n    Dashboards.fireChange('tempoCEDES', mesFinalCEDES2);\r\n    Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES2);\r\n    Dashboards.fireChange('dataMesCEDES', \"\");\r\n    var newValSUBCEDES2 = Dashboards.getParam('paramCEDES_SUB');\r\n    \r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValCEDES2 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES2 + '\",\"paramCEDES_aux\":\"' + newValCEDES2 + '\",\"dataMesCEDES\":\"' + mesFinalCEDES2 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n\r\n} "
      },
      {
       "name": "tooltip",
@@ -1152,7 +1152,7 @@
      {
       "name": "postChange",
       "type": "JavaScript",
-      "value": "function postChange(){\r\n    //Captura dos parametros de data\r\n    var dataAnoCEDES3= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES3= Dashboards.getParam('dataTrimestreCEDES');\r\n    var dataMesCEDES3= Dashboards.getParam('dataMesCEDES');\r\n    //Modificação para o padrão MDX\r\n    var anoFinalCEDES3 = \"[Periodo.default].[\"+dataAnoCEDES3+\"]\";\r\n    var trimestreFinalCEDES3 = anoFinalCEDES3 + \".[\"+dataTrimestreCEDES3+\"]\";\r\n    var mesFinalCEDES3 = trimestreFinalCEDES3 +\".CHILDREN\" ;\r\n    var mesFinal_auxCEDES3 = trimestreFinalCEDES3 +\".[\"+ dataMesCEDES3 +\"]\" ;\r\n    //Recuperar todos os trimestres selecionados\r\n    var arrayTrimestreCEDES2 = [];\r\n    for (i = 0; i < dataTrimestreCEDES3.length; i++) {\r\n      var finalT2 = anoFinalCEDES3 + \".[\" + dataTrimestreCEDES3[i] + \"]\" + \".children\";\r\n      arrayTrimestreCEDES2.push(finalT2);\r\n    }\r\n    mesFinalCEDES3 = arrayTrimestreCEDES2 ;\r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if(dataMesCEDES3 ==\"\"){\r\n        mesFinal_auxCEDES3=mesFinalCEDES3;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (i = 0; i < dataMesCEDES3.length; i++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMesCEDES3[i] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        mesFinal_auxCEDES3 = arrayMes;\r\n     }\r\n    var newValCEDES3 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES3);\r\n    Dashboards.fireChange('dataMes_auxCEDES', mesFinalCEDES3);\r\n    var newValSUBCEDES3 = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValSUBCEDES3 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES3 + '\",\"paramCEDES_aux\":\"' + newValCEDES3 + '\",\"dataMesCEDES\":\"' + mesFinal_auxCEDES3 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n    alert(\"teste\");\r\n    \r\n} "
+      "value": "function postChangeMesCedes(){\r\n    //Captura dos parametros de data\r\n    var dataAnoCEDES3= Dashboards.getParam('dataAnoCEDES');\r\n    var dataTrimestreCEDES3= Dashboards.getParam('dataMes_auxCEDES');\r\n    var dataMesCEDES3= Dashboards.getParam('dataMesCEDES');\r\n    \r\n    //Modificação para o padrão MDX\r\n    var anoFinalCEDES3 = \"[Periodo.default].[\"+dataAnoCEDES3+\"]\";\r\n    \r\n    //Verifica se tem algum mês selecionado, senão retorna os filhos do trimestre\r\n    if((dataMesCEDES3 ===\"\")||(dataMesCEDES3 ==\"Todos\")){\r\n        mesFinal_auxCEDES3=dataTrimestreCEDES3;\r\n    }else{\r\n        var arrayMes = [];\r\n        for (i = 0; i < dataMesCEDES3.length; i++) {\r\n            var finalM = \"[Periodo.default].[Ano Mes]\" + \".[\" + dataMesCEDES3[i] + \"]\";\r\n            arrayMes.push(finalM);\r\n        }\r\n        mesFinal_auxCEDES3 = arrayMes;\r\n     }\r\n    var newValCEDES3 = Dashboards.getParam('paramCEDES');\r\n    Dashboards.fireChange('paramCEDES_aux', newValCEDES3);\r\n    Dashboards.fireChange('tempoCEDES', mesFinal_auxCEDES3);\r\n    var newValSUBCEDES3 = Dashboards.getParam('paramCEDES_SUB');\r\n\r\n    var strBookmark = '{\"impl\":\"client\",\"params\":{\"paramCEDES\":\"' + newValSUBCEDES3 + '\",\"paramCEDES_SUB\":\"' + newValSUBCEDES3 + '\",\"paramCEDES_aux\":\"' + newValCEDES3 + '\",\"dataMesCEDES\":\"' + mesFinal_auxCEDES3 + '\"}}';\r\n    var bookmark = encodeURI(strBookmark); \r\n    var indicadoresIframe = document.getElementById(\"indicadoresIframeCEDES\");\r\n    var urlIndicadores = \"/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState=\"+bookmark;\r\n    indicadoresIframe.src = urlIndicadores;\r\n    var geralIframe = document.getElementById(\"geralIframe\");\r\n    geralIframe.src = geralIframe.src;\r\n        \r\n} "
      },
      {
       "name": "tooltip",
@@ -1358,6 +1358,40 @@
     "typeDesc": "<i>Group</i>"
    },
    {
+    "id": "63b644bd-acc6-03a2-d53d-2252a84e8d0a",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tempoGEA"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
     "id": "c786fc8f-5857-aa21-a911-9da9ae4e9960",
     "parent": "GENERIC",
     "properties": [
@@ -1403,7 +1437,41 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "T1"
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "rowName": "Simple Parameter",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "aee5d987-7f75-0eb7-f85e-102ade764df7",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dataMes"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
      },
      {
       "name": "parameterViewRole",
@@ -1437,7 +1505,7 @@
      {
       "name": "propertyValue",
       "type": "String",
-      "value": "[Periodo.default].[2017].[T1].children"
+      "value": ""
      },
      {
       "name": "parameterViewRole",
@@ -1460,13 +1528,13 @@
     "typeDesc": "Simple parameter"
    },
    {
-    "id": "aee5d987-7f75-0eb7-f85e-102ade764df7",
+    "id": "7c4f4428-befb-4025-d00f-f63d5372dab3",
     "parent": "GENERIC",
     "properties": [
      {
       "name": "name",
       "type": "Id",
-      "value": "dataMes"
+      "value": "tempoCEDES"
      },
      {
       "name": "propertyValue",
@@ -1628,64 +1696,6 @@
     "rowName": "Simple Parameter",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter"
-   },
-   {
-    "id": "31f1788e-d175-c481-36d5-85b23634a5e3",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "dataInicio"
-     },
-     {
-      "name": "propertyDateValue",
-      "type": "Date",
-      "value": "today"
-     },
-     {
-      "name": "bookmarkable",
-      "type": "Boolean",
-      "value": "true"
-     },
-     {
-      "name": "public",
-      "type": "Boolean",
-      "value": "true"
-     }
-    ],
-    "rowName": "Date Parameter",
-    "type": "ComponentsDateParameter",
-    "typeDesc": "Date Parameter"
-   },
-   {
-    "id": "41968546-6f6b-94af-ee45-b2176f2f3d9f",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "type": "Id",
-      "value": "dataFim"
-     },
-     {
-      "name": "propertyDateValue",
-      "type": "Date",
-      "value": "today"
-     },
-     {
-      "name": "bookmarkable",
-      "type": "Boolean",
-      "value": "true"
-     },
-     {
-      "name": "public",
-      "type": "Boolean",
-      "value": "true"
-     }
-    ],
-    "rowName": "Date Parameter",
-    "type": "ComponentsDateParameter",
-    "typeDesc": "Date Parameter"
    },
    {
     "id": "51b90ea0-c77c-c0ab-2454-4be48b3f1d94",
@@ -2007,7 +2017,7 @@
     "typeDesc": "<i>Group</i>"
    },
    {
-    "id": "0b67aa14-7d31-dc25-fa4e-196aa64a5c10",
+    "id": "13f885cc-90e4-f37e-362f-efc2c87ba7c8",
     "parent": "SCRIPT",
     "properties": [
      {
@@ -2024,6 +2034,44 @@
     "rowName": "Function",
     "type": "ComponentsFunction",
     "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "4f8fbab9-4b40-4bbc-cc13-a01e14e6cde8",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "change_Iframe"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function loadIframe(iframeName, url) {\r\n    var $iframe = $('#' + iframeName);\r\n    if ( $iframe.length ) {\r\n        $iframe.attr('src',url);   \r\n        return false;\r\n    }\r\n    return true;\r\n}\r\n\r\n//Carrega o iframe com o novo src\r\n//loadIframe(\"indicadoresIframe\",srcatual);\r\n//loadIframe(\"indicadoresIframeCEDES\",srcatualCedes);\r\n "
+     }
+    ],
+    "rowName": "Function",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "15559532-f3bd-6b50-2c1b-31b601881abd",
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "value": "jquerychange_Iframe",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "var data = new Date();\r\nvar ano = data.getFullYear();\r\nvar mes = data.getMonth();\r\nvar trimestre;\r\nvar tempo;\r\n    if(mes<3){\r\n        trimestre = \"T1\";\r\n        tempo=\"[Periodo.default].[\"+ ano +\"].[\"+trimestre+\"].children\";   \r\n    } else if(mes>=3){\r\n            trimestre = \"T2\";\r\n            tempo=\"[Periodo.default].[\"+ ano +\"].[\"+trimestre+\"].children\";          \r\n    } else if(mes>=6){\r\n            trimestre = \"T3\";\r\n            tempo=\"[Periodo.default].[\"+ ano +\"].[\"+trimestre+\"].children\";           \r\n    } else if(mes>=9){\r\n            trimestre = \"T4\";\r\n            tempo=\"[Periodo.default].[\"+ ano +\"].[\"+trimestre+\"].children\";           \r\n    }\r\n\r\n//Atualiza parametros dos filtros    \r\nDashboards.setParam(\"dataTrimestre\",trimestre);\r\nDashboards.setParam(\"dataTrimestreCEDES\",trimestre);\r\nDashboards.setParam(\"dataMes_aux\",tempo);\r\nDashboards.setParam(\"dataMes_auxCEDES\",tempo);\r\nDashboards.setParam(\"tempoGEA\",tempo);\r\nDashboards.setParam(\"tempoCEDES\",tempo); \r\n\r\n//Atualiza src com os valores atualizados\r\nvar srcatual='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramGEC\":\"[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\",\"paramGEC_SUB\":\"[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\",\"dataMes\":\"[Periodo.default].['+ano+'].['+trimestre+'].children\"}}';\r\nvar srcatualCedes='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramCEDES\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members\",\"paramCEDES_SUB\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members\",\"dataMesCEDES\":\"[Periodo.default].['+ano+'].['+trimestre+'].children\"}}';\r\nvar c=0;\r\nvar iframe = document.getElementById('tab_ind');\r\niframe.addEventListener('click', function() {\r\n    if(c===0){\r\n    loadIframe(\"indicadoresIframe\",srcatual);\r\n    }\r\n    c++;\r\n}, false); \r\n\r\nvar n = 0;\r\nvar iframe2 = document.getElementById('tab_cedes');\r\niframe2.addEventListener('click', function() {\r\n    if(n===0){\r\n    loadIframe(\"indicadoresIframeCEDES\",srcatualCedes);\r\n    }\r\n    n=n+1;\r\n}, false); \r\n\r\n\r\n\r\n\r\n \r\n ",
+      "type": "JavaScript"
+     }
+    ],
+    "rowName": "Function"
    }
   ]
  },
@@ -2519,7 +2567,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\n[Periodo.default].[Ano].MEMBERS on 1\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, \r\n[Measures].[*ZERO] on 0\r\nFROM [SIALG - Indicadores CEDES]"
      },
      {
       "name": "parameters",
@@ -2601,7 +2649,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\nfilter(\r\n[Periodo.default].[Trimestre].MEMBERS,\r\nANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])\r\nin { [Periodo.default].[2017]}) on 1\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, \r\n[Measures].[*ZERO] on 0\r\nFROM [SIALG - Indicadores CEDES]"
      },
      {
       "name": "parameters",
@@ -2683,7 +2731,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\nFILTER(\r\n[Periodo.default].[Ano Mes].MEMBERS,\r\nANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) \r\nin{ ${dataMes_auxCEDES}}) on 1\r\nFROM [SIALG - Indicadores CEDES]"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures].[*ZERO] on 0,\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {${dataMes_auxCEDES}}}) on 1\r\nFROM [SIALG - Indicadores CEDES]"
      },
      {
       "name": "parameters",
@@ -2765,7 +2813,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\n[Periodo.default].[Ano].MEMBERS on 1\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, \r\n[Measures].[*ZERO] on 0\r\nFROM [SIALG - Indicadores GEA]"
      },
      {
       "name": "parameters",
@@ -2847,7 +2895,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\nfilter(\r\n[Periodo.default].[Trimestre].MEMBERS,\r\nANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano])\r\nin { [Periodo.default].[2017]}) on 1\r\nFROM [SIALG - Indicadores GEA]"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, \r\n[Measures].[*ZERO] on 0\r\nFROM [SIALG - Indicadores GEA]"
      },
      {
       "name": "parameters",
@@ -2929,7 +2977,7 @@
      {
       "name": "query",
       "type": "CurrentMdxQuery",
-      "value": "with\r\nSET [Measures.Zero] AS '{[Measures].[*ZERO]}'\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures.Zero] on 0,\r\nFILTER(\r\n[Periodo.default].[Ano Mes].MEMBERS,\r\nANCESTOR([Periodo.default].CURRENTMEMBER, [Periodo.default].[Ano Mes]) \r\nin{ ${dataMes_aux}}) on 1\r\nFROM [SIALG - Indicadores GEA]\r\n"
+      "value": "with\r\nMEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0\r\nselect\r\n[Measures].[*ZERO] on 0,\r\nVisualTotals({[Periodo.default].[Trimestre].DefaultMember, {${dataMes_aux}}}) on 1\r\nFROM [SIALG - Indicadores GEA]"
      },
      {
       "name": "parameters",
@@ -4098,7 +4146,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<div class=\"container-fluid\">\n     <!-- Brand and toggle get grouped for better mobile display -->\n     <div class=\"navbar-header\">\n       <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#menu_mobile\" >\n         <span class=\"sr-only\">Toggle navigation</span>\n         <span class=\"icon-bar\"></span>\n         <span class=\"icon-bar\"></span>\n         <span class=\"icon-bar\"></span>\n       </button>\n     </div>\n     <!-- Collect the nav links, forms, and other content for toggling -->\n     <div class=\"navbar-collapse collapse \" id=\"menu_mobile\" >\n <!-- Nav tabs -->\n <ul class=\"nav navbar-nav\" role=\"tablist\">\n   <li role=\"presentation\" class=\"active\"><a href=\"#tab_geral\" aria-controls=\"tab_geral\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Geral</a></li>\n   <li role=\"presentation\"><a href=\"#tab_indicadores\" aria-controls=\"tab_indicadores\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Indicadores</a></li>\n   <li role=\"presentation\"><a href=\"#tab_contratos\" aria-controls=\"tab_contratos\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Contratos</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_gestao\" aria-controls=\"tab_gestao\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Gestão de Demandas</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_auditoria\" aria-controls=\"tab_auditoria\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i> Auditoria</a></li>\n   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_falha\" aria-controls=\"tab_falha\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Falha de Natureza Tecnológica</a></li>\n   <li role=\"presentation\"><a href=\"/pentaho/Home\" aria-controls=\"tab_analise\" role=\"tab\" target=_blank><i class=\"fa fa-pie-chart\" aria-hidden=\"true\"></i> Análise</a></li>\n </ul>\n</div>\n   </div> "
+      "value": "<div class=\"container-fluid\">\r\n     <!-- Brand and toggle get grouped for better mobile display -->\r\n     <div class=\"navbar-header\">\r\n       <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#menu_mobile\" >\r\n         <span class=\"sr-only\">Toggle navigation</span>\r\n         <span class=\"icon-bar\"></span>\r\n         <span class=\"icon-bar\"></span>\r\n         <span class=\"icon-bar\"></span>\r\n       </button>\r\n     </div>\r\n     \r\n\t \r\n     <!-- Collect the nav links, forms, and other content for toggling -->\r\n\t<div class=\"navbar-collapse collapse \" id=\"menu_mobile\" >\r\n\t\t <!-- Nav tabs -->\r\n\t\t <ul class=\"nav navbar-nav\" role=\"tablist\">\r\n\t\t   <li role=\"presentation\" class=\"active\"><a href=\"#tab_geral\" aria-controls=\"tab_geral\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Geral</a></li>\r\n\t\t   <li role=\"presentation\" id=\"tab_ind\" ><a href=\"#tab_indicadores\" aria-controls=\"tab_indicadores\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-line-chart\" aria-hidden=\"true\"></i> Indicadores</a></li>\r\n\t\t   <li role=\"presentation\"><a href=\"#tab_contratos\" aria-controls=\"tab_contratos\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Contratos</a></li>\r\n\t\t   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_gestao\" aria-controls=\"tab_gestao\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Gestão de Demandas</a></li>\r\n\t\t   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_auditoria\" aria-controls=\"tab_auditoria\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-briefcase\" aria-hidden=\"true\"></i> Auditoria</a></li>\r\n\t\t   <li class=\"disabled\"  role=\"presentation\"><a href=\"#tab_falha\" aria-controls=\"tab_falha\" role=\"tab\" data-toggle=\"tab\"><i class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i> Falha de Natureza Tecnológica</a></li>\r\n\t\t   <li role=\"presentation\"><a href=\"/pentaho/Home\" aria-controls=\"tab_analise\" role=\"tab\" target=_blank><i class=\"fa fa-pie-chart\" aria-hidden=\"true\"></i> Análise</a></li>\r\n\t\t </ul>\r\n\t</div>\r\n\r\n\r\n</div> "
      },
      {
       "name": "fontSize",
@@ -4467,7 +4515,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<ul class=\"nav nav-pills\">\n <li class=\"active\"  ><a data-toggle=\"pill\" href=\"#gea\"  >GEA</a></li>\n <li><a data-toggle=\"pill\" href=\"#cedes\">CEDES</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#fsw\">FSW</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#vp\">VP</a></li>\n</ul> "
+      "value": "<ul class=\"nav nav-pills\">\n <li class=\"active\"  ><a data-toggle=\"pill\" href=\"#gea\"  >GEA</a></li>\n <li id=\"tab_cedes\" ><a data-toggle=\"pill\" href=\"#cedes\">CEDES</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#fsw\">FSW</a></li>\n <li class=\"disabled\" ><a data-toggle=\"pill\" href=\"#vp\">VP</a></li>\n</ul> "
      },
      {
       "name": "fontSize",
@@ -5134,7 +5182,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe\r\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramGEC\":\"[Organizacao.Gestao da Demanda].[Sigla GEA].MEMBERS\",\"paramGEC_SUB\":\"[Organizacao.Gestao da Demanda].[Sigla GEA Completa].MEMBERS\",\"dataMes\":\"[Periodo.default].[2017].[T1].children\"}}'\r\n               id=\"indicadoresIframe\"\r\n               width=\"100%\"\r\n               height=\"1800em\" style=\"\r\n   border-left-width: 0px;\r\n   border-bottom-width: 0px;\r\n   border-right-width: 0px;\r\n   border-top-width: 0px;\"></iframe> "
+      "value": "<iframe\nsrc=''\nid='indicadoresIframe'\nwidth=\"100%\"\nheight=\"1800em\" \nstyle=\"border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px; border-top-width: 0px;\"\n></iframe> "
      },
      {
       "name": "fontSize",
@@ -5700,7 +5748,7 @@
      {
       "name": "html",
       "type": "Html",
-      "value": "<iframe\r\n               src='/pentaho/api/repos/%3Apublic%3ASIALG%3AIndicadores_cedes.wcdf/generatedContent?bookmarkState={\"impl\":\"client\",\"params\":{\"paramCEDES\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Site (s/ GEA)].Members\",\"paramCEDES_SUB\":\"[Organizacao.Coord .TI].[Sigla Coord. TI Completa (s/ GEA)].Members\",\"dataMesCEDES\":\"[Periodo.default].[2017].[T1].children\"}}'\r\n               id=\"indicadoresIframeCEDES\"\r\n               width=\"100%\"\r\n               height=\"2500em\" style=\"\r\n   border-left-width: 0px;\r\n   border-bottom-width: 0px;\r\n   border-right-width: 0px;\r\n   border-top-width: 0px;\"></iframe> \r\n   \r\n   "
+      "value": "<iframe\r\nsrc=''\r\nid=\"indicadoresIframeCEDES\"\r\nwidth=\"100%\"\r\nheight=\"2500em\" \r\n    style=\"border-left-width: 0px;\r\n    border-bottom-width: 0px;\r\n    border-right-width: 0px;\r\n    border-top-width: 0px;\"></iframe> \r\n   \r\n   "
      },
      {
       "name": "fontSize",
