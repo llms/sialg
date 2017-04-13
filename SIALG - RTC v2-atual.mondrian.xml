@@ -330,7 +330,7 @@
     </Hierarchy>
   </Dimension>
   <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Periodo - CEDES" description="Cedes">
-    <Hierarchy name="default" visible="true" hasAll="true" defaultMember="[Periodo - CEDES.default].[2017]">
+    <Hierarchy name="default" visible="true" hasAll="true" allMemberName="Todos">
       <Table name="ALGTBA002_RTC_INDICADORES_PERIODO" schema="ALGSC002_SIALG">
       </Table>
       <Level name="Ano" visible="true" column="NU_ANO" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
@@ -342,7 +342,7 @@
     </Hierarchy>
   </Dimension>
   <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Periodo - GEA" description="GEA">
-    <Hierarchy name="default" visible="true" hasAll="true" defaultMember="[Periodo - GEA.default].[2017]">
+    <Hierarchy name="default" visible="true" hasAll="true" allMemberName="Todos">
       <Table name="ALGTBA003_RTC_INDICADORES_PERIODO_GEA" schema="ALGSC002_SIALG">
       </Table>
       <Level name="Ano" visible="true" column="NU_ANO" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
