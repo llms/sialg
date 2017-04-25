@@ -163,7 +163,7 @@ order by "SG_GEC", "SG_GEC_COMPLETO"]]></Query>
       <Query><![CDATA[with
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, 
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {order([Periodo.default].[Ano].members, [Periodo.default].currentMember.Name, bdesc)}}) on 1, 
 [Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
@@ -177,7 +177,7 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Query><![CDATA[with
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, 
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[2017].children}}) on 1, 
 [Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
@@ -207,9 +207,9 @@ FROM [SIALG - Indicadores CEDES]]]></Query>
       <Query><![CDATA[with
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Ano].members}}) on 1, 
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {order([Periodo.default].[Ano].members, [Periodo.default].currentMember.Name, bdesc)}}) on 1, 
 [Measures].[*ZERO] on 0
-FROM [SIALG - Indicadores GEA]]]></Query>
+FROM [SIALG - Indicadores CEDES]]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="trimestre" id="trimestre" type="mdx">
       <Name>trimestre</Name>
@@ -221,7 +221,7 @@ FROM [SIALG - Indicadores GEA]]]></Query>
       <Query><![CDATA[with
 MEMBER [Measures].[*ZERO] AS '0', SOLVE_ORDER=0
 select
-VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[Trimestre].members}}) on 1, 
+VisualTotals({[Periodo.default].[Trimestre].DefaultMember, {[Periodo.default].[2017].children}}) on 1, 
 [Measures].[*ZERO] on 0
 FROM [SIALG - Indicadores GEA]]]></Query>
    </DataAccess>
