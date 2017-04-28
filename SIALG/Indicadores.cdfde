@@ -15525,6 +15525,42 @@
     "typeDesc": "<i>Group</i>"
    },
    {
+    "id": "7dd8c68e-1c34-0e3e-f21f-803f27ecd7b1",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "elimina_duplicatas"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function unique(list) {\r\n        var result = [];\r\n        $.each(list, function(i, e) {\r\n            if ($.inArray(e, result) == -1) result.push(e);\r\n        });\r\n        return result;\r\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "28a97966-89d0-064d-6e93-a6375bb9c0b7",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "preencheArray"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function preencheArray(ano,trimestre) {\r\n    \r\n    var T1=[\"01\",\"02\",\"03\"];\r\n    var T2=[\"04\",\"05\",\"06\"];\r\n    var T3=[\"07\",\"08\",\"09\"];\r\n    var T4=[\"10\",\"11\",\"12\"];\r\n    var result = [];\r\n    var anoMes;\r\n    var arrayDataFinal = [];\r\n    for(z = 0; z < arrFinal_ano.length; z++){\r\n        for (y = 0; y < arrFinal_tri.length; y++) {\r\n            if(arrFinal_tri[y]== \"T1\"){\r\n                anoMes = T1.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n    \r\n            } else if(arrFinal_tri[y]== \"T2\"){\r\n                anoMes = T2.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            } else if(arrFinal_tri[y]== \"T3\"){\r\n                anoMes = T3.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            } else if(arrFinal_tri[y]== \"T4\"){\r\n                 anoMes = T4.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            }       \r\n    \t}\r\n\t}\r\n    return arrayDataFinal;\r\n}\r\n "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
     "id": "58525626-c4d8-0f30-e75d-97558cafa360",
     "parent": "SCRIPT",
     "properties": [
@@ -15536,7 +15572,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function detalha(g, h) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramIndicador=' + h);\r\n\r\n} "
+      "value": "function detalha(g, h) { \r\n      \r\n    //Captura paramêtro\r\n    tempo = Dashboards.getParam('dataMes');\r\n    var arrayAnoMes= []; \r\n    var arr_s1= []; \r\n    var arr_s2= [];\r\n    var auxTempo, aux1, aux2, str1, str2, tempo_prd;\r\n    \r\n    //Condição 1: Quando só o ano está filtrado. Retorna todos os meses do ano.    \r\n    if(tempo.substring(0,13) == 'PeriodsToDate'){\r\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]/g); \r\n        for (var i = 0; i < auxTempo.length; i++) {\r\n            for (var j = 1; j < 13; j++) {\r\n                aux1=auxTempo[i]+ (\"0\" + j).slice(-2);\r\n                arrayAnoMes.push(aux1);\r\n            }\r\n        }\r\n        tempo_prd = arrayAnoMes;\r\n   //Condição 2: Quando os meses estão filtrados. Retorna os meses selecionados.    \r\n   } else if(tempo.substring(0,27) == '[Periodo.default].[Ano Mes]'){\r\n            auxTempo=tempo.match(/[0-9][0-9][0-9][0-9][0-9][0-9]/g);\r\n            tempo_prd = auxTempo;\r\n    \r\n   //Condição 3: Quando os meses estão filtrados. Retorna os meses selecionados.\r\n   } else {     \r\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]...[T][1-4]/g);\r\n        for (k = 0; k < auxTempo.length; k++){\r\n            \r\n            str1 = auxTempo[k].substring(0,4);\r\n            str2 = auxTempo[k].substring(7,9);\r\n            arr_s1.push(str1);\r\n            arr_s2.push(str2);\r\n        }\r\n            arrFinal_ano = unique(arr_s1);\r\n            arrFinal_tri = unique(arr_s2);\r\n                    \r\n            tempo_prd = preencheArray(arrFinal_ano, arrFinal_tri);\r\n   }\r\n   //alert(\"DataFinal: \" + tempo_prd);\r\n\r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramIndicador=' + h + '&paramAnoMes=' + tempo_prd);\r\n\r\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -15554,7 +15590,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function drill(g) { \r\n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g);\r\n\r\n} "
+      "value": "function drill(g) { \r\n\r\n    //Captura paramêtro\r\n    tempo = Dashboards.getParam('dataMes');\r\n    var arrayAnoMes= []; \r\n    var arr_s1= []; \r\n    var arr_s2= [];\r\n    var auxTempo, aux1, aux2, str1, str2, tempo_prd;\r\n    \r\n    //Condição 1: Quando só o ano está filtrado. Retorna todos os meses do ano.    \r\n    if(tempo.substring(0,13) == 'PeriodsToDate'){\r\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]/g); \r\n        for (var i = 0; i < auxTempo.length; i++) {\r\n            for (var j = 1; j < 13; j++) {\r\n                aux1=auxTempo[i]+ (\"0\" + j).slice(-2);\r\n                arrayAnoMes.push(aux1);\r\n            }\r\n        }\r\n        tempo_prd = arrayAnoMes;\r\n   //Condição 2: Quando os meses estão filtrados. Retorna os meses selecionados.    \r\n   } else if(tempo.substring(0,27) == '[Periodo.default].[Ano Mes]'){\r\n            auxTempo=tempo.match(/[0-9][0-9][0-9][0-9][0-9][0-9]/g);\r\n            tempo_prd = auxTempo;\r\n    \r\n   //Condição 3: Quando os meses estão filtrados. Retorna os meses selecionados.\r\n   } else {     \r\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]...[T][1-4]/g);\r\n        for (k = 0; k < auxTempo.length; k++){\r\n            \r\n            str1 = auxTempo[k].substring(0,4);\r\n            str2 = auxTempo[k].substring(7,9);\r\n            arr_s1.push(str1);\r\n            arr_s2.push(str2);\r\n        }\r\n            arrFinal_ano = unique(arr_s1);\r\n            arrFinal_tri = unique(arr_s2);\r\n                    \r\n            tempo_prd = preencheArray(arrFinal_ano, arrFinal_tri);\r\n   }\r\n   //alert(\"DataFinal: \" + tempo_prd);\r\n   \r\n    var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramAnoMes=' + tempo_prd);\r\n    \r\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -15572,7 +15608,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function init(){\n\n        \n    //Funcao iniciada por um Custom Param.  \n    //Data-----\n    dataMes = Dashboards.getQueryParameter(\"dataMes\");\n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
+      "value": "function init(){\n\n        \n    //Funcao iniciada por um Custom Param.  \n    //Data-----\n    tempo_GEA = Dashboards.getQueryParameter(\"tempo_GEA\");\n    dataMes = Dashboards.getQueryParameter(\"dataMes\");\n    //Param SUB GEC\n    paramGEC_SUB = Dashboards.getQueryParameter(\"paramGEC_SUB\");\n    //Param do GEA\n    paramGEC = Dashboards.getQueryParameter(\"paramGEC\");\n    paramGEC_aux = Dashboards.getQueryParameter(\"paramGEC_aux\");\n    \n    dataFim = Dashboards.getQueryParameter(\"dataFim\");\n    dataInicio = Dashboards.getQueryParameter(\"dataInicio\");\n    //Data Criação Pai\n    dataCriacaoPaiInicio = convertDateToMDX(\"Data Criacao Pai\", \"\", dataInicio);\n    dataCriacaoPaiFim = convertDateToMDX(\"Data Criacao Pai\", \"\", dataFim);\n    //Data Criação Filha\n    dataCriacaoFilhaInicio = convertDateToMDX(\"Data Criacao Filha\", \"\", dataInicio);\n    dataCriacaoFilhaFim = convertDateToMDX(\"Data Criacao Filha\", \"\", dataFim);\n    //Data Modificacao Pai\n    dataModificacaoPaiInicio = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataInicio);\n    dataModificacaoPaiFim = convertDateToMDX(\"Data Modificacao Pai\", \"\", dataFim);\n    //Data Modificacao Filha\n    dataModificacaoFilhaInicio = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataInicio);\n    dataModificacaoFilhaFim = convertDateToMDX(\"Data Modifcacao Filha\", \"\", dataFim);\n    //Data Resolucao Pai\n    dataResolucaoPaiInicio = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataInicio);\n    dataResolucaoPaiFim = convertDateToMDX(\"Data Resolucao Pai\", \"\", dataFim);\n    //Data Resolucao Filha\n    dataResolucaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n    dataResolucaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Aprovação Filha\n     dataAprovacaoFilhaInicio = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataInicio);\n     dataAprovacaoFilhaFim = convertDateToMDX(\"Data Resolucao Filha\", \"\", dataFim);\n    //Data Max Aprovacao Filha\n     dataMaxAprovacaoFilhaInicio = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataInicio);\n     dataMaxAprovacaoFilhaFim = convertDateToMDX(\"Data Max Aprovacao Filha\", \"\", dataFim);\n          \n    \n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -16470,6 +16506,39 @@
     ],
     "type": "Label",
     "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "913a6570-f9bf-1a07-3432-22aa2d0b4eda",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "tempo_GEA"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
    },
    {
     "id": "e4aa5f9f-6dd3-e148-30a9-7b0cec99dff6",

@@ -14070,6 +14070,42 @@
     "typeDesc": "<i>Group</i>"
    },
    {
+    "id": "f4f9b1c6-1cd2-d722-f9a8-e1aec7d614ec",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "elimina_duplicatas"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function unique(list) {\r\n        var result = [];\r\n        $.each(list, function(i, e) {\r\n            if ($.inArray(e, result) == -1) result.push(e);\r\n        });\r\n        return result;\r\n} "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
+    "id": "5b98bc3c-ed10-4005-9889-549a8d8dac74",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "preencheArray"
+     },
+     {
+      "name": "javaScript",
+      "type": "JavaScript",
+      "value": "function preencheArray(ano,trimestre) {\r\n    \r\n    var T1=[\"01\",\"02\",\"03\"];\r\n    var T2=[\"04\",\"05\",\"06\"];\r\n    var T3=[\"07\",\"08\",\"09\"];\r\n    var T4=[\"10\",\"11\",\"12\"];\r\n    var result = [];\r\n    var anoMes;\r\n    var arrayDataFinal = [];\r\n    for(z = 0; z < arrFinal_ano.length; z++){\r\n        for (y = 0; y < arrFinal_tri.length; y++) {\r\n            if(arrFinal_tri[y]== \"T1\"){\r\n                anoMes = T1.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n    \r\n            } else if(arrFinal_tri[y]== \"T2\"){\r\n                anoMes = T2.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            } else if(arrFinal_tri[y]== \"T3\"){\r\n                anoMes = T3.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            } else if(arrFinal_tri[y]== \"T4\"){\r\n                 anoMes = T4.map(function(num) {\r\n                    return arrFinal_ano[z] +num;        \r\n                });\r\n                arrayDataFinal.push(anoMes);\r\n            }       \r\n        }\r\n\t}\r\n    return arrayDataFinal;\r\n}\r\n "
+     }
+    ],
+    "type": "ComponentsFunction",
+    "typeDesc": "JavaScript function"
+   },
+   {
     "id": "a7e91734-2157-3e9d-66a8-57be4aa333d4",
     "parent": "SCRIPT",
     "properties": [
@@ -14081,7 +14117,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function detalha(g, h) { \n      var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramIndicador=' + h);\n\n} "
+      "value": "function detalha(g, h) { \n    \n    //Captura paramêtro\n    tempo = Dashboards.getParam('dataMesCEDES');\n    var arrayAnoMes= []; \n    var arr_s1= []; \n    var arr_s2= [];\n    var auxTempo, aux1, aux2, str1, str2, tempo_prd;\n    \n    //Condição 1: Quando só o ano está filtrado. Retorna todos os meses do ano.    \n    if(tempo.substring(0,13) == 'PeriodsToDate'){\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]/g); \n        for (var i = 0; i < auxTempo.length; i++) {\n            for (var j = 1; j < 13; j++) {\n                aux1=auxTempo[i]+ (\"0\" + j).slice(-2);\n                arrayAnoMes.push(aux1);\n            }\n        }\n        tempo_prd = arrayAnoMes;\n   //Condição 2: Quando os meses estão filtrados. Retorna os meses selecionados.    \n   } else if(tempo.substring(0,27) == '[Periodo.default].[Ano Mes]'){\n            auxTempo=tempo.match(/[0-9][0-9][0-9][0-9][0-9][0-9]/g);\n            tempo_prd = auxTempo;\n    \n   //Condição 3: Quando os meses estão filtrados. Retorna os meses selecionados.\n   } else {     \n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]...[T][1-4]/g);\n        for (k = 0; k < auxTempo.length; k++){\n            \n            str1 = auxTempo[k].substring(0,4);\n            str2 = auxTempo[k].substring(7,9);\n            arr_s1.push(str1);\n            arr_s2.push(str2);\n        }\n            arrFinal_ano = unique(arr_s1);\n            arrFinal_tri = unique(arr_s2);\n                    \n            tempo_prd = preencheArray(arrFinal_ano, arrFinal_tri);\n   }\n   //alert(\"DataFinal: \" + tempo_prd);\n    \n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramIndicador=' + h + '&paramAnoMes=' + tempo_prd);\n\n} "
      }
     ],
     "type": "ComponentsFunction",
@@ -14099,7 +14135,7 @@
      {
       "name": "javaScript",
       "type": "JavaScript",
-      "value": "function drill(g) { \n      var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g);\n\n} "
+      "value": "function drill(g) { \n    \n    //Captura paramêtro\n    tempo = Dashboards.getParam('dataMesCEDES');\n    var arrayAnoMes= []; \n    var arr_s1= []; \n    var arr_s2= [];\n    var auxTempo, aux1, aux2, str1, str2, tempo_prd;\n    \n    //Condição 1: Quando só o ano está filtrado. Retorna todos os meses do ano.    \n    if(tempo.substring(0,13) == 'PeriodsToDate'){\n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]/g); \n        for (var i = 0; i < auxTempo.length; i++) {\n            for (var j = 1; j < 13; j++) {\n                aux1=auxTempo[i]+ (\"0\" + j).slice(-2);\n                arrayAnoMes.push(aux1);\n            }\n        }\n        tempo_prd = arrayAnoMes;\n   //Condição 2: Quando os meses estão filtrados. Retorna os meses selecionados.    \n   } else if(tempo.substring(0,27) == '[Periodo.default].[Ano Mes]'){\n            auxTempo=tempo.match(/[0-9][0-9][0-9][0-9][0-9][0-9]/g);\n            tempo_prd = auxTempo;\n    \n   //Condição 3: Quando os meses estão filtrados. Retorna os meses selecionados.\n   } else {     \n        auxTempo=tempo.match(/[0-9][0-9][0-9][0-9]...[T][1-4]/g);\n        for (k = 0; k < auxTempo.length; k++){\n            \n            str1 = auxTempo[k].substring(0,4);\n            str2 = auxTempo[k].substring(7,9);\n            arr_s1.push(str1);\n            arr_s2.push(str2);\n        }\n            arrFinal_ano = unique(arr_s1);\n            arrFinal_tri = unique(arr_s2);\n                    \n            tempo_prd = preencheArray(arrFinal_ano, arrFinal_tri);\n   }\n   //alert(\"DataFinal: \" + tempo_prd);\n    \n   var win = window.open('/pentaho/api/repos/%3Apublic%3ASIALG%3ADemandas_RTC.prpt/viewer?paramUnidade='+ g + '&paramAnoMes=' + tempo_prd);\n\n} "
      }
     ],
     "type": "ComponentsFunction",
